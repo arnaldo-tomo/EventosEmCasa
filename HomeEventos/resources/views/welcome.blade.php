@@ -84,7 +84,7 @@ Header START -->
                             </ul>
                         </li> --}}
                         <!-- Nav item 2 Pages -->
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu" aria-labelledby="pagesMenu">
@@ -140,12 +140,12 @@ Header START -->
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav item 3 Post -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="postMenu"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account </a>
+                            <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Account </a>
                             <ul class="dropdown-menu" aria-labelledby="postMenu">
                                 <li> <a class="dropdown-item" href="create-page.html">Create a page</a></li>
                                 <li> <a class="dropdown-item" href="settings.html">Settings</a> </li>
