@@ -917,21 +917,21 @@ Header END -->
                                                     src="assets/images/logo/09.svg" alt=""></a>
                                         </div>
                                         <!-- Info -->
-                                        <h5 class="mb-0"> <a href="group-details.html">Eternal triangle</a></h5>
-                                        <small> <i class="bi bi-globe pe-1"></i> Public Group</small>
-                                        <!-- Group stat START -->
-                                        <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
-                                            <!-- Group stat item -->
+                                        <h5 class="mb-0"><a href="group-details.html">Rainhas da beleza</a></h5>
+                                        <small> <i class="bi bi-globe pe-1"></i> Grupo público</small>
+                                        <!-- Estatística de grupo INICIAR -->
+                                        <div class="hstack gap-2 gap-xl-3 justifique-content-center mt-3">
+                                            <!-- Item de estatística de grupo -->
                                             <div>
-                                                <h6 class="mb-0">45k</h6>
-                                                <small>Members</small>
+                                                <h6 class="mb-0">23k</h6>
+                                                <small>Membros</small>
                                             </div>
-                                            <!-- Divider -->
+                                            <!-- Divisor -->
                                             <div class="vr"></div>
-                                            <!-- Group stat item -->
+                                            <!-- Item de estatística de grupo -->
                                             <div>
-                                                <h6 class="mb-0">16</h6>
-                                                <small>Post per day</small>
+                                                <h6 class="mb-0">12</h6>
+                                                <small>Post por dia</small>
                                             </div>
                                         </div>
                                         <!-- Group stat END -->
