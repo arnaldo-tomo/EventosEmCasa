@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/index-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:40:23 GMT -->
 
 <head>
-    <title>HomeEvento</title>
+    <title>DashboardEvento</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -206,7 +206,7 @@ Header END -->
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
-                                        <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
+                                        <img class="h-40px mb-3" src="assets/images/icon/dashboard-outline-filled.svg"
                                             alt="">
                                         <h6>PNY E-Gaming Fest</h6>
                                     </a>
