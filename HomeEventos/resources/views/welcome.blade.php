@@ -542,11 +542,11 @@ Header END -->
                                     </li>
                                     <li class="avatar avatar-xs">
                                         <div class="avatar-img rounded-circle bg-primary"><span
-                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+56</span>
+                                                class="menor text-white position-absolute top-50 start-50 translate-middle">+56</span>
                                         </div>
                                     </li>
                                     <li class="ms-3">
-                                        <small> are attending</small>
+                                        <small> estão participando</small>
                                     </li>
                                 </ul>
                                 <!-- Avatar group END -->
@@ -556,7 +556,7 @@ Header END -->
                                     <div class="w-100">
                                         <input type="checkbox" class="btn-check d-block" id="Interested4" checked>
                                         <label class="btn btn-sm btn-outline-success d-block" for="Interested4"><i
-                                                class="fa-solid fa-thumbs-up me-1"></i> Interested</label>
+                                                class="fa-solid fa-thumbs-up me-1"></i> Interessante</label>
                                     </div>
                                     <div class="dropdown ms-3">
                                         <a href="#" class="btn btn-sm btn-primary-soft" id="eventActionShare4"
@@ -567,21 +567,25 @@ Header END -->
                                         <ul class="dropdown-menu dropdown-menu-end"
                                             aria-labelledby="eventActionShare4">
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-envelope fa-fw pe-1"></i> Send via Direct
-                                                    Message</a></li>
+                                                        class="bi bi-envelope fa-fw pe-1"></i> Enviar via Direct
+                                                    Mensagem</a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-bookmark-check fa-fw pe-1"></i> Share to News Feed
+                                                        class="bi bi-bookmark-check fa-fw pe-1"></i> Compartilhar no
+                                                    feed de notícias
                                                 </a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-people fa-fw pe-1"></i> Share to a group</a></li>
+                                                        class="bi bi-pessoas fa-fw pe-1"></i> Compartilhar em um
+                                                    grupo</a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-share fa-fw pe-1"></i> Share post via …</a></li>
+                                                        class="bi bi-share fa-fw pe-1"></i> Compartilhar postagem via
+                                                    …</a></li>
                                             <li>
-                                                <hr class="dropdown-divider">
+                                                <hr class="divisor suspenso">
                                             </li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-person fa-fw pe-1"></i> Share on a friend's
-                                                    profile</a></li>
+                                                        class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
+                                                    amigo
+                                                    perfil</a></li>
                                         </ul>
                                     </div>
                                 </div>
