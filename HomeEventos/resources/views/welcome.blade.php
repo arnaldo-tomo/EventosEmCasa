@@ -143,7 +143,7 @@ Header START -->
                         </li> --}}
 
                         <!-- Nav item 3 Post -->
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">Account </a>
                             <ul class="dropdown-menu" aria-labelledby="postMenu">
@@ -173,7 +173,7 @@ Header START -->
                                 <li> <a class="dropdown-item" href="offline.html">Offline</a> </li>
                                 <li> <a class="dropdown-item" href="privacy-and-terms.html">Privacy & terms</a> </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
