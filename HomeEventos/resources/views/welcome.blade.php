@@ -203,8 +203,8 @@ Header START -->
                                             alt="avatar">
                                     </div>
                                     <div>
-                                        <a class="h6 stretched-link" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">Web Developer</p>
+                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
+                                        <p class="small m-0">Desenvolvedor Web</p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
