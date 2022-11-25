@@ -177,7 +177,7 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="my-profile-connections.html">My network</a>
+                            <a class="nav-link" href="my-profile-connections.html">Minha rede</a>
                         </li>
                     </ul>
                 </div>
@@ -218,11 +218,7 @@ Header START -->
                                     <i class="fa-fw bi bi-life-preserver me-2"></i>Support
                                 </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="docs/index.html" target="_blank">
-                                    <i class="fa-fw bi bi-card-text me-2"></i>Documentation
-                                </a>
-                            </li>
+
                             <li class="dropdown-divider"></li>
                             <li><a class="dropdown-item bg-danger-soft-hover" href="sign-in-advance.html"><i
                                         class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
