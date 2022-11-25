@@ -753,10 +753,9 @@ Header END -->
                                 <div class="w-100 mt-auto">
                                     <!-- Card title -->
                                     <h5 class="text-white"><a href="#"
-                                            class="btn-link text-reset stretch-link">Londres</a></h5>
-                                    <!-- Informações do cartão -->
-                                    <span class="text-white small">Artes e entretenimento</span>
-                                    <h4>Explorar grupos </h4>
+                                            class="btn-link text-reset stretched-link">London</a></h5>
+                                    <!-- Card info -->
+                                    <span class="text-white small">Arts & Entertainment</span>
                                 </div>
                             </div>
                         </div>
@@ -773,10 +772,7 @@ Header END -->
                 <div class="row">
                     <div class="col-12 mb-3">
                         <!-- Title -->
-                        class="btn-link text-reset stretch-link">Londres</a></h5>
-                        <!-- Informações do cartão -->
-                        <span class="text-white small">Artes e entretenimento</span>
-                        <h4>Explorar grupos </h4>
+                        <h4>Explore Groups </h4>
                     </div>
                 </div>
                 <div class="row g-4">
@@ -795,21 +791,21 @@ Header END -->
                                             src="assets/images/logo/08.svg" alt=""></a>
                                 </div>
                                 <!-- Info -->
-                                <h5 class="mb-0"> <a href="group-details.html">Tudo na mente</a> </h5>
-                                <small> <i class="bi bi-lock pe-1"></i> Grupo Privado</small>
-                                <!-- Estatística de grupo INICIAR -->
-                                <div class="hstack gap-2 gap-xl-3 justificar-content-center mt-3">
-                                    <!-- Item de estatística de grupo -->
+                                <h5 class="mb-0"> <a href="group-details.html">All in the Mind</a> </h5>
+                                <small> <i class="bi bi-lock pe-1"></i> Private Group</small>
+                                <!-- Group stat START -->
+                                <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
+                                    <!-- Group stat item -->
                                     <div>
                                         <h6 class="mb-0">32k</h6>
-                                        <small>Membros</small>
+                                        <small>Members</small>
                                     </div>
-                                    <!-- Divisor -->
+                                    <!-- Divider -->
                                     <div class="vr"></div>
-                                    <!-- Item de estatística de grupo -->
+                                    <!-- Group stat item -->
                                     <div>
                                         <h6 class="mb-0">20</h6>
-                                        <small>Post por dia</small>
+                                        <small>Post per day</small>
                                     </div>
                                 </div>
                                 <!-- Group stat END -->
@@ -859,107 +855,109 @@ Header END -->
                                             src="assets/images/logo/02.svg" alt=""></a>
                                 </div>
                                 <!-- Info -->
-                                <h5 class="mb-0"> <a href="group-details.html">Tudo na mente</a> </h5>
-                                <small> <i class="bi bi-lock pe-1"></i> Grupo Privado</small>
-                                <!-- Estatística de grupo INICIAR -->
-                                <div class="hstack gap-2 gap-xl-3 justificar-content-center mt-3">
-                                    <!-- Item de estatística de grupo -->
+                                <h5 class="mb-0"><a href="group-details.html">Beauty queens</a></h5>
+                                <small> <i class="bi bi-globe pe-1"></i> Public Group</small>
+                                <!-- Group stat START -->
+                                <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
+                                    <!-- Group stat item -->
                                     <div>
-                                        <h6 class="mb-0">32k</h6>
-                                        <small>Membros</small>
+                                        <h6 class="mb-0">23k</h6>
+                                        <small>Members</small>
                                     </div>
-                                    <!-- Divisor -->
+                                    <!-- Divider -->
                                     <div class="vr"></div>
-                                    <!-- Item de estatística de grupo -->
+                                    <!-- Group stat item -->
                                     <div>
-                                        <h6 class="mb-0">20</h6>
-                                        <small>Post por dia</small>
-                                        <!-- Group stat END -->
-                                        <!-- Avatar group START -->
-                                        <ul
-                                            class="avatar-group list-unstyled align-items-center justify-content-center mb-0 mt-3">
-                                            <li class="avatar avatar-xs">
-                                                <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/06.jpg" alt="avatar">
-                                            </li>
-                                            <li class="avatar avatar-xs">
-                                                <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/07.jpg" alt="avatar">
-                                            </li>
-                                            <li class="avatar avatar-xs">
-                                                <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/09.jpg" alt="avatar">
-                                            </li>
-                                            <li class="avatar avatar-xs">
-                                                <div class="avatar-img rounded-circle bg-primary"><span
-                                                        class="smaller text-white position-absolute top-50 start-50 translate-middle">+13</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!-- Avatar group END -->
+                                        <h6 class="mb-0">12</h6>
+                                        <small>Post per day</small>
                                     </div>
-                                    <!-- Card body END -->
                                 </div>
-                                <!-- Card END -->
-                            </div>
-                            <div class="col-md-4">
-                                <!-- Card START -->
-                                <div class="card">
-                                    <div class="h-80px rounded-top"
-                                        style="background-image:url(assets/images/bg/03.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                    </div>
-                                    <!-- Card body START -->
-                                    <div class="card-body text-center pt-0">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-lg mt-n5 mb-3">
-                                            <a href="group-details.html"><img
-                                                    class="avatar-img rounded-circle border border-white border-3 bg-mode"
-                                                    src="assets/images/logo/09.svg" alt=""></a>
+                                <!-- Group stat END -->
+                                <!-- Avatar group START -->
+                                <ul
+                                    class="avatar-group list-unstyled align-items-center justify-content-center mb-0 mt-3">
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <div class="avatar-img rounded-circle bg-primary"><span
+                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+13</span>
                                         </div>
-                                        <!-- Info -->
-                                        <h5 class="mb-0"><a href="group-details.html">Rainhas da beleza</a></h5>
-                                        <small> <i class="bi bi-globe pe-1"></i> Grupo público</small>
-                                        <!-- Estatística de grupo INICIAR -->
-                                        <div class="hstack gap-2 gap-xl-3 justifique-content-center mt-3">
-                                            <!-- Item de estatística de grupo -->
-                                            <div>
-                                                <h6 class="mb-0">23k</h6>
-                                                <small>Membros</small>
-                                            </div>
-                                            <!-- Divisor -->
-                                            <div class="vr"></div>
-                                            <!-- Item de estatística de grupo -->
-                                            <div>
-                                                <h6 class="mb-0">12</h6>
-                                                <small>Post por dia</small>
-                                            </div>
-                                        </div>
-                                        <!-- Group stat END -->
-                                        <!-- Avatar group START -->
-                                        <ul
-                                            class="avatar-group list-unstyled align-items-center justify-content-center mb-0 mt-3">
-                                            <li class="avatar avatar-xs">
-                                                <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/11.jpg" alt="avatar">
-                                            </li>
-                                            <li class="avatar avatar-xs">
-                                                <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/10.jpg" alt="avatar">
-                                            </li>
-                                            <li class="avatar avatar-xs">
-                                                <div class="avatar-img rounded-circle bg-primary"><span
-                                                        class="smaller text-white position-absolute top-50 start-50 translate-middle">+12</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!-- Avatar group END -->
-                                    </div>
-                                    <!-- Card body END -->
-                                </div>
-                                <!-- Card END -->
+                                    </li>
+                                </ul>
+                                <!-- Avatar group END -->
                             </div>
+                            <!-- Card body END -->
                         </div>
+                        <!-- Card END -->
                     </div>
+                    <div class="col-md-4">
+                        <!-- Card START -->
+                        <div class="card">
+                            <div class="h-80px rounded-top"
+                                style="background-image:url(assets/images/bg/03.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            </div>
+                            <!-- Card body START -->
+                            <div class="card-body text-center pt-0">
+                                <!-- Avatar -->
+                                <div class="avatar avatar-lg mt-n5 mb-3">
+                                    <a href="group-details.html"><img
+                                            class="avatar-img rounded-circle border border-white border-3 bg-mode"
+                                            src="assets/images/logo/09.svg" alt=""></a>
+                                </div>
+                                <!-- Info -->
+                                <h5 class="mb-0"> <a href="group-details.html">Eternal triangle</a></h5>
+                                <small> <i class="bi bi-globe pe-1"></i> Public Group</small>
+                                <!-- Group stat START -->
+                                <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
+                                    <!-- Group stat item -->
+                                    <div>
+                                        <h6 class="mb-0">45k</h6>
+                                        <small>Members</small>
+                                    </div>
+                                    <!-- Divider -->
+                                    <div class="vr"></div>
+                                    <!-- Group stat item -->
+                                    <div>
+                                        <h6 class="mb-0">16</h6>
+                                        <small>Post per day</small>
+                                    </div>
+                                </div>
+                                <!-- Group stat END -->
+                                <!-- Avatar group START -->
+                                <ul
+                                    class="avatar-group list-unstyled align-items-center justify-content-center mb-0 mt-3">
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/11.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <div class="avatar-img rounded-circle bg-primary"><span
+                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+12</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- Avatar group END -->
+                            </div>
+                            <!-- Card body END -->
+                        </div>
+                        <!-- Card END -->
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Explore Groups END -->
 
@@ -991,18 +989,17 @@ Header END -->
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
-                    <h5 class="mb-4">Sobre</h5>
+                    <h5 class="mb-4">About</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link pt-0" href="#">Sobre redes sociais</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Segurança</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Suporte ao cliente</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Parceiros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Carreiras - <b> Junte-se a nós!
-                                </b></a></li>
+                        <li class="nav-item"><a class="nav-link pt-0" href="#"> About social</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Security</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Customer Support</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Partners</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Careers - <b> Join Us! </b></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <!-- Widget de rodapé -->
+                    <!-- Footer Widget -->
                     <h5 class="mb-4">Recursos</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item"><a class="nav-link pt-0" href="#"> Participe</a></li>
@@ -1022,25 +1019,25 @@ Header END -->
                         <!-- Footer nav START -->
                         <ul class="nav justify-content-center justify-content-lg-start lh-1">
                             <li class="nav-item">
-                                <a class="nav-link ps-0" href="#">Suporte </a>
+                                <a class="nav-link ps-0" href="#">Support </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="docs/index.html">Documentos </a>
+                                <a class="nav-link" target="_blank" href="docs/index.html">Docs </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Termos de uso</a>
+                                <a class="nav-link" href="#">Terms of Use</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Privacidade e privacidade termos</a>
+                                <a class="nav-link" href="#">Privacy &amp; terms</a>
                             </li>
                         </ul>
-                        <!-- Navegação no rodapé INICIAR -->
+                        <!-- Footer nav START -->
                     </div>
                     <div class="col-lg-6">
                         <!-- Copyright START -->
                         <p class="text-center text-lg-end mb-0">©2022 <a class="text-body" target="_blank"
-                                href="https://www.webestica.com/"> Webestica </a>Todos os direitos reservados.</p>
-                        <!-- Direitos autorais FIM -->
+                                href="https://www.webestica.com/"> Webestica </a>All rights reserved.</p>
+                        <!-- Copyright END -->
                     </div>
                 </div>
             </div>
