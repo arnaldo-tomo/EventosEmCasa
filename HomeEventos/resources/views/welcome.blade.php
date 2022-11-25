@@ -692,9 +692,10 @@ Header END -->
                         <a href="event-details-2.html"><img class="rounded" src="assets/images/events/06.jpg"
                                 alt=""></a>
                         <!-- Info -->
-                        <h5 class="mt-4"> <a href="event-details-2.html"> Global conference </a></h5>
-                        <p>He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay
-                            assistance joy.</p>
+                        <h5 class="mt-4"> <a href="event-details-2.html"> Conferência global </a></h5>
+                        <p>Ele luar difícil absorvê-lo, desportistas. Interessado tem todas as dificuldades de
+                            Devonshire gay
+                            alegria de assistência.</p>
                         <!-- Avatar group -->
                         <ul class="avatar-group list-unstyled align-items-center mb-0">
                             <li class="avatar avatar-xs">
