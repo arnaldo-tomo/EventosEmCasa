@@ -717,9 +717,9 @@ Header END -->
                                 <div class="w-100 mt-auto">
                                     <!-- Card title -->
                                     <h5 class="text-white"><a href="#"
-                                            class="btn-link text-reset stretched-link">Los Angeles</a></h5>
-                                    <!-- Card info -->
-                                    <span class="text-white small">Events & Parties</span>
+                                            class="btn-link text-reset stretch-link">Los Angeles</a></h5>
+                                    <!-- Informações do cartão -->
+                                    <span class="text-white small">Eventos e festas</span>
                                 </div>
                             </div>
                         </div>
