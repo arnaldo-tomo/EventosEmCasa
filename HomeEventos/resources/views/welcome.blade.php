@@ -323,7 +323,7 @@ Header END -->
                                             </li>
                                             <li><a class="dropdown-item" href="#"> <i
                                                         class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
-                                                    amigo profile</a></li>
+                                                    amigo perfil</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -343,15 +343,16 @@ Header END -->
                             </div>
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
-                                <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Photography
-                                    Workshop</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Decibel magazine </a> </h5>
-                                <!-- Date time -->
-                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Mon, Aug 10, 2022 at
-                                    9:30 AM </p>
-                                <p class="small"> <i class="bi bi-geo-alt pe-1"></i> London </p>
-                                <!-- Avatar group START -->
+                                <!-- Etiqueta -->
+                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Fotografia
+                                    Oficina</a>
+                                <h5 class="mt-3"> <a href="event-details-2.html"> Revista Decibel </a> </h5>
+                                <!-- Data hora -->
+                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Seg, 10 de agosto de
+                                    2022 às
+                                    9h30 </p>
+                                <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Londres </p>
+                                <!-- Grupo de avatar START -->
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
                                     <li class="avatar avatar-xs">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg"
@@ -363,11 +364,11 @@ Header END -->
                                     </li>
                                     <li class="avatar avatar-xs">
                                         <div class="avatar-img rounded-circle bg-primary"><span
-                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+34</span>
+                                                class="menor text-white position-absolute top-50 start-50 translate-middle">+34</span>
                                         </div>
                                     </li>
                                     <li class="ms-3">
-                                        <small> are attending</small>
+                                        <small> estão participando</small>
                                     </li>
                                 </ul>
                                 <!-- Avatar group END -->
