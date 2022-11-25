@@ -991,17 +991,18 @@ Header END -->
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
-                    <h5 class="mb-4">About</h5>
+                    <h5 class="mb-4">Sobre</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link pt-0" href="#"> About social</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Security</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Customer Support</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Partners</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Careers - <b> Join Us! </b></a></li>
+                        <li class="nav-item"><a class="nav-link pt-0" href="#">Sobre redes sociais</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Segurança</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Suporte ao cliente</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Parceiros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Carreiras - <b> Junte-se a nós!
+                                </b></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <!-- Footer Widget -->
+                    <!-- Widget de rodapé -->
                     <h5 class="mb-4">Recursos</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item"><a class="nav-link pt-0" href="#"> Participe</a></li>
@@ -1021,25 +1022,25 @@ Header END -->
                         <!-- Footer nav START -->
                         <ul class="nav justify-content-center justify-content-lg-start lh-1">
                             <li class="nav-item">
-                                <a class="nav-link ps-0" href="#">Support </a>
+                                <a class="nav-link ps-0" href="#">Suporte </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="docs/index.html">Docs </a>
+                                <a class="nav-link" target="_blank" href="docs/index.html">Documentos </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Terms of Use</a>
+                                <a class="nav-link" href="#">Termos de uso</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Privacy &amp; terms</a>
+                                <a class="nav-link" href="#">Privacidade e privacidade termos</a>
                             </li>
                         </ul>
-                        <!-- Footer nav START -->
+                        <!-- Navegação no rodapé INICIAR -->
                     </div>
                     <div class="col-lg-6">
                         <!-- Copyright START -->
                         <p class="text-center text-lg-end mb-0">©2022 <a class="text-body" target="_blank"
-                                href="https://www.webestica.com/"> Webestica </a>All rights reserved.</p>
-                        <!-- Copyright END -->
+                                href="https://www.webestica.com/"> Webestica </a>Todos os direitos reservados.</p>
+                        <!-- Direitos autorais FIM -->
                     </div>
                 </div>
             </div>
