@@ -735,9 +735,9 @@ Header END -->
                                 <div class="w-100 mt-auto">
                                     <!-- Card title -->
                                     <h5 class="text-white"><a href="#"
-                                            class="btn-link text-reset stretched-link">London</a></h5>
-                                    <!-- Card info -->
-                                    <span class="text-white small">Arts & Entertainment</span>
+                                            class="btn-link text-reset stretch-link">Londres</a></h5>
+                                    <!-- Informações do cartão -->
+                                    <span class="text-white small">Artes e entretenimento</span>
                                 </div>
                             </div>
                         </div>
@@ -753,9 +753,10 @@ Header END -->
                                 <div class="w-100 mt-auto">
                                     <!-- Card title -->
                                     <h5 class="text-white"><a href="#"
-                                            class="btn-link text-reset stretched-link">London</a></h5>
-                                    <!-- Card info -->
-                                    <span class="text-white small">Arts & Entertainment</span>
+                                            class="btn-link text-reset stretch-link">Londres</a></h5>
+                                    <!-- Informações do cartão -->
+                                    <span class="text-white small">Artes e entretenimento</span>
+                                    <h4>Explorar grupos </h4>
                                 </div>
                             </div>
                         </div>
@@ -772,7 +773,10 @@ Header END -->
                 <div class="row">
                     <div class="col-12 mb-3">
                         <!-- Title -->
-                        <h4>Explore Groups </h4>
+                        class="btn-link text-reset stretch-link">Londres</a></h5>
+                        <!-- Informações do cartão -->
+                        <span class="text-white small">Artes e entretenimento</span>
+                        <h4>Explorar grupos </h4>
                     </div>
                 </div>
                 <div class="row g-4">
