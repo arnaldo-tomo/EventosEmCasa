@@ -168,21 +168,21 @@ Header END -->
                                         <!-- What -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="What">
+                                                placeholder="o que">
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <!-- Where -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Where">
+                                                placeholder="Onde">
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Nice</a>
+                                        <a class="btn btn-lg btn-primary" href="#">GO</a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
@@ -257,12 +257,14 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Spa training </a>
+                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Treinamento em spa
+                                </a>
                                 <h5 class="mt-3"> <a href="event-details-2.html"> Bone thugs-n-harmony </a> </h5>
-                                <!-- Date time -->
-                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Mon, Sep 25, 2020 at
-                                    9:30 AM </p>
-                                <p class="small"> <i class="bi bi-geo-alt pe-1"></i> San francisco </p>
+                                <!-- Data hora -->
+                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> segunda-feira, 25 de
+                                    setembro de 2020 às
+                                    9h30 </p>
+                                <p class="small"> <i class="bi bi-geo-alt pe-1"></i> São Francisco </p>
                                 <!-- Avatar group START -->
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
                                     <li class="avatar avatar-xs">
