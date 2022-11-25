@@ -266,7 +266,7 @@ Header END -->
                                 mais perto de você.
                             </p>
                             <div class="mx-auto bg-mode shadow rounded p-4 mt-5">
-                                <h5 class="mb-3 text-start">We will help you to find all</h5>
+                                <h5 class="mb-3 text-start">Ajudaremos você a encontrar tudo</h5>
                                 <!-- Form START -->
                                 <form class="row g-3 justify-content-center">
                                     <div class="col-md-5">
@@ -287,7 +287,7 @@ Header END -->
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Search</a>
+                                        <a class="btn btn-lg btn-primary" href="#">Pesquisar</a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
