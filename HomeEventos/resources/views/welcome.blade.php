@@ -231,7 +231,7 @@ Header START -->
                                     <div class="modeswitch-item">
                                         <div class="modeswitch-icon"></div>
                                     </div>
-                                    <span>Dark mode</span>
+                                    <span>Modo escuro</span>
                                 </div>
                             </li>
                             <!-- Dark mode switch END -->
