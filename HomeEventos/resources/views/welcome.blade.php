@@ -301,13 +301,13 @@ Header END -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Arts & Entertainment</h6>
+                                        <h6>Artes e Entretenimento</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clipboard-outline-filled.svg"
                                             alt="">
-                                        <h6> Business & Conferences</h6>
+                                        <h6> Negócios e conferências</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
@@ -319,13 +319,13 @@ Header END -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
-                                        <h6>Events & Parties</h6>
+                                        <h6>Eventos e festas</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
-                                        <h6>Sports & Wellness</h6>
+                                        <h6>Esportes e bem-estar</h6>
                                     </a>
                                 </div>
                                 <!-- Category END -->
