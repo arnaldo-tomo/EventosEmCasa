@@ -208,20 +208,20 @@ Header START -->
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="my-profile.html">View profile</a>
+                                    href="my-profile.html">Visualizar perfil</a>
                             </li>
                             <!-- Links -->
                             <li><a class="dropdown-item" href="settings.html"><i
-                                        class="bi bi-gear fa-fw me-2"></i>Settings & Privacy</a></li>
+                                        class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
                             <li>
                                 <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                    <i class="fa-fw bi bi-life-preserver me-2"></i>Support
+                                    <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
                                 </a>
                             </li>
 
                             <li class="dropdown-divider"></li>
                             <li><a class="dropdown-item bg-danger-soft-hover" href="sign-in-advance.html"><i
-                                        class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+                                        class="bi bi-power fa-fw me-2"></i>Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
