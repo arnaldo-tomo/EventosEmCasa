@@ -428,12 +428,14 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Conference</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Illenium: fallen embers tour </a>
+                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Conferência</a>
+                                <h5 class="mt-3"> <a href="event-details-2.html"> Illenium: tour das brasas caídas
+                                    </a>
                                 </h5>
-                                <!-- Date time -->
-                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Sun, Sep 23, 2022 at
-                                    12:00 PM </p>
+                                <!-- Data hora -->
+                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Dom, 23 de setembro
+                                    de 2022 às
+                                    12h </p>
                                 <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Mumbai </p>
                                 <!-- Avatar group START -->
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
@@ -455,11 +457,11 @@ Header END -->
                                     </li>
                                     <li class="avatar avatar-xs">
                                         <div class="avatar-img rounded-circle bg-primary"><span
-                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+65</span>
+                                                class="menor text-white position-absolute top-50 start-50 translate-middle">+65</span>
                                         </div>
                                     </li>
                                     <li class="ms-3">
-                                        <small> are attending</small>
+                                        <small> estão participando</small>
                                     </li>
                                 </ul>
                                 <!-- Avatar group END -->
@@ -469,7 +471,7 @@ Header END -->
                                     <div class="w-100">
                                         <input type="checkbox" class="btn-check d-block" id="Interested3">
                                         <label class="btn btn-sm btn-outline-success d-block" for="Interested3"><i
-                                                class="fa-solid fa-thumbs-up me-1"></i> Interested</label>
+                                                class="fa-solid fa-thumbs-up me-1"></i> Interessante</label>
                                     </div>
                                     <div class="dropdown ms-3">
                                         <a href="#" class="btn btn-sm btn-primary-soft" id="eventActionShare3"
