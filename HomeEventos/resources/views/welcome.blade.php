@@ -795,21 +795,21 @@ Header END -->
                                             src="assets/images/logo/08.svg" alt=""></a>
                                 </div>
                                 <!-- Info -->
-                                <h5 class="mb-0"> <a href="group-details.html">All in the Mind</a> </h5>
-                                <small> <i class="bi bi-lock pe-1"></i> Private Group</small>
-                                <!-- Group stat START -->
-                                <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
-                                    <!-- Group stat item -->
+                                <h5 class="mb-0"> <a href="group-details.html">Tudo na mente</a> </h5>
+                                <small> <i class="bi bi-lock pe-1"></i> Grupo Privado</small>
+                                <!-- Estatística de grupo INICIAR -->
+                                <div class="hstack gap-2 gap-xl-3 justificar-content-center mt-3">
+                                    <!-- Item de estatística de grupo -->
                                     <div>
                                         <h6 class="mb-0">32k</h6>
-                                        <small>Members</small>
+                                        <small>Membros</small>
                                     </div>
-                                    <!-- Divider -->
+                                    <!-- Divisor -->
                                     <div class="vr"></div>
-                                    <!-- Group stat item -->
+                                    <!-- Item de estatística de grupo -->
                                     <div>
                                         <h6 class="mb-0">20</h6>
-                                        <small>Post per day</small>
+                                        <small>Post por dia</small>
                                     </div>
                                 </div>
                                 <!-- Group stat END -->
