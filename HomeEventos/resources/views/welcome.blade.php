@@ -1083,13 +1083,13 @@ Header END -->
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
-                    <h5 class="mb-4">Resources</h5>
+                    <h5 class="mb-4">Recursos</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link pt-0" href="#"> Join</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Help Center</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Developers</a></li>
+                        <li class="nav-item"><a class="nav-link pt-0" href="#"> Participe</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Central de Ajuda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Desenvolvedores</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"> Status</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"> Communities </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Comunidades </a></li>
                     </ul>
                 </div>
             </div>
