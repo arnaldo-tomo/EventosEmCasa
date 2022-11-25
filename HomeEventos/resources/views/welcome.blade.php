@@ -629,36 +629,36 @@ Header END -->
                                 </div>
                             </li>
                             <li class="ms-3">
-                                <small> are attending</small>
+                                <small> estão participando</small>
                             </li>
                         </ul>
                         <!-- Global conference END -->
                     </div>
                     <div class="col-lg-6">
                         <!-- Book a conference START -->
-                        <h4 class="mb-4">Book a conference</h4>
+                        <h4 class="mb-4">Agende uma conferência</h4>
                         <div class="bg-light dashed p-4 rounded">
                             <div class="row g-4 justify-content-between">
                                 <div class="col-sm-7">
                                     <div class="row g-3">
                                         <!-- Date -->
                                         <div class="col-6">
-                                            <small>Date</small>
-                                            <h6>12 june, 2022</h6>
+                                            <small>Data</small>
+                                            <h6>12 de junho de 2022</h6>
                                         </div>
-                                        <!-- Time -->
+                                        <!-- Tempo -->
                                         <div class="col-6">
-                                            <small>Time</small>
-                                            <h6>🌞Morning 10AM</h6>
+                                            <small>Tempo</small>
+                                            <h6>🌞Manhã 10h</h6>
                                         </div>
-                                        <!-- Address -->
+                                        <!-- Endereço -->
                                         <div class="col-12">
-                                            <small>Address</small>
+                                            <small>Endereço</small>
                                             <h6>2492 Centennial NW, Acworth, GA, 30102</h6>
                                         </div>
                                         <div class="col-12">
                                             <a class="btn btn-white" href="#"><i
-                                                    class="bi bi-share-fill pe-2"></i> Share </a>
+                                                    class="bi bi-share-fill pe-2"></i> Compartilhe </a>
                                         </div>
                                     </div>
                                 </div>
