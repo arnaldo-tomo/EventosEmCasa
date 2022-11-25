@@ -378,7 +378,7 @@ Header END -->
                                     <div class="w-100">
                                         <input type="checkbox" class="btn-check d-block" id="Interested2" checked>
                                         <label class="btn btn-sm btn-outline-success d-block" for="Interested2"><i
-                                                class="fa-solid fa-thumbs-up me-1"></i> Interested</label>
+                                                class="fa-solid fa-thumbs-up me-1"></i> Interessante</label>
                                     </div>
                                     <div class="dropdown ms-3">
                                         <a href="#" class="btn btn-sm btn-primary-soft" id="eventActionShare2"
