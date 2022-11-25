@@ -518,11 +518,13 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Live show</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Comedy on the green </a> </h5>
-                                <!-- Date time -->
-                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Fri, Oct 05, 2022 at
-                                    1:00 AM </p>
+                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Apresentação ao
+                                    vivo</a>
+                                <h5 class="mt-3"> <a href="event-details-2.html"> Comédia no verde </a> </h5>
+                                <!-- Data hora -->
+                                <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Sexta, 05 de outubro
+                                    de 2022 às
+                                    1h </p>
                                 <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Miami </p>
                                 <!-- Avatar group START -->
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
