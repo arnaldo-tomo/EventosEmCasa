@@ -287,7 +287,7 @@ Header END -->
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Pesquisar</a>
+                                        <a class="btn btn-lg btn-primary" href="#">Nice</a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
@@ -344,8 +344,8 @@ Header END -->
                     <div class="col-12 mb-3">
                         <div class="d-sm-flex justify-content-between">
                             <!-- Title -->
-                            <h4>Discover Events </h4>
-                            <a class="btn btn-link" href="events-2.html">View all events</a>
+                            <h4>Descubra eventos </h4>
+                            <a class="btn btn-link" href="events-2.html">Ver todos os eventos</a>
                         </div>
                     </div>
                 </div>
