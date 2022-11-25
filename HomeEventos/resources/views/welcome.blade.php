@@ -261,8 +261,9 @@ Header END -->
                     <div class="row position-relative">
                         <div class="col-xl-8 col-lg-10 mx-auto pt-sm-5 text-center">
                             <!-- Title -->
-                            <h1 class="text-white">Find events near you</h1>
-                            <p class="text-white">Let's uncover the best places to eat, drink, and shop nearest to you.
+                            <h1 class="text-white">Encontre eventos perto de você</h1>
+                            <p class="text-white">Vamos descobrir os melhores lugares para comer, beber e fazer compras
+                                mais perto de você.
                             </p>
                             <div class="mx-auto bg-mode shadow rounded p-4 mt-5">
                                 <h5 class="mb-3 text-start">We will help you to find all</h5>
