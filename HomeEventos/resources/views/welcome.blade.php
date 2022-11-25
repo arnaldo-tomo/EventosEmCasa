@@ -667,7 +667,7 @@ Header END -->
                                         <!-- QR code -->
                                         <img class="w-200px mx-auto" src="assets/images/qr-code.png" alt="">
                                         <a class="btn btn-primary mt-3" href="#"><i
-                                                class="bi bi-ticket-fill pe-2"></i> Book now </a>
+                                                class="bi bi-ticket-fill pe-2"></i> Agende agora</a>
                                     </div>
                                 </div>
                             </div>
