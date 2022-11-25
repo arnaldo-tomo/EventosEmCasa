@@ -685,7 +685,7 @@ Header END -->
                 <div class="row">
                     <div class="col-12 mb-3">
                         <!-- Title -->
-                        <h4>Top Destinations </h4>
+                        <h4>Principais destinos </h4>
                     </div>
                 </div>
                 <div class="row g-4">
@@ -699,9 +699,9 @@ Header END -->
                                 <div class="w-100 mt-auto">
                                     <!-- Card title -->
                                     <h5 class="text-white"><a href="#"
-                                            class="btn-link text-reset stretched-link">California</a></h5>
-                                    <!-- Card info -->
-                                    <span class="text-white small">Business & Conferences</span>
+                                            class="btn-link text-reset stretch-link">Califórnia</a></h5>
+                                    <!-- Informações do cartão -->
+                                    <span class="text-white small">Negócios e conferências</span>
                                 </div>
                             </div>
                         </div>
