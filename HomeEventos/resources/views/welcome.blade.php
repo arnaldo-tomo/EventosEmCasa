@@ -389,21 +389,25 @@ Header END -->
                                         <ul class="dropdown-menu dropdown-menu-end"
                                             aria-labelledby="eventActionShare2">
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-envelope fa-fw pe-1"></i> Send via Direct
-                                                    Message</a></li>
+                                                        class="bi bi-envelope fa-fw pe-1"></i> Enviar via Direct
+                                                    Mensagem</a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-bookmark-check fa-fw pe-1"></i> Share to News Feed
+                                                        class="bi bi-bookmark-check fa-fw pe-1"></i> Compartilhar no
+                                                    feed de notícias
                                                 </a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-people fa-fw pe-1"></i> Share to a group</a></li>
+                                                        class="bi bi-pessoas fa-fw pe-1"></i> Compartilhar em um
+                                                    grupo</a></li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-share fa-fw pe-1"></i> Share post via …</a></li>
+                                                        class="bi bi-share fa-fw pe-1"></i> Compartilhar postagem via
+                                                    …</a></li>
                                             <li>
-                                                <hr class="dropdown-divider">
+                                                <hr class="divisor suspenso">
                                             </li>
                                             <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-person fa-fw pe-1"></i> Share on a friend's
-                                                    profile</a></li>
+                                                        class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
+                                                    amigo
+                                                    perfil</a></li>
                                         </ul>
                                     </div>
                                 </div>
