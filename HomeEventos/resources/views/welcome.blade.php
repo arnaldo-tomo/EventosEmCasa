@@ -281,11 +281,11 @@ Header END -->
                                     </li>
                                     <li class="avatar avatar-xs">
                                         <div class="avatar-img rounded-circle bg-primary"><span
-                                                class="smaller text-white position-absolute top-50 start-50 translate-middle">+78</span>
+                                                class="menor text-white position-absolute top-50 start-50 translate-middle">+78</span>
                                         </div>
                                     </li>
                                     <li class="ms-3">
-                                        <small> are attending</small>
+                                        <small> estão participando</small>
                                     </li>
                                 </ul>
                                 <!-- Avatar group END -->
@@ -295,7 +295,7 @@ Header END -->
                                     <div class="w-100">
                                         <input type="checkbox" class="btn-check d-block" id="Interested1">
                                         <label class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
-                                                class="fa-solid fa-thumbs-up me-1"></i> Interested</label>
+                                                class="fa-solid fa-thumbs-up me-1"></i> Interessante</label>
                                     </div>
                                     <div class="dropdown ms-3">
                                         <a href="#" class="btn btn-sm btn-primary-soft" id="eventActionShare"
