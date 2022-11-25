@@ -1054,7 +1054,7 @@ Header END -->
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
                     <img src="assets/images/logo.svg" alt="">
-                    <p class="mt-3">Match way these she avoids seeing death their fat off. </p>
+                    <p class="mt-3">Combinar com isso ela evita ver a morte tirar a gordura deles. </p>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
