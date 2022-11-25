@@ -1058,16 +1058,16 @@ Header END -->
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
-                    <h5 class="mb-4">Download</h5>
+                    <h5 class="mb-4">Baixar</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item"><a class="nav-link pt-0" href="#"> <i
-                                    class="bi bi-globe fa-fw pe-2"></i>Web Browser</a></li>
+                                    class="bi bi-globe fa-fw pe-2"></i>Navegador da Web</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"> <i
-                                    class="bi bi-windows fa-fw pe-2"></i>Windows</a></li>
+                                    class="bi bi-janelas fa-fw pe-2"></i>Windows</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"> <i
                                     class="bi bi-apple fa-fw pe-2"></i>macOS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"> <i
-                                    class="bi bi-phone fa-fw pe-2"></i>iOS & Android</a></li>
+                                    class="bi bi-phone fa-fw pe-2"></i>iOS e Android</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
