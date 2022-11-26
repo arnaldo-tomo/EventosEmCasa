@@ -15,4 +15,9 @@ class EventosController extends Controller
     {
         return view('eventos.detalhes');
     }
+
+    public function categoria()
+    {
+        return view('eventos.categoria');
+    }
 }

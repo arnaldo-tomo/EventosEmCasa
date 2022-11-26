@@ -39,7 +39,7 @@ Header START -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo START -->
-                <a class="navbar-brand" href="{{ route }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>

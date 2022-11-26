@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/Detalhes', [EventosController::class, 'detalhes'])->name('detalhes');
+Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categoria');
 
 
 // Route::get('/dashboard', function () {

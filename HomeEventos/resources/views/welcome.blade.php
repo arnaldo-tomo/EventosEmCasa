@@ -193,31 +193,36 @@ Header END -->
                                 <!-- Category START -->
                                 <div class="d-md-flex gap-3 mt-5">
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="{{ route('categoria') }}"
+                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
                                         <h6>Artes e Entretenimento</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="{{ route('categoria') }}"
+                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clipboard-outline-filled.svg"
                                             alt="">
                                         <h6> Negócios e conferências</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="{{ route('categoria') }}"
+                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/dashboard-outline-filled.svg"
                                             alt="">
                                         <h6>PNY E-Gaming Fest</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="{{ route('categoria') }}"
+                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
                                         <h6>Eventos e festas</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="{{ route('categoria') }}"
+                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
                                         <h6>Esportes e bem-estar</h6>
@@ -429,7 +434,8 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Conferência</a>
+                                <a class="btn btn-xs btn-primary mt-n3"
+                                    href="{{ route('detalhes') }}">Conferência</a>
                                 <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Illenium: tour das brasas
                                         caídas
                                     </a>
@@ -520,7 +526,8 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Apresentação ao
+                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Apresentação
+                                    ao
                                     vivo</a>
                                 <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Comédia no verde </a> </h5>
                                 <!-- Data hora -->
