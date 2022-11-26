@@ -31,6 +31,50 @@
 
 <body>
 
+
+    <!-- Modal create events START -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="modalLabelCreateEvents" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal feed header START -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabelCreateEvents">Enforme as suas
+                        credencias </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal feed header END -->
+                <!-- Modal feed body START -->
+                <div class="modal-body">
+                    <!-- Form START -->
+                    <form method="POST" action="{{ route('login') }}" class="row g-4">
+
+                        {{ csrf_field() }}
+                        <!-- Title -->
+                        <div class="col-12">
+                            <label class="form-label">Seu Email</label>
+                            <input type="text" name="email" class="form-control" placeholder="exempla@gmail.com">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Sua senha</label>
+                            <input type="password" name="password" class="form-control" placeholder="*****************">
+                        </div>
+
+
+                        <!-- Form END -->
+                </div>
+                <!-- Modal feed body END -->
+                <!-- Modal footer -->
+                <!-- Button -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
+                        Cancelar</button>
+                    <button type="submit" class="btn btn-success-soft">Entrar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- **************** MAIN CONTENT START **************** -->
 
     <!-- =======================
@@ -72,10 +116,24 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="my-profile-connections.html">Minha rede</a>
+                            @auth
+                                <a class="nav-link" href="my-profile-connections.html">{{ Auth::user()->name }}</a>
+                            @endauth
+                            @guest
+                                {{-- <a class="nav-link" href="my-profile-connections.html"><a class="btn btn-primary btn-sm"
+                                        href="#" ata-bs-toggle="modal" data-bs-target="#login">
+                                        <i class="fa fa-sign-in fa-sm"></i>
+                                        Entrar</a></a> --}}
+                                <a class="btn btn-primary-soft btn-sm" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#login"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                    Entrar</a>
+                            @endguest
                         </li>
                     </ul>
                 </div>
+
+
+                <!-- Modal create events END -->
                 <!-- Main navbar END -->
 
                 <!-- Nav right START -->
@@ -115,7 +173,8 @@ Header START -->
                             </li>
 
                             <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="sign-in-advance.html"><i
+
+                            <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
                                         class="bi bi-power fa-fw me-2"></i>Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
