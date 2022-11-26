@@ -1066,6 +1066,5 @@ JS libraries, plugins and custom scripts -->
 
 </body>
 
-<!-- Mirrored from social.webestica.com/index-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:43:00 GMT -->
 
 </html>
