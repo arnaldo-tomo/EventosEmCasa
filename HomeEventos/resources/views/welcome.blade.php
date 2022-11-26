@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/index-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:40:23 GMT -->
 
 <head>
-    <title>DashboardEvento</title>
+    <title>HomeEvento</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -41,7 +41,7 @@ Header START -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo START -->
-                <a class="navbar-brand" href="index-2.html">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>
@@ -240,7 +240,7 @@ Header END -->
                         <div class="d-sm-flex justify-content-between">
                             <!-- Title -->
                             <h4>Descubra eventos </h4>
-                            <a class="btn btn-link" href="events-2.html">Ver todos os eventos</a>
+                            <a class="btn btn-link" href="{{ route('todos') }}">Ver todos os eventos</a>
                         </div>
                     </div>
                 </div>
@@ -257,9 +257,10 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Treinamento em spa
+                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Treinamento em
+                                    spa
                                 </a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Bone thugs-n-harmony </a> </h5>
+                                <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Bone thugs-n-harmony </a> </h5>
                                 <!-- Data hora -->
                                 <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> segunda-feira, 25 de
                                     setembro de 2020 às
@@ -344,9 +345,9 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Etiqueta -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Fotografia
+                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Fotografia
                                     Oficina</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Revista Decibel </a> </h5>
+                                <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Revista Decibel </a> </h5>
                                 <!-- Data hora -->
                                 <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Seg, 10 de agosto de
                                     2022 às
@@ -428,8 +429,9 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Conferência</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Illenium: tour das brasas caídas
+                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Conferência</a>
+                                <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Illenium: tour das brasas
+                                        caídas
                                     </a>
                                 </h5>
                                 <!-- Data hora -->
@@ -518,9 +520,9 @@ Header END -->
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3" href="event-details-2.html">Apresentação ao
+                                <a class="btn btn-xs btn-primary mt-n3" href="{{ route('detalhes') }}">Apresentação ao
                                     vivo</a>
-                                <h5 class="mt-3"> <a href="event-details-2.html"> Comédia no verde </a> </h5>
+                                <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Comédia no verde </a> </h5>
                                 <!-- Data hora -->
                                 <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> Sexta, 05 de outubro
                                     de 2022 às
@@ -606,10 +608,10 @@ Header END -->
                     <div class="col-lg-5">
                         <!-- Global conference START -->
                         <!-- Image -->
-                        <a href="event-details-2.html"><img class="rounded" src="assets/images/events/06.jpg"
+                        <a href="{{ route('detalhes') }}"><img class="rounded" src="assets/images/events/06.jpg"
                                 alt=""></a>
                         <!-- Info -->
-                        <h5 class="mt-4"> <a href="event-details-2.html"> Conferência global </a></h5>
+                        <h5 class="mt-4"> <a href="{{ route('detalhes') }}"> Conferência global </a></h5>
                         <p>Ele luar difícil absorvê-lo, desportistas. Interessado tem todas as dificuldades de
                             Devonshire gay
                             alegria de assistência.</p>

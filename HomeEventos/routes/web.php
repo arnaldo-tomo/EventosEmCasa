@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
+Route::get('/Detalhes', [EventosController::class, 'detalhes'])->name('detalhes');
 
-require __DIR__.'/auth.php';
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
