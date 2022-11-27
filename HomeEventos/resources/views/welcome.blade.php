@@ -138,6 +138,8 @@
     </header>
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
+        {{-- Modal --}}
+
         <!-- Modal create events START tabindex="-1"-->
         <div class="modal fade" id="login_Modal" tabindex="-1" aria-labelledby="login_Modal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -168,7 +170,7 @@
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label">Sua senha</label>
+                                <label class="form-label">Sua senha </label>
                                 <input type="password" id="password" name="password"
                                     class="form-control  @error('password') is-invalid @enderror"
                                     value="{{ old('password') }}" placeholder="*****************">
@@ -179,20 +181,168 @@
                                 @enderror
                             </div>
                             <!-- Form END -->
+                            <a href="#login_recuperar" data-bs-toggle="modal"
+                                data-bs-target="#login_recuperar">Esqueceu a
+                                sua senha?</a>
                     </div>
                     <!-- Modal feed body END -->
                     <!-- Modal footer -->
                     <!-- Button -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
-                            Cancelar</button>
-                        <button type="submit" class="btn btn-success-soft">Entrar</button>
+                        <p>Novo em nossa plataforma?</p>
+                        <a class="btn btn-info btn-sm " href="#login_registar" data-bs-toggle="modal"
+                            data-bs-target="#login_registar">
+                            Crie uma conta</a>
+
+                        <button type="submit" class="btn btn-success btn-sm">Entrar</button>
                     </div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- Modal create events START tabindex="-1"-->
+
+        <!-- Criar Conta"-->
+        <div class="modal fade" id="login_recuperar" tabindex="-1" aria-labelledby="login_recuperar"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal feed header START -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="login_recuperar">Redefinir senha </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <!-- Modal feed header END -->
+
+                    <!-- Modal feed body START -->
+                    <div class="modal-body">
+                        <p>Se você esqueceu sua senha, bem, enviaremos um e-mail com instruções para redefinir sua
+                            senha.</p>
+                        <!-- Form START -->
+                        <form id="login_recuperar" method="POST" action="{{ route('login') }}" class="row g-4">
+                            {{ csrf_field() }}
+                            <!-- Title -->
+                            <div class="col-12">
+                                <label class="form-label">Seu Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-sm">Enviar link de
+                                redefinição</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Criar Conta"-->
+
+        {{-- Registar --}}
+        <div class="modal fade" id="login_registar" tabindex="-1" aria-labelledby="login_registar"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal feed header START -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="login_registar">Registro </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <!-- Modal feed header END -->
+                    <!-- Modal feed body START -->
+                    <div class="modal-body">
+                        <p>Criar nova conta em HomeEvento</p>
+                        <!-- Form START -->
+                        <form id="login_registar" method="POST" action="{{ route('login') }}" class="row g-4">
+                            {{ csrf_field() }}
+                            <!-- Title -->
+                            <div class="col-12">
+                                <label class="form-label">Seu Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Seu Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Seu Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Seu Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Sua senha </label>
+                                <input type="password" id="password" name="password"
+                                    class="form-control  @error('password') is-invalid @enderror"
+                                    value="{{ old('password') }}" placeholder="*****************">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                    </div>
+                    <!-- Modal feed body END -->
+                    <!-- Modal footer -->
+                    <!-- Button -->
+                    <div class="modal-footer">
+                        <p>Nao sou nova na plataforma?</p>
+                        <button class="btn btn-info btn-sm " href="#login_Modal" data-bs-toggle="modal"
+                            data-bs-target="#login_Modal">
+                            Ja tenho Uma Conta</button>
+
+                        <button type="submit" class="btn btn-success btn-sm">Entrar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{-- Registar --}}
+
+        {{-- Modal --}}
+
+
+
+
         <!-- Hero event START -->
         <section class="pt-5 pb-0 position-relative"
             style="background-image: url(assets/images/bg/07.jpg); background-repeat: no-repeat; background-size: cover; background-position: top center;">
