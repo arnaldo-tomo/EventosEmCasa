@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from social.webestica.com/index-event.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:40:23 GMT -->
-
 <head>
     <title>HomeEvento</title>
 
@@ -32,34 +30,58 @@
 <body>
 
 
+
     <!-- Modal create events START -->
-    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="modalLabelCreateEvents" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal feed header START -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabelCreateEvents">Enforme as suas
-                        credencias </h5>
+                    <h5 class="modal-title" id="myModal">Enforme as suas credencias. </h5>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal feed header END -->
                 <!-- Modal feed body START -->
                 <div class="modal-body">
+                    {{-- @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger role">
+                                <div class="display">
+                                    <strong> {{ $error }}</strong>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif --}}
                     <!-- Form START -->
-                    <form method="POST" action="{{ route('login') }}" class="row g-4">
-
+                    <form id="myModal" method="POST" action="{{ route('login') }}" class="row g-4">
                         {{ csrf_field() }}
                         <!-- Title -->
                         <div class="col-12">
                             <label class="form-label">Seu Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="exempla@gmail.com">
+                            <input type="text" name="email" id="email"
+                                class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
+                                placeholder="exempla@gmail.com">
+                            @error('email')
+                                <script>
+                                    $('#myModal').modal('show');
+                                </script>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col-12">
                             <label class="form-label">Sua senha</label>
-                            <input type="password" name="password" class="form-control" placeholder="*****************">
+                            <input type="password" id="password" name="password"
+                                class="form-control  @error('password') is-invalid @enderror"
+                                value="{{ old('password') }}" placeholder="*****************">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-
-
                         <!-- Form END -->
                 </div>
                 <!-- Modal feed body END -->
@@ -75,10 +97,7 @@
         </div>
     </div>
 
-    <!-- **************** MAIN CONTENT START **************** -->
 
-    <!-- =======================
-Header START -->
     <header class="navbar-dark navbar-transparent header-static">
 
         <!-- Logo Nav START -->
@@ -90,7 +109,6 @@ Header START -->
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
-
                 <!-- Responsive navbar toggler -->
                 <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -104,39 +122,21 @@ Header START -->
 
                 <!-- Main navbar START -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-
                     <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <!-- Nav item 1 Demos -->
-
-                        <!-- Nav item 2 Pages -->
-
-
-                        <!-- Nav item 3 Post -->
-
-
-                        <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
                             @auth
                                 <a class="nav-link" href="my-profile-connections.html">{{ Auth::user()->name }}</a>
                             @endauth
                             @guest
-                                {{-- <a class="nav-link" href="my-profile-connections.html"><a class="btn btn-primary btn-sm"
-                                        href="#" ata-bs-toggle="modal" data-bs-target="#login">
-                                        <i class="fa fa-sign-in fa-sm"></i>
-                                        Entrar</a></a> --}}
                                 <a class="btn btn-primary-soft btn-sm" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#login"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                    data-bs-target="#myModal"> <i class="fa-solid fa-sign-in pe-1"></i>
                                     Entrar</a>
                             @endguest
                         </li>
                     </ul>
                 </div>
-
-
-                <!-- Modal create events END -->
-                <!-- Main navbar END -->
-
                 <!-- Nav right START -->
+
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
                     <!-- Notification dropdown END -->
                     <li class="nav-item ms-2 dropdown">
@@ -179,6 +179,7 @@ Header START -->
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+
                             <!-- Dark mode switch START -->
                             <li>
                                 <div class="modeswitch-wrap" id="darkModeSwitch">
@@ -200,7 +201,7 @@ Header START -->
         <!-- Logo Nav END -->
     </header>
     <!-- =======================
-Header END -->
+ Header END -->
 
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
@@ -227,7 +228,7 @@ Header END -->
                                         <!-- What -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="o que">
+                                                placeholder="Oque ">
                                         </div>
                                     </div>
                                     <div class="col-md-5">
@@ -241,7 +242,7 @@ Header END -->
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">GO</a>
+                                        <a class="btn btn-lg btn-primary" href="#">Search</a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
@@ -256,7 +257,7 @@ Header END -->
                                         class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Artes e Entretenimento</h6>
+                                        <h6>Artes e entretenimento</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="{{ route('categoria') }}"
@@ -268,7 +269,7 @@ Header END -->
                                     <!-- Category item -->
                                     <a href="{{ route('categoria') }}"
                                         class="card card-body mb-3 mb-lg-0 p-3 text-center">
-                                        <img class="h-40px mb-3" src="assets/images/icon/dashboard-outline-filled.svg"
+                                        <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
                                             alt="">
                                         <h6>PNY E-Gaming Fest</h6>
                                     </a>
@@ -280,8 +281,7 @@ Header END -->
                                         <h6>Eventos e festas</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="{{ route('categoria') }}"
-                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
                                         <h6>Esportes e bem-estar</h6>
@@ -1031,6 +1031,7 @@ Header END -->
         <!-- Explore Groups END -->
 
     </main>
+
     <!-- **************** MAIN CONTENT END **************** -->
 
     <!-- Footer START -->
@@ -1105,25 +1106,18 @@ Header END -->
                     <div class="col-lg-6">
                         <!-- Copyright START -->
                         <p class="text-center text-lg-end mb-0">©2022 <a class="text-body" target="_blank"
-                                href="https://www.webestica.com/"> Webestica </a>All rights reserved.</p>
+                                href="http://arnaldotomo.epizy.com//"> Webestica </a>All rights reserved.</p>
                         <!-- Copyright END -->
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer END -->
 
-    <!-- =======================
-JS libraries, plugins and custom scripts -->
-
-    <!-- Bootstrap JS -->
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Template Functions -->
     <script src="{{ asset('assets/js/functions.js') }}"></script>
 
-</body>
 
+</body>
 
 </html>
