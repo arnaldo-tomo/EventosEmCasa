@@ -24,6 +24,7 @@
 
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+
 </head>
 
 <body>
@@ -60,8 +61,8 @@
                                     aria-expanded="false">{{ Auth::user()->name }}</a>
                             @endauth
                             @guest
-                                <a class="btn btn-primary-soft btn-sm" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#myModal"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                <a class="btn btn-primary-soft btn-sm" href="#login_Modal" data-bs-toggle="modal"
+                                    data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
                                     Entrar</a>
                             @endguest
                         </li>
@@ -138,95 +139,11 @@
 
 
 
-    {{-- Segundo Moda --}}
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- Segundo Moda --}}
-
-    <!-- Modal create events START tabindex="-1"-->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal feed header START -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModal">Enforme as suas credencias. </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- Modal feed header END -->
-                <!-- Modal feed body START -->
-                <div class="modal-body">
-                    <!-- Form START -->
-                    <form id="myModal" method="POST" action="{{ route('login') }}" class="row g-4">
-                        {{ csrf_field() }}
-                        <!-- Title -->
-                        <div class="col-12">
-                            <label class="form-label">Seu Email</label>
-                            <input type="text" name="email" id="email"
-                                class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
-                                placeholder="exempla@gmail.com">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Sua senha</label>
-                            <input type="password" id="password" name="password"
-                                class="form-control  @error('password') is-invalid @enderror"
-                                value="{{ old('password') }}" placeholder="*****************">
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <!-- Form END -->
-                </div>
-                <!-- Modal feed body END -->
-                <!-- Modal footer -->
-                <!-- Button -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
-                        Cancelar</button>
-                    <button type="submit" class="btn btn-success-soft">Entrar</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Modal create events START tabindex="-1"-->
-
 
 
 
 
     @yield('content')
-
-
-
-
-
-
 
 
 
@@ -312,15 +229,18 @@
     </footer>
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
-    <script src="jquery.min.js"></script>
-    <script src="popper.min.js"></script>
-    <script src="jquery.appear.js"></script>
-    <script>
-        @error('email')
-            // alert('Alert aboss')
-            $('#exampleModalCenter').modal('show');
-        @enderror
-    </script>
+    <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
+    @error('email')
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
+
+            function OpenBootstrapPopup() {
+                $("#login_Modal").modal('show');
+            }
+        </script>
+    @enderror
 </body>
 
 </html>
