@@ -266,11 +266,11 @@
                             {{ csrf_field() }}
                             <!-- Title -->
                             <div class="col-12">
-                                <label class="form-label">Seu Email</label>
-                                <input type="text" name="email" id="email"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
-                                @error('email')
+                                <label class="form-label">Seu nome</label>
+                                <input type="text" name="name" id="name"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name') }}" placeholder="EX:John Doe">
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -287,23 +287,13 @@
                                     </span>
                                 @enderror
                             </div>
+
                             <div class="col-12">
-                                <label class="form-label">Seu Email</label>
-                                <input type="text" name="email" id="email"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Seu Email</label>
-                                <input type="text" name="email" id="email"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
-                                @error('email')
+                                <label class="form-label">Sua senha </label>
+                                <input type="password" id="password" name="password"
+                                    class="form-control  @error('password') is-invalid @enderror"
+                                    value="{{ old('password') }}" placeholder="*****************">
+                                @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -311,10 +301,11 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Sua senha </label>
-                                <input type="password" id="password" name="password"
-                                    class="form-control  @error('password') is-invalid @enderror"
-                                    value="{{ old('password') }}" placeholder="*****************">
-                                @error('password')
+                                <input type="password" name="password_confirmation"
+                                    value="{{ old('password_confirmation') }}"
+                                    class="form-control  @error('password_confirmation') is-invalid @enderror"
+                                    value="{{ old('password_confirmation') }}" placeholder="*****************">
+                                @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -367,7 +358,7 @@
                                         <!-- What -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque ">
+                                                placeholder="Oque" id="location" name="location" required>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
@@ -1269,6 +1260,39 @@
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
+
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
+        async defer></script>
+
+    <script>
+        $(document).ready(function() {
+            var autocomplete;
+            var to = 'location';
+            Autocomplete = new google.maps.places.Autocomplete((document.getElementById(to)), {
+                types: ['geovode'],
+            });
+        });
+    </script>
+
+    {{--
+    <script type="text/javascript">
+        var location = document.getElementById("location");
+        var autocomplete;
+
+        function initAutocomplete() {
+            autocomplete = new google.maps.places.Autocomplete(
+                location, {
+                    types: ['(cities)'],
+                    componentRestrictions: {
+                        'country': ['US']
+                    },
+                    fields: ['place_id', 'geometry', 'name']
+                });
+        }
+    </script> --}}
+
+
     @error('email')
         <script type="text/javascript">
             window.onload = function() {
