@@ -132,15 +132,12 @@
             </div>
         </nav>
         <!-- Logo Nav END -->
-
-
-
     </header>
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         {{-- Modal --}}
 
-        <!-- Modal create events START tabindex="-1"-->
+        <!-- login"-->
         <div class="modal fade" id="login_Modal" tabindex="-1" aria-labelledby="login_Modal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -200,7 +197,7 @@
                 </div>
             </div>
         </div>
-        <!-- Modal create events START tabindex="-1"-->
+        <!-- login-->
 
         <!-- Criar Conta"-->
         <div class="modal fade" id="login_recuperar" tabindex="-1" aria-labelledby="login_recuperar"
@@ -221,22 +218,23 @@
                         <p>Se você esqueceu sua senha, bem, enviaremos um e-mail com instruções para redefinir sua
                             senha.</p>
                         <!-- Form START -->
-                        <form id="login_recuperar" method="POST" action="{{ route('login') }}" class="row g-4">
+                        <form id="login_recuperar" method="POST" action="{{ route('password.email') }}"
+                            class="row g-4">
                             {{ csrf_field() }}
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu Email</label>
-                                <input type="text" name="email" id="email"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
-                                @error('email')
+                                <input type="text" required autofocus name="email" id="email"
+                                    class="form-control @error('recuperar') is-invalid @enderror"
+                                    value="{{ old('recuperar') }}" placeholder="exempla@gmail.com">
+                                @error('recuperar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-sm">Enviar link de
+                            <button type="submit" class="btn btn-lg btn-primary btn-sm">Enviar link de
                                 redefinição</button>
                     </div>
                     </form>
@@ -1301,6 +1299,19 @@
 
             function OpenBootstrapPopup() {
                 $("#login_Modal").modal('show');
+            }
+        </script>
+    @enderror
+
+    {{-- chama modal de error na parte de recuprar senha --}}
+    @error('recuperar')
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
+
+            function OpenBootstrapPopup() {
+                $("#login_recuperar").modal('show');
             }
         </script>
     @enderror
