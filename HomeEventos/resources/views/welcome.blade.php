@@ -226,7 +226,7 @@
                                 <label class="form-label">Seu Email</label>
                                 <input type="text" required autofocus name="email" id="email"
                                     class="form-control @error('recuperar') is-invalid @enderror"
-                                    value="{{ old('recuperar') }}" placeholder="exempla@gmail.com">
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
                                 @error('recuperar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -1290,7 +1290,7 @@
         }
     </script> --}}
 
-
+    {{-- este comando chama o modal caso aga error  --}}
     @error('email')
         <script type="text/javascript">
             window.onload = function() {
