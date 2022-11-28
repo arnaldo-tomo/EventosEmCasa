@@ -32,8 +32,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        // return view('welcome')->with('certo', 'Bem Vindo');
-        return redirect()->intended(RouteServiceProvider::HOME)->with('status', 'Bem Vindo');;
+        // return view('welcome')->with('status', 'Bem Vindo');
+        return redirect()->intended(RouteServiceProvider::HOME)->withErrors('loginerro');
     }
 
     /**
