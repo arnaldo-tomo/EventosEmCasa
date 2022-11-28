@@ -159,7 +159,7 @@
                                 <label class="form-label">Seu Email</label>
                                 <input type="text" name="email" id="email"
                                     class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com" required autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -170,7 +170,7 @@
                                 <label class="form-label">Sua senha </label>
                                 <input type="password" id="password" name="password"
                                     class="form-control  @error('password') is-invalid @enderror"
-                                    value="{{ old('password') }}" placeholder="*****************">
+                                    value="{{ old('password') }}" placeholder="*****************" required autofocus>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -224,7 +224,7 @@
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu Email</label>
-                                <input type="text" required autofocus name="email" id="email"
+                                <input type="text" required autofocus autofocus name="email" id="email"
                                     class="form-control @error('recuperar') is-invalid @enderror"
                                     value="{{ old('email') }}" placeholder="exempla@gmail.com">
                                 @error('recuperar')
@@ -260,15 +260,15 @@
                     <div class="modal-body">
                         <p>Criar nova conta em HomeEvento</p>
                         <!-- Form START -->
-                        <form id="login_registar" method="POST" action="{{ route('login') }}" class="row g-4">
+                        <form id="login_registar" method="POST" action="{{ route('register') }}" class="row g-4">
                             {{ csrf_field() }}
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu nome</label>
                                 <input type="text" name="name" id="name"
                                     class="form-control @error('name') is-invalid @enderror"
-                                    value="{{ old('name') }}" placeholder="EX:John Doe">
-                                @error('name')
+                                    value="{{ old('name') }}" placeholder="EX:John Doe" required autofocus>
+                                @error('name2')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -278,7 +278,7 @@
                                 <label class="form-label">Seu Email</label>
                                 <input type="text" name="email" id="email"
                                     class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }}" placeholder="exempla@gmail.com">
+                                    value="{{ old('email') }}" placeholder="exempla@gmail.com" required autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -288,21 +288,23 @@
 
                             <div class="col-12">
                                 <label class="form-label">Sua senha </label>
-                                <input type="password" id="password" name="password"
-                                    class="form-control  @error('password') is-invalid @enderror"
-                                    value="{{ old('password') }}" placeholder="*****************">
-                                @error('password')
+                                <input type="password" id="password." name="password."
+                                    class="form-control  @error('password.') is-invalid @enderror"
+                                    value="{{ old('password.') }}" placeholder="*****************" required
+                                    autofocus>
+                                @error('password.')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label">Sua senha </label>
+                                <label class="form-label">Confirme a sua senha </label>
                                 <input type="password" name="password_confirmation"
                                     value="{{ old('password_confirmation') }}"
                                     class="form-control  @error('password_confirmation') is-invalid @enderror"
-                                    value="{{ old('password_confirmation') }}" placeholder="*****************">
+                                    value="{{ old('password_confirmation') }}" placeholder="*****************"
+                                    required autofocus>
                                 @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -314,12 +316,12 @@
                     <!-- Modal footer -->
                     <!-- Button -->
                     <div class="modal-footer">
-                        <p>Nao sou nova na plataforma?</p>
+                        <p>Nao sou nova na plataforma</p>
                         <button class="btn btn-info btn-sm " href="#login_Modal" data-bs-toggle="modal"
                             data-bs-target="#login_Modal">
-                            Ja tenho Uma Conta</button>
+                            Login</button>
 
-                        <button type="submit" class="btn btn-success btn-sm">Entrar</button>
+                        <button type="submit" class="btn btn-success btn-sm">Criar Conta</button>
                     </div>
                     </form>
                 </div>
@@ -356,7 +358,7 @@
                                         <!-- What -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque" id="location" name="location" required>
+                                                placeholder="Oque" id="location" name="location" required autofocus>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
@@ -1291,6 +1293,20 @@
     </script> --}}
 
     {{-- este comando chama o modal caso aga error  --}}
+
+    @error('password.')
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
+
+            function OpenBootstrapPopup() {
+                $("#login_registar").modal('show');
+            }
+        </script>
+    @enderror
+
+
     @error('email')
         <script type="text/javascript">
             window.onload = function() {
