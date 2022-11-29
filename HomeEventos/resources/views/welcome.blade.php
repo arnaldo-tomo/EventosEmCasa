@@ -331,9 +331,6 @@
 
         {{-- Modal --}}
 
-
-
-
         <!-- Hero event START -->
         <section class="pt-5 pb-0 position-relative"
             style="background-image: url(assets/images/bg/07.jpg); background-repeat: no-repeat; background-size: cover; background-position: top center;">
