@@ -355,14 +355,18 @@
                                         <!-- What -->
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque" id="location" name="location" required autofocus>
+                                                placeholder="Oque" required autofocus>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <!-- Where -->
+
+
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Onde">
+                                                placeholder="Onde" id="pac-input" name="pac-input">
+                                            <div id="lat"></div>
+                                            <div id="long"></div>
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
@@ -1258,7 +1262,7 @@
     <script src="{{ asset('assets/js/functions.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
 
-    <script type="text/javascript"
+    {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
         async defer></script>
 
@@ -1267,10 +1271,10 @@
             var autocomplete;
             var to = 'location';
             Autocomplete = new google.maps.places.Autocomplete((document.getElementById(to)), {
-                types: ['geovode'],
+                types: ['geocode'],
             });
         });
-    </script>
+    </script> --}}
 
     {{--
     <script type="text/javascript">
@@ -1328,6 +1332,47 @@
             }
         </script>
     @enderror
+
+
+    {{-- GOOGLE MAPS AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    {{-- <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBY5p5e5ePtJuJLI_nRpjefL0S094jdheP8"> --}}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
+    </script>
+    <script>
+        function initialize() {
+            var address = (document.getElementById('pac-input'));
+            var autocomplete = new google.maps.places.Autocomplete(address);
+            autocomplete.setTypes(['geocode']);
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    return;
+                }
+
+                var address = '';
+                if (place.address_components) {
+                    address = [
+                        (place.address_components[0] && place.address_components[0].short_name || ''),
+                        (place.address_components[1] && place.address_components[1].short_name || ''),
+                        (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                }
+                /*********************************************************************/
+                /* var address contain your autocomplete address *********************/
+                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
+                /* will be used for current address latitude and longitude************/
+                /*********************************************************************/
+                document.getElementById('lat').innerHTML = place.geometry.location.lat();
+                document.getElementById('long').innerHTML = place.geometry.location.lng();
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    {{-- GOOGLE MAPS --}}
 </body>
 
 </html>
