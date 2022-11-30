@@ -26,11 +26,13 @@ class EventosController extends Controller
     public function sair(Request $request)
     {
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
+    }
+
+    public function salvar(Request $request)
+    {
+        dd($request->all());
     }
 }

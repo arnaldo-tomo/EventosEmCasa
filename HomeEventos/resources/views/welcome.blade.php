@@ -469,7 +469,8 @@
                     <!-- Modal feed body START -->
                     <div class="modal-body">
                         <!-- Form START -->
-                        <form class="row g-4">
+                        <form method="POST" action="/salvar" enctype="multipart/form-data" class="row g-4">
+                            @csrf
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
@@ -499,7 +500,7 @@
                             <!-- Location -->
                             <div class="col-12">
                                 <label class="form-label">Localização</label>
-                                <input type="text" class="form-control" id="pac-input" name="pac-input"
+                                <input type="text" class="form-control" id="pac-inpute" name="pac-inpute"
                                     placeholder="Beira-Moçambique, Munhava Rua Gross Gomes 47">
                             </div>
                             <!-- Location -->
@@ -639,7 +640,7 @@
 
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Onde" id="pac-input" name="pac-input">
+                                                placeholder="Onde" id="pac-input" class="controls">
                                             {{-- <div id="lat"></div>
                                             <div id="long"></div> --}}
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
@@ -1556,26 +1557,25 @@
 
     {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
-        async defer></script>
+        async defer></script> --}}
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             var autocomplete;
-            var to = 'location';
+            var to = 'criarlocalizacao';
             Autocomplete = new google.maps.places.Autocomplete((document.getElementById(to)), {
                 types: ['geocode'],
             });
         });
     </script> --}}
 
-    {{--
-    <script type="text/javascript">
-        var location = document.getElementById("location");
+    {{-- <script type="text/javascript">
+        var criarlocalizacao = document.getElementById("criarlocalizacao");
         var autocomplete;
 
         function initAutocomplete() {
             autocomplete = new google.maps.places.Autocomplete(
-                location, {
+                criarlocalizacao, {
                     types: ['(cities)'],
                     componentRestrictions: {
                         'country': ['US']
@@ -1639,10 +1639,43 @@
 
     {{-- GOOGLE MAPS AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    {{-- <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBY5p5e5ePtJuJLI_nRpjefL0S094jdheP8"> --}}
     <script
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
+    </script>
+
+    {{-- <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDfc3rDzZBc_PjmIbQF1xMEsuDS5H681po">
+    </script> --}}
+    <script>
+        function initializes() {
+            var addresss = (document.getElementById('pac-inpute'));
+            var autocomplete = new google.maps.places.Autocomplete(addresss);
+            autocomplete.setTypes(['geocode']);
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    return;
+                }
+
+                var addresss = '';
+                if (place.address_components) {
+                    addresss = [
+                        (place.address_components[0] && place.address_components[0].short_name || ''),
+                        (place.address_components[1] && place.address_components[1].short_name || ''),
+                        (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                }
+                /*********************************************************************/
+                /* var address contain your autocomplete address *********************/
+                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
+                /* will be used for current address latitude and longitude************/
+                /*********************************************************************/
+                document.getElementById('lat').innerHTML = place.geometry.location.lat();
+                document.getElementById('long').innerHTML = place.geometry.location.lng();
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initializes);
     </script>
     <script>
         function initialize() {

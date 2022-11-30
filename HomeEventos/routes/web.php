@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/Detalhes', [EventosController::class, 'detalhes'])->name('detalhes');
 Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categoria');
 Route::get('/sair', [EventosController::class, 'sair'])->name('sair');
+Route::post('/salvar', [EventosController::class], 'salvar')->name('salvar');
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__ . '/auth.php';
