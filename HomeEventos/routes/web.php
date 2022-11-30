@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventosController;
+use App\Models\Eventos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $eventos = Eventos::all();
+    return view('welcome', compact('eventos'));
 })->name('home');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/Detalhes', [EventosController::class, 'detalhes'])->name('detalhes');
