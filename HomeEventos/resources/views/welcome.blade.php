@@ -771,11 +771,10 @@
                                         </a>
                                     </h5>
                                     <!-- Data hora -->
-                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> segunda-feira, 25
-                                        de
-                                        setembro de 2020 às
+                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
+                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }} -
                                         {{ $evento->hora }}</p>
-                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> São Francisco </p>
+                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }} </p>
                                     <!-- Avatar group START -->
                                     <ul class="avatar-group list-unstyled align-items-center mb-0">
                                         <li class="avatar avatar-xs">
