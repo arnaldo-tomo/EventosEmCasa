@@ -11,6 +11,7 @@ class EventosController extends Controller
 {
     public function todos()
     {
+        $eventos = Eventos::all();
         return view('eventos.todos');
     }
 
