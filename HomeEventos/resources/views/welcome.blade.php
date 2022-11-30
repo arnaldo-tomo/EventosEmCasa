@@ -469,47 +469,71 @@
                     <!-- Modal feed body START -->
                     <div class="modal-body">
                         <!-- Form START -->
-                        <form method="POST" action="/salvar" enctype="multipart/form-data" class="row g-4">
+                        <form method="POST" action="{{ route('salvar') }}" enctype="multipart/form-data"
+                            class="row g-4">
                             @csrf
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
-                                <input type="text" class="form-control" placeholder="Nome do evento">
+                                <input type="text" class="form-control" name="nome"
+                                    placeholder="Nome do evento">
                             </div>
                             <!-- Description -->
                             <div class="col-12">
                                 <label class="form-label">Descrição</label>
-                                <textarea class="form-control" rows="2" placeholder="Ex: topicos, Cronograma, etc."></textarea>
+                                <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                             </div>
+                            <!-- Duração -->
+                            <div class="col-sm-6">
+                                <label class="form-label">Data Inicial</label>
+                                <input type="date" class="form-control flatpickr" name="dataInicio"
+                                    placeholder="Select date">
+                            </div>
+                            <!-- Duração -->
+                            <!-- Duração -->
+                            <div class="col-sm-6">
+                                <label class="form-label">Data do final </label>
+                                <input type="date" class="form-control flatpickr" name="dataFim"
+                                    placeholder="Select date">
+                            </div>
+
+                            <!-- Duração -->
                             <!-- Date -->
-                            <div class="col-sm-4">
-                                <label class="form-label">Data</label>
-                                <input type="date" class="form-control flatpickr" placeholder="Select date">
+                            <div class="col-sm-3">
+                                <label class="form-label">Duração</label>
+                                <input type="duracao" class="form-control" name="duracao" placeholder="1hr 23m">
+                            </div>
+                            <!-- Date final -->
+                            <div class="col-sm-6">
+                                <label class="form-label">Publico Ou Privado</label>
+                                <select class="form-select form-select" name="privado"
+                                    aria-label=".form-select-lg example">
+                                    <option disabled selected>-------------Escolha------------</option>
+                                    <option value="0">publico</option>
+                                    <option value="1">privado</option>
+
+                                </select>
                             </div>
                             <!-- Time -->
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label class="form-label">Hora</label>
-                                <input type="time" class="form-control flatpickr" data-enableTime="true"
-                                    data-noCalendar="true" placeholder="Select time">
+                                <input type="time" class="form-control flatpickr" name="hora"
+                                    data-enableTime="true" data-noCalendar="true" placeholder="Select time">
                             </div>
-                            <!-- Duration -->
-                            <div class="col-sm-4">
-                                <label class="form-label">Duração</label>
-                                <input type="duracao" class="form-control" placeholder="1hr 23m">
-                            </div>
-                            <!-- Location -->
+
                             <div class="col-12">
                                 <label class="form-label">Localização</label>
-                                <input type="text" class="form-control" id="pac-inpute" name="pac-inpute"
-                                    placeholder="Beira-Moçambique, Munhava Rua Gross Gomes 47">
+                                <input type="text" class="form-control" id="pac-inpute" name="localizacao"
+                                    placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
                             </div>
                             <!-- Location -->
                             <div class="col-12">
                                 <label class="form-label">Cidade</label>
-                                <select class="form-select form-select" aria-label=".form-select-lg example">
+                                <select class="form-select form-select" name="cidade"
+                                    aria-label=".form-select-lg example">
                                     <option disabled selected>Escolha a cidade</option>
-                                    <option value="#">Beira</option>
-                                    <option value="#">Maputo</option>
+                                    <option value="Beira">Beira</option>
+                                    <option value="Maputo">Maputo</option>
                                     <option value="#">Nampula</option>
                                     <option value="#">CaboDelegado</option>
                                     <option value="#">Chimoio</option>
@@ -520,10 +544,11 @@
                             <!-- Tipo de evento -->
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
-                                <select class="form-select form-select" aria-label=".form-select-lg example">
+                                <select class="form-select form-select" name="categoria"
+                                    aria-label=".form-select-lg example">
                                     <option disabled selected>Escolha o tipo de evento</option>
-                                    <option value="#">Beira</option>
-                                    <option value="#">Maputo</option>
+                                    <option value="Festa">Festa</option>
+                                    <option value="Culto">Culto</option>
                                     <option value="#">Nampula</option>
                                     <option value="#">CaboDelegado</option>
                                     <option value="#">Chimoio</option>
@@ -534,7 +559,8 @@
                             <!-- Add guests -->
                             <div class="col-12">
                                 <label class="form-label">Addicionar Participantes</label>
-                                <input type="email" class="form-control" placeholder="Guest email">
+                                <input type="email" class="form-control" name="participante"
+                                    placeholder="Exemplo:joaocarlos@gmail.com">
                             </div>
                             <!-- Avatar group START -->
                             <div class="col-12 mt-3">
@@ -575,13 +601,13 @@
                             {{-- FIle manger --}}
                             <div class="col-12">
                                 <label class="form-label">Carregar Fotografia</label>
-                                <input type="file" class="form-control" name="foto">
+                                <input type="file" class="form-control" name="imagen">
                             </div>
                             {{-- FIle manger --}}
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
                                 <label class="form-label">Carregar Anexo</label>
-                                <div class="dropzone dropzone-default card shadow-none"
+                                <div name="anexo" class="dropzone  dropzone-default card shadow-none"
                                     data-dropzone='{"maxFiles":2}'>
                                     <div class="dz-message">
                                         <i class="bi bi-file-earmark-text display-3"></i>
@@ -590,16 +616,16 @@
                                 </div>
                             </div>
                             <!-- Dropzone photo END -->
-                        </form>
-                        <!-- Form END -->
+                            <!-- Form END -->
                     </div>
                     <!-- Modal feed body END -->
                     <!-- Modal footer -->
                     <!-- Button -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
+                        <button type="cancel" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
                             Cancelar</button>
-                        <button type="button" class="btn btn-success-soft">Criar Agora</button>
+                        <button type="submit" class="btn btn-success-soft">Criar Agora</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -817,7 +843,7 @@
                         </div>
                         <!-- Event item END -->
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    {{-- <div class="col-sm-6 col-lg-3">
                         <!-- Event item START -->
                         <div class="card h-100">
                             <div class="position-relative">
@@ -1091,7 +1117,7 @@
                             <!-- Card body END -->
                         </div>
                         <!-- Event item END -->
-                    </div>
+                    </div> --}}
                     <a href="/Todos" role="button" class="btn btn-loader btn-primary-soft">
                         <span class="load-text"> Ver todos os eventos </span>
                         <div class="load-icon">
