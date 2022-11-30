@@ -51,84 +51,209 @@
                     </span>
                 </button>
 
-                <!-- Main navbar START -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <li class="nav-item">
-                            @auth
-                                <a class="nav-link" href="#" id="profileDropdown" data-bs-auto-close="outside"
-                                    data-bs-display="static" data-bs-toggle="dropdown"
-                                    aria-expanded="false">{{ Auth::user()->name }}</a>
-                            @endauth
-                            @guest
-                                <a class="btn btn-primary-soft btn-sm" href="#login_Modal" data-bs-toggle="modal"
-                                    data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
-                                    Entrar</a>
-                            @endguest
-                        </li>
-                    </ul>
-                </div>
-                <!-- Nav right START -->
+
 
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-                    <!-- Notification dropdown END -->
-                    <li class="nav-item ms-2 dropdown">
-                        <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
-                            data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img class="avatar-img rounded-2" src="assets/images/avatar/07.jpg" alt="">
-                        </a>
-                        <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
-                            aria-labelledby="profileDropdown">
-                            <!-- Profile info -->
-                            <li class="px-3">
-                                <div class="d-flex align-items-center position-relative">
-                                    <!-- Avatar -->
-                                    <div class="avatar me-3">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
+
+                    <!-- Nav right START -->
+                    <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
+
+                        {{-- messaging --}}
+                        <!-- Main navbar START -->
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+                                <li class="nav-item">
+                                    @auth
+                                        <a class="nav-link" id="profileDropdown" data-bs-auto-close="outside"
+                                            data-bs-display="static" data-bs-toggle="dropdown"
+                                            aria-expanded="false">{{ Auth::user()->name }}</a>
+                                    @endauth
+                                    @guest
+                                        <a class="btn btn-primary-soft btn-sm" href="#login_Modal" data-bs-toggle="modal"
+                                            data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                            Entrar</a>
+                                    @endguest
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- Nav right START -->
+                        {{-- <li class="nav-item ms-2">
+                            <a class="nav-link icon-md btn btn-light p-0" href="messaging.html">
+                                <i class="bi bi-chat-left-text-fill fs-6"> </i>
+                            </a>
+                        </li> --}}
+
+                        <li class="nav-item ms-2">
+                            <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
+                                <i class="bi bi-gear-fill fs-6"> </i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-bs-auto-close="outside">
+                                <span class="badge-notif animation-blink"></span>
+                                <i class="bi bi-bell-fill fs-6"> </i>
+                            </a>
+                            <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0"
+                                aria-labelledby="notifDropdown">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="m-0">Notifications <span
+                                                class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span></h6>
+                                        <a class="small" href="#">Clear all</a>
                                     </div>
-                                    <div>
-                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">Desenvolvedor Web</p>
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush list-unstyled p-2">
+                                            <!-- Notif item -->
+                                            <li>
+                                                <div
+                                                    class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
+                                                    <div class="avatar text-center d-none d-sm-inline-block">
+                                                        <img class="avatar-img rounded-circle"
+                                                            src="assets/images/avatar/01.jpg" alt="">
+                                                    </div>
+                                                    <div class="ms-sm-3">
+                                                        <div class=" d-flex">
+                                                            <p class="small mb-2"><b>Judy Nguyen</b> sent you a friend
+                                                                request.</p>
+                                                            <p class="small ms-3 text-nowrap">Just now</p>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <button class="btn btn-sm py-1 btn-primary me-2">Accept
+                                                            </button>
+                                                            <button class="btn btn-sm py-1 btn-danger-soft">Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- Notif item -->
+                                            <li>
+                                                <div
+                                                    class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
+                                                    <div class="avatar text-center d-none d-sm-inline-block">
+                                                        <img class="avatar-img rounded-circle"
+                                                            src="assets/images/avatar/02.jpg" alt="">
+                                                    </div>
+                                                    <div class="ms-sm-3 d-flex">
+                                                        <div>
+                                                            <p class="small mb-2">Wish <b>Amanda Reed</b> a happy
+                                                                birthday
+                                                                (Nov 12)</p>
+                                                            <button class="btn btn-sm btn-outline-light py-1 me-2">Say
+                                                                happy birthday 🎂</button>
+                                                        </div>
+                                                        <p class="small ms-3">2min</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- Notif item -->
+                                            <li>
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action rounded d-flex border-0 mb-1 p-3">
+                                                    <div class="avatar text-center d-none d-sm-inline-block">
+                                                        <div class="avatar-img rounded-circle bg-success"><span
+                                                                class="text-white position-absolute top-50 start-50 translate-middle fw-bold">WB</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ms-sm-3">
+                                                        <div class="d-flex">
+                                                            <p class="small mb-2">Webestica has 15 like and 1 new
+                                                                activity
+                                                            </p>
+                                                            <p class="small ms-3">1hr</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <!-- Notif item -->
+                                            <li>
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
+                                                    <div class="avatar text-center d-none d-sm-inline-block">
+                                                        <img class="avatar-img rounded-circle"
+                                                            src="assets/images/logo/12.svg" alt="">
+                                                    </div>
+                                                    <div class="ms-sm-3 d-flex">
+                                                        <p class="small mb-2"><b>Bootstrap in the news:</b> The search
+                                                            giant’s parent company, Alphabet, just joined an exclusive
+                                                            club
+                                                            of tech stocks.</p>
+                                                        <p class="small ms-3">4hr</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <a href="#" class="btn btn-sm btn-primary-soft">See all incoming
+                                            activity</a>
                                     </div>
                                 </div>
-                                <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="my-profile.html">Visualizar perfil</a>
-                            </li>
-                            <!-- Links -->
-                            <li><a class="dropdown-item" href="settings.html"><i
-                                        class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
-                            <li>
-                                <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                    <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+                            </div>
+                        </li>
+                        <!-- Notification dropdown END -->
+                        <li class="nav-item ms-2 dropdown">
+                            @auth
+                                <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
+                                    data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                                 </a>
-                            </li>
-
-                            <li class="dropdown-divider"></li>
-
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
-                                        class="bi bi-power fa-fw me-2"></i>Sair</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <!-- Dark mode switch START -->
-                            <li>
-                                <div class="modeswitch-wrap" id="darkModeSwitch">
-                                    <div class="modeswitch-item">
-                                        <div class="modeswitch-icon"></div>
+                            @endauth
+                            <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
+                                aria-labelledby="profileDropdown">
+                                <!-- Profile info -->
+                                <li class="px-3">
+                                    <div class="d-flex align-items-center position-relative">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-3">
+                                            <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                                alt="avatar">
+                                        </div>
+                                        <div>
+                                            <a class="h6 stretch-link" href="#">Lori Ferguson</a>
+                                            <p class="small m-0">Desenvolvedor Web</p>
+                                        </div>
                                     </div>
-                                    <span>Modo escuro</span>
-                                </div>
-                            </li>
-                            <!-- Dark mode switch END -->
-                        </ul>
-                    </li>
-                    <!-- Profile START -->
+                                    <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
+                                        href="my-profile.html">Visualizar perfil</a>
+                                </li>
+                                <!-- Links -->
+                                <li><a class="dropdown-item" href="settings.html"><i
+                                            class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
+                                        <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+                                    </a>
+                                </li>
 
-                </ul>
-                <!-- Nav right END -->
+                                <li class="dropdown-divider"></li>
+
+                                <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
+                                            class="bi bi-power fa-fw me-2"></i>Sair</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <!-- Dark mode switch START -->
+                                <li>
+                                    <div class="modeswitch-wrap" id="darkModeSwitch">
+                                        <div class="modeswitch-item">
+                                            <div class="modeswitch-icon"></div>
+                                        </div>
+                                        <span>Modo escuro</span>
+                                    </div>
+                                </li>
+                                <!-- Dark mode switch END -->
+                            </ul>
+                        </li>
+                        <!-- Profile START -->
+
+                    </ul>
+                    <!-- Nav right END -->
             </div>
         </nav>
         <!-- Logo Nav END -->
@@ -288,11 +413,11 @@
 
                             <div class="col-12">
                                 <label class="form-label">Sua senha </label>
-                                <input type="password" id="password." name="password."
-                                    class="form-control  @error('password.') is-invalid @enderror"
-                                    value="{{ old('password.') }}" placeholder="*****************" required
+                                <input type="password" id="passworde" name="passworde"
+                                    class="form-control  @error('passworde') is-invalid @enderror"
+                                    value="{{ old('passworde') }}" placeholder="*****************" required
                                     autofocus>
-                                @error('password.')
+                                @error('passworde')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -329,6 +454,156 @@
         </div>
         {{-- Registar --}}
 
+        <!-- Modal criar events  -->
+        <div class="modal fade" id="modalCreateEvents" tabindex="-1" aria-labelledby="modalLabelCreateEvents"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal feed header START -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabelCreateEvents">Criar evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <!-- Modal feed header END -->
+                    <!-- Modal feed body START -->
+                    <div class="modal-body">
+                        <!-- Form START -->
+                        <form class="row g-4">
+                            <!-- Title -->
+                            <div class="col-12">
+                                <label class="form-label">Titulo</label>
+                                <input type="text" class="form-control" placeholder="Nome do evento">
+                            </div>
+                            <!-- Description -->
+                            <div class="col-12">
+                                <label class="form-label">Descrição</label>
+                                <textarea class="form-control" rows="2" placeholder="Ex: topicos, Cronograma, etc."></textarea>
+                            </div>
+                            <!-- Date -->
+                            <div class="col-sm-4">
+                                <label class="form-label">Data</label>
+                                <input type="date" class="form-control flatpickr" placeholder="Select date">
+                            </div>
+                            <!-- Time -->
+                            <div class="col-sm-4">
+                                <label class="form-label">Hora</label>
+                                <input type="time" class="form-control flatpickr" data-enableTime="true"
+                                    data-noCalendar="true" placeholder="Select time">
+                            </div>
+                            <!-- Duration -->
+                            <div class="col-sm-4">
+                                <label class="form-label">Duração</label>
+                                <input type="duracao" class="form-control" placeholder="1hr 23m">
+                            </div>
+                            <!-- Location -->
+                            <div class="col-12">
+                                <label class="form-label">Localização</label>
+                                <input type="text" class="form-control" id="pac-input" name="pac-input"
+                                    placeholder="Beira-Moçambique, Munhava Rua Gross Gomes 47">
+                            </div>
+                            <!-- Location -->
+                            <div class="col-12">
+                                <label class="form-label">Cidade</label>
+                                <select class="form-select form-select" aria-label=".form-select-lg example">
+                                    <option disabled selected>Escolha a cidade</option>
+                                    <option value="#">Beira</option>
+                                    <option value="#">Maputo</option>
+                                    <option value="#">Nampula</option>
+                                    <option value="#">CaboDelegado</option>
+                                    <option value="#">Chimoio</option>
+                                    <option value="#">Chimoio</option>
+                                </select>
+                            </div>
+                            <!-- Location -->
+                            <!-- Tipo de evento -->
+                            <div class="col-12">
+                                <label class="form-label">Tipo & categoria de evento</label>
+                                <select class="form-select form-select" aria-label=".form-select-lg example">
+                                    <option disabled selected>Escolha o tipo de evento</option>
+                                    <option value="#">Beira</option>
+                                    <option value="#">Maputo</option>
+                                    <option value="#">Nampula</option>
+                                    <option value="#">CaboDelegado</option>
+                                    <option value="#">Chimoio</option>
+                                    <option value="#">Chimoio</option>
+                                </select>
+                            </div>
+                            <!-- Tipo de evento -->
+                            <!-- Add guests -->
+                            <div class="col-12">
+                                <label class="form-label">Addicionar Participantes</label>
+                                <input type="email" class="form-control" placeholder="Guest email">
+                            </div>
+                            <!-- Avatar group START -->
+                            <div class="col-12 mt-3">
+                                <ul class="avatar-group list-unstyled align-items-center mb-0">
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                            alt="avatar">
+                                    </li>
+                                    <li class="ms-3">
+                                        <small> +50 </small>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{-- FIle manger --}}
+                            <div class="col-12">
+                                <label class="form-label">Carregar Fotografia</label>
+                                <input type="file" class="form-control" name="foto">
+                            </div>
+                            {{-- FIle manger --}}
+                            <!-- Dropzone photo START -->
+                            <div class="mb-3">
+                                <label class="form-label">Carregar Anexo</label>
+                                <div class="dropzone dropzone-default card shadow-none"
+                                    data-dropzone='{"maxFiles":2}'>
+                                    <div class="dz-message">
+                                        <i class="bi bi-file-earmark-text display-3"></i>
+                                        <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Dropzone photo END -->
+                        </form>
+                        <!-- Form END -->
+                    </div>
+                    <!-- Modal feed body END -->
+                    <!-- Modal footer -->
+                    <!-- Button -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
+                            Cancelar</button>
+                        <button type="button" class="btn btn-success-soft">Criar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal criar events -->
         {{-- Modal --}}
 
         <!-- Hero event START -->
@@ -365,8 +640,8 @@
                                         <div class="input-group">
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
                                                 placeholder="Onde" id="pac-input" name="pac-input">
-                                            <div id="lat"></div>
-                                            <div id="long"></div>
+                                            {{-- <div id="lat"></div>
+                                            <div id="long"></div> --}}
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
@@ -435,7 +710,16 @@
                         <div class="d-sm-flex justify-content-between">
                             <!-- Title -->
                             <h4>Descubra eventos </h4>
-                            <a class="btn btn-link" href="{{ route('todos') }}">Ver todos os eventos</a>
+                            @auth
+                                <a class="btn btn-primary-soft" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#modalCreateEvents"> <i class="fa-solid fa-plus pe-1"></i> Criar
+                                    evento</a>
+                            @endauth
+                            @guest
+                                <a class="btn btn-primary-soft" href="#login_Modal" data-bs-toggle="modal"
+                                    data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                    Entrar</a>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -807,6 +1091,14 @@
                         </div>
                         <!-- Event item END -->
                     </div>
+                    <a href="/Todos" role="button" class="btn btn-loader btn-primary-soft">
+                        <span class="load-text"> Ver todos os eventos </span>
+                        <div class="load-icon">
+                            <div class="spinner-grow spinner-grow-sm" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1295,7 +1587,18 @@
 
     {{-- este comando chama o modal caso aga error  --}}
 
-    @error('password.')
+    @error('passworde')
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
+
+            function OpenBootstrapPopup() {
+                $("#login_registar").modal('show');
+            }
+        </script>
+    @enderror
+    @error('password_confirmation')
         <script type="text/javascript">
             window.onload = function() {
                 OpenBootstrapPopup();
