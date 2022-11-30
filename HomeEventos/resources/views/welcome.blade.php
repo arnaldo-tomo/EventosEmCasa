@@ -765,16 +765,16 @@
                                 <div class="card-body position-relative pt-0">
                                     <!-- Tag -->
                                     <a class="btn btn-xs btn-primary mt-n3"
-                                        href="{{ route('detalhes') }}">Treinamento em
-                                        spa
+                                        href="{{ route('detalhes') }}">{{ $evento->tipo_categoria }}
                                     </a>
-                                    <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> Bone thugs-n-harmony </a>
+                                    <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> {{ $evento->titulo }}
+                                        </a>
                                     </h5>
                                     <!-- Data hora -->
                                     <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i> segunda-feira, 25
                                         de
                                         setembro de 2020 às
-                                        9h30 </p>
+                                        {{ $evento->hora }}</p>
                                     <p class="small"> <i class="bi bi-geo-alt pe-1"></i> São Francisco </p>
                                     <!-- Avatar group START -->
                                     <ul class="avatar-group list-unstyled align-items-center mb-0">
