@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/my-profile-events.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
 
 <head>
-    <title>Meu Perfil - HomeEvento</title>
+    <title>Perfil - {{ Auth::user()->name }}</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -403,7 +403,7 @@ Header END -->
                                 </div>
                                 <div class="ms-sm-4 mt-sm-3">
                                     <!-- Info -->
-                                    <h1 class="mb-0 h5">Arnaldo Tomo <i
+                                    <h1 class="mb-0 h5">{{ Auth::user()->name }} <i
                                             class="bi bi-patch-check-fill text-success small"></i></h1>
                                     <p>250 conexões</p>
                                 </div>
@@ -440,8 +440,8 @@ Header END -->
                             <ul class="list-inline mb-0 text-center text-sm-start mt-3 mt-sm-0">
                                 <li class="list-inline-item"><i class="bi bi-briefcase me-1"></i> Lead Developer</li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> Beira,Moçambique</li>
-                                <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>Entrou em Nov
-                                    26, 2019</li>
+                                <li class="list-inline-item"><i
+                                        class="bi bi-calendar2-plus me-1"></i>{{ $name }}</li>
                             </ul>
                         </div>
                         <!-- Card body END -->
@@ -450,18 +450,18 @@ Header END -->
                             <ul
                                 class="nav nav-bottom-line align-items-center justify-content-center justify-content-md-start mb-0 border-0">
                                 {{-- <li class="nav-item"> <a class="nav-link" href="my-profile.html"> Posts </a> </li> --}}
-                                <li class="nav-item"> <a class="nav-link active" href="my-profile-events.html">
+                                <li class="nav-item"> <a class="nav-link active" href="{{ route('perfil') }}">
                                         Meus Ventos</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="my-profile-about.html"> Sobre </a>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('sobre') }}"> Sobre </a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="my-profile-connections.html">
+                                <li class="nav-item"> <a class="nav-link" href="#">
                                         Conexões <span class="badge bg-success bg-opacity-10 text-success small">
                                             230</span> </a> </li>
                                 {{-- <li class="nav-item"> <a class="nav-link" href="my-profile-media.html"> Media</a>
                                 </li> --}}
                                 {{-- <li class="nav-item"> <a class="nav-link" href="my-profile-videos.html"> Videos</a>
                                 </li> --}}
-                                <li class="nav-item"> <a class="nav-link" href="my-profile-activity.html">
+                                <li class="nav-item"> <a class="nav-link" href="#">
                                         Atividade</a> </li>
                             </ul>
                         </div>
@@ -664,77 +664,88 @@ Header END -->
                         <!-- Card header END -->
                         <!-- Card body START -->
                         <div class="card-body">
-                            <!-- Upcoming event START -->
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>Upcoming event:</strong> The learning conference on Sep 19 2022
-                                <a href="events.html" class="btn btn-xs btn-success ms-md-4">View event</a>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                            <!-- Upcoming event END -->
+
                             <!-- Events list START -->
                             <div class="row">
-                                @foreach ($eventos as $evento)
-                                    <div class="d-sm-flex align-items-center mb-2">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xl">
-                                            <a href="#!"><img
-                                                    class="avatar-img rounded border border-white border-3"
-                                                    src="/{{ $evento->imagen }}" alt=""></a>
-                                        </div>
-                                        <div class="ms-sm-4 mt-2 mt-sm-0">
-                                            <!-- Info -->
-                                            <h5 class="mb-1"><a href="event-details.html"> {{ $evento->titulo }}
-                                                </a>
-                                            </h5>
-                                            <ul class="nav nav-stack small">
-                                                <li class="nav-item">
-                                                    <i class="bi bi-calendar-check pe-1"></i>
-                                                    {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
-                                                    -
-                                                    {{ $evento->hora }} Horas
-                                                </li>
-                                                <li class="nav-item">
-                                                    <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }}
-                                                </li>
-                                                <li class="nav-item">
-                                                    <i class="bi bi-people pe-1"></i> 77 going
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!-- Button -->
-                                        <div class="d-flex mt-3 ms-auto">
-                                            <div class="dropdown">
-                                                <!-- Card share action menu -->
-                                                <button class="icon-md btn btn-secondary-soft" type="button"
-                                                    id="profileAction" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <i class="bi bi-three-dots"></i>
-                                                </button>
-                                                <!-- Card share action dropdown menu -->
-                                                <ul class="dropdown-menu dropdown-menu-end"
-                                                    aria-labelledby="profileAction">
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
-                                                            a
-                                                            message</a></li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                            profile to PDF</a></li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
+                                @if ($eventos->count() == 0)
+                                    <!-- Upcoming event START -->
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Ola,{{ Auth::user()->name }}</strong> parece que nao tens nenhum evento
+                                        publicado
+                                        {{-- <a href="events.html" class="btn btn-xs btn-success ms-md-4">Criar um
+                                            evento</a> --}}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <!-- Upcoming event END -->
+                                @else
+                                    @foreach ($eventos as $evento)
+                                        <div class="d-sm-flex align-items-center mb-2">
+                                            <!-- Avatar -->
+                                            <div class="avatar avatar-xl">
+                                                <a href="#!"><img
+                                                        class="avatar-img rounded border border-white border-3"
+                                                        src="/{{ $evento->imagen }}" alt=""></a>
+                                            </div>
+                                            <div class="ms-sm-4 mt-2 mt-sm-0">
+                                                <!-- Info -->
+                                                <h5 class="mb-1"><a href="event-details.html">
+                                                        {{ $evento->titulo }}
+                                                    </a>
+                                                </h5>
+                                                <ul class="nav nav-stack small">
+                                                    <li class="nav-item">
+                                                        <i class="bi bi-calendar-check pe-1"></i>
+                                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                        -
+                                                        {{ $evento->hora }} Horas
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
+                                                    <li class="nav-item">
+                                                        <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }}
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <i class="bi bi-people pe-1"></i> 77 going
                                                     </li>
                                                 </ul>
                                             </div>
+                                            <!-- Button -->
+                                            <div class="d-flex mt-3 ms-auto">
+                                                <div class="dropdown">
+                                                    <!-- Card share action menu -->
+                                                    <button class="icon-md btn btn-secondary-soft" type="button"
+                                                        id="profileAction" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="bi bi-three-dots"></i>
+                                                    </button>
+                                                    <!-- Card share action dropdown menu -->
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="profileAction">
+                                                        <li><a class="dropdown-item" href="#"> <i
+                                                                    class="bi bi-bookmark fa-fw pe-2"></i>Share profile
+                                                                in
+                                                                a
+                                                                message</a></li>
+                                                        <li><a class="dropdown-item" href="#"> <i
+                                                                    class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
+                                                                your
+                                                                profile to PDF</a></li>
+                                                        <li><a class="dropdown-item" href="#"> <i
+                                                                    class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
+                                                        </li>
+                                                        <li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#"> <i
+                                                                    class="bi bi-gear fa-fw pe-2"></i>Profile
+                                                                settings</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                @endforeach
+                                        <br>
+                                    @endforeach
+                                @endif
                             </div>
                             <!-- Events list END -->
 
@@ -755,21 +766,21 @@ Header END -->
                         <div class="col-md-6 col-lg-12">
                             <div class="card">
                                 <div class="card-header border-0 pb-0">
-                                    <h5 class="card-title">About</h5>
+                                    <h5 class="card-title">Sobre</h5>
                                     <!-- Button modal -->
                                 </div>
                                 <!-- Card body START -->
                                 <div class="card-body position-relative pt-0">
-                                    <p>He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire
-                                        difficulty gay assistance joy.</p>
-                                    <!-- Date time -->
+                                    <p>Ele luar difícil absorvê-lo, esportistas. Interessado tem todo Devonshire
+                                        dificuldade assistência gay alegria.</p>
+                                    <!-- Data hora -->
                                     <ul class="list-unstyled mt-3 mb-0">
-                                        <li class="mb-2"> <i class="bi bi-calendar-date fa-fw pe-1"></i> Born:
-                                            <strong> October 20, 1990 </strong>
+                                        <li class="mb-2"> <i class="bi bi-calendar-date fa-fw pe-1"></i> Nascimento:
+                                            <strong> 20 de outubro de 1990 </strong>
                                         </li>
                                         <li class="mb-2"> <i class="bi bi-heart fa-fw pe-1"></i> Status: <strong>
-                                                Single </strong> </li>
-                                        <li> <i class="bi bi-envelope fa-fw pe-1"></i> Email: <strong>
+                                                Único </strong> </li>
+                                        <li> <i class="bi bi-envelope fa-fw pe-1"></i> E-mail: <strong>
                                                 webestica@gmail.com </strong> </li>
                                     </ul>
                                 </div>
@@ -779,137 +790,6 @@ Header END -->
                         <!-- Card END -->
 
                         <!-- Card START -->
-                        <div class="col-md-6 col-lg-12">
-                            <div class="card">
-                                <!-- Card header START -->
-                                <div class="card-header d-flex justify-content-between border-0">
-                                    <h5 class="card-title">Experience</h5>
-                                    <a class="btn btn-primary-soft btn-sm" href="#!"> <i
-                                            class="fa-solid fa-plus"></i> </a>
-                                </div>
-                                <!-- Card header END -->
-                                <!-- Card body START -->
-                                <div class="card-body position-relative pt-0">
-                                    <!-- Experience item START -->
-                                    <div class="d-flex">
-                                        <!-- Avatar -->
-                                        <div class="avatar me-3">
-                                            <a href="#!"> <img class="avatar-img rounded-circle"
-                                                    src="assets/images/logo/08.svg" alt=""> </a>
-                                        </div>
-                                        <!-- Info -->
-                                        <div>
-                                            <h6 class="card-title mb-0"><a href="#!"> Apple Computer, Inc. </a>
-                                            </h6>
-                                            <p class="small">May 2015 – Present Employment Duration 8 mos <a
-                                                    class="btn btn-primary-soft btn-xs ms-2" href="#!">Edit </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- Experience item END -->
-
-                                    <!-- Experience item START -->
-                                    <div class="d-flex">
-                                        <!-- Avatar -->
-                                        <div class="avatar me-3">
-                                            <a href="#!"> <img class="avatar-img rounded-circle"
-                                                    src="assets/images/logo/09.svg" alt=""> </a>
-                                        </div>
-                                        <!-- Info -->
-                                        <div>
-                                            <h6 class="card-title mb-0"><a href="#!"> Microsoft Corporation </a>
-                                            </h6>
-                                            <p class="small">May 2017 – Present Employment Duration 1 yrs 5 mos <a
-                                                    class="btn btn-primary-soft btn-xs ms-2" href="#!">Edit </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- Experience item END -->
-
-                                    <!-- Experience item START -->
-                                    <div class="d-flex">
-                                        <!-- Avatar -->
-                                        <div class="avatar me-3">
-                                            <a href="#!"> <img class="avatar-img rounded-circle"
-                                                    src="assets/images/logo/10.svg" alt=""> </a>
-                                        </div>
-                                        <!-- Info -->
-                                        <div>
-                                            <h6 class="card-title mb-0"><a href="#!"> Tata Consultancy Services.
-                                                </a></h6>
-                                            <p class="small mb-0">May 2022 – Present Employment Duration 6 yrs 10 mos
-                                                <a class="btn btn-primary-soft btn-xs ms-2" href="#!">Edit </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- Experience item END -->
-
-                                </div>
-                                <!-- Card body END -->
-                            </div>
-                        </div>
-                        <!-- Card END -->
-
-                        <!-- Card START -->
-                        <div class="col-md-6 col-lg-12">
-                            <div class="card">
-                                <!-- Card header START -->
-                                <div class="card-header d-sm-flex justify-content-between border-0">
-                                    <h5 class="card-title">Photos</h5>
-                                    <a class="btn btn-primary-soft btn-sm" href="#!"> See all photo</a>
-                                </div>
-                                <!-- Card header END -->
-                                <!-- Card body START -->
-                                <div class="card-body position-relative pt-0">
-                                    <div class="row g-2">
-                                        <!-- Photos item -->
-                                        <div class="col-6">
-                                            <a href="assets/images/albums/01.jpg" data-gallery="image-popup"
-                                                data-glightbox="">
-                                                <img class="rounded img-fluid" src="assets/images/albums/01.jpg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <!-- Photos item -->
-                                        <div class="col-6">
-                                            <a href="assets/images/albums/02.jpg" data-gallery="image-popup"
-                                                data-glightbox="">
-                                                <img class="rounded img-fluid" src="assets/images/albums/02.jpg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <!-- Photos item -->
-                                        <div class="col-4">
-                                            <a href="assets/images/albums/03.jpg" data-gallery="image-popup"
-                                                data-glightbox="">
-                                                <img class="rounded img-fluid" src="assets/images/albums/03.jpg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <!-- Photos item -->
-                                        <div class="col-4">
-                                            <a href="assets/images/albums/04.jpg" data-gallery="image-popup"
-                                                data-glightbox="">
-                                                <img class="rounded img-fluid" src="assets/images/albums/04.jpg"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <!-- Photos item -->
-                                        <div class="col-4">
-                                            <a href="assets/images/albums/05.jpg" data-gallery="image-popup"
-                                                data-glightbox="">
-                                                <img class="rounded img-fluid" src="assets/images/albums/05.jpg"
-                                                    alt="">
-                                            </a>
-                                            <!-- glightbox Albums left bar END  -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card body END -->
-                            </div>
-                        </div>
-                        <!-- Card END -->
-
                         <!-- Card START -->
                         <div class="col-md-6 col-lg-12">
                             <div class="card">
