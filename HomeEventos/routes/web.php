@@ -11,9 +11,8 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => ['web']], function () {
-
-    Route::get('/perfil', [EventosController::class, 'perfil'])->middleware()->name('perfil');
 });
+Route::get('/perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/Detalhes', [EventosController::class, 'detalhes'])->name('detalhes');
 Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categoria');
