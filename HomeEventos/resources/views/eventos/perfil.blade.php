@@ -34,18 +34,17 @@
 
     <!-- =======================
 Header START -->
-    <header class="navbar-light fixed-top header-static bg-mode">
+    <header class="navbar-dark navbar-transparent header-static">
 
         <!-- Logo Nav START -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo START -->
-                <a class="navbar-brand" href="http://127.0.0.1:8000">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
-
                 <!-- Responsive navbar toggler -->
                 <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -57,200 +56,211 @@ Header START -->
                     </span>
                 </button>
 
-                <!-- Main navbar START -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                    <!-- Nav Search START -->
-
-                    <!-- Nav Search END -->
-
-                    <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <!-- Nav item 1 Demos -->
 
 
-                        <!-- Nav item 4 Mega menu -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/perfil">Arnaldo Tomo</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Main navbar END -->
-
-                <!-- Nav right START -->
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-                    <li class="nav-item ms-2">
+
+                    <!-- Nav right START -->
+                    <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
+
+                        {{-- messaging --}}
+                        <!-- Main navbar START -->
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+                                <li class="nav-item">
+                                    @guest
+                                        <a class="btn btn-primary btn-sm" href="#login_Modal" data-bs-toggle="modal"
+                                            data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                            Entrar</a>
+                                    @endguest
+                                    @auth
+                                        <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- Nav right START -->
+                            {{-- <li class="nav-item ms-2">
                         <a class="nav-link icon-md btn btn-light p-0" href="messaging.html">
                             <i class="bi bi-chat-left-text-fill fs-6"> </i>
                         </a>
-                    </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
-                            <i class="bi bi-gear-fill fs-6"> </i>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown ms-2">
-                        <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                            <span class="badge-notif animation-blink"></span>
-                            <i class="bi bi-bell-fill fs-6"> </i>
-                        </a>
-                        <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0"
-                            aria-labelledby="notifDropdown">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h6 class="m-0">Notifications <span
-                                            class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span></h6>
-                                    <a class="small" href="#">Clear all</a>
-                                </div>
-                                <div class="card-body p-0">
-                                    <ul class="list-group list-group-flush list-unstyled p-2">
-                                        <!-- Notif item -->
-                                        <li>
-                                            <div
-                                                class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
-                                                <div class="avatar text-center d-none d-sm-inline-block">
-                                                    <img class="avatar-img rounded-circle"
-                                                        src="assets/images/avatar/01.jpg" alt="">
-                                                </div>
-                                                <div class="ms-sm-3">
-                                                    <div class=" d-flex">
-                                                        <p class="small mb-2"><b>Judy Nguyen</b> sent you a friend
-                                                            request.</p>
-                                                        <p class="small ms-3 text-nowrap">Just now</p>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <button class="btn btn-sm py-1 btn-primary me-2">Accept
-                                                        </button>
-                                                        <button class="btn btn-sm py-1 btn-danger-soft">Delete
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Notif item -->
-                                        <li>
-                                            <div
-                                                class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
-                                                <div class="avatar text-center d-none d-sm-inline-block">
-                                                    <img class="avatar-img rounded-circle"
-                                                        src="assets/images/avatar/02.jpg" alt="">
-                                                </div>
-                                                <div class="ms-sm-3 d-flex">
-                                                    <div>
-                                                        <p class="small mb-2">Wish <b>Amanda Reed</b> a happy birthday
-                                                            (Nov 12)</p>
-                                                        <button class="btn btn-sm btn-outline-light py-1 me-2">Say
-                                                            happy birthday 🎂</button>
-                                                    </div>
-                                                    <p class="small ms-3">2min</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Notif item -->
-                                        <li>
-                                            <a href="#"
-                                                class="list-group-item list-group-item-action rounded d-flex border-0 mb-1 p-3">
-                                                <div class="avatar text-center d-none d-sm-inline-block">
-                                                    <div class="avatar-img rounded-circle bg-success"><span
-                                                            class="text-white position-absolute top-50 start-50 translate-middle fw-bold">WB</span>
-                                                    </div>
-                                                </div>
-                                                <div class="ms-sm-3">
-                                                    <div class="d-flex">
-                                                        <p class="small mb-2">Webestica has 15 like and 1 new activity
-                                                        </p>
-                                                        <p class="small ms-3">1hr</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- Notif item -->
-                                        <li>
-                                            <a href="#"
-                                                class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
-                                                <div class="avatar text-center d-none d-sm-inline-block">
-                                                    <img class="avatar-img rounded-circle"
-                                                        src="assets/images/logo/12.svg" alt="">
-                                                </div>
-                                                <div class="ms-sm-3 d-flex">
-                                                    <p class="small mb-2"><b>Bootstrap in the news:</b> The search
-                                                        giant’s parent company, Alphabet, just joined an exclusive club
-                                                        of tech stocks.</p>
-                                                    <p class="small ms-3">4hr</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href="#" class="btn btn-sm btn-primary-soft">See all incoming
-                                        activity</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Notification dropdown END -->
+                    </li> --}}
 
-                    <li class="nav-item ms-2 dropdown">
-                        <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
-                            data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
-                        </a>
-                        <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
-                            aria-labelledby="profileDropdown">
-                            <!-- Profile info -->
-                            <li class="px-3">
-                                <div class="d-flex align-items-center position-relative">
-                                    <!-- Avatar -->
-                                    <div class="avatar me-3">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
-                                    </div>
-                                    <div>
-                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">Desenvolvedor Web</p>
-                                    </div>
-                                </div>
-                                <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="http://127.0.0.1:8000/perfil">Visualizar perfil</a>
-                            </li>
-                            <!-- Links -->
-                            <li><a class="dropdown-item" href="settings.html"><i
-                                        class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
-                            <li>
-                                <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                    <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+                            <li class="nav-item ms-2">
+                                <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
+                                    <i class="bi bi-gear-fill fs-6"> </i>
                                 </a>
                             </li>
-
-                            <li class="dropdown-divider"></li>
-
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="http://127.0.0.1:8000/Terminar"><i
-                                        class="bi bi-power fa-fw me-2"></i>Sair</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <!-- Dark mode switch START -->
-                            <li>
-                                <div class="modeswitch-wrap" id="darkModeSwitch">
-                                    <div class="modeswitch-item">
-                                        <div class="modeswitch-icon"></div>
+                            <li class="nav-item dropdown ms-2">
+                                <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-auto-close="outside">
+                                    <span class="badge-notif animation-blink"></span>
+                                    <i class="bi bi-bell-fill fs-6"> </i>
+                                </a>
+                                <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0"
+                                    aria-labelledby="notifDropdown">
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h6 class="m-0">Notifications <span
+                                                    class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span></h6>
+                                            <a class="small" href="#">Clear all</a>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <ul class="list-group list-group-flush list-unstyled p-2">
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <div
+                                                        class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/avatar/01.jpg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3">
+                                                            <div class=" d-flex">
+                                                                <p class="small mb-2"><b>Judy Nguyen</b> sent you a friend
+                                                                    request.</p>
+                                                                <p class="small ms-3 text-nowrap">Just now</p>
+                                                            </div>
+                                                            <div class="d-flex">
+                                                                <button class="btn btn-sm py-1 btn-primary me-2">Accept
+                                                                </button>
+                                                                <button class="btn btn-sm py-1 btn-danger-soft">Delete
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <div
+                                                        class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/avatar/02.jpg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3 d-flex">
+                                                            <div>
+                                                                <p class="small mb-2">Wish <b>Amanda Reed</b> a happy
+                                                                    birthday
+                                                                    (Nov 12)
+                                                                </p>
+                                                                <button class="btn btn-sm btn-outline-light py-1 me-2">Say
+                                                                    happy birthday 🎂</button>
+                                                            </div>
+                                                            <p class="small ms-3">2min</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <a href="#"
+                                                        class="list-group-item list-group-item-action rounded d-flex border-0 mb-1 p-3">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <div class="avatar-img rounded-circle bg-success"><span
+                                                                    class="text-white position-absolute top-50 start-50 translate-middle fw-bold">WB</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ms-sm-3">
+                                                            <div class="d-flex">
+                                                                <p class="small mb-2">Webestica has 15 like and 1 new
+                                                                    activity
+                                                                </p>
+                                                                <p class="small ms-3">1hr</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <a href="#"
+                                                        class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/logo/12.svg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3 d-flex">
+                                                            <p class="small mb-2"><b>Bootstrap in the news:</b> The search
+                                                                giant’s parent company, Alphabet, just joined an exclusive
+                                                                club
+                                                                of tech stocks.</p>
+                                                            <p class="small ms-3">4hr</p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="#" class="btn btn-sm btn-primary-soft">See all incoming
+                                                activity</a>
+                                        </div>
                                     </div>
-                                    <span>Modo escuro</span>
                                 </div>
                             </li>
-                            <!-- Dark mode switch END -->
-                        </ul>
-                    </li>
-                    <!-- Profile START -->
+                            <!-- Notification dropdown END -->
+                            <li class="nav-item ms-2 dropdown">
+                                @auth
+                                    <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
+                                        data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
+                                    </a>
+                                @endauth
+                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
+                                    aria-labelledby="profileDropdown">
+                                    <!-- Profile info -->
+                                    <li class="px-3">
+                                        <div class="d-flex align-items-center position-relative">
+                                            <!-- Avatar -->
+                                            <div class="avatar me-3">
+                                                <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                                    alt="avatar">
+                                            </div>
+                                            <div>
+                                                <a class="h6 stretch-link" href="#">Lori Ferguson</a>
+                                                <p class="small m-0">Desenvolvedor Web</p>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
+                                            href="{{ route('perfil') }}">Visualizar perfil</a>
+                                    </li>
+                                    <!-- Links -->
+                                    <li><a class="dropdown-item" href="settings.html"><i
+                                                class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
+                                            <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+                                        </a>
+                                    </li>
 
-                </ul>
-                <!-- Nav right END -->
-            </div>
-        </nav>
-        <!-- Logo Nav END -->
+                                    <li class="dropdown-divider"></li>
+
+                                    <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
+                                                class="bi bi-power fa-fw me-2"></i>Sair</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <!-- Dark mode switch START -->
+                                    <li>
+                                        <div class="modeswitch-wrap" id="darkModeSwitch">
+                                            <div class="modeswitch-item">
+                                                <div class="modeswitch-icon"></div>
+                                            </div>
+                                            <span>Modo escuro</span>
+                                        </div>
+                                    </li>
+                                    <!-- Dark mode switch END -->
+                                </ul>
+                            </li>
+                            <!-- Profile START -->
+
+                        </ul>
+                        <!-- Nav right END -->
+                </div>
+            </nav>
+            <!-- Logo Nav END -->
+        @endauth
     </header>
     <!-- =======================
 Header END -->
@@ -368,234 +378,67 @@ Header END -->
                             <!-- Upcoming event END -->
                             <!-- Events list START -->
                             <div class="row">
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/02.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html"> Jejum de 22 dias
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                1 dez 2022
-                                                -
-                                                16:43:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i> Maputo
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
+                                @foreach ($eventos as $evento)
+                                    <div class="d-sm-flex align-items-center mb-2">
+                                        <!-- Avatar -->
+                                        <div class="avatar avatar-xl">
+                                            <a href="#!"><img
+                                                    class="avatar-img rounded border border-white border-3"
+                                                    src="/{{ $evento->imagen }}" alt=""></a>
+                                        </div>
+                                        <div class="ms-sm-4 mt-2 mt-sm-0">
+                                            <!-- Info -->
+                                            <h5 class="mb-1"><a href="event-details.html"> {{ $evento->titulo }}
+                                                </a>
+                                            </h5>
+                                            <ul class="nav nav-stack small">
+                                                <li class="nav-item">
+                                                    <i class="bi bi-calendar-check pe-1"></i>
+                                                    {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                    -
+                                                    {{ $evento->hora }} Horas
                                                 </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
+                                                <li class="nav-item">
+                                                    <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }}
+                                                </li>
+                                                <li class="nav-item">
+                                                    <i class="bi bi-people pe-1"></i> 77 going
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/04.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html"> Festas de djs afrika
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                2 nov 2022
-                                                -
-                                                03:21:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i> Beira
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
-                                                </li>
-                                            </ul>
+                                        <!-- Button -->
+                                        <div class="d-flex mt-3 ms-auto">
+                                            <div class="dropdown">
+                                                <!-- Card share action menu -->
+                                                <button class="icon-md btn btn-secondary-soft" type="button"
+                                                    id="profileAction" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
+                                                <!-- Card share action dropdown menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="profileAction">
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
+                                                            a
+                                                            message</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
+                                                            profile to PDF</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/03.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html"> Explosao Profetica
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                30 jan 2023
-                                                -
-                                                01:48:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i> Maputo
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html"> Middlemarch, de George Eliot
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                1 dez 2022
-                                                -
-                                                21:57:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i> Beira
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
+                                    <br>
+                                @endforeach
                             </div>
                             <!-- Events list END -->
 
@@ -922,5 +765,6 @@ JS libraries, plugins and custom scripts -->
 
 </body>
 
+<!-- Mirrored from social.webestica.com/my-profile-events.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
 
 </html>
