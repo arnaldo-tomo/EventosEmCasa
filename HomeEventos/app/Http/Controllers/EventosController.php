@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon;
 use App\Models\Eventos;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,8 +32,19 @@ class EventosController extends Controller
         if (!Auth::check()) {
             redirect()->back();
         }
+        $info = User::where('id', Auth::user()->id);
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
-        return view('eventos.perfil', compact('eventos'));
+        return view('eventos.perfil', compact('eventos', 'info'));
+    }
+    public function sobre()
+    {
+        if (!Auth::check()) {
+            redirect()->back();
+        }
+        $info = User::where('id', Auth::user()->id);
+
+
+        return view('eventos.sobre', ['info' => $info]);
     }
 
     public function sair(Request $request)
