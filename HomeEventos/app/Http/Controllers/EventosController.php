@@ -26,6 +26,12 @@ class EventosController extends Controller
         return view('eventos.categoria');
     }
 
+    public function perfil()
+    {
+        $Endentificador = Auth::user()->id;
+        $evento = Eventos::find($Endentificador);
+    }
+
     public function sair(Request $request)
     {
         Auth::guard('web')->logout();
@@ -58,6 +64,7 @@ class EventosController extends Controller
             $foto->move('imagen/eventos', $filename);
         }
         $evento->save();
-        echo "Publicado";
+        $messagen = "Evento publicado com sucessos!";
+        return redirect()->back()->with('novo', $messagen);
     }
 }
