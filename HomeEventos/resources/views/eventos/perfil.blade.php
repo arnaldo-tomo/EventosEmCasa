@@ -490,57 +490,70 @@ Header END -->
                             <!-- Upcoming event END -->
                             <!-- Events list START -->
                             <div class="row">
-                                <div class="d-sm-flex align-items-center">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="assets/images/events/01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html"> Comedy on the green </a></h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i> Mon, Sep 25, 2020 at 9:30 AM
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i> San francisco
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile in a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
+                                @foreach ($eventos as $evento)
+                                    <div class="d-sm-flex align-items-center mb-2">
+                                        <!-- Avatar -->
+                                        <div class="avatar avatar-xl">
+                                            <a href="#!"><img
+                                                    class="avatar-img rounded border border-white border-3"
+                                                    src="/{{ $evento->imagen }}" alt=""></a>
+                                        </div>
+                                        <div class="ms-sm-4 mt-2 mt-sm-0">
+                                            <!-- Info -->
+                                            <h5 class="mb-1"><a href="event-details.html"> {{ $evento->titulo }}
+                                                </a>
+                                            </h5>
+                                            <ul class="nav nav-stack small">
+                                                <li class="nav-item">
+                                                    <i class="bi bi-calendar-check pe-1"></i>
+                                                    {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                    -
+                                                    {{ $evento->hora }} Horas
                                                 </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile settings</a></li>
+                                                <li class="nav-item">
+                                                    <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }}
+                                                </li>
+                                                <li class="nav-item">
+                                                    <i class="bi bi-people pe-1"></i> 77 going
+                                                </li>
                                             </ul>
                                         </div>
+                                        <!-- Button -->
+                                        <div class="d-flex mt-3 ms-auto">
+                                            <div class="dropdown">
+                                                <!-- Card share action menu -->
+                                                <button class="icon-md btn btn-secondary-soft" type="button"
+                                                    id="profileAction" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
+                                                <!-- Card share action dropdown menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="profileAction">
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-bookmark fa-fw pe-2"></i>Share profile in
+                                                            a
+                                                            message</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your
+                                                            profile to PDF</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-lock fa-fw pe-2"></i>Lock profile</a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-gear fa-fw pe-2"></i>Profile settings</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <br>
+                                @endforeach
                             </div>
                             <!-- Events list END -->
+
                         </div>
                         <!-- Card body END -->
                     </div>
