@@ -21,7 +21,7 @@ class CreateEventosTable extends Migration
             $table->string('cidade');
             $table->boolean('privado');
             $table->string('tipo_categoria');
-            $table->time('hora');
+            $table->string('hora');
             $table->string('participante')->nullable();
             $table->date('dataInicio');
             $table->date('dataFim');
