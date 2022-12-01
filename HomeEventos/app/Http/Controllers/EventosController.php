@@ -28,8 +28,8 @@ class EventosController extends Controller
 
     public function perfil()
     {
-        $Endentificador = Auth::user()->id;
-        $evento = Eventos::find($Endentificador);
+        $evento = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
+        return view('eventos.perfil', compact('evento'));
     }
 
     public function sair(Request $request)
