@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/my-profile-events.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
 
 <head>
-    <title>Social - Network, Community and Event Theme</title>
+    <title>Meu Perfil - HomeEvento</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -61,7 +61,7 @@ Header START -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
 
                     <!-- Nav Search START -->
-                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
+                    {{-- <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
                         <div class="nav-item w-100">
                             <form class="rounded position-relative">
                                 <input class="form-control ps-5 bg-light" type="search" placeholder="Search..."
@@ -71,12 +71,12 @@ Header START -->
                                     type="submit"><i class="bi bi-search fs-5"> </i></button>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Nav Search END -->
 
                     <ul class="navbar-nav navbar-nav-scroll ms-auto">
                         <!-- Nav item 1 Demos -->
-                        <li class="nav-item dropdown">
+                        {{--   <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="homeMenu" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">Demo</a>
                             <ul class="dropdown-menu" aria-labelledby="homeMenu">
@@ -186,7 +186,7 @@ Header START -->
                                 <li> <a class="dropdown-item" href="offline.html">Offline</a> </li>
                                 <li> <a class="dropdown-item" href="privacy-and-terms.html">Privacy & terms</a> </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
@@ -209,9 +209,8 @@ Header START -->
                         </a>
                     </li>
                     <li class="nav-item dropdown ms-2">
-                        <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            data-bs-auto-close="outside">
+                        <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                             <span class="badge-notif animation-blink"></span>
                             <i class="bi bi-bell-fill fs-6"> </i>
                         </a>
@@ -569,7 +568,8 @@ Header END -->
                                     <!-- Date time -->
                                     <ul class="list-unstyled mt-3 mb-0">
                                         <li class="mb-2"> <i class="bi bi-calendar-date fa-fw pe-1"></i> Born:
-                                            <strong> October 20, 1990 </strong> </li>
+                                            <strong> October 20, 1990 </strong>
+                                        </li>
                                         <li class="mb-2"> <i class="bi bi-heart fa-fw pe-1"></i> Status: <strong>
                                                 Single </strong> </li>
                                         <li> <i class="bi bi-envelope fa-fw pe-1"></i> Email: <strong>
