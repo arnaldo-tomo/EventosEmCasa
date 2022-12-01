@@ -440,8 +440,9 @@ Header END -->
                             <ul class="list-inline mb-0 text-center text-sm-start mt-3 mt-sm-0">
                                 <li class="list-inline-item"><i class="bi bi-briefcase me-1"></i> Lead Developer</li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> Beira,Moçambique</li>
-                                <li class="list-inline-item"><i
-                                        class="bi bi-calendar2-plus me-1"></i>{{ $name }}</li>
+                                <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
+                                    {{ \Carbon\Carbon::parse($info->created_at)->isoFormat('DD  MMM Y') }}
+                                </li>
                             </ul>
                         </div>
                         <!-- Card body END -->
