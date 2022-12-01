@@ -28,8 +28,11 @@ class EventosController extends Controller
 
     public function perfil()
     {
-        $evento = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
-        return view('eventos.perfil', compact('evento'));
+        if (!Auth::check()) {
+            redirect()->back();
+        }
+        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
+        return view('eventos.perfil', compact('eventos'));
     }
 
     public function sair(Request $request)
