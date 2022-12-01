@@ -69,8 +69,8 @@
                                             Entrar</a>
                                     @endguest
                                     @auth
-                                        <a class="nav-link" id="profileDropdown" data-bs-auto-close="outside"
-                                            data-bs-display="static" data-bs-toggle="dropdown"
+                                        <a class="nav-link" href="{{ route('perfil') }}" id="profileDropdown"
+                                            data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                                             aria-expanded="false">{{ Auth::user()->name }}</a>
 
                                     </li>
@@ -220,7 +220,7 @@
                                             </div>
                                         </div>
                                         <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                            href="my-profile.html">Visualizar perfil</a>
+                                            href="{{ route('perfil') }}">Visualizar perfil</a>
                                     </li>
                                     <!-- Links -->
                                     <li><a class="dropdown-item" href="settings.html"><i
