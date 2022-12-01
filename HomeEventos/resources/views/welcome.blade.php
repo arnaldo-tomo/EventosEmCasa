@@ -770,7 +770,7 @@
                                     </h5>
                                     <!-- Data hora -->
                                     <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }} -
+                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }} -
                                         {{ $evento->hora }} Horas</p>
                                     <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }} </p>
                                     <!-- Avatar group START -->
