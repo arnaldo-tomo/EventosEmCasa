@@ -69,10 +69,7 @@
                                             Entrar</a>
                                     @endguest
                                     @auth
-                                        <a class="nav-link" href="{{ route('perfil') }}" id="profileDropdown"
-                                            data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-                                            aria-expanded="false">{{ Auth::user()->name }}</a>
-
+                                        <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
                                     </li>
 
                                 </ul>
