@@ -668,6 +668,16 @@ Header END -->
 
                             <!-- Events list START -->
                             <div class="row">
+                                @if (session('novo'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Otimo,</strong> Evento publicado com sucessos
+                                        <a href="{{ route('todos') }}" class="btn btn-xs btn-success ms-md-4">Ver
+                                            todos
+                                            eventos</a>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
                                 @if ($eventos->count() == 0)
                                     <!-- Upcoming event START -->
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
