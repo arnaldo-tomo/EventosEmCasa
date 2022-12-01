@@ -33,6 +33,65 @@
 
     <!-- =======================
 Header START -->
+    <!-- login"-->
+    <div class="modal fade" id="login_Modal" tabindex="-1" aria-labelledby="login_Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal feed header START -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="login_Modal">Enforme as suas credencias. </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal feed header END -->
+                <!-- Modal feed body START -->
+                <div class="modal-body">
+                    <!-- Form START -->
+                    <form id="login_Modal" method="POST" action="{{ route('login') }}" class="row g-4">
+                        {{ csrf_field() }}
+                        <!-- Title -->
+                        <div class="col-12">
+                            <label class="form-label">Seu Email</label>
+                            <input type="text" name="email" id="email"
+                                class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
+                                placeholder="exempla@gmail.com" required autofocus>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Sua senha </label>
+                            <input type="password" id="password" name="password"
+                                class="form-control  @error('password') is-invalid @enderror"
+                                value="{{ old('password') }}" placeholder="*****************" required autofocus>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <!-- Form END -->
+                        <a href="#login_recuperar" data-bs-toggle="modal" data-bs-target="#login_recuperar">Esqueceu a
+                            sua senha?</a>
+                </div>
+                <!-- Modal feed body END -->
+                <!-- Modal footer -->
+                <!-- Button -->
+                <div class="modal-footer">
+                    <p>Novo em nossa plataforma?</p>
+                    <a class="btn btn-info btn-sm " href="#login_registar" data-bs-toggle="modal"
+                        data-bs-target="#login_registar">
+                        Crie uma conta</a>
+
+                    <button type="submit" class="btn btn-success btn-sm">Entrar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login-->
     <header class="navbar-dark navbar-transparent header-static">
 
         <!-- Logo Nav START -->
@@ -44,7 +103,6 @@ Header START -->
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
-
                 <!-- Responsive navbar toggler -->
                 <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -56,87 +114,212 @@ Header START -->
                     </span>
                 </button>
 
-                <!-- Main navbar START -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                    <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <!-- Nav item 1 Demos -->
-
-                        <!-- Nav item 2 Pages -->
 
 
-                        <!-- Nav item 3 Post -->
-
-
-                        <!-- Nav item 4 Mega menu -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="my-profile-connections.html">Minha rede</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Main navbar END -->
-
-                <!-- Nav right START -->
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-                    <!-- Notification dropdown END -->
-                    <li class="nav-item ms-2 dropdown">
-                        <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
-                            data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img class="avatar-img rounded-2" src="assets/images/avatar/07.jpg" alt="">
-                        </a>
-                        <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
-                            aria-labelledby="profileDropdown">
-                            <!-- Profile info -->
-                            <li class="px-3">
-                                <div class="d-flex align-items-center position-relative">
-                                    <!-- Avatar -->
-                                    <div class="avatar me-3">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
-                                    </div>
-                                    <div>
-                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">Desenvolvedor Web</p>
-                                    </div>
-                                </div>
-                                <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="my-profile.html">Visualizar perfil</a>
-                            </li>
-                            <!-- Links -->
-                            <li><a class="dropdown-item" href="settings.html"><i
-                                        class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
-                            <li>
-                                <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                    <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+
+                    <!-- Nav right START -->
+                    <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
+
+                        {{-- messaging --}}
+                        <!-- Main navbar START -->
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+                                <li class="nav-item">
+                                    @guest
+                                        <a class="btn btn-primary btn-sm" href="#login_Modal" data-bs-toggle="modal"
+                                            data-bs-target="#login_Modal"> <i class="fa-solid fa-sign-in pe-1"></i>
+                                            Entrar</a>
+                                    @endguest
+                                    @auth
+                                        <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- Nav right START -->
+                            {{-- <li class="nav-item ms-2">
+                    <a class="nav-link icon-md btn btn-light p-0" href="messaging.html">
+                        <i class="bi bi-chat-left-text-fill fs-6"> </i>
+                    </a>
+                </li> --}}
+
+                            <li class="nav-item ms-2">
+                                <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
+                                    <i class="bi bi-gear-fill fs-6"> </i>
                                 </a>
                             </li>
-
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="sign-in-advance.html"><i
-                                        class="bi bi-power fa-fw me-2"></i>Sair</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <!-- Dark mode switch START -->
-                            <li>
-                                <div class="modeswitch-wrap" id="darkModeSwitch">
-                                    <div class="modeswitch-item">
-                                        <div class="modeswitch-icon"></div>
+                            <li class="nav-item dropdown ms-2">
+                                <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-auto-close="outside">
+                                    <span class="badge-notif animation-blink"></span>
+                                    <i class="bi bi-bell-fill fs-6"> </i>
+                                </a>
+                                <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0"
+                                    aria-labelledby="notifDropdown">
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h6 class="m-0">Notifications <span
+                                                    class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span>
+                                            </h6>
+                                            <a class="small" href="#">Clear all</a>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <ul class="list-group list-group-flush list-unstyled p-2">
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <div
+                                                        class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/avatar/01.jpg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3">
+                                                            <div class=" d-flex">
+                                                                <p class="small mb-2"><b>Judy Nguyen</b> sent you a friend
+                                                                    request.</p>
+                                                                <p class="small ms-3 text-nowrap">Just now</p>
+                                                            </div>
+                                                            <div class="d-flex">
+                                                                <button class="btn btn-sm py-1 btn-primary me-2">Accept
+                                                                </button>
+                                                                <button class="btn btn-sm py-1 btn-danger-soft">Delete
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <div
+                                                        class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/avatar/02.jpg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3 d-flex">
+                                                            <div>
+                                                                <p class="small mb-2">Wish <b>Amanda Reed</b> a happy
+                                                                    birthday
+                                                                    (Nov 12)
+                                                                </p>
+                                                                <button class="btn btn-sm btn-outline-light py-1 me-2">Say
+                                                                    happy birthday 🎂</button>
+                                                            </div>
+                                                            <p class="small ms-3">2min</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <a href="#"
+                                                        class="list-group-item list-group-item-action rounded d-flex border-0 mb-1 p-3">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <div class="avatar-img rounded-circle bg-success"><span
+                                                                    class="text-white position-absolute top-50 start-50 translate-middle fw-bold">WB</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ms-sm-3">
+                                                            <div class="d-flex">
+                                                                <p class="small mb-2">Webestica has 15 like and 1 new
+                                                                    activity
+                                                                </p>
+                                                                <p class="small ms-3">1hr</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <!-- Notif item -->
+                                                <li>
+                                                    <a href="#"
+                                                        class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
+                                                        <div class="avatar text-center d-none d-sm-inline-block">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/logo/12.svg" alt="">
+                                                        </div>
+                                                        <div class="ms-sm-3 d-flex">
+                                                            <p class="small mb-2"><b>Bootstrap in the news:</b> The search
+                                                                giant’s parent company, Alphabet, just joined an exclusive
+                                                                club
+                                                                of tech stocks.</p>
+                                                            <p class="small ms-3">4hr</p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="#" class="btn btn-sm btn-primary-soft">See all incoming
+                                                activity</a>
+                                        </div>
                                     </div>
-                                    <span>Modo escuro</span>
                                 </div>
                             </li>
-                            <!-- Dark mode switch END -->
-                        </ul>
-                    </li>
-                    <!-- Profile START -->
+                            <!-- Notification dropdown END -->
+                            <li class="nav-item ms-2 dropdown">
+                                @auth
+                                    <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
+                                        data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
+                                    </a>
+                                @endauth
+                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
+                                    aria-labelledby="profileDropdown">
+                                    <!-- Profile info -->
+                                    <li class="px-3">
+                                        <div class="d-flex align-items-center position-relative">
+                                            <!-- Avatar -->
+                                            <div class="avatar me-3">
+                                                <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                                    alt="avatar">
+                                            </div>
+                                            <div>
+                                                <a class="h6 stretch-link" href="#">Lori Ferguson</a>
+                                                <p class="small m-0">Desenvolvedor Web</p>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
+                                            href="{{ route('perfil') }}">Visualizar perfil</a>
+                                    </li>
+                                    <!-- Links -->
+                                    <li><a class="dropdown-item" href="settings.html"><i
+                                                class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
+                                            <i class="fa-fw bi bi-life-preserver me-2"></i>Suporte
+                                        </a>
+                                    </li>
 
-                </ul>
-                <!-- Nav right END -->
-            </div>
-        </nav>
-        <!-- Logo Nav END -->
+                                    <li class="dropdown-divider"></li>
+
+                                    <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
+                                                class="bi bi-power fa-fw me-2"></i>Sair</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <!-- Dark mode switch START -->
+                                    <li>
+                                        <div class="modeswitch-wrap" id="darkModeSwitch">
+                                            <div class="modeswitch-item">
+                                                <div class="modeswitch-icon"></div>
+                                            </div>
+                                            <span>Modo escuro</span>
+                                        </div>
+                                    </li>
+                                    <!-- Dark mode switch END -->
+                                </ul>
+                            </li>
+                            <!-- Profile START -->
+
+                        </ul>
+                        <!-- Nav right END -->
+                </div>
+            </nav>
+            <!-- Logo Nav END -->
+        @endauth
     </header>
     <!-- =======================
 Header END -->
@@ -153,10 +336,10 @@ Header END -->
                 <div class="col-lg-8 mx-auto">
                     <!-- SVG START -->
                     <figure class="m-0 pt-5 pt-md-0">
-                        <svg class="col-sm-7 col-lg-5" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 1285.3 712.4" style="enable-background:new 0 0 1285.3 712.4;"
-                            xml:space="preserve">
+                        <svg class="col-sm-7 col-lg-5" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" viewBox="0 0 1285.3 712.4"
+                            style="enable-background:new 0 0 1285.3 712.4;" xml:space="preserve">
                             <style type="text/css">
                                 .st0 {
                                     opacity: 0.2;
