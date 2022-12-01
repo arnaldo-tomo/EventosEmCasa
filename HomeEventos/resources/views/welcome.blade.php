@@ -260,7 +260,6 @@
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         {{-- Modal --}}
-
         <!-- login"-->
         <div class="modal fade" id="login_Modal" tabindex="-1" aria-labelledby="login_Modal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
