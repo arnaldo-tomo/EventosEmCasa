@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/event-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
 
 <head>
-    <title>HomeEventos - Detalhes dos Eventos</title>
+    <title>Eventos - Network, Community and Event Theme</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -39,7 +39,7 @@ Header START -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo START -->
-                <a class="navbar-brand" href="{{ route('home') }}">
+                <a class="navbar-brand" href="index-2.html">
                     <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                 </a>
