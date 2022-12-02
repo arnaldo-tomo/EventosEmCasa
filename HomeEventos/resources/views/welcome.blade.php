@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <title>HomeEvento</title>
@@ -276,7 +276,8 @@
                     <div class="modal-body">
                         <!-- Form START -->
                         <form id="login_Modal" method="POST" action="{{ route('login') }}" class="row g-4">
-                            {{ csrf_field() }}
+                            {{-- {{ csrf_field() }} --}}
+                            @csrf
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu Email</label>
@@ -341,9 +342,9 @@
                         <p>Se você esqueceu sua senha, bem, enviaremos um e-mail com instruções para redefinir sua
                             senha.</p>
                         <!-- Form START -->
-                        <form id="login_recuperar" method="POST" action="{{ route('password.email') }}"
+                        <form id="login_recuperar" method="POST" action="{{ route('password.email') }}" @csrf
                             class="row g-4">
-                            {{ csrf_field() }}
+                            {{-- {{ csrf_field() }} --}}
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu Email</label>
@@ -384,7 +385,8 @@
                         <p>Criar nova conta em HomeEvento</p>
                         <!-- Form START -->
                         <form id="login_registar" method="POST" action="{{ route('register') }}" class="row g-4">
-                            {{ csrf_field() }}
+                            @csrf
+                            {{-- {{ csrf_field() }} --}}
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Seu nome</label>
@@ -688,7 +690,7 @@
                                         class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Artes e entretenimento</h6>
+                                        <h6>Artes e entretenimento </h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="{{ route('categoria') }}"
