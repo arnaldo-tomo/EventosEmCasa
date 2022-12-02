@@ -767,7 +767,7 @@
                                     <a class="btn btn-xs btn-primary mt-n3"
                                         href="{{ route('evento', ['id' => $evento->id]) }}">{{ $evento->tipo_categoria }}
                                     </a>
-                                    <h5 class="mt-3"> <a href="{{ route('evento', ['id' => $evento->id]) }}">
+                                    <h5 class="mt-3"> <a href="{{ route('evento', $evento->id) }}">
                                             {{ $evento->titulo }}
                                         </a>
                                     </h5>
