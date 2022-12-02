@@ -767,7 +767,8 @@
                                     <a class="btn btn-xs btn-primary mt-n3"
                                         href="{{ route('detalhes') }}">{{ $evento->tipo_categoria }}
                                     </a>
-                                    <h5 class="mt-3"> <a href="{{ route('detalhes') }}"> {{ $evento->titulo }}
+                                    <h5 class="mt-3"> <a href="{{ route('detalhes', $evento->id) }}">
+                                            {{ $evento->titulo }}
                                         </a>
                                     </h5>
                                     <!-- Data hora -->
