@@ -1,16 +1,10 @@
 <?php
 
 use App\Http\Controllers\EventosController;
-use App\Models\Eventos;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     $eventos = Eventos::all();
-//     return view('evntos', compact('eventos'));
-// })->name('home');
-
-
 Route::get('/', [EventosController::class, 'home'])->name('home');
+Route::get('/dashboard', [EventosController::class, 'dashboard'])->name('dashboard');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
