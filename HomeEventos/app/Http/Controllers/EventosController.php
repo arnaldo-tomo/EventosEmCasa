@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class EventosController extends Controller
 {
+
+    public function home()
+    {
+        $eventos = Eventos::all();
+        return view('welcome', compact('eventos'));
+    }
     public function todos()
     {
         $eventos = Eventos::all();
