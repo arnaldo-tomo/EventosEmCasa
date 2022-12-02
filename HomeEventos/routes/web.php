@@ -14,7 +14,7 @@ Route::get('/', [EventosController::class, 'home'])->name('home');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
-Route::get('/Detalhes/{id}', [EventosController::class, 'detalhes'])->name('detalhes');
+Route::get('Evento/{id}', [EventosController::class, 'evento'])->name('evento');
 Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categoria');
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
 Route::post('/Salvar', [EventosController::class, 'salvar'])->name('salvar');
