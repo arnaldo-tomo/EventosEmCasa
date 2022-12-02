@@ -25,8 +25,7 @@ class EventosController extends Controller
     public function evento($id)
     {
         $eventos = Eventos::find($id);
-        // // return view('eventos.detalhes');
-        dd($eventos);
+        return view('eventos.detalhes', compact($eventos));
     }
     public function categoria()
     {
