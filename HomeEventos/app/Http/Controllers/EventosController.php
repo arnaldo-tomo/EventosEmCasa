@@ -22,11 +22,12 @@ class EventosController extends Controller
         return view('eventos.todos');
     }
 
-    public function detalhes()
+    public function detalhes($id)
     {
-        return view('eventos.detalhes');
+        $eventos = Eventos::find($id);
+        // return view('eventos.detalhes');
+        dd($id);
     }
-
     public function categoria()
     {
         return view('eventos.categoria');
