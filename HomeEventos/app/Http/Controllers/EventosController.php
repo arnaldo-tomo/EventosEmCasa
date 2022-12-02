@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class EventosController extends Controller
 {
 
+    public function dashboard()
+    {
+        $eventos = Eventos::all();
+        return view('eventos.eventos');
+    }
     public function home()
     {
         $eventos = Eventos::all();
@@ -25,7 +30,7 @@ class EventosController extends Controller
     public function evento($id)
     {
         $eventos = Eventos::find($id);
-        return view('eventos.detalhes', compact($eventos));
+        return view('eventos.eventos');
     }
     public function categoria()
     {
