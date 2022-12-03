@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('app')
+    {{--  --}}
+
+    {{--  --}}
     <!-- Hero event START -->
     <section class="pt-5 pb-0 position-relative"
         style="background-image: url(assets/images/bg/07.jpg); background-repeat: no-repeat; background-size: cover; background-position: top center;">
@@ -131,7 +134,8 @@
                                 <a class="btn btn-xs btn-primary mt-n3"
                                     href="{{ route('evento') }}">{{ $evento->tipo_categoria }}
                                 </a>
-                                <h5 class="mt-3"> <a href="{{ route('evento') }}">
+                                <h5 class="mt-3"> <a href="" data-bs-toggle="modal"
+                                        data-bs-target="#modalCreateEvents{{ $evento->id }}">
                                         {{ $evento->titulo }}
                                     </a>
                                 </h5>
@@ -208,6 +212,193 @@
                         </div>
                         <!-- Event item END -->
                     </div>
+
+
+                    {{-- ver events --}}
+                    <div class="modal fade col-12" id="modalCreateEvents{{ $evento->id }}" tabindex="-1"
+                        aria-labelledby="modalLabelCreateEvents" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <!-- Modal feed header START -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabelCreateEvents{{ $evento->id }}">
+                                        {{ $evento->titulo }}
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <!-- Modal feed header END -->
+
+
+
+                                <!-- Modal feed body START -->
+                                <div class="modal-body">
+                                    <div class="card card-body card-overlay-bottom border-0"
+                                        style="background-image:url(/{{ $evento->imagen }}); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                                        <!-- Card body START -->
+                                        <div class="row g-3 justify-content-between">
+                                            <!-- Date START -->
+                                            <div class="col-lg-2">
+                                                <div
+                                                    class="bg-mode text-center rounded overflow-hidden p-1 d-inline-block">
+                                                    <div class="bg-primary p-2 text-white rounded-top small lh-1">Wednesday
+                                                    </div>
+                                                    <h6 class="mb-0 py-2 lh-1">
+                                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Event name START -->
+                                        <div
+                                            class="row g-3 justify-content-between align-items-center mt-5 pt-5 position-relative z-index-9">
+                                            <div class="col-lg-9">
+                                                <h1 class="h3 mb-1 text-white"> {{ $evento->titulo }} </h1>
+                                                <a class="text-white" href="https://github.com/arnaldo-tomo"
+                                                    target="_blank">https://github.com/arnaldo-tomo</a>
+                                            </div>
+                                            <!-- Button -->
+                                            <div class="col-lg-3 text-lg-end">
+                                                <a class="btn btn-primary-soft" href="#!"> Comprar </a>
+                                            </div>
+                                        </div>
+                                        <!-- Event name END -->
+                                    </div>
+                                    <!-- Card END -->
+                                </div>
+
+                                <!-- Card About START -->
+                                <div class="card card-body">
+                                    <!-- Card body START -->
+                                    <div class="row g-4">
+                                        <!-- info -->
+                                        <div class="col-12">
+                                            <p class="mb-0">{{ $evento->descricao }}</p>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <!-- Timings -->
+                                            <h5>Timings</h5>
+                                            <p class="small mb-0">{{ $evento->dataInicio }}</p>
+                                            <p class="small mb-0"> {{ $evento->dataFim }}</p>
+                                        </div>
+                                        <!-- Entry Fees -->
+                                        <div class="col-sm-6 col-lg-4">
+                                            <h5>Entry fees</h5>
+                                            <p class="small mb-0"> <a href="#!"> Free Ticket </a>For photography
+                                                professionals check official website</p>
+                                        </div>
+                                        <!-- Category & Type -->
+                                        <div class="col-sm-6 col-lg-4">
+                                            <h5>Category & type</h5>
+                                            <p class="small mb-0">Trade Show</p>
+                                            <p class="small mb-0"> Photography & Prewedding</p>
+                                        </div>
+                                        <!-- Estimated Turnout -->
+                                        <div class="col-sm-6 col-lg-4">
+                                            <h5>Estimated turnout</h5>
+                                            <p class="small mb-0">140000 Visitors</p>
+                                            <p class="small mb-0"> 1800 Exhibitors</p>
+                                            <span class="badge bg-danger text-danger bg-opacity-10 small">Estimated
+                                                Count</span>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <!-- Rating -->
+                                            <ul class="d-flex list-unstyled mb-1">
+                                                <li class="me-2">4.5</li>
+                                                <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                <li><i class="fa-solid fa-star-half-stroke text-warning"></i></li>
+                                                <li class="ms-1 small">132 Ratings</li>
+                                            </ul>
+                                            <p class="mb-0 small"> <strong> #2 of 3506</strong> Events in Photography &
+                                                Prewedding</p>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <!-- Interested -->
+                                            <div class="d-flex">
+                                                <h6> <i class="bi bi-hand-thumbs-up-fill text-success"></i> 50</h6>
+                                                <p class="small">People have shown interest recently</p>
+                                            </div>
+                                            <button class="btn btn-success-soft btn-sm">Interested?</button>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <h5>Attendees</h5>
+                                            <!-- Avatar group START -->
+                                            <ul class="avatar-group list-unstyled align-items-center">
+                                                <li class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/01.jpg" alt="avatar">
+                                                </li>
+                                                <li class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/03.jpg" alt="avatar">
+                                                </li>
+                                                <li class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/04.jpg" alt="avatar">
+                                                </li>
+                                                <li class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/05.jpg" alt="avatar">
+                                                </li>
+                                                <li class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/06.jpg" alt="avatar">
+                                                </li>
+                                                <li class="ms-4">
+                                                    <small> 148.9K people responded</small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <!-- Avatar group END -->
+                                            <div class="row g-2">
+                                                <div class="col-sm-4">
+                                                    <!-- Visitors -->
+                                                    <div class="d-flex">
+                                                        <i class="bi bi-globe fs-4"></i>
+                                                        <div class="ms-3">
+                                                            <h5 class="mb-0">125</h5>
+                                                            <p class="mb-0">Visitors</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <!-- Registred -->
+                                                    <div class="d-flex">
+                                                        <i class="bi bi-person-plus fs-4"></i>
+                                                        <div class="ms-3">
+                                                            <h5 class="mb-0">356</h5>
+                                                            <p class="mb-0">Registred</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <!-- Attendance -->
+                                                    <div class="d-flex">
+                                                        <i class="bi bi-people fs-4"></i>
+                                                        <div class="ms-3">
+                                                            <h5 class="mb-0">350</h5>
+                                                            <p class="mb-0">Attendance</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card About END -->
+
+                            </div>
+                        </div>
+                    </div>
+                    {{-- ver events --}}
                 @endforeach
 
                 <a href="/Todos" role="button" class="btn btn-loader btn-primary-soft">
