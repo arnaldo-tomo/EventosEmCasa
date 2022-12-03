@@ -18,12 +18,6 @@ class EventosController extends Controller
         return view('welcome', ['eventos' => $eventos]);
     }
 
-    public function evento()
-    {
-        // $eventos = Eventos::find($id);
-        return view('eventos/eventos');
-    }
-
     public function todos()
     {
         $eventos = Eventos::all();
