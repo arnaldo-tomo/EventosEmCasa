@@ -478,11 +478,9 @@ Header END -->
                                                 <!-- Card body START -->
                                                 <div class="card-body position-relative pt-0">
                                                     <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="{{ route('evento') }}">{{ $evento->tipo_categoria }}
+                                                    <a class="btn btn-xs btn-primary mt-n3">{{ $evento->tipo_categoria }}
                                                     </a>
-                                                    <h6 class="mt-3"> <a
-                                                            href="{{ url('/Eventos', [$evento->id]) }}">
+                                                    <h6 class="mt-3"> <a>
                                                             {{ $evento->titulo }}
                                                         </a>
                                                     </h6>
