@@ -123,7 +123,9 @@
                         <!-- Event item START -->
                         <div class="card h-100">
                             <div class="position-relative">
-                                <img class="img-fluid rounded-top" src="/{{ $evento->imagen }}" alt="">
+                                <img class="img-fluid rounded-top" href="" data-bs-toggle="modal"
+                                    data-bs-target="#modalCreateEvents{{ $evento->id }}" src="/{{ $evento->imagen }}"
+                                    alt="">
                                 <div class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
                                     {{ $evento->localizacao }}
                                 </div>
@@ -131,8 +133,7 @@
                             <!-- Card body START -->
                             <div class="card-body position-relative pt-0">
                                 <!-- Tag -->
-                                <a class="btn btn-xs btn-primary mt-n3"
-                                    href="{{ route('evento') }}">{{ $evento->tipo_categoria }}
+                                <a class="btn btn-xs btn-primary mt-n3">{{ $evento->tipo_categoria }}
                                 </a>
                                 <h5 class="mt-3"> <a href="" data-bs-toggle="modal"
                                         data-bs-target="#modalCreateEvents{{ $evento->id }}">
