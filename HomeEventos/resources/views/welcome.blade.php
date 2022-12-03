@@ -242,7 +242,8 @@
                                             <div class="col-lg-2">
                                                 <div
                                                     class="bg-mode text-center rounded overflow-hidden p-1 d-inline-block">
-                                                    <div class="bg-primary p-2 text-white rounded-top small lh-1">Wednesday
+                                                    <div class="bg-primary p-2 text-white rounded-top small lh-1">
+                                                        {{ $evento->hora }}Hora
                                                     </div>
                                                     <h6 class="mb-0 py-2 lh-1">
                                                         {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
@@ -278,57 +279,45 @@
                                         </div>
                                         <div class="col-sm-6 col-lg-4">
                                             <!-- Timings -->
-                                            <h5>Timings</h5>
-                                            <p class="small mb-0">{{ $evento->dataInicio }}</p>
-                                            <p class="small mb-0"> {{ $evento->dataFim }}</p>
+                                            <h5>Horários</h5>
+                                            <p class="small mb-0">Inicio :: {{ $evento->dataInicio }}</p>
+                                            <p class="small mb-0">Fim :: {{ $evento->dataFim }}</p>
                                         </div>
                                         <!-- Entry Fees -->
                                         <div class="col-sm-6 col-lg-4">
-                                            <h5>Entry fees</h5>
+                                            <h5>Taxas de entrada</h5>
                                             <p class="small mb-0"> <a href="#!"> Free Ticket </a>For photography
                                                 professionals check official website</p>
                                         </div>
                                         <!-- Category & Type -->
                                         <div class="col-sm-6 col-lg-4">
-                                            <h5>Category & type</h5>
+                                            <h5>Categoria e tipo</h5>
                                             <p class="small mb-0">Trade Show</p>
                                             <p class="small mb-0"> Photography & Prewedding</p>
                                         </div>
                                         <!-- Estimated Turnout -->
-                                        <div class="col-sm-6 col-lg-4">
-                                            <h5>Estimated turnout</h5>
+                                        {{-- <div class="col-sm-6 col-lg-4">
+                                            <h5>Afluência estimada</h5>
                                             <p class="small mb-0">140000 Visitors</p>
                                             <p class="small mb-0"> 1800 Exhibitors</p>
                                             <span class="badge bg-danger text-danger bg-opacity-10 small">Estimated
                                                 Count</span>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-4">
-                                            <!-- Rating -->
-                                            <ul class="d-flex list-unstyled mb-1">
-                                                <li class="me-2">4.5</li>
-                                                <li><i class="fa-solid fa-star text-warning"></i></li>
-                                                <li><i class="fa-solid fa-star text-warning"></i></li>
-                                                <li><i class="fa-solid fa-star text-warning"></i></li>
-                                                <li><i class="fa-solid fa-star text-warning"></i></li>
-                                                <li><i class="fa-solid fa-star-half-stroke text-warning"></i></li>
-                                                <li class="ms-1 small">132 Ratings</li>
-                                            </ul>
-                                            <p class="mb-0 small"> <strong> #2 of 3506</strong> Events in Photography &
-                                                Prewedding</p>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-4">
+                                        </div> --}}
+                                        <button class="btn btn-danger-soft btn-sm"> <i class="fa fa-file-pdf"></i>
+                                            Download enexo</button>
+                                        <div class="col-sm-12 col-lg-12">
                                             <!-- Interested -->
                                             <div class="d-flex">
-                                                <h6> <i class="bi bi-hand-thumbs-up-fill text-success"></i> 50</h6>
-                                                <p class="small">People have shown interest recently</p>
+                                                <button class="btn btn-success-soft btn-sm">Interessado?</button>
+                                                <h6> <i class="bi bi-hand-thumbs-up-fill text-success"></i> 50 </h6>
+                                                <p class="small"> pessoas demonstraram interesse recentemente</p>
                                             </div>
-                                            <button class="btn btn-success-soft btn-sm">Interested?</button>
                                         </div>
                                     </div>
                                     <hr class="mt-4">
                                     <div class="row align-items-center">
-                                        <div class="col-lg-6">
-                                            <h5>Attendees</h5>
+                                        <div class="col-lg-4">
+                                            <h5>Participantes</h5>
                                             <!-- Avatar group START -->
                                             <ul class="avatar-group list-unstyled align-items-center">
                                                 <li class="avatar avatar-xs">
@@ -352,11 +341,11 @@
                                                         src="assets/images/avatar/06.jpg" alt="avatar">
                                                 </li>
                                                 <li class="ms-4">
-                                                    <small> 148.9K people responded</small>
+                                                    <small> 148.9K</small>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-7">
                                             <!-- Avatar group END -->
                                             <div class="row g-2">
                                                 <div class="col-sm-4">
@@ -365,7 +354,7 @@
                                                         <i class="bi bi-globe fs-4"></i>
                                                         <div class="ms-3">
                                                             <h5 class="mb-0">125</h5>
-                                                            <p class="mb-0">Visitors</p>
+                                                            <p class="mb-0">Visitantes</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -375,7 +364,7 @@
                                                         <i class="bi bi-person-plus fs-4"></i>
                                                         <div class="ms-3">
                                                             <h5 class="mb-0">356</h5>
-                                                            <p class="mb-0">Registred</p>
+                                                            <p class="mb-0">registrado</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -385,7 +374,7 @@
                                                         <i class="bi bi-people fs-4"></i>
                                                         <div class="ms-3">
                                                             <h5 class="mb-0">350</h5>
-                                                            <p class="mb-0">Attendance</p>
+                                                            <p class="mb-0"> Confirmado</p>
                                                         </div>
                                                     </div>
                                                 </div>
