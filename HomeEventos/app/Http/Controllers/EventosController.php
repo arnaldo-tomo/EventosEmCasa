@@ -27,10 +27,10 @@ class EventosController extends Controller
         return view('eventos.todos');
     }
 
-    public function evento($id)
+    public function evento()
     {
-        $eventos = Eventos::find($id);
-        return view('eventos.eventos');
+        // $eventos = Eventos::find($id);
+        return view('eventos/eventos');
     }
     public function categoria()
     {
