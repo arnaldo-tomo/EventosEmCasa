@@ -130,7 +130,8 @@
                                 @endauth
 
                                 @guest
-                                    <img class="img-fluid rounded-top" src="/{{ $evento->imagen }}" alt="">
+                                    <img class="img-fluid rounded-top" href="#login_Modal" data-bs-toggle="modal"
+                                        data-bs-target="#login_Modal" src="/{{ $evento->imagen }}" alt="">
                                 @endguest
                                 <div class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
                                     {{ $evento->localizacao }}
@@ -150,7 +151,8 @@
                                 @endauth
 
                                 @guest
-                                    <h5 class="mt-3"> <a href="">
+                                    <h5 class="mt-3"> <a href="#login_Modal" data-bs-toggle="modal"
+                                            data-bs-target="#login_Modal">
                                             {{ $evento->titulo }}
                                         </a>
                                     </h5>
