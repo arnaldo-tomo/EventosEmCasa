@@ -8,7 +8,7 @@ Route::get('/dashboard', [EventosController::class, 'dashboard'])->name('dashboa
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
-Route::get('Evento/{id}', [EventosController::class, 'evento'])->name('evento');
+Route::get('evento', [EventosController::class, 'evento'])->name('evento');
 Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categoria');
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
 Route::post('/Salvar', [EventosController::class, 'salvar'])->name('salvar');
