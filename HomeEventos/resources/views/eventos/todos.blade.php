@@ -270,7 +270,7 @@ Header END -->
                             <div class="text-center">
                                 <!-- Title -->
                                 <h1 class="text-white">Encontre eventos perto de você</h1>
-                                <p class="text-white">Vamos descobrir os melhores lugares para comer, beber e fazer
+                                <p class="text-white">Vamos descobrir os melhores lugares para comer, relaxar e fazer
                                     compras mais perto de
                                     você.</p>
                             </div>
