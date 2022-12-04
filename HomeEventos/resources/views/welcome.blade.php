@@ -576,8 +576,8 @@
                         <div class="card-img-overlay d-flex flex-column p-3 p-sm-4">
                             <div class="w-100 mt-auto">
                                 <!-- Card title -->
-                                <h5 class="text-white"><a href="#" class="btn-link text-reset stretch-link">Los
-                                        Angeles</a></h5>
+                                <h5 class="text-white"><a href="#"
+                                        class="btn-link text-reset stretch-link">Nampula</a></h5>
                                 <!-- Informações do cartão -->
                                 <span class="text-white small">Eventos e festas</span>
                             </div>
@@ -595,7 +595,7 @@
                             <div class="w-100 mt-auto">
                                 <!-- Card title -->
                                 <h5 class="text-white"><a href="#"
-                                        class="btn-link text-reset stretch-link">Nampula</a></h5>
+                                        class="btn-link text-reset stretch-link">Tete</a></h5>
                                 <!-- Informações do cartão -->
                                 <span class="text-white small">Artes e entretenimento</span>
                             </div>
