@@ -279,33 +279,34 @@ Header END -->
                                 <form class="row align-items-end g-4">
                                     <!-- Duration -->
                                     <div class="col-sm-6 col-lg-3">
-                                        <label class="form-label">Select genre</label>
+                                        <label class="form-label">Selecione o gênero</label>
                                         <select class="form-select js-choice choice-select-text-none"
                                             data-position="bottom" data-search-enabled="false">
-                                            <option value="category">Category</option>
-                                            <option value="comedy">Comedy</option>
-                                            <option value="dance">Dance</option>
-                                            <option value="family">Family</option>
-                                            <option value="music">Music</option>
-                                            <option value="workshop">Workshop</option>
+                                            <option value="culto">culto</option>
+                                            <option value="category">Categoria</option>
+                                            <option value="comedy">Comédia</option>
+                                            <option value="dance">Dança</option>
+                                            <option value="family">Família</option>
+                                            <option value="music">Música</option>
+                                            <option value="workshop">Oficina</option>
                                         </select>
                                     </div>
                                     <!-- Date -->
                                     <div class="col-sm-6 col-lg-3">
-                                        <label class="form-label">Date form</label>
+                                        <label class="form-label">Formulário de data</label>
                                         <input type="text" class="form-control flatpickr" value="12/10/2022">
                                     </div>
-                                    <!-- Time -->
+                                    <!-- Tempo -->
                                     <div class="col-sm-6 col-lg-3">
-                                        <label class="form-label">Date to</label>
+                                        <label class="form-label">Data até</label>
                                         <input type="text" class="form-control flatpickr" value="14/10/2022">
                                     </div>
-                                    <!-- Time -->
+                                    <!-- Tempo -->
                                     <div class="col-sm-6 col-lg-3">
-                                        <a class="btn btn-primary w-100" href="#">Filters Dates</a>
+                                        <a class="btn btn-primary w-100" href="#">Filtra datas</a>
                                     </div>
                                 </form>
-                                <!-- Form END -->
+                                <!-- Formulário END -->
                             </div>
                         </div>
                     </div>
