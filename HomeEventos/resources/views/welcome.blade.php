@@ -308,16 +308,22 @@
                                                 <p class="small mb-0"><i class=" fa fa-clock"></i>
                                                     Hora :
                                                     {{ $evento->hora }}</p>
+                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                    Duração :
+                                                    {{ $evento->duracao }}</p>
                                             @else
                                                 <p class="small mb-0"><i class=" fa fa-calendar"></i>
                                                     Inicio :
                                                     {{ $evento->dataInicio }}</p>
-                                                <p class="small mb-0"> <i class=" fa fa-calendar"></i>
+                                                <p class="small mb-0"> <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     Terminio : {{ $evento->dataFim }}
                                                 </p>
                                                 <p class="small mb-0"><i class=" fa fa-clock"></i>
                                                     Hora :
                                                     {{ $evento->hora }}</p>
+                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                    Duração :
+                                                    {{ $evento->duracao }}</p>
                                             @endif
                                         </div>
                                         <!-- Entry Fees -->
@@ -329,6 +335,16 @@
                                         <!-- Category & Type -->
                                         <div class="col-sm-6 col-lg-4">
                                             <h5>Categoria e tipo</h5>
+                                            <p class="small mb-0">Trade Show</p>
+                                            <p class="small mb-0"> Photography & Prewedding</p>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <h5>cidade</h5>
+                                            <p class="small mb-0">Trade Show</p>
+                                            <p class="small mb-0"> Photography & Prewedding</p>
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <h5>localização</h5>
                                             <p class="small mb-0">Trade Show</p>
                                             <p class="small mb-0"> Photography & Prewedding</p>
                                         </div>
