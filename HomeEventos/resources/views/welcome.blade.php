@@ -559,7 +559,7 @@
                             <div class="w-100 mt-auto">
                                 <!-- Card title -->
                                 <h5 class="text-white"><a href="#"
-                                        class="btn-link text-reset stretch-link">Califórnia</a></h5>
+                                        class="btn-link text-reset stretch-link">Beira</a></h5>
                                 <!-- Informações do cartão -->
                                 <span class="text-white small">Negócios e conferências</span>
                             </div>
