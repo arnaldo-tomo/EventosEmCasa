@@ -520,12 +520,23 @@ Header END -->
                                                             <div class="col-sm-6 col-lg-5">
                                                                 <!-- Timings -->
                                                                 <h5>Horários</h5>
-                                                                <p class="small mb-0"><i class=" fa fa-calendar"></i>
-                                                                    Inicio :
-                                                                    {{ $evento->dataInicio }}</p>
-                                                                <p class="small mb-0"> <i class=" fa fa-calendar"></i>
-                                                                    Terminio : {{ $evento->dataFim }}
-                                                                </p>
+                                                                @if ($evento->dataInicio == $evento->dataFim)
+                                                                    <p class="small mb-0"><i
+                                                                            class=" fa fa-calendar"></i>
+                                                                        Inicio :
+                                                                        {{ $evento->dataInicio }}</p>
+                                                                @else
+                                                                    <p class="small mb-0"><i
+                                                                            class=" fa fa-calendar"></i>
+                                                                        Inicio :
+                                                                        {{ $evento->dataInicio }}</p>
+                                                                    <p class="small mb-0"> <i
+                                                                            class=" fa fa-calendar"></i>
+                                                                        Terminio : {{ $evento->dataFim }}
+                                                                    </p>
+                                                                @endif
+
+
                                                             </div>
                                                             <!-- Entry Fees -->
                                                             <div class="col-sm-6 col-lg-4">
