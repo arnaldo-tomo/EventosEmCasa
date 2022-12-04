@@ -195,9 +195,12 @@
                                 <div class="d-flex mt-3 justify-content-between">
                                     <!-- Interested button -->
                                     <div class="w-100">
-                                        <input type="checkbox" class="btn-check d-block" id="Interested1">
-                                        <label class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
-                                                class="fa-solid fa-thumbs-up me-1"></i> Interessante</label>
+                                        <form method="POST" action="Participar/{{ $evento->id }}">
+                                            @csrf
+                                            <button class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
+                                                    class="fa-solid fa-thumbs-up me-1"></i> Interessante</button>
+
+                                        </form>
                                     </div>
                                     <div class="dropdown ms-3">
                                         <a href="#" class="btn btn-sm btn-primary-soft" id="eventActionShare"
