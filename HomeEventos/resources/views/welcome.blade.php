@@ -467,12 +467,11 @@
                 <div class="col-lg-5">
                     <!-- Global conference START -->
                     <!-- Image -->
-                    <a><img class="rounded" src="assets/images/events/06.jpg" alt=""></a>
+                    <a><img class="rounded" src="assets/images/events/maputo.jpg" alt=""></a>
                     <!-- Info -->
-                    <h5 class="mt-4"> <a> Conferência global </a></h5>
-                    <p>Ele luar difícil absorvê-lo, desportistas. Interessado tem todas as dificuldades de
-                        Devonshire gay
-                        alegria de assistência.</p>
+                    <h5 class="mt-4"> <a> Kotlin Night Maputo </a></h5>
+                    <p>um evento onde desenvolvedores com experiência em Kotlin irão mostrar-nos algumas das funcionalidades
+                        principais da linguagem.</p>
                     <!-- Avatar group -->
                     <ul class="avatar-group list-unstyled align-items-center mb-0">
                         <li class="avatar avatar-xs">
@@ -502,7 +501,7 @@
                                     <!-- Date -->
                                     <div class="col-6">
                                         <small>Data</small>
-                                        <h6>12 de junho de 2022</h6>
+                                        <h6>Quarta-feira, dia 24 de Abril,2023 </h6>
                                     </div>
                                     <!-- Tempo -->
                                     <div class="col-6">
@@ -512,7 +511,7 @@
                                     <!-- Endereço -->
                                     <div class="col-12">
                                         <small>Endereço</small>
-                                        <h6>2492 Centennial NW, Acworth, GA, 30102</h6>
+                                        <h6>Incubadora do Standard Bank.</h6>
                                     </div>
                                     <div class="col-12">
                                         <a class="btn btn-white" href="#"><i class="bi bi-share-fill pe-2"></i>
