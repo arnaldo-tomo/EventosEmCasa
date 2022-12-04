@@ -305,6 +305,9 @@
                                                 <p class="small mb-0"><i class=" fa fa-calendar"></i>
                                                     Inicio :
                                                     {{ $evento->dataInicio }}</p>
+                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                    Hora :
+                                                    {{ $evento->hora }}</p>
                                             @else
                                                 <p class="small mb-0"><i class=" fa fa-calendar"></i>
                                                     Inicio :
@@ -312,6 +315,9 @@
                                                 <p class="small mb-0"> <i class=" fa fa-calendar"></i>
                                                     Terminio : {{ $evento->dataFim }}
                                                 </p>
+                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                    Hora :
+                                                    {{ $evento->hora }}</p>
                                             @endif
                                         </div>
                                         <!-- Entry Fees -->
