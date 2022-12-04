@@ -517,12 +517,14 @@ Header END -->
                                                             <div class="col-12">
                                                                 <p class="mb-0">{{ $evento->descricao }}</p>
                                                             </div>
-                                                            <div class="col-sm-6 col-lg-4">
+                                                            <div class="col-sm-6 col-lg-5">
                                                                 <!-- Timings -->
                                                                 <h5>Horários</h5>
-                                                                <p class="small mb-0">Inicio ::
+                                                                <p class="small mb-0"><i class=" fa fa-calendar"></i>
+                                                                    Inicio :
                                                                     {{ $evento->dataInicio }}</p>
-                                                                <p class="small mb-0">Fim :: {{ $evento->dataFim }}
+                                                                <p class="small mb-0"> <i class=" fa fa-calendar"></i>
+                                                                    Terminio : {{ $evento->dataFim }}
                                                                 </p>
                                                             </div>
                                                             <!-- Entry Fees -->
@@ -533,7 +535,7 @@ Header END -->
                                                                     professionals check official website</p>
                                                             </div>
                                                             <!-- Category & Type -->
-                                                            <div class="col-sm-6 col-lg-4">
+                                                            <div class="col-sm-6 col-lg-3">
                                                                 <h5>Categoria e tipo</h5>
                                                                 <p class="small mb-0">Trade Show</p>
                                                                 <p class="small mb-0"> Photography & Prewedding</p>
