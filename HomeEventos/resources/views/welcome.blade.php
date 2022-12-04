@@ -595,7 +595,7 @@
                             <div class="w-100 mt-auto">
                                 <!-- Card title -->
                                 <h5 class="text-white"><a href="#"
-                                        class="btn-link text-reset stretch-link">Londres</a></h5>
+                                        class="btn-link text-reset stretch-link">Nampula</a></h5>
                                 <!-- Informações do cartão -->
                                 <span class="text-white small">Artes e entretenimento</span>
                             </div>
@@ -613,7 +613,7 @@
                             <div class="w-100 mt-auto">
                                 <!-- Card title -->
                                 <h5 class="text-white"><a href="#"
-                                        class="btn-link text-reset stretched-link">London</a></h5>
+                                        class="btn-link text-reset stretched-link">Tete</a></h5>
                                 <!-- Card info -->
                                 <span class="text-white small">Arts & Entertainment</span>
                             </div>
