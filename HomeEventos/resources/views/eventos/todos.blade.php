@@ -535,8 +535,6 @@ Header END -->
                                                                         Terminio : {{ $evento->dataFim }}
                                                                     </p>
                                                                 @endif
-
-
                                                             </div>
                                                             <!-- Entry Fees -->
                                                             <div class="col-sm-6 col-lg-4">
