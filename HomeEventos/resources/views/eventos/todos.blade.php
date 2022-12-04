@@ -282,8 +282,8 @@ Header END -->
                                         <label class="form-label">Selecione o gênero</label>
                                         <select class="form-select js-choice choice-select-text-none"
                                             data-position="bottom" data-search-enabled="false">
+                                            <option selected disabled value="category">Categoria</option>
                                             <option value="culto">culto</option>
-                                            <option value="category">Categoria</option>
                                             <option value="comedy">Comédia</option>
                                             <option value="dance">Dança</option>
                                             <option value="family">Família</option>
@@ -330,11 +330,11 @@ Header END -->
                             <!-- Card header START -->
                             <div
                                 class="card-header d-sm-flex align-items-center text-center justify-content-sm-between border-0 pb-0">
-                                <h2 class="h4 card-title">Discover Events</h2>
-                                <!-- Button modal -->
+                                <h2 class="h4 card-title">Descubra eventos</h2>
+                                <!-- Botão modal -->
                                 <a class="btn btn-primary-soft" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#modalCreateEvents"> <i class="fa-solid fa-plus pe-1"></i> Create
-                                    event</a>
+                                    data-bs-target="#modalCreateEvents"> <i class="fa-solid fa-plus pe-1"></i> Criar
+                                    evento</a>
                             </div>
                             <!-- Card header START -->
                             <!-- Card body START -->
@@ -458,56 +458,111 @@ Header END -->
     </main>
     <!-- **************** MAIN CONTENT END **************** -->
 
-    <!-- Modal create events START -->
+    <!-- Modal criar events  -->
     <div class="modal fade" id="modalCreateEvents" tabindex="-1" aria-labelledby="modalLabelCreateEvents"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal feed header START -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabelCreateEvents">Create event</h5>
+                    <h5 class="modal-title" id="modalLabelCreateEvents">Criar evento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal feed header END -->
                 <!-- Modal feed body START -->
                 <div class="modal-body">
                     <!-- Form START -->
-                    <form class="row g-4">
+                    <form method="POST" action="{{ route('salvar') }}" enctype="multipart/form-data"
+                        class="row g-4">
+                        @csrf
                         <!-- Title -->
                         <div class="col-12">
-                            <label class="form-label">Title</label>
-                            <input type="text" class="form-control" placeholder="Event name here">
+                            <label class="form-label">Titulo</label>
+                            <input type="text" class="form-control" name="nome" placeholder="Nome do evento">
                         </div>
                         <!-- Description -->
                         <div class="col-12">
-                            <label class="form-label">Description</label>
-                            <textarea class="form-control" rows="2" placeholder="Ex: topics, schedule, etc."></textarea>
+                            <label class="form-label">Descrição</label>
+                            <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                         </div>
+                        <!-- Duração -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Data Inicial</label>
+                            <input type="date" class="form-control flatpickr" name="dataInicio"
+                                placeholder="Select date">
+                        </div>
+                        <!-- Duração -->
+                        <!-- Duração -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Data do final </label>
+                            <input type="date" class="form-control flatpickr" name="dataFim"
+                                placeholder="Select date">
+                        </div>
+
+                        <!-- Duração -->
                         <!-- Date -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Date</label>
-                            <input type="text" class="form-control flatpickr" placeholder="Select date">
+                        <div class="col-sm-3">
+                            <label class="form-label">Duração</label>
+                            <input type="duracao" class="form-control" name="duracao" placeholder="1hr 23m">
+                        </div>
+                        <!-- Date final -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Publico Ou Privado</label>
+                            <select class="form-select form-select" name="privado"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>-------------Escolha------------</option>
+                                <option value="0">publico</option>
+                                <option value="1">privado</option>
+
+                            </select>
                         </div>
                         <!-- Time -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Time</label>
-                            <input type="text" class="form-control flatpickr" data-enableTime="true"
-                                data-noCalendar="true" placeholder="Select time">
+                        <div class="col-sm-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" class="form-control flatpickr" name="hora"
+                                data-enableTime="true" data-noCalendar="true" placeholder="Select time">
                         </div>
-                        <!-- Duration -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Duration</label>
-                            <input type="text" class="form-control" placeholder="1hr 23m">
+
+                        <div class="col-12">
+                            <label class="form-label">Localização</label>
+                            <input type="text" class="form-control" id="pac-inpute" name="localizacao"
+                                placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
                         </div>
                         <!-- Location -->
                         <div class="col-12">
-                            <label class="form-label">Location</label>
-                            <input type="text" class="form-control" placeholder="Logansport, IN 46947">
+                            <label class="form-label">Cidade</label>
+                            <select class="form-select form-select" name="cidade"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>Escolha a cidade</option>
+                                <option value="Beira">Beira</option>
+                                <option value="Maputo">Maputo</option>
+                                <option value="#">Nampula</option>
+                                <option value="#">CaboDelegado</option>
+                                <option value="#">Chimoio</option>
+                                <option value="#">Chimoio</option>
+                            </select>
                         </div>
+                        <!-- Location -->
+                        <!-- Tipo de evento -->
+                        <div class="col-12">
+                            <label class="form-label">Tipo & categoria de evento</label>
+                            <select class="form-select form-select" name="categoria"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>Escolha o tipo de evento</option>
+                                <option value="Festa">Festa</option>
+                                <option value="Culto">Culto</option>
+                                <option value="#">Nampula</option>
+                                <option value="#">CaboDelegado</option>
+                                <option value="#">Chimoio</option>
+                                <option value="#">Chimoio</option>
+                            </select>
+                        </div>
+                        <!-- Tipo de evento -->
                         <!-- Add guests -->
                         <div class="col-12">
-                            <label class="form-label">Add guests</label>
-                            <input type="email" class="form-control" placeholder="Guest email">
+                            <label class="form-label">Addicionar Participantes</label>
+                            <input type="email" class="form-control" name="participante"
+                                placeholder="Exemplo:joaocarlos@gmail.com">
                         </div>
                         <!-- Avatar group START -->
                         <div class="col-12 mt-3">
@@ -545,31 +600,40 @@ Header END -->
                                 </li>
                             </ul>
                         </div>
+                        {{-- FIle manger --}}
+                        <div class="col-12">
+                            <label class="form-label">Carregar Fotografia</label>
+                            <input type="file" class="form-control" name="imagen">
+                        </div>
+                        {{-- FIle manger --}}
                         <!-- Dropzone photo START -->
                         <div class="mb-3">
-                            <label class="form-label">Upload attachment</label>
-                            <div class="dropzone dropzone-default card shadow-none" data-dropzone='{"maxFiles":2}'>
+                            <label class="form-label">Carregar Anexo</label>
+                            <div name="anexo" class="dropzone  dropzone-default card shadow-none"
+                                data-dropzone='{"maxFiles":2}'>
                                 <div class="dz-message">
                                     <i class="bi bi-file-earmark-text display-3"></i>
-                                    <p>Drop presentation and document here or click to upload.</p>
+                                    <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Dropzone photo END -->
-                    </form>
-                    <!-- Form END -->
+                        <!-- Form END -->
                 </div>
                 <!-- Modal feed body END -->
                 <!-- Modal footer -->
                 <!-- Button -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal"> Cancel</button>
-                    <button type="button" class="btn btn-success-soft">Create now</button>
+                    <button type="cancel" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
+                        Cancelar</button>
+                    <button type="submit" class="btn btn-success-soft">Criar Agora</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal create events END -->
+    <!-- Modal criar events -->
+    {{-- Modal --}}
 
     <!-- =======================
 JS libraries, plugins and custom scripts -->
