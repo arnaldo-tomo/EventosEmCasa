@@ -484,7 +484,7 @@
                             <!-- Description -->
                             <div class="col-12">
                                 <label class="form-label">Descrição</label>
-                                <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
+                                <textarea class="form-control" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                             </div>
                             <!-- Duração -->
                             <div class="col-sm-6">
