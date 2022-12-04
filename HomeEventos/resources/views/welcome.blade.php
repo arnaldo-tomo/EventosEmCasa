@@ -162,8 +162,10 @@
 
                                 <!-- Data hora -->
                                 <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                    {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }} -
-                                    {{ $evento->hora }} Horas</p>
+                                    {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
+                                    <i class=" fa fa-clock"></i>
+                                    {{ $evento->hora }} Horas
+                                </p>
                                 <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }} </p>
                                 <!-- Avatar group START -->
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
@@ -335,7 +337,9 @@
                                         <!-- Category & Type -->
                                         <div class="col-sm-6 col-lg-4">
                                             <h5>Categoria e tipo</h5>
-                                            <p class="small mb-0">Trade Show</p>
+                                            <p class="small mb-0"><i class="fa fa-bullseye"> </i>
+                                                {{ $evento->tipo_categoria }}
+                                            </p>
                                         </div>
                                         <div class="col-sm-6 col-lg-4">
                                             <h5>Cidade</h5>
