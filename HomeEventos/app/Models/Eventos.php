@@ -30,7 +30,7 @@ class Eventos extends Model
         return $this->belongsTo([User::class]);
     }
 
-    public function eventos()
+    public function users()
     {
         return $this->belongsToMany([User::class]);
     }
