@@ -308,9 +308,9 @@
                                                 <p class="small mb-0"><i class=" fa fa-clock"></i>
                                                     Hora :
                                                     {{ $evento->hora }}</p>
-                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                <p class="small mb-0"><i class="fa fa-hourglass-end"></i>
                                                     Duração :
-                                                    {{ $evento->duracao }}</p>
+                                                    {{ $evento->duracao }} Horas</p>
                                             @else
                                                 <p class="small mb-0"><i class=" fa fa-calendar"></i>
                                                     Inicio :
@@ -321,9 +321,9 @@
                                                 <p class="small mb-0"><i class=" fa fa-clock"></i>
                                                     Hora :
                                                     {{ $evento->hora }}</p>
-                                                <p class="small mb-0"><i class=" fa fa-clock"></i>
+                                                <p class="small mb-0"><i class="fa fa-hourglass-end"></i>
                                                     Duração :
-                                                    {{ $evento->duracao }}</p>
+                                                    {{ $evento->duracao }} Horas </p>
                                             @endif
                                         </div>
                                         <!-- Entry Fees -->
