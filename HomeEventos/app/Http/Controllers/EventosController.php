@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Eventos;
 use App\Models\User;
+use App\Models\participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +16,11 @@ class EventosController extends Controller
     public function home()
     {
         $eventos = Eventos::all();
-        return view('welcome', ['eventos' => $eventos]);
+
+        // echo $eventos->id;
+        // $usuario = User::where('user_id', $eventos->user_id)->get();
+        // dd($usuario);
+        return view('welcome', compact('eventos'));
     }
 
     public function todos()
@@ -84,5 +89,12 @@ class EventosController extends Controller
         $evento->save();
         $messagen = "Evento publicado com sucessos!";
         return redirect()->back()->with('novo', $messagen);
+    }
+
+    public function participar($id)
+    {
+        $user->EventosParticipante->attach($id);
+        $user->user_id = Auth::user()->id;
+        $user->eventos_id = $id;
     }
 }
