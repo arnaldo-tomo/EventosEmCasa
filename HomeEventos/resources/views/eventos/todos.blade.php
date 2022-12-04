@@ -345,8 +345,10 @@ Header END -->
                                             <!-- Event item START -->
                                             <div class="card h-100">
                                                 <div class="position-relative">
-                                                    <img class="img-fluid rounded-top" src="/{{ $evento->imagen }}"
-                                                        alt="">
+                                                    <img class="img-fluid rounded-top" href=""
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#modalCreateEvents{{ $evento->id }}"
+                                                        src="/{{ $evento->imagen }}" alt="/{{ $evento->imagen }}">
                                                     <div
                                                         class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
                                                         {{ $evento->localizacao }}
@@ -357,7 +359,8 @@ Header END -->
                                                     <!-- Tag -->
                                                     <a class="btn btn-xs btn-primary mt-n3">{{ $evento->tipo_categoria }}
                                                     </a>
-                                                    <h6 class="mt-3"> <a>
+                                                    <h6 class="mt-3"> <a href="" data-bs-toggle="modal"
+                                                            data-bs-target="#modalCreateEvents{{ $evento->id }}">
                                                             {{ $evento->titulo }}
                                                         </a>
                                                     </h6>
@@ -442,6 +445,203 @@ Header END -->
                                             </div>
                                             <!-- Event item END -->
                                         </div>
+
+
+
+                                        {{-- ver events --}}
+                                        <div class="modal fade col-12" id="modalCreateEvents{{ $evento->id }}"
+                                            tabindex="-1" aria-labelledby="modalLabelCreateEvents"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+
+                                                    <!-- Modal feed header START -->
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="modalLabelCreateEvents{{ $evento->id }}">
+                                                            {{ $evento->titulo }}
+                                                        </h5>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <!-- Modal feed header END -->
+
+
+
+                                                    <!-- Modal feed body START -->
+                                                    <div class="modal-body">
+                                                        <div class="card card-body card-overlay-bottom border-0"
+                                                            style="background-image:url(/{{ $evento->imagen }}); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                                                            <!-- Card body START -->
+                                                            <div class="row g-3 justify-content-between">
+                                                                <!-- Date START -->
+                                                                <div class="col-lg-2">
+                                                                    <div
+                                                                        class="bg-mode text-center rounded overflow-hidden p-1 d-inline-block">
+                                                                        <div
+                                                                            class="bg-primary p-2 text-white rounded-top small lh-1">
+                                                                            {{ $evento->hora }}Hora
+                                                                        </div>
+                                                                        <h6 class="mb-0 py-2 lh-1">
+                                                                            {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
+                                                                        </h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Event name START -->
+                                                            <div
+                                                                class="row g-3 justify-content-between align-items-center mt-5 pt-5 position-relative z-index-9">
+                                                                <div class="col-lg-9">
+                                                                    <h1 class="h3 mb-1 text-white">
+                                                                        {{ $evento->titulo }} </h1>
+                                                                    <a class="text-white"
+                                                                        href="https://github.com/arnaldo-tomo"
+                                                                        target="_blank">https://github.com/arnaldo-tomo</a>
+                                                                </div>
+                                                                <!-- Button -->
+                                                                <div class="col-lg-3 text-lg-end">
+                                                                    <a class="btn btn-primary-soft" href="#!">
+                                                                        Comprar </a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Event name END -->
+                                                        </div>
+                                                        <!-- Card END -->
+                                                    </div>
+
+                                                    <!-- Card About START -->
+                                                    <div class="card card-body">
+                                                        <!-- Card body START -->
+                                                        <div class="row g-4">
+                                                            <!-- info -->
+                                                            <div class="col-12">
+                                                                <p class="mb-0">{{ $evento->descricao }}</p>
+                                                            </div>
+                                                            <div class="col-sm-6 col-lg-4">
+                                                                <!-- Timings -->
+                                                                <h5>Horários</h5>
+                                                                <p class="small mb-0">Inicio ::
+                                                                    {{ $evento->dataInicio }}</p>
+                                                                <p class="small mb-0">Fim :: {{ $evento->dataFim }}
+                                                                </p>
+                                                            </div>
+                                                            <!-- Entry Fees -->
+                                                            <div class="col-sm-6 col-lg-4">
+                                                                <h5>Taxas de entrada</h5>
+                                                                <p class="small mb-0"> <a href="#!"> Free Ticket
+                                                                    </a>For photography
+                                                                    professionals check official website</p>
+                                                            </div>
+                                                            <!-- Category & Type -->
+                                                            <div class="col-sm-6 col-lg-4">
+                                                                <h5>Categoria e tipo</h5>
+                                                                <p class="small mb-0">Trade Show</p>
+                                                                <p class="small mb-0"> Photography & Prewedding</p>
+                                                            </div>
+                                                            <!-- Estimated Turnout -->
+                                                            {{-- <div class="col-sm-6 col-lg-4">
+                                            <h5>Afluência estimada</h5>
+                                            <p class="small mb-0">140000 Visitors</p>
+                                            <p class="small mb-0"> 1800 Exhibitors</p>
+                                            <span class="badge bg-danger text-danger bg-opacity-10 small">Estimated
+                                                Count</span>
+                                        </div> --}}
+                                                            <button class="btn btn-danger-soft btn-sm"> <i
+                                                                    class="fa fa-file-pdf"></i>
+                                                                Download enexo</button>
+                                                            <div class="col-sm-12 col-lg-12">
+                                                                <!-- Interested -->
+                                                                <div class="d-flex">
+                                                                    <button
+                                                                        class="btn btn-success-soft btn-sm">Interessado?</button>
+                                                                    <h6> <i
+                                                                            class="bi bi-hand-thumbs-up-fill text-success"></i>
+                                                                        50 </h6>
+                                                                    <p class="small"> pessoas demonstraram interesse
+                                                                        recentemente</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="mt-4">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-lg-4">
+                                                                <h5>Participantes</h5>
+                                                                <!-- Avatar group START -->
+                                                                <ul
+                                                                    class="avatar-group list-unstyled align-items-center">
+                                                                    <li class="avatar avatar-xs">
+                                                                        <img class="avatar-img rounded-circle"
+                                                                            src="assets/images/avatar/01.jpg"
+                                                                            alt="avatar">
+                                                                    </li>
+                                                                    <li class="avatar avatar-xs">
+                                                                        <img class="avatar-img rounded-circle"
+                                                                            src="assets/images/avatar/03.jpg"
+                                                                            alt="avatar">
+                                                                    </li>
+                                                                    <li class="avatar avatar-xs">
+                                                                        <img class="avatar-img rounded-circle"
+                                                                            src="assets/images/avatar/04.jpg"
+                                                                            alt="avatar">
+                                                                    </li>
+                                                                    <li class="avatar avatar-xs">
+                                                                        <img class="avatar-img rounded-circle"
+                                                                            src="assets/images/avatar/05.jpg"
+                                                                            alt="avatar">
+                                                                    </li>
+                                                                    <li class="avatar avatar-xs">
+                                                                        <img class="avatar-img rounded-circle"
+                                                                            src="assets/images/avatar/06.jpg"
+                                                                            alt="avatar">
+                                                                    </li>
+                                                                    <li class="ms-4">
+                                                                        <small> 148.9K</small>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-lg-7">
+                                                                <!-- Avatar group END -->
+                                                                <div class="row g-2">
+                                                                    <div class="col-sm-4">
+                                                                        <!-- Visitors -->
+                                                                        <div class="d-flex">
+                                                                            <i class="bi bi-globe fs-4"></i>
+                                                                            <div class="ms-3">
+                                                                                <h5 class="mb-0">125</h5>
+                                                                                <p class="mb-0">Visitantes</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <!-- Registred -->
+                                                                        <div class="d-flex">
+                                                                            <i class="bi bi-person-plus fs-4"></i>
+                                                                            <div class="ms-3">
+                                                                                <h5 class="mb-0">356</h5>
+                                                                                <p class="mb-0">registrado</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <!-- Attendance -->
+                                                                        <div class="d-flex">
+                                                                            <i class="bi bi-people fs-4"></i>
+                                                                            <div class="ms-3">
+                                                                                <h5 class="mb-0">350</h5>
+                                                                                <p class="mb-0"> Confirmado</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Card About END -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- ver events --}}
                                     @endforeach
                                 </div>
                             </div>
