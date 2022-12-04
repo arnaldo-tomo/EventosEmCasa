@@ -632,7 +632,7 @@
             <div class="row">
                 <div class="col-12 mb-3">
                     <!-- Title -->
-                    <h4>Explore Groups </h4>
+                    <h4>Explorar Comunidades </h4>
                 </div>
             </div>
             <div class="row g-4">
@@ -646,13 +646,13 @@
                         <div class="card-body text-center pt-0">
                             <!-- Avatar -->
                             <div class="avatar avatar-lg mt-n5 mb-3">
-                                <a href="group-details.html"><img
+                                <a href="#"><img
                                         class="avatar-img rounded-circle border border-white border-3 bg-mode"
-                                        src="assets/images/logo/08.svg" alt=""></a>
+                                        src="assets/images/logo/c3.png" alt=""></a>
                             </div>
                             <!-- Info -->
-                            <h5 class="mb-0"> <a href="group-details.html">All in the Mind</a> </h5>
-                            <small> <i class="bi bi-lock pe-1"></i> Private Group</small>
+                            <h5 class="mb-0"> <a href="https://github.com/mozdevz">MozDevz Community</a> </h5>
+                            <small> <i class="bi bi-github pe-1"></i>mozdevz</small>
                             <!-- Group stat START -->
                             <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
                                 <!-- Group stat item -->
@@ -709,13 +709,13 @@
                         <div class="card-body text-center pt-0">
                             <!-- Avatar -->
                             <div class="avatar avatar-lg mt-n5 mb-3">
-                                <a href="group-details.html"><img
+                                <a href="#"><img
                                         class="avatar-img rounded-circle border border-white border-3 bg-mode"
-                                        src="assets/images/logo/02.svg" alt=""></a>
+                                        src="assets/images/logo/c2.png" alt=""></a>
                             </div>
                             <!-- Info -->
-                            <h5 class="mb-0"><a href="group-details.html">Beauty queens</a></h5>
-                            <small> <i class="bi bi-globe pe-1"></i> Public Group</small>
+                            <h5 class="mb-0"><a href="https://github.com/paymentsds">paymentsds</a></h5>
+                            <small> <i class="bi bi-github pe-1"></i> paymentsds</small>
                             <!-- Group stat START -->
                             <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
                                 <!-- Group stat item -->
@@ -768,13 +768,15 @@
                         <div class="card-body text-center pt-0">
                             <!-- Avatar -->
                             <div class="avatar avatar-lg mt-n5 mb-3">
-                                <a href="group-details.html"><img
+                                <a href="#"><img
                                         class="avatar-img rounded-circle border border-white border-3 bg-mode"
-                                        src="assets/images/logo/09.svg" alt=""></a>
+                                        src="assets/images/logo/c1.png" alt=""></a>
                             </div>
                             <!-- Info -->
-                            <h5 class="mb-0"> <a href="group-details.html">Eternal triangle</a></h5>
-                            <small> <i class="bi bi-globe pe-1"></i> Public Group</small>
+                            <h5 class="mb-0"> <a href="https://github.com/LCAV">Audiovisual Communications
+                                    Laboratory</a>
+                            </h5>
+                            <small> <i class="bi bi-github pe-1"></i> LCAV</small>
                             <!-- Group stat START -->
                             <div class="hstack gap-2 gap-xl-3 justify-content-center mt-3">
                                 <!-- Group stat item -->
