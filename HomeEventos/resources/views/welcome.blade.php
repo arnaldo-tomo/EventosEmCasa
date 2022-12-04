@@ -336,17 +336,17 @@
                                         <div class="col-sm-6 col-lg-4">
                                             <h5>Categoria e tipo</h5>
                                             <p class="small mb-0">Trade Show</p>
-                                            <p class="small mb-0"> Photography & Prewedding</p>
                                         </div>
                                         <div class="col-sm-6 col-lg-4">
-                                            <h5>cidade</h5>
-                                            <p class="small mb-0">Trade Show</p>
-                                            <p class="small mb-0"> Photography & Prewedding</p>
+                                            <h5>Cidade</h5>
+                                            <p class="small mb-0"><i class="fa fa-building"></i> {{ $evento->cidade }}
+                                            </p>
+
                                         </div>
                                         <div class="col-sm-6 col-lg-4">
-                                            <h5>localização</h5>
-                                            <p class="small mb-0">Trade Show</p>
-                                            <p class="small mb-0"> Photography & Prewedding</p>
+                                            <h5>Localização</h5>
+                                            <p class="small mb-0"><i class="fa fa-map-marker"></i>
+                                                {{ $evento->localizacao }} </p>
                                         </div>
                                         <!-- Estimated Turnout -->
                                         {{-- <div class="col-sm-6 col-lg-4">
