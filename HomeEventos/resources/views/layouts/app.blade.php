@@ -544,6 +544,7 @@
                                 </select>
                             </div>
                             <!-- Location -->
+
                             <!-- Tipo de evento -->
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
@@ -620,6 +621,8 @@
                             </div>
                             <!-- Dropzone photo END -->
                             <!-- Form END -->
+
+
                     </div>
                     <!-- Modal feed body END -->
                     <!-- Modal footer -->
@@ -727,6 +730,18 @@
     </footer>
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
+    {{-- script de campo multiselect --}}
+    <script>
+        mobiscroll.setOptions({
+            locale: mobiscroll.localeFr,
+            theme: 'ios',
+            themeVariant: 'light'
+        });
+
+        mobiscroll.select('#demo-multiple-select', {
+            inputElement: document.getElementById('demo-multiple-select-input')
+        });
+    </script>
 
     {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
