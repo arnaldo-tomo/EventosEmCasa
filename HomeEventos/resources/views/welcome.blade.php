@@ -564,14 +564,11 @@
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
                                 <select class="form-select form-select">
-                                    multiple="multiple" name="categoria" aria-label=".form-select-lg example">
-                                    <option disabled>Escolha o tipo de evento</option>
-                                    <option value="Festa">Festa</option>
-                                    <option value="Culto">Culto</option>
-                                    <option value="#">Nampula</option>
-                                    <option value="#">CaboDelegado</option>
-                                    <option value="#">Chimoio</option>
-                                    <option value="#">Chimoio</option>
+                                    <option disabled selected>Escolha o tipo de evento</option>
+                                    @foreach ($catergoria as $item)
+                                        <option value="{{ $item->nome }}">{{ $item->nome }}</option>
+                                    @endforeach
+
                                 </select>
                             </div>
                             <!-- Tipo de evento -->
@@ -681,8 +678,8 @@
                                         <!-- What -->
                                         <div class="input-group">
                                             <select required autofocus class="form-control form-control-lg me-1 pe-5">
+                                                <option disabled selected>O que</option>
                                                 @foreach ($catergoria as $item)
-                                                    <option disabled selected>Oque</option>
                                                     <option> {{ $item->nome }}</option>
                                                 @endforeach
                                             </select>
@@ -705,7 +702,7 @@
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Search</a>
+                                        <a class="btn btn-lg btn-primary" href="#">Buscar</a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
@@ -743,7 +740,7 @@
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
-                                        <h6>Esportes e bem-estar</h6>
+                                        <h6>Tecnologias</h6>
                                     </a>
                                 </div>
                                 <!-- Category END -->
