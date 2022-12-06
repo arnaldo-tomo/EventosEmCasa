@@ -17,7 +17,7 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css"> --}}
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -28,7 +28,15 @@
         integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+
+
+
+    {{--  --}}
+
 
 </head>
 
@@ -535,25 +543,27 @@
                             </div>
                             <!-- Location -->
 
+                            <div class="col-md-12">
+                                <div class="form-group">
 
-                            <div class="col-12">
-                                <label class="form-label">Cidade</label>
-                                <select class="form-select form-select" name="cidade"
-                                    aria-label=".form-select-lg example">
-                                    <option value="Beira">Beira</option>
-                                    <option value="Maputo">Maputo</option>
-                                    <option value="#">Nampula</option>
-                                    <option value="#">CaboDelegado</option>
-                                    <option value="#">Chimoio</option>
-                                    <option value="#">Chimoio</option>
-                                </select>
+                                    <label class="form-label">Cidade</label>
+                                    <select class="form-control select2 select2-hidden-accessible" multiple="multiple"
+                                        data-placeholder="Escolha o curso" style="width: 100%;" tabindex="-1"
+                                        aria-hidden="true" id="month" name="cidade">
+                                        <option value="Beira">Beira</option>
+                                        <option value="Maputo">Maputo</option>
+                                        <option value="#">Nampula</option>
+                                        <option value="#">CaboDelegado</option>
+                                        <option value="#">Chimoio</option>
+                                    </select>
+                                </div>
                             </div>
                             <!-- Location -->
 
                             <!-- Tipo de evento -->
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
-                                <select class="form-control" style="width: 75%" style="width: 100px" id="month"
+                                <select class="form-select form-select">
                                     multiple="multiple" name="categoria" aria-label=".form-select-lg example">
                                     <option disabled>Escolha o tipo de evento</option>
                                     <option value="Festa">Festa</option>
@@ -1565,18 +1575,27 @@
         </div>
     </footer>
     <script src="{{ URL::asset('assets/js/functions.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/modal.js') }}"></script>
 
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Styles -->
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
     </script>
 
     <script>
         $('#month').select2({
-            placeholder: 'Select an option',
+            width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+            placeholder: $(this).data('placeholder'),
+            allowClear: true,
             dropdownParent: '#modalLabelCreateEvents',
             language: 'pt-BR',
-            width: 'resolve'
+            closeOnSelect: false
         });
     </script>
 
