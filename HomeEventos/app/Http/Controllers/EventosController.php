@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Eventos;
 use App\Models\User;
+use App\Models\Eventos;
+use App\Models\catergoria;
 use App\Models\participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,12 +27,15 @@ class EventosController extends Controller
     public function todos()
     {
         $eventos = Eventos::all();
-        return view('eventos.todos', compact('eventos'));
+        $usuario =  catergoria::all();
+        return view('eventos.todos', compact('eventos', '$usuario'));
     }
 
 
     public function categoria()
     {
+        $usuario =  catergoria::all();
+        $eventos = Eventos::all();
         return view('eventos.categoria');
     }
 
