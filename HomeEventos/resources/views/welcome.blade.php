@@ -550,28 +550,11 @@
                             </div>
                             <!-- Location -->
 
-                            {{-- <div class="col-12">
-                                <select style="width: 100%" style="height: 50%" id="month" multiple="multiple">
-
-                                    <option value="1">
-                                        ja
-                                    </option>
-                                    <option value="2">
-                                        Feb
-                                    </option>
-                                    <option value="3">
-                                        March
-
-                                    </option>
-                                </select>
-                            </div> --}}
-
                             <!-- Tipo de evento -->
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
-                                <select class="form-select form-select" style="width: 75%" style="width: 100%"
-                                    style="height: 50%" id="month" multiple="multiple" name="categoria"
-                                    aria-label=".form-select-lg example">
+                                <select class="form-control" style="width: 75%" style="width: 100px" id="month"
+                                    multiple="multiple" name="categoria" aria-label=".form-select-lg example">
                                     <option disabled>Escolha o tipo de evento</option>
                                     <option value="Festa">Festa</option>
                                     <option value="Culto">Culto</option>
