@@ -20,6 +20,14 @@
                             compras
                             mais perto de você.
                         </p>
+                        <div>
+                            <select id="month" multiple style="width: 300px;">
+                                <option></option>
+                                <option value="jan">ja</option>
+                                <option value="fev">Feb</option>
+                                <option value="mar">March</option>
+                            </select>
+                        </div>
                         <div class="mx-auto bg-mode shadow rounded p-4 mt-5">
                             <h5 class="mb-3 text-start">Ajudaremos você a encontrar tudo</h5>
                             <!-- Form START -->
