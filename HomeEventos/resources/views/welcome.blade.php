@@ -686,8 +686,8 @@
                                                     <option> {{ $item->nome }}</option>
                                                 @endforeach
                                             </select>
-                                            <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque" required autofocus>
+                                            {{-- <input class="form-control form-control-lg me-1 pe-5" type="text"
+                                                placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-5">
