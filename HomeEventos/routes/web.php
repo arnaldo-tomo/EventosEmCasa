@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\EventosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventosController;
 
 Route::get('/', [EventosController::class, 'home'])->name('home');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
@@ -11,4 +12,5 @@ Route::get('/Categoria', [EventosController::class, 'categoria'])->name('categor
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
 Route::post('/Salvar', [EventosController::class, 'salvar'])->name('salvar');
 Route::post('Participar/{id}', [EventosController::class, 'participar'])->name('participar');
+Route::get('/Save', [AdminController::class, 'categoria'])->name('Save');
 require __DIR__ . '/auth.php';
