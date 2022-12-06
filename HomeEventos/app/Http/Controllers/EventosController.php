@@ -32,10 +32,9 @@ class EventosController extends Controller
     }
 
 
-    public function categoria()
+    public function categoria($categoria)
     {
-        $usuario =  catergoria::all();
-        $eventos = Eventos::all();
+        $eventos = Eventos::where('categoria', $categoria);
         return view('eventos.categoria');
     }
 
