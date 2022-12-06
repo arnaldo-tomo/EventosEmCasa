@@ -17,18 +17,19 @@ class EventosController extends Controller
     public function home()
     {
         $eventos = Eventos::all();
+        $catergoria =  catergoria::all();
 
         // echo $eventos->id;
         // $usuario = User::where('user_id', $eventos->user_id)->get();
         // dd($usuario);
-        return view('welcome', compact('eventos'));
+        return view('welcome', compact('eventos', 'catergoria'));
     }
 
     public function todos()
     {
         $eventos = Eventos::all();
-        $usuario =  catergoria::all();
-        return view('eventos.todos', compact('eventos', '$usuario'));
+        $catergoria =  catergoria::all();
+        return view('eventos.todos', compact('eventos', 'catergoria'));
     }
 
 
