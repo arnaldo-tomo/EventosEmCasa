@@ -22,9 +22,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
 
+
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <script src="{{ URL::asset('assets/js/functions.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+
 
 
 </head>
@@ -728,26 +732,20 @@
             </div>
         </div>
     </footer>
-    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
-    {{-- script de campo multiselect --}}
-    <script>
-        mobiscroll.setOptions({
-            locale: mobiscroll.localeFr,
-            theme: 'ios',
-            themeVariant: 'light'
-        });
 
-        mobiscroll.select('#demo-multiple-select', {
-            inputElement: document.getElementById('demo-multiple-select-input')
-        });
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
     </script>
+    {{-- script de campo multiselect --}}
 
     {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
-        async defer></script> --}}
-
-    {{-- <script>
+        async defer></script> --}} {{-- <script>
         $(document).ready(function() {
             var autocomplete;
             var to = 'criarlocalizacao';
@@ -755,9 +753,7 @@
                 types: ['geocode'],
             });
         });
-    </script> --}}
-
-    {{-- <script type="text/javascript">
+    </> --}} {{-- <script type="text/javascript">
         var criarlocalizacao = document.getElementById("criarlocalizacao");
         var autocomplete;
 
@@ -771,11 +767,7 @@
                     fields: ['place_id', 'geometry', 'name']
                 });
         }
-    </script> --}}
-
-    {{-- este comando chama o modal caso aga error  --}}
-
-    @error('passworde')
+    </script> --}} {{-- este comando chama o modal caso aga error  --}} @error('passworde')
         <script type="text/javascript">
             window.onload = function() {
                 OpenBootstrapPopup();
@@ -825,15 +817,9 @@
     @enderror
 
 
-    {{-- GOOGLE MAPS AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
-    </script>
 
-    {{-- <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDfc3rDzZBc_PjmIbQF1xMEsuDS5H681po">
-    </script> --}}
+
+
     <script>
         function initializes() {
             var addresss = (document.getElementById('pac-inpute'));
@@ -865,6 +851,8 @@
 
         google.maps.event.addDomListener(window, 'load', initializes);
     </script>
+
+
     <script>
         function initialize() {
             var address = (document.getElementById('pac-input'));
@@ -897,6 +885,17 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
     {{-- GOOGLE MAPS --}}
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#month').select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+        });
+    </script>
 </body>
 
 </html>
