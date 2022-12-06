@@ -680,6 +680,12 @@
                                     <div class="col-md-5">
                                         <!-- What -->
                                         <div class="input-group">
+                                            <select required autofocus class="form-control form-control-lg me-1 pe-5">
+                                                @foreach ($catergoria as $item)
+                                                    <option disabled selected>Oque</option>
+                                                    <option> {{ $item->nome }}</option>
+                                                @endforeach
+                                            </select>
                                             <input class="form-control form-control-lg me-1 pe-5" type="text"
                                                 placeholder="Oque" required autofocus>
                                         </div>
@@ -710,29 +716,25 @@
                                 <!-- Category START -->
                                 <div class="d-md-flex gap-3 mt-5">
                                     <!-- Category item -->
-                                    <a href="{{ route('categoria') }}"
-                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
                                         <h6>Artes e entretenimento </h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="{{ route('categoria') }}"
-                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clipboard-outline-filled.svg"
                                             alt="">
                                         <h6> Negócios e conferências</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="{{ route('categoria') }}"
-                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
                                             alt="">
                                         <h6>PNY E-Gaming Fest</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="{{ route('categoria') }}"
-                                        class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
                                         <h6>Eventos e festas</h6>
