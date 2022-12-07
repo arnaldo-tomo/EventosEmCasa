@@ -16,12 +16,8 @@ class EventosController extends Controller
 
     public function home()
     {
-        $eventos = Eventos::all();
+        $eventos = Eventos::paginate(8);
         $catergoria =  catergoria::all();
-
-        // echo $eventos->id;
-        // $usuario = User::where('user_id', $eventos->user_id)->get();
-        // dd($usuario);
         return view('welcome', compact('eventos', 'catergoria'));
     }
 
