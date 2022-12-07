@@ -1029,6 +1029,25 @@
                                         </div>
                                         <hr class="mt-4">
                                         <div class="row align-items-center">
+                                            <div class="col-lg-7">
+                                                <div class="col-lg-7">
+                                                    <h5>Proprietário</h5>
+                                                    <!-- Avatar group START -->
+                                                    <ul class="avatar-group list-unstyled align-items-center">
+                                                        <li class="avatar avatar-xs">
+                                                            <img class="avatar-img rounded-circle"
+                                                                src="assets/images/avatar/01.jpg" alt="avatar">
+                                                        </li>
+
+
+
+                                                        <li class="ms-3">
+                                                            <small> {{ Auth::user()->name }}</small>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
                                             <div class="col-lg-4">
                                                 <h5>Participantes</h5>
                                                 <!-- Avatar group START -->
@@ -1053,46 +1072,12 @@
                                                         <img class="avatar-img rounded-circle"
                                                             src="assets/images/avatar/06.jpg" alt="avatar">
                                                     </li>
-                                                    <li class="ms-4">
-                                                        <small> 148.9K</small>
+                                                    <li class="ms-3">
+                                                        <small>16+ </small>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-7">
-                                                <!-- Avatar group END -->
-                                                <div class="row g-2">
-                                                    <div class="col-sm-4">
-                                                        <!-- Visitors -->
-                                                        <div class="d-flex">
-                                                            <i class="bi bi-globe fs-4"></i>
-                                                            <div class="ms-3">
-                                                                <h5 class="mb-0">125</h5>
-                                                                <p class="mb-0">Visitantes</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <!-- Registred -->
-                                                        <div class="d-flex">
-                                                            <i class="bi bi-person-plus fs-4"></i>
-                                                            <div class="ms-3">
-                                                                <h5 class="mb-0">356</h5>
-                                                                <p class="mb-0">registrado</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <!-- Attendance -->
-                                                        <div class="d-flex">
-                                                            <i class="bi bi-people fs-4"></i>
-                                                            <div class="ms-3">
-                                                                <h5 class="mb-0">350</h5>
-                                                                <p class="mb-0"> Confirmado</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- Card About END -->
