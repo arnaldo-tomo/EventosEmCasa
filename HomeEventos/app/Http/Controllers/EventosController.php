@@ -18,7 +18,7 @@ class EventosController extends Controller
     {
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
-        return view('welcome', compact('eventos', 'catergoria'));
+        return view('welcome', compact('eventos', 'catergoria',));
     }
 
     public function todos()
@@ -67,6 +67,7 @@ class EventosController extends Controller
     {
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
+        $evento->user_name = Auth::user()->name;
         $evento->titulo = $request->nome;
         $evento->descricao = $request->descricao;
         $evento->dataInicio = $request->dataInicio;
