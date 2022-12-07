@@ -757,6 +757,7 @@ Header END -->
                                         <br>
                                     @endforeach
                                 @endif
+                                {{ $eventos->Links() }}
                             </div>
                             <!-- Events list END -->
 
