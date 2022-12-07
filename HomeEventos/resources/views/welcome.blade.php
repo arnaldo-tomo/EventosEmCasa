@@ -1038,11 +1038,15 @@
                                                             <img class="avatar-img rounded-circle"
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
-
-
-
                                                         <li class="ms-3">
-                                                            <small> {{ Auth::user()->name }}</small>
+                                                            <small>
+
+
+                                                                @php($sql = "select * from `users` where `id` = '$evento->user_id'")
+
+                                                                {{ $sql }}
+                                                                @endphp
+                                                            </small>
                                                         </li>
 
                                                     </ul>
@@ -1073,7 +1077,7 @@
                                                             src="assets/images/avatar/06.jpg" alt="avatar">
                                                     </li>
                                                     <li class="ms-3">
-                                                        <small>16+ </small>
+                                                        <small>16+- </small>
                                                     </li>
                                                 </ul>
                                             </div>
