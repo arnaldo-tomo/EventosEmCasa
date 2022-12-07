@@ -21,15 +21,13 @@
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-        integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
-        integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 </head>
 
@@ -556,7 +554,7 @@
                             <!-- Tipo de evento -->
                             <div class="col-12">
                                 <label class="form-label">Tipo & categoria de evento</label>
-                                <select class="form-select form-select">
+                                <select name="tipo_categoria" class="form-select form-select">
                                     <option disabled selected>Escolha o tipo de evento</option>
                                     @foreach ($catergoria as $item)
                                         <option value="{{ $item->nome }}">{{ $item->nome }}</option>
@@ -987,9 +985,8 @@
                                             <!-- Entry Fees -->
                                             <div class="col-sm-6 col-lg-4">
                                                 <h5>Taxas de entrada</h5>
-                                                <p class="small mb-0"> <a href="#!"> Free Ticket </a>For
-                                                    photography
-                                                    professionals check official website</p>
+                                                <p class="small mb-0"> <a href="#!"> {{ $evento->privado }} </a>
+                                                </p>
                                             </div>
                                             <!-- Category & Type -->
                                             <div class="col-sm-6 col-lg-4">
@@ -998,14 +995,14 @@
                                                     {{ $evento->tipo_categoria }}
                                                 </p>
                                             </div>
-                                            <div class="col-sm-6 col-lg-4">
+                                            <div class="col-sm-3 col-lg-3">
                                                 <h5>Cidade</h5>
                                                 <p class="small mb-0"><i class="fa fa-building"></i>
                                                     {{ $evento->cidade }}
                                                 </p>
 
                                             </div>
-                                            <div class="col-sm-6 col-lg-4">
+                                            <div class="col-sm-7 col-lg-7">
                                                 <h5>Localização</h5>
                                                 <p class="small mb-0"><i class="fa fa-map-marker"></i>
                                                     {{ $evento->localizacao }} </p>
@@ -1108,7 +1105,7 @@
 
                     <div class="py-4">
 
-                        {{ $eventos->links() }}
+                        {{-- {{ $eventos->links() }} --}}
                     </div>
 
 
