@@ -16,7 +16,7 @@ class EventosController extends Controller
 
     public function home()
     {
-        $eventos = Eventos::paginate(8);
+        $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
         return view('welcome', compact('eventos', 'catergoria'));
     }
@@ -42,7 +42,7 @@ class EventosController extends Controller
         }
 
         $info = User::where('id', Auth::user()->id)->get()->first();
-        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(100);
+        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(10);
         return view('eventos.perfil', compact('info', 'eventos'));
     }
     public function sobre()
