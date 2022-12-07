@@ -16,7 +16,7 @@ class EventosController extends Controller
 
     public function home()
     {
-        $eventos = Eventos::paginate(8);
+        $eventos = Eventos::ORDERBY('id', 'DESC')->get();
         $catergoria =  catergoria::all();
         return view('welcome', compact('eventos', 'catergoria'));
     }
@@ -42,7 +42,7 @@ class EventosController extends Controller
         }
 
         $info = User::where('id', Auth::user()->id)->get()->first();
-        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
+        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(100);
         return view('eventos.perfil', compact('info', 'eventos'));
     }
     public function sobre()
@@ -76,7 +76,7 @@ class EventosController extends Controller
         $evento->duracao = $request->duracao;
         $evento->localizacao = $request->localizacao;
         $evento->cidade = $request->cidade;
-        $evento->tipo_categoria = $request->categoria;
+        $evento->tipo_categoria = $request->tipo_categoria;
         $evento->participante = $request->participante;
         $evento->imagen = $request->imagen;
         if ($request->file('imagen') != null) {
