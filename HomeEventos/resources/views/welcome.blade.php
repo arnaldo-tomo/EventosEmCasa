@@ -1103,10 +1103,8 @@
                         {{-- ver events --}}
                     @endforeach
 
-                    <div class="py-4">
+                    {{ $eventos->links() }}
 
-                        {{-- {{ $eventos->links() }} --}}
-                    </div>
 
 
                 </div>
