@@ -31,13 +31,6 @@
     <link href="min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-
-
-
-
-    {{--  --}}
-
-
 </head>
 
 <body>
@@ -1113,14 +1106,12 @@
                         {{-- ver events --}}
                     @endforeach
 
-                    <a href="/Todos" role="button" class="btn btn-loader btn-primary-soft">
-                        <span class="load-text"> Ver todos os eventos </span>
-                        <div class="load-icon">
-                            <div class="spinner-grow spinner-grow-sm" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
-                    </a>
+                    <div class="py-4">
+
+                        {{ $eventos->links() }}
+                    </div>
+
+
                 </div>
             </div>
         </section>
