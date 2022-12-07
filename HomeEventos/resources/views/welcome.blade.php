@@ -1040,12 +1040,7 @@
                                                         </li>
                                                         <li class="ms-3">
                                                             <small>
-
-
-                                                                @php($sql = "select * from `users` where `id` = '$evento->user_id'")
-
-                                                                {{ $sql }}
-                                                                @endphp
+                                                                {{ $evento->user_name }}
                                                             </small>
                                                         </li>
 
