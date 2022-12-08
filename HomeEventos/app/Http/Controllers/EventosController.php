@@ -92,10 +92,12 @@ class EventosController extends Controller
         return redirect()->back()->with('novo', $messagen);
     }
 
-    public function participar($id)
+    public function join($id)
     {
-        $user->EventosParticipante->attach($id);
-        $user->user_id = Auth::user()->id;
-        $user->eventos_id = $id;
+        $gosto = auth()->user();
+        $gosto->EventosParticipante()->attach($id);
+        $eventos = Eventos::findOrFail($id);
+        $messagen = "Evento" . $eventos->titulo . " Interessante";
+        return redirect()->back()->with('interessante', $messagen);
     }
 }
