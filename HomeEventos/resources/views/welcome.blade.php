@@ -842,9 +842,10 @@
                                     <div class="d-flex mt-3 justify-content-between">
                                         <!-- Interested button -->
                                         <div class="w-100">
-                                            <form method="POST" action="Participar/{{ $evento->id }}">
+                                            <form method="POST" action="{{ route('join', $evento->id) }}">
                                                 @csrf
-                                                <button class="btn btn-sm btn-outline-success d-block"
+                                                <input type="hidden" value="{{ $evento->id }}" name="id">
+                                                <button type="submit" class="btn btn-sm btn-outline-success d-block"
                                                     for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
                                                     Interessante</button>
 
@@ -1086,11 +1087,7 @@
                         </div>
                         {{-- ver events --}}
                     @endforeach
-
                     {{ $eventos->links() }}
-
-
-
                 </div>
             </div>
         </section>
