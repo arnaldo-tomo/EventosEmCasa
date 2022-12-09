@@ -1480,7 +1480,8 @@
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
                     <img src="assets/images/logo.svg" alt="">
-                    <p class="mt-3">Combinar com isso ela evita ver a morte tirar a gordura deles. </p>
+                    <p class="mt-3">HomePoste e um projecto que,fiz com objectivo de crir uma plataforma para a
+                        publicacao de eventos a nivel nacional. </p>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <!-- Footer Widget -->
