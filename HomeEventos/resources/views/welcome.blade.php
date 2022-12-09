@@ -1548,7 +1548,7 @@
                     <div class="col-lg-6">
                         <!-- Copyright START -->
                         <p class="text-center text-lg-end mb-0">©2022 <a class="text-body" target="_blank"
-                                href="http://arnaldotomo.epizy.com//"> Webestica </a>All rights reserved.</p>
+                                href="http://arnaldotomo.epizy.com//"> ArnaldoTomo </a>All rights reserved.</p>
                         <!-- Copyright END -->
                     </div>
                 </div>
