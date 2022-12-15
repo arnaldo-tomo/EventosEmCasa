@@ -16,9 +16,12 @@ class EventosController extends Controller
 
     public function home()
     {
-        $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
-        $catergoria =  catergoria::all();
-        return view('welcome', compact('eventos', 'catergoria',));
+        $todos = Eventos::all();
+        echo count($todos->Eventos->id);
+
+        // $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
+        // $catergoria =  catergoria::all();
+        // return view('welcome', compact('eventos', 'catergoria',));
     }
 
     public function todos()
