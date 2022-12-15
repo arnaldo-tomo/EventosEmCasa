@@ -26,12 +26,12 @@ class Eventos extends Model
     ];
 
 
-    public function user()
+    public function User()
     {
-        return $this->belongsTo([User::class]);
+        return $this->belongsToMany([User::class]);
     }
 
-    public function users()
+    public function Users()
     {
         return $this->belongsToMany([User::class]);
     }
