@@ -939,55 +939,5 @@ JS libraries, plugins and custom scripts -->
 
 </body>
 
-{{-- este comando chama o modal caso aga error  --}}
-
-@error('passworde')
-    <script type="text/javascript">
-        window.onload = function() {
-            OpenBootstrapPopup();
-        };
-
-        function OpenBootstrapPopup() {
-            $("#login_registar").modal('show');
-        }
-    </script>
-@enderror
-@error('password_confirmation')
-    <script type="text/javascript">
-        window.onload = function() {
-            OpenBootstrapPopup();
-        };
-
-        function OpenBootstrapPopup() {
-            $("#login_registar").modal('show');
-        }
-    </script>
-@enderror
-
-
-@error('email')
-    <script type="text/javascript">
-        window.onload = function() {
-            OpenBootstrapPopup();
-        };
-
-        function OpenBootstrapPopup() {
-            $("#login_Modal").modal('show');
-        }
-    </script>
-@enderror
-
-{{-- chama modal de error na parte de recuprar senha --}}
-@error('recuperar')
-    <script type="text/javascript">
-        window.onload = function() {
-            OpenBootstrapPopup();
-        };
-
-        function OpenBootstrapPopup() {
-            $("#login_recuperar").modal('show');
-        }
-    </script>
-@enderror
 
 </html>
