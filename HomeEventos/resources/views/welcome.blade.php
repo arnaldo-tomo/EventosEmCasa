@@ -348,8 +348,9 @@
                         <p>Se você esqueceu sua senha, bem, enviaremos um e-mail com instruções para redefinir sua
                             senha.</p>
                         <!-- Form START -->
-                        <form id="login_recuperar" method="POST" action="{{ route('password.email') }}" @csrf
+                        <form id="login_recuperar" method="POST" action="{{ route('password.email') }}"
                             class="row g-4">
+                            @csrf
                             {{-- {{ csrf_field() }} --}}
                             <!-- Title -->
                             <div class="col-12">
@@ -1030,8 +1031,12 @@
                                             <span class="badge bg-danger text-danger bg-opacity-10 small">Estimated
                                                 Count</span>
                                         </div> --}}
-                                            <button class="btn btn-danger-soft btn-sm"> <i class="fa fa-file-pdf"></i>
-                                                Download enexo</button>
+                                            <div class="col-sm-6">
+
+                                                <a class="btn btn-info-soft btn-sm"> <i class="fa fa-cloud-download"
+                                                        aria-hidden="true"></i>
+                                                    Download enexo</a>
+                                            </div>
                                             <div class="col-sm-12 col-lg-12">
                                                 <!-- Interested -->
                                                 <div class="d-flex">
@@ -1653,6 +1658,18 @@
             }
         </script>
     @enderror
+
+    @if ('email')
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
+
+            function OpenBootstrapPopup() {
+                $("#login_Modal").modal('show');
+            }
+        </script>
+    @endif
 
     {{-- chama modal de error na parte de recuprar senha --}}
     @error('recuperar')
