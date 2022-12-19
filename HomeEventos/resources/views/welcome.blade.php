@@ -1659,17 +1659,7 @@
         </script>
     @enderror
 
-    @if ('email')
-        <script type="text/javascript">
-            window.onload = function() {
-                OpenBootstrapPopup();
-            };
 
-            function OpenBootstrapPopup() {
-                $("#login_Modal").modal('show');
-            }
-        </script>
-    @endif
 
     {{-- chama modal de error na parte de recuprar senha --}}
     @error('recuperar')
