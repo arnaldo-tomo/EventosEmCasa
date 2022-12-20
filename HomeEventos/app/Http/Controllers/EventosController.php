@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\gosto;
+use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\catergoria;
-use App\Models\cidade;
 use App\Models\participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,9 +21,17 @@ class EventosController extends Controller
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
         $cidades = cidade::all();
-        $participantes = User::find(1);
+        $participantes = User::all();
 
-        dd($participantes->gostos);
+        $evento = Eventos::all();
+        // dd($evento->usuario);
+        foreach ($evento as $i) {
+            // echo " " .  $i->usuario . "!";
+
+            foreach ($i->usuario as $b) {
+                print $b->name;
+            }
+        }
         // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
     }
 
@@ -103,12 +112,16 @@ class EventosController extends Controller
         return redirect()->back()->with('novo', $messagen);
     }
 
-    public function join($id)
+    public function gosto($id, Request $request)
     {
-        $gosto = auth()->user();
-        $gosto->EventosParticipante()->attach($id);
-        $eventos = Eventos::findOrFail($id);
-        $messagen = "Evento" . $eventos->titulo . " Interessante";
-        return redirect()->back()->with('interessante', $messagen);
+
+        $gosto = new gosto();
+        $gosto->user_id = Auth::user()->id;
+        $gosto->eventos_id = $id;
+        $gosto->save();
+
+
+
+        // return redirect()->back()->with('interessante');
     }
 }
