@@ -21,12 +21,7 @@ class EventosController extends Controller
         $catergoria =  catergoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-
-        $evento = Eventos::find(12);
-        foreach ($evento->dono as $i) {
-            echo $i->name;
-        }
-        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
+        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
     }
 
     public function todos()
