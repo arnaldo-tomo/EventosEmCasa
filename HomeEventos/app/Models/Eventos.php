@@ -33,6 +33,6 @@ class Eventos extends Model
     }
     public function usuario()
     {
-        return $this->belongsTo(User::class, 'gostos', 'user_id', 'eventos_id');
+        return $this->belongsToMany(User::class, 'gostos', 'user_id', 'eventos_id');
     }
 }
