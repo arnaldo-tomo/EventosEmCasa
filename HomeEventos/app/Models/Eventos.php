@@ -31,4 +31,8 @@ class Eventos extends Model
     {
         return $this->belongsTo(User::class,  'user_id');
     }
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'gostos', 'user_id', 'eventos_id');
+    }
 }
