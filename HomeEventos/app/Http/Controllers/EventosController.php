@@ -55,7 +55,6 @@ class EventosController extends Controller
         if (!Auth::check()) {
             redirect()->back();
         }
-
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
         $amigos = User::all();
@@ -65,7 +64,7 @@ class EventosController extends Controller
 
     public function Verperfil($id)
     {
-        $info = User::find($id)->get()->first();
+        $info = User::find($id);
         return view('eventos.verperfil', compact('info'));
     }
     public function sobre()
