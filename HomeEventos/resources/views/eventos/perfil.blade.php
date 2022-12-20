@@ -58,133 +58,9 @@ Header START -->
                 <!-- Main navbar START -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
 
-                    <!-- Nav Search START -->
-                    {{-- <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
-                    <div class="nav-item w-100">
-                        <form class="rounded position-relative">
-                            <input class="form-control ps-5 bg-light" type="search" placeholder="Search..."
-                                aria-label="Search">
-                            <button
-                                class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y"
-                                type="submit"><i class="bi bi-search fs-5"> </i></button>
-                        </form>
-                    </div>
-                </div> --}}
-                    <!-- Nav Search END -->
+
 
                     <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <!-- Nav item 1 Demos -->
-                        {{--   <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeMenu" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Demo</a>
-                        <ul class="dropdown-menu" aria-labelledby="homeMenu">
-                            <li> <a class="dropdown-item" href="index-2.html">Home default</a></li>
-                            <li> <a class="dropdown-item" href="index-classic.html">Home classic</a></li>
-                            <li> <a class="dropdown-item" href="index-post.html">Home post</a></li>
-                            <li> <a class="dropdown-item" href="index-video.html">Home video</a></li>
-                            <li> <a class="dropdown-item" href="index-event.html">Home event</a></li>
-                            <li> <a class="dropdown-item" href="landing.html">Landing page</a></li>
-                            <li> <a class="dropdown-item" href="app-download.html">App download</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li>
-                                <a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/"
-                                    target="_blank">
-                                    <i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy Social!
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Nav item 2 Pages -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                            <li> <a class="dropdown-item" href="albums.html">Albums</a></li>
-                            <li> <a class="dropdown-item" href="celebration.html">Celebration</a></li>
-                            <li> <a class="dropdown-item" href="messaging.html">Messaging</a></li>
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#!">Profile</a>
-                                <ul class="dropdown-menu" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="my-profile.html">Feed</a> </li>
-                                    <li> <a class="dropdown-item" href="my-profile-about.html">About</a> </li>
-                                    <li> <a class="dropdown-item"
-                                            href="my-profile-connections.html">Connections</a> </li>
-                                    <li> <a class="dropdown-item" href="my-profile-media.html">Media</a> </li>
-                                    <li> <a class="dropdown-item" href="my-profile-videos.html">Videos</a> </li>
-                                    <li> <a class="dropdown-item" href="my-profile-events.html">Events</a> </li>
-                                    <li> <a class="dropdown-item" href="my-profile-activity.html">Activity</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li> <a class="dropdown-item" href="events.html">Events</a></li>
-                            <li> <a class="dropdown-item" href="events-2.html">Events 2</a></li>
-                            <li> <a class="dropdown-item" href="event-details.html">Event details</a></li>
-                            <li> <a class="dropdown-item" href="event-details-2.html">Event details 2</a></li>
-                            <li> <a class="dropdown-item" href="groups.html">Groups</a></li>
-                            <li> <a class="dropdown-item" href="group-details.html">Group details</a></li>
-                            <li> <a class="dropdown-item" href="post-videos.html">Post videos</a></li>
-                            <li> <a class="dropdown-item" href="post-video-details.html">Post video details</a>
-                            </li>
-                            <li> <a class="dropdown-item" href="post-details.html">Post details</a></li>
-                            <li> <a class="dropdown-item" href="video-details.html">Video details</a></li>
-                            <li> <a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li> <a class="dropdown-item" href="blog-details.html">Blog details</a></li>
-
-                            <!-- Dropdown submenu levels -->
-                            <li class="dropdown-divider"></li>
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
-                                <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                    <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                    <!-- dropdown submenu open left -->
-                                    <li class="dropdown-submenu dropstart">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Dropdown
-                                            (start)</a>
-                                        <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        </ul>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Nav item 3 Post -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="postMenu"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account </a>
-                        <ul class="dropdown-menu" aria-labelledby="postMenu">
-                            <li> <a class="dropdown-item" href="create-page.html">Create a page</a></li>
-                            <li> <a class="dropdown-item" href="Configuracoes">Settings</a> </li>
-                            <li> <a class="dropdown-item" href="notifications.html">Notifications</a> </li>
-                            <li> <a class="dropdown-item" href="help.html">Help center</a> </li>
-                            <li> <a class="dropdown-item" href="help-details.html">Help details</a> </li>
-                            <!-- dropdown submenu open left -->
-                            <li class="dropdown-submenu dropstart">
-                                <a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
-                                <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="sign-in.html">Sign in</a> </li>
-                                    <li> <a class="dropdown-item" href="sign-up.html">Sing up</a> </li>
-                                    <li> <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                    </li>
-                                    <li class="dropdown-divider"></li>
-                                    <li> <a class="dropdown-item" href="sign-in-advance.html">Sign in advance</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="sign-up-advance.html">Sing up advance</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="forgot-password-advance.html">Forgot
-                                            password advance</a> </li>
-                                </ul>
-                            </li>
-                            <li> <a class="dropdown-item" href="error-404.html">Error 404</a> </li>
-                            <li> <a class="dropdown-item" href="offline.html">Offline</a> </li>
-                            <li> <a class="dropdown-item" href="privacy-and-terms.html">Privacy & terms</a> </li>
-                        </ul>
-                    </li> --}}
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
@@ -422,7 +298,7 @@ Header END -->
                                                         src="assets/images/avatar/07.jpg" alt=""></a>
                                             </div>
                                             <!-- Info -->
-                                            <h5 class="mb-0"> <a href="#!">Sam Lanson </a> </h5>
+                                            <h5 class="mb-0"> <a href="#!">{{ Auth::user()->name }} </a> </h5>
                                             <small>Web Developer at Webestica</small>
                                             <p class="mt-3">I'd love to change the world, but they won’t give me the
                                                 source code.</p>
@@ -560,7 +436,7 @@ Header END -->
                         <!-- Card header START -->
                         <div
                             class="card-header d-sm-flex align-items-center text-center justify-content-sm-between border-0 pb-0">
-                            <h1 class="h4 card-title">Discover Events</h1>
+                            <h1 class="h4 card-title">Descubra eventos</h1>
                             <!-- Button modal -->
                             <a class="btn btn-primary-soft" href="#" data-bs-toggle="modal"
                                 data-bs-target="#modalCreateEvents"> <i class="fa-solid fa-plus pe-1"></i> Criar
@@ -591,459 +467,144 @@ Header END -->
                                 <!-- Event top tab START -->
                                 <div class="tab-pane fade show active" id="tab-1">
                                     <div class="row g-4">
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/01.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Online
-                                                    </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Spa training </a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Bone
-                                                            thugs-n-harmony </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Mon, Sep 25, 2020 at 9:30 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> San
-                                                        francisco </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/01.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/03.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/04.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+78</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested1">
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested1"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card body END -->
+                                        @if (session('novo'))
+                                            <div class="alert alert-success alert-dismissible fade show"
+                                                role="alert">
+                                                <strong>Otimo,</strong> Evento publicado com sucessos
+                                                <a href="{{ route('todos') }}"
+                                                    class="btn btn-xs btn-success ms-md-4">Ver
+                                                    todos
+                                                    eventos</a>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
                                             </div>
-                                            <!-- Event item END -->
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/02.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Hotel
-                                                    </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Photography Workshop</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Decibel magazine
-                                                        </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Mon, Aug 10, 2022 at 9:30 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> London </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/05.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+34</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested2" checked>
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested2"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare2" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare2">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card body END -->
+                                        @endif
+                                        @if ($eventos->count() == 0)
+                                            <!-- Upcoming event START -->
+                                            <div class="alert alert-success alert-dismissible fade show"
+                                                role="alert">
+                                                <strong>Ola,{{ Auth::user()->name }}</strong> parece que nao tens nenhum
+                                                evento
+                                                publicado
+                                                {{-- <a href="events.html" class="btn btn-xs btn-success ms-md-4">Criar um
+                                                evento</a> --}}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
                                             </div>
-                                            <!-- Event item END -->
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/03.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Online
-                                                    </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Conference</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Illenium: fallen
-                                                            embers tour </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Sun, Sep 23, 2022 at 12:00 PM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Mumbai </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/07.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/08.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/09.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+65</span>
+                                            <!-- Upcoming event END -->
+                                        @else
+                                            @foreach ($eventos as $evento)
+                                                <div class="col-sm-6 col-xl-4">
+                                                    <!-- Event item START -->
+                                                    <div class="card h-100">
+                                                        <div class="position-relative">
+                                                            <img class="img-fluid rounded-top"
+                                                                src="/{{ $evento->imagen }}" alt="">
+                                                            <div
+                                                                class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
+                                                                {{ $evento->localizacao }}
                                                             </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested3">
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested3"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
                                                         </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare3" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare3">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
+                                                        <!-- Card body START -->
+                                                        <div class="card-body position-relative pt-0">
+                                                            <!-- Tag -->
+                                                            <a class="btn btn-xs btn-primary mt-n3"
+                                                                href="event-details.html">{{ $evento->tipo_categoria }}</a>
+                                                            <h6 class="mt-3"> <a href="event-details.html">
+                                                                    {{ $evento->titulo }} </a>
+                                                            </h6>
+                                                            <!-- Date time -->
+                                                            <p class="mb-0 small"> <i
+                                                                    class="bi bi-calendar-check pe-1"></i>
+                                                                {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                                -
+                                                                {{ $evento->hora }} Horas </p>
+                                                            <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
+                                                                {{ $evento->cidade }} </p>
+                                                            <!-- Avatar group START -->
+                                                            <ul
+                                                                class="avatar-group list-unstyled align-items-center mb-0">
+                                                                <li class="avatar avatar-xs">
+                                                                    <img class="avatar-img rounded-circle"
+                                                                        src="assets/images/avatar/05.jpg"
+                                                                        alt="avatar">
                                                                 </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
+                                                                <li class="avatar avatar-xs">
+                                                                    <img class="avatar-img rounded-circle"
+                                                                        src="assets/images/avatar/06.jpg"
+                                                                        alt="avatar">
+                                                                </li>
+                                                                <li class="avatar avatar-xs">
+                                                                    <div class="avatar-img rounded-circle bg-primary">
+                                                                        <span
+                                                                            class="smaller text-white position-absolute top-50 start-50 translate-middle">+36</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="ms-3">
+                                                                    <small> are attending</small>
+                                                                </li>
                                                             </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card body END -->
-                                            </div>
-                                            <!-- Event item END -->
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/04.jpg" alt="">
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Live show</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Comedy on the
-                                                            green </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Fri, Oct 05, 2022 at 1:00 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Miami </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/02.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/04.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+56</span>
+                                                            <!-- Avatar group END -->
+                                                            <!-- Button -->
+                                                            <div class="d-flex mt-3 justify-content-between">
+                                                                <!-- Interested button -->
+                                                                <div class="w-100">
+                                                                    <input type="checkbox" class="btn-check d-block"
+                                                                        id="Interested5">
+                                                                    <label
+                                                                        class="btn btn-sm btn-outline-success d-block"
+                                                                        for="Interested5"><i
+                                                                            class="fa-solid fa-thumbs-up me-1"></i>
+                                                                        Interresante</label>
+                                                                </div>
+                                                                <div class="dropdown ms-3">
+                                                                    <a href="#"
+                                                                        class="btn btn-sm btn-primary-soft"
+                                                                        id="eventActionShare5"
+                                                                        data-bs-toggle="dropdown"
+                                                                        aria-expanded="false">
+                                                                        <i class="bi bi-share-fill"></i>
+                                                                    </a>
+                                                                    <!-- Dropdown menu -->
+                                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                                        aria-labelledby="eventActionShare5">
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    class="bi bi-envelope fa-fw pe-1"></i>
+                                                                                Send
+                                                                                via Direct Message</a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    class="bi bi-bookmark-check fa-fw pe-1"></i>
+                                                                                Share to News Feed </a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-people fa-fw pe-1"></i>
+                                                                                Share
+                                                                                to a group</a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-share fa-fw pe-1"></i>
+                                                                                Share
+                                                                                post via …</a></li>
+                                                                        <li>
+                                                                            <hr class="dropdown-divider">
+                                                                        </li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-person fa-fw pe-1"></i>
+                                                                                Share
+                                                                                on a friend's profile</a></li>
+                                                                    </ul>
+                                                                </div>
                                                             </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested4" checked>
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested4"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
                                                         </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare4" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare4">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
-                                                        </div>
+                                                        <!-- Card body END -->
                                                     </div>
+                                                    <!-- Event item END -->
                                                 </div>
-                                                <!-- Card body END -->
-                                            </div>
-                                            <!-- Event item END -->
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/05.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Beach
-                                                    </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Meeting</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Beach event </a>
-                                                    </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Wen, Dec 16, 2022 at 5:00 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> London </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/05.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+36</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested5">
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested5"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare5" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare5">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card body END -->
-                                            </div>
-                                            <!-- Event item END -->
-                                        </div>
+                                            @endforeach
+                                        @endif
+                                        {{ $eventos->Links() }}
+
+
                                     </div>
                                 </div>
                                 <!-- Event top tab END -->
@@ -1559,50 +1120,104 @@ Header END -->
             <div class="modal-content">
                 <!-- Modal feed header START -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabelCreateEvents">Criar Evento</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <h5 class="modal-title" id="modalLabelCreateEvents">Criar evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal feed header END -->
                 <!-- Modal feed body START -->
                 <div class="modal-body">
                     <!-- Form START -->
-                    <form class="row g-4">
+                    <form method="POST" action="{{ route('salvar') }}" enctype="multipart/form-data"
+                        class="row g-4">
+                        @csrf
                         <!-- Title -->
                         <div class="col-12">
-                            <label class="form-label">Title</label>
-                            <input type="text" class="form-control" placeholder="Event name here">
+                            <label class="form-label">Titulo</label>
+                            <input type="text" class="form-control" name="nome" placeholder="Nome do evento">
                         </div>
                         <!-- Description -->
                         <div class="col-12">
-                            <label class="form-label">Description</label>
-                            <textarea class="form-control" rows="2" placeholder="Ex: topics, schedule, etc."></textarea>
+                            <label class="form-label">Descrição</label>
+                            <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                         </div>
+                        <!-- Duração -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Data Inicial</label>
+                            <input type="date" class="form-control flatpickr" name="dataInicio"
+                                placeholder="Select date">
+                        </div>
+                        <!-- Duração -->
+                        <!-- Duração -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Data do final </label>
+                            <input type="date" class="form-control flatpickr" name="dataFim"
+                                placeholder="Select date">
+                        </div>
+
+                        <!-- Duração -->
                         <!-- Date -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Date</label>
-                            <input type="text" class="form-control flatpickr" placeholder="Select date">
+                        <div class="col-sm-3">
+                            <label class="form-label">Duração</label>
+                            <input type="duracao" class="form-control" name="duracao" placeholder="1hr 23m">
+                        </div>
+                        <!-- Date final -->
+                        <div class="col-sm-6">
+                            <label class="form-label">Publico Ou Privado</label>
+                            <select class="form-select form-select" name="privado"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>-------------Escolha------------</option>
+                                <option value="0">publico</option>
+                                <option value="1">privado</option>
+
+                            </select>
                         </div>
                         <!-- Time -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Time</label>
-                            <input type="text" class="form-control flatpickr" data-enableTime="true"
-                                data-noCalendar="true" placeholder="Select time">
+                        <div class="col-sm-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" class="form-control flatpickr" name="hora"
+                                data-enableTime="true" data-noCalendar="true" placeholder="Select time">
                         </div>
-                        <!-- Duration -->
-                        <div class="col-sm-4">
-                            <label class="form-label">Duration</label>
-                            <input type="text" class="form-control" placeholder="1hr 23m">
+
+                        <div class="col-12">
+                            <label class="form-label">Localização</label>
+                            <input type="text" class="form-control" id="pac-inpute" name="localizacao"
+                                placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
                         </div>
                         <!-- Location -->
                         <div class="col-12">
-                            <label class="form-label">Location</label>
-                            <input type="text" class="form-control" placeholder="Logansport, IN 46947">
+                            <label class="form-label">Cidade</label>
+                            <select class="form-select form-select" name="cidade"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>Escolha a cidade</option>
+                                <option value="Beira">Beira</option>
+                                <option value="Maputo">Maputo</option>
+                                <option value="#">Nampula</option>
+                                <option value="#">CaboDelegado</option>
+                                <option value="#">Chimoio</option>
+                                <option value="#">Chimoio</option>
+                            </select>
                         </div>
+                        <!-- Location -->
+                        <!-- Tipo de evento -->
+                        <div class="col-12">
+                            <label class="form-label">Tipo & categoria de evento</label>
+                            <select class="form-select form-select" name="categoria"
+                                aria-label=".form-select-lg example">
+                                <option disabled selected>Escolha o tipo de evento</option>
+                                <option value="Festa">Festa</option>
+                                <option value="Culto">Culto</option>
+                                <option value="#">Nampula</option>
+                                <option value="#">CaboDelegado</option>
+                                <option value="#">Chimoio</option>
+                                <option value="#">Chimoio</option>
+                            </select>
+                        </div>
+                        <!-- Tipo de evento -->
                         <!-- Add guests -->
                         <div class="col-12">
-                            <label class="form-label">Add guests</label>
-                            <input type="email" class="form-control" placeholder="Guest email">
+                            <label class="form-label">Addicionar Participantes</label>
+                            <input type="email" class="form-control" name="participante"
+                                placeholder="Exemplo:joaocarlos@gmail.com">
                         </div>
                         <!-- Avatar group START -->
                         <div class="col-12 mt-3">
@@ -1640,27 +1255,35 @@ Header END -->
                                 </li>
                             </ul>
                         </div>
+                        {{-- FIle manger --}}
+                        <div class="col-12">
+                            <label class="form-label">Carregar Fotografia</label>
+                            <input type="file" class="form-control" name="imagen">
+                        </div>
+                        {{-- FIle manger --}}
                         <!-- Dropzone photo START -->
                         <div class="mb-3">
-                            <label class="form-label">Upload attachment</label>
-                            <div class="dropzone dropzone-default card shadow-none" data-dropzone='{"maxFiles":2}'>
+                            <label class="form-label">Carregar Anexo</label>
+                            <div name="anexo" class="dropzone  dropzone-default card shadow-none"
+                                data-dropzone='{"maxFiles":2}'>
                                 <div class="dz-message">
                                     <i class="bi bi-file-earmark-text display-3"></i>
-                                    <p>Drop presentation and document here or click to upload.</p>
+                                    <p>Solte a Apresentação e o documento aqui ou clique para
+                                        carregar.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Dropzone photo END -->
-                    </form>
-                    <!-- Form END -->
+                        <!-- Form END -->
                 </div>
                 <!-- Modal feed body END -->
                 <!-- Modal footer -->
                 <!-- Button -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
-                        Cancel</button>
-                    <button type="button" class="btn btn-success-soft">Create now</button>
+                    <button type="cancel" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
+                        Cancelar</button>
+                    <button type="submit" class="btn btn-success-soft">Criar Agora</button>
+                    </form>
                 </div>
             </div>
         </div>
