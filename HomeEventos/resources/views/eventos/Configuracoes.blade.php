@@ -410,12 +410,12 @@ Header END -->
                                     <!-- Form settings START -->
                                     <form class="row g-3">
                                         <!-- First name -->
-                                        <div class="col-sm-6 col-lg-4">
+                                        <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Foto do Peril</label>
                                             <input type="file" class="form-control" placeholder=""
                                                 value="Sam">
                                         </div>
-                                        <div class="col-sm-6 col-lg-4">
+                                        <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">foto de capa</label>
                                             <input type="file" class="form-control" placeholder=""
                                                 value="Sam">
@@ -432,18 +432,18 @@ Header END -->
                                                 value="Lanson">
                                         </div>
                                         <!-- Additional name -->
-                                        <div class="col-sm-6 col-lg-4">
+                                        <div class="col-sm-4 col-lg-4">
                                             <label class="form-label">Additional name</label>
                                             <input type="text" class="form-control" placeholder="">
                                         </div>
                                         <!-- User name -->
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <label class="form-label">User name</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 value="@samlanson">
                                         </div>
                                         <!-- Birthday -->
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <label class="form-label">Birthday </label>
                                             <input type="text" class="form-control flatpickr" value="12/12/1990">
                                         </div>
