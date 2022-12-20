@@ -17,7 +17,6 @@ class CreateEventosUserTable extends Migration
             $table->id();
             $table->foreignId('eventos_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->timestamps();
         });
     }
 
