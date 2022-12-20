@@ -857,15 +857,19 @@
                                     <!-- Button -->
                                     <div class="d-flex mt-3 justify-content-between">
                                         <!-- Interested button -->
-                                        <div class="w-100">
-                                            <form method="POST" action="{{ route('join', $evento->id) }}">
-                                                @csrf
-                                                <input type="hidden" value="{{ $evento->id }}" name="id">
-                                                <button type="submit" class="btn btn-sm btn-outline-success d-block"
-                                                    for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                    Interessante</button>
 
-                                            </form>
+
+
+                                        <div class="w-100">
+                                            @auth
+                                                <form method="POST" action="gosto{{ $evento->id }}">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-outline-success d-block"
+                                                        for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
+                                                        Interessante</button>
+
+                                                </form>
+                                            @endauth
                                         </div>
                                         <div class="dropdown ms-3">
                                             <a href="#" class="btn btn-sm btn-primary-soft"
