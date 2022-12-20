@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>HomeEvento</title>
+    <title>{{ config('app.name') }}</title>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -86,12 +86,12 @@
                         </li> --}}
 
                             <li class="nav-item ms-2">
-                                <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
+                                <a class="nav-link icon-md btn btn-dark p-0" href="{{ route('Configuracoes') }}">
                                     <i class="bi bi-gear-fill fs-6"> </i>
                                 </a>
                             </li>
                             <li class="nav-item dropdown ms-2">
-                                <a class="nav-link icon-md btn btn-light p-0" href="#" id="notifDropdown"
+                                <a class="nav-link icon-md btn btn-dark p-0" href="#" id="notifDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                     data-bs-auto-close="outside">
                                     <span class="badge-notif animation-blink"></span>
@@ -144,7 +144,7 @@
                                                                     birthday
                                                                     (Nov 12)
                                                                 </p>
-                                                                <button class="btn btn-sm btn-outline-light py-1 me-2">Say
+                                                                <button class="btn btn-sm btn-outline-dark py-1 me-2">Say
                                                                     happy birthday 🎂</button>
                                                             </div>
                                                             <p class="small ms-3">2min</p>
@@ -225,7 +225,7 @@
                                             href="{{ route('perfil') }}">Visualizar perfil</a>
                                     </li>
                                     <!-- Links -->
-                                    <li><a class="dropdown-item" href="settings.html"><i
+                                    <li><a class="dropdown-item" href="{{ route('Configuracoes') }}"><i
                                                 class="bi bi-gear fa-fw me-2"></i>Configurações e privacidade</a></li>
                                     <li>
                                         <a class="dropdown-item" href="" target="_blank">
@@ -866,7 +866,7 @@
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-outline-success d-block"
                                                         for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                        Interessante</button>
+                                                        Interessante </button>
 
                                                 </form>
                                             @endauth
@@ -1065,7 +1065,7 @@
                                                         </li>
                                                         <li class="ms-3">
                                                             <a style="color: aliceblue"
-                                                                href="Verperfil{{ $evento->user_name }}">
+                                                                href="Verperfil{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
                                                             </a>
                                                         </li>
