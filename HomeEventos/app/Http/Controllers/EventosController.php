@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Eventos;
 use App\Models\catergoria;
+use App\Models\cidade;
 use App\Models\participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,8 @@ class EventosController extends Controller
     {
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
-        return view('welcome', compact('eventos', 'catergoria',));
+        $cidades = cidade::all();
+        return view('welcome', compact('eventos', 'catergoria', 'cidades'));
     }
 
     public function todos()
