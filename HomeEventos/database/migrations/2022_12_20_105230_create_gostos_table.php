@@ -15,7 +15,6 @@ class CreateGostosTable extends Migration
     {
         Schema::create('gostos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
         });
     }
 
