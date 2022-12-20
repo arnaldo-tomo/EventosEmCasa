@@ -573,7 +573,7 @@ Header END -->
                                                 </div>
                                             @endforeach
                                         @endif
-                                        {{ $eventos->Links() }}
+                                        {{ $info->Links() }}
 
 
                                     </div>
