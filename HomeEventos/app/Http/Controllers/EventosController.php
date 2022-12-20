@@ -23,18 +23,19 @@ class EventosController extends Controller
         $cidades = cidade::all();
         $participantes = User::all();
 
-        $evento = Eventos::all();
-        // dd($evento->usuario);
-        foreach ($evento as $i) {
-            // echo " " .  $i->usuario . "!";
+        // $evento = Eventos::find(1);
+        // foreach ($evento->usuario as $i) {
+        //     echo $i->name->count();
+        // }
 
-            foreach ($i->usuario as $b) {
-                print $b->name;
-            }
-        }
-        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
+        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
 
+
+    public function Configuracoes()
+    {
+        return view('eventos.Configuracoes');
+    }
     public function todos()
     {
         $eventos = Eventos::all();
@@ -57,13 +58,14 @@ class EventosController extends Controller
 
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(10);
-        return view('eventos.perfil', compact('info', 'eventos'));
+        $amigos = User::all();
+        return view('eventos.perfil', compact('info', 'eventos', 'amigos'));
     }
 
 
-    public function Verperfil($user_name)
+    public function Verperfil($id)
     {
-        dd($user_name);
+        dd($id);
     }
     public function sobre()
     {
