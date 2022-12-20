@@ -29,6 +29,6 @@ class Eventos extends Model
 
     public function dono()
     {
-        return $this->belongsToMany(User::class, 'eventos_user', 'user_id', 'eventos_id',);
+        return $this->belongsTo(User::class,  'user_id');
     }
 }
