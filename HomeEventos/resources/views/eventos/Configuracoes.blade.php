@@ -459,7 +459,7 @@ Header END -->
                                     <!-- Card body END -->
                                     <!-- Card footer -->
                                     <div class="card-footer text-center py-2">
-                                        <a class="btn btn-link text-secondary btn-sm" href="#!">View Profile </a>
+                                        <a class="btn btn-link text-secondary btn-sm" href="Perfil">View Profile </a>
                                     </div>
                                 </div>
                                 <!-- Card END -->
