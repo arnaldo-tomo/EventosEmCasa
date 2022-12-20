@@ -20,8 +20,8 @@ class EventosController extends Controller
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
         $cidades = cidade::all();
-        $participante = User::all();
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participante'));
+        $participantes = User::all();
+        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
     }
 
     public function todos()
@@ -47,6 +47,12 @@ class EventosController extends Controller
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(10);
         return view('eventos.perfil', compact('info', 'eventos'));
+    }
+
+
+    public function Verperfil($id)
+    {
+        dd($id);
     }
     public function sobre()
     {
