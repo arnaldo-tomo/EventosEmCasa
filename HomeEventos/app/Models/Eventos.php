@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Eventos extends Model
 {
     use HasFactory;
+    protected $table = 'eventos';
     protected $fillable = [
         'titulo',
         'user_name',
@@ -26,13 +27,8 @@ class Eventos extends Model
     ];
 
 
-    public function User()
+    public function dono()
     {
-        return $this->belongsToMany([User::class]);
-    }
-
-    public function Users()
-    {
-        return $this->belongsToMany([User::class]);
+        return $this->belongsToMany(User::class, 'eventos_user', 'user_id', 'eventos_id',);
     }
 }
