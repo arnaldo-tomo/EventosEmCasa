@@ -331,7 +331,7 @@ Header START -->
                                             alt="avatar">
                                     </div>
                                     <div>
-                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
+                                        <a class="h6 stretch-link" href="#">{{ Auth::user()->name }}</a>
                                         <p class="small m-0">Desenvolvedor Web</p>
                                     </div>
                                 </div>
