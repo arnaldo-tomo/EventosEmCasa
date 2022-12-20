@@ -409,8 +409,8 @@ Header END -->
                                 </div>
                                 <!-- Button -->
                                 <div class="d-flex mt-3 justify-content-center ms-sm-auto">
-                                    <button class="btn btn-danger-soft me-2" type="button"> <i
-                                            class="bi bi-pencil-fill pe-1"></i> Edit profile </button>
+                                    <a href="Configuracoes" class="btn btn-danger-soft me-2" type="button"> <i
+                                            class="bi bi-pencil-fill pe-1"></i> Editar perfil </a>
                                     <div class="dropdown">
                                         <!-- Card share action menu -->
                                         <button class="icon-md btn btn-light" type="button" id="profileAction2"
