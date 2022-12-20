@@ -411,12 +411,22 @@ Header END -->
                                     <form class="row g-3">
                                         <!-- First name -->
                                         <div class="col-sm-6 col-lg-4">
+                                            <label class="form-label">Foto do Peril</label>
+                                            <input type="file" class="form-control" placeholder=""
+                                                value="Sam">
+                                        </div>
+                                        <div class="col-sm-6 col-lg-4">
+                                            <label class="form-label">foto de capa</label>
+                                            <input type="file" class="form-control" placeholder=""
+                                                value="Sam">
+                                        </div>
+                                        <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">First name</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 value="Sam">
                                         </div>
                                         <!-- Last name -->
-                                        <div class="col-sm-6 col-lg-4">
+                                        <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Last name</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 value="Lanson">
