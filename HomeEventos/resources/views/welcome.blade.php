@@ -616,27 +616,34 @@
                                     </li>
                                 </ul>
                             </div>
-                            {{-- FIle manger --}}
-                            <div class="col-12">
-                                <label class="form-label">Carregar Fotografia</label>
-                                <input type="file" class="form-control" name="imagen">
-                            </div>
-                            {{-- FIle manger --}}
+
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
-                                <label class="form-label">Carregar Anexo</label>
-                                <div type="file" name="anexo"
+                                <label class="form-label">Carregar Fotografia</label>
+                                <div type="file" id="imagen" name="imagen"
                                     class="dropzone  dropzone-default card shadow-none"
-                                    data-dropzone='{"maxFiles":2}'>
-                                    <div class="dz-message">
-                                        <i class="bi bi-file-earmark-text display-3"></i>
+                                    data-dropzone='{"maxFiles":1}'>
+                                    <div id="imagen" name="imagen" class="dz-message">
+                                        <i id="imagen" name="imagen"
+                                            class="bi bi-file-earmark-text display-3"></i>
                                         <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Dropzone photo END -->
-                            <!-- Form END -->
 
+                            <div class="col-12">
+                                <label class="form-label">Link Externos</label>
+                                <input type="text" class="form-control" id="link" name="link"
+                                    placeholder="https://go.com/fwlink/?LinkID=219472&clcid=0x409">
+                            </div>
+                            <!-- Form END -->
+                            {{-- FIle manger --}}
+                            <div class="col-12">
+                                <label class="form-label">Carregar anexo</label>
+                                <input type="file" class="form-control" name="anexo">
+                            </div>
+                            {{-- FIle manger --}}
 
                     </div>
                     <!-- Modal feed body END -->
@@ -962,8 +969,8 @@
                                                 class="row g-3 justify-content-between align-items-center mt-5 pt-5 position-relative z-index-9">
                                                 <div class="col-lg-9">
                                                     <h1 class="h3 mb-1 text-white"> {{ $evento->titulo }} </h1>
-                                                    <a class="text-white" href="https://github.com/arnaldo-tomo"
-                                                        target="_blank">https://github.com/arnaldo-tomo</a>
+                                                    <a class="text-white" href="{{ $evento->link }}"
+                                                        target="_blank">{{ $evento->link }}</a>
                                                 </div>
                                                 <!-- Button -->
                                                 <div class="col-lg-3 text-lg-end">
