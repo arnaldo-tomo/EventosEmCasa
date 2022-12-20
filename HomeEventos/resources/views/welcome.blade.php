@@ -1064,10 +1064,9 @@
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
                                                         <li class="ms-3">
-                                                            <a style="color: aliceblue"
-                                                                href="Verperfil{{ $evento->dono->id }}">
+                                                            <small href="Verperfil{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
-                                                            </a>
+                                                            </small>
                                                         </li>
 
                                                     </ul>
