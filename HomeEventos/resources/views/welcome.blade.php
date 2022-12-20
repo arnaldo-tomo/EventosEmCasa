@@ -540,9 +540,10 @@
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
 
-                                    <select class="form-select form-select" style="width: 100%" style="height: 100%"
+                                    <select class="form-select form-select" style="width: 100%,height: 100%"
                                         id="month" name="cidade[]">
-                                        <option disabled selected>Escolha o tipo </option>
+
+                                        <option disabled selected>Escolha o cidade </option>
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->nome }}">{{ $cidade->nome }}</option>
                                         @endforeach
@@ -554,14 +555,20 @@
 
                             <!-- Tipo de evento -->
                             <div class="col-12">
-                                <label class="form-label">Tipo & categoria de evento</label>
-                                <select name="tipo_categoria" class="form-select form-select">
-                                    <option disabled selected>Escolha o tipo de evento</option>
-                                    @foreach ($catergoria as $item)
-                                        <option value="{{ $item->nome }}">{{ $item->nome }}</option>
-                                    @endforeach
+                                <label class="form-label">Tipo & categoria</label>
+                                <div class="form-group">
 
-                                </select>
+                                    <select name="tipo_categoria" style="width: 100%,height: 100%"
+                                        class="form-select form-select">
+
+                                        <option disabled selected>Escolha o tipo de evento</option>
+
+                                        @foreach ($catergoria as $item)
+                                            <option value="{{ $item->nome }}">{{ $item->nome }}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
                             </div>
                             <!-- Tipo de evento -->
                             <!-- Add guests -->
@@ -577,30 +584,12 @@
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
                                             alt="avatar">
                                     </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg"
-                                            alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg"
-                                            alt="avatar">
-                                    </li>
+
                                     <li class="avatar avatar-xs">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg"
                                             alt="avatar">
                                     </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg"
-                                            alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg"
-                                            alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
-                                    </li>
+
                                     <li class="ms-3">
                                         <small> +50 </small>
                                     </li>
@@ -1585,14 +1574,15 @@
         });
     </script>
 
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function() {
-            $('#month').select2({
+            $('#month1').select2({
                 placeholder: "escolha cidade",
-                allowClear: true
+                allowClear: true,
+                closeOnSelect: false
             });
         });
-    </script> --}}
+    </script>
     {{-- script de campo multiselect --}
 
 
