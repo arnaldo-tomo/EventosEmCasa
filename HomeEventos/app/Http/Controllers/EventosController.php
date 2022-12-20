@@ -65,7 +65,8 @@ class EventosController extends Controller
 
     public function Verperfil($id)
     {
-        dd($id);
+        $info = User::find($id)->get()->first();
+        return view('eventos.verperfil', compact('info'));
     }
     public function sobre()
     {
