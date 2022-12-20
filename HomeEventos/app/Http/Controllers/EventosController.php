@@ -20,8 +20,10 @@ class EventosController extends Controller
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  catergoria::all();
         $cidades = cidade::all();
-        $participantes = User::all();
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
+        $participantes = User::find(1);
+
+        dd($participantes->gostos);
+        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
     }
 
     public function todos()
