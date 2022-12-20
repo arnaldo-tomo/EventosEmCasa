@@ -397,68 +397,6 @@ Header END -->
                         <div class="tab-pane show active fade" id="nav-setting-tab-1">
                             <!-- Account settings START -->
                             <div class="card mb-4">
-                                <div class="card">
-                                    <div class="h-200px rounded-top"
-                                        style="background-image:url(assets/images/bg/05.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                    </div>
-                                    <!-- Card body START -->
-                                    <div class="card-body py-0">
-                                        <div class="d-sm-flex align-items-start text-center text-sm-start">
-                                            <div>
-                                                <!-- Avatar -->
-                                                <div class="avatar avatar-xxl mt-n5 mb-3">
-                                                    <img class="avatar-img rounded-circle border border-white border-3"
-                                                        src="assets/images/avatar/main.png" alt="">
-
-                                                </div>
-                                            </div>
-                                            <div class="ms-sm-4 mt-sm-3">
-                                                <!-- Info -->
-                                                <h1 class="mb-0 h5">{{ Auth::user()->name }} <i
-                                                        class="bi bi-patch-check-fill text-success small"></i></h1>
-                                                <p>250 conexões</p>
-                                            </div>
-                                            <!-- Button -->
-                                            <div class="d-flex mt-3 justify-content-center ms-sm-auto">
-                                                <a href="Configuracoes" class="btn btn-danger-soft me-2"
-                                                    type="button"> <i class="bi bi-pencil-fill pe-1"></i> Editar
-                                                    perfil </a>
-                                                <div class="dropdown">
-                                                    <!-- Card share action menu -->
-                                                    <button class="icon-md btn btn-light" type="button"
-                                                        id="profileAction2" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        <i class="bi bi-three-dots"></i>
-                                                    </button>
-                                                    <!-- Card share action dropdown menu -->
-                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                        aria-labelledby="profileAction2">
-                                                        <li><a class="dropdown-item" href="#"> <i
-                                                                    class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                                in a
-                                                                message</a></li>
-                                                        <li><a class="dropdown-item" href="#"> <i
-                                                                    class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                                your profile
-                                                                to PDF</a></li>
-                                                        <li><a class="dropdown-item" href="#"> <i
-                                                                    class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                        </li>
-                                                        <li>
-                                                            <hr class="dropdown-divider">
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#"> <i
-                                                                    class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                                settings</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- Card body END -->
-
-                                </div>
                                 <!-- Title START -->
                                 <div class="card-header border-0 pb-0">
                                     <h1 class="h5 card-title">Account Settings</h1>
