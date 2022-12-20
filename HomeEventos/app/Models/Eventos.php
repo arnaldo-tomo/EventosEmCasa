@@ -23,6 +23,7 @@ class Eventos extends Model
         'duracao',
         'localizacao',
         'anexo',
+        'link',
         'imagen'
     ];
 
