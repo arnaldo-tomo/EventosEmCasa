@@ -540,9 +540,9 @@
                                 <div class="form-group">
 
                                     <label class="form-label">Cidade</label>
-                                    <select class="form-control select2 select2-hidden-accessible" multiple="multiple"
+                                    <select class="form-control select2 select2-hidden-accessible"
                                         data-placeholder="Escolha o curso" style="width: 100%;" tabindex="-1"
-                                        aria-hidden="true" id="month" name="cidade">
+                                        aria-hidden="true" id="month" name="cidade[]">
                                         <option value="Beira">Beira</option>
                                         <option value="Maputo">Maputo</option>
                                         <option value="#">Nampula</option>
