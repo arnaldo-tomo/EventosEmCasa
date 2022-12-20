@@ -21,7 +21,12 @@ class EventosController extends Controller
         $catergoria =  catergoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
+
+        $evento = Eventos::find(12);
+        foreach ($evento->dono as $i) {
+            echo $i->name;
+        }
+        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes'));
     }
 
     public function todos()
@@ -50,9 +55,9 @@ class EventosController extends Controller
     }
 
 
-    public function Verperfil($id)
+    public function Verperfil($user_name)
     {
-        dd($id);
+        dd($user_name);
     }
     public function sobre()
     {
