@@ -23,11 +23,27 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/OverlayScrollbars-master/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/dist/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/choices.js/public/assets/styles/choices.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/dropzone/dist/dropzone.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/dist/flatpickr.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/plyr/plyr.css" />
 
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMKQ4P9YMZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GMKQ4P9YMZ');
+    </script>
 </head>
 
 <body>
@@ -396,10 +412,65 @@ Header END -->
                             <div class="d-sm-flex align-items-start text-center text-sm-start">
                                 <div>
                                     <!-- Avatar -->
-                                    <div class="avatar avatar-xxl mt-n5 mb-3">
+                                    <a href="#!" data-bs-toggle="modal" data-bs-target="#feedActionPhoto"
+                                        class="avatar avatar-xxl mt-n5 mb-3">
                                         <img class="avatar-img rounded-circle border border-white border-3"
                                             src="assets/images/avatar/main.png" alt="">
+                                    </a>
+                                </div>
 
+                                <div class="modal fade" id="feedActionPhoto" tabindex="-1"
+                                    aria-labelledby="feedActionPhotoLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <!-- Modal feed header START -->
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="feedActionPhotoLabel">Add post photo</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <!-- Modal feed header END -->
+
+                                            <!-- Modal feed body START -->
+                                            <div class="modal-body">
+                                                <!-- Add Feed -->
+                                                <div class="d-flex mb-3">
+                                                    <!-- Avatar -->
+                                                    <div class="avatar avatar-xs me-2">
+                                                        <img class="avatar-img rounded-circle"
+                                                            src="assets/images/avatar/03.jpg" alt="">
+                                                    </div>
+                                                    <!-- Feed box  -->
+                                                    <form class="w-100">
+                                                        <textarea class="form-control pe-4 fs-3 lh-1 border-0" rows="2" placeholder="Share your thoughts..."></textarea>
+                                                    </form>
+                                                </div>
+
+                                                <!-- Dropzone photo START -->
+                                                <div>
+                                                    <label class="form-label">Upload attachment</label>
+                                                    <div class="dropzone dropzone-default card shadow-none"
+                                                        data-dropzone='{"maxFiles":2}'>
+                                                        <div class="dz-message">
+                                                            <i class="bi bi-images display-3"></i>
+                                                            <p>Drag here or click to upload photo.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Dropzone photo END -->
+
+                                            </div>
+                                            <!-- Modal feed body END -->
+
+                                            <!-- Modal feed footer -->
+                                            <div class="modal-footer ">
+                                                <!-- Button -->
+                                                <button type="button" class="btn btn-danger-soft me-2"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-success-soft">Post</button>
+                                            </div>
+                                            <!-- Modal feed footer -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="ms-sm-4 mt-sm-3">
@@ -420,9 +491,10 @@ Header END -->
                                         </button>
                                         <!-- Card share action dropdown menu -->
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileAction2">
-                                            <li><a class="dropdown-item" href="#"> <i
-                                                        class="bi bi-bookmark fa-fw pe-2"></i>Share profile in a
-                                                    message</a></li>
+                                            <li><a class="dropdown-item"href="#!" data-bs-toggle="modal"
+                                                    data-bs-target="#feedActionPhoto"> <i
+                                                        class="bi bi-bookmark fa-fw pe-2"></i>Actular foto de
+                                                    perfil</a></li>
                                             <li><a class="dropdown-item" href="#"> <i
                                                         class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save your profile
                                                     to PDF</a></li>
@@ -871,12 +943,16 @@ Header END -->
 
     <!-- =======================
 JS libraries, plugins and custom scripts -->
-
-    <!-- Bootstrap JS -->
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Vendors -->
+    <script src="assets/vendor/tiny-slider/dist/tiny-slider.js"></script>
+    <script src="assets/vendor/OverlayScrollbars-master/js/OverlayScrollbars.min.js"></script>
+    <script src="assets/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="assets/vendor/glightbox-master/dist/js/glightbox.min.js"></script>
+    <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="assets/vendor/plyr/plyr.js"></script>
+    <script src="assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
 
     <!-- Template Functions -->
     <script src="assets/js/functions.js"></script>
