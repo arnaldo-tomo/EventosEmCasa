@@ -540,8 +540,8 @@
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
 
-                                    <select class="form-select form-select" style="width: 100%" style="height:50%" id="month"
-                                        name="cidade[]">
+                                    <select class="form-select form-select" style="width: 100%" style="height: 100%"
+                                        id="month" name="cidade[]">
                                         <option disabled selected>Escolha o tipo </option>
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->nome }}">{{ $cidade->nome }}</option>
