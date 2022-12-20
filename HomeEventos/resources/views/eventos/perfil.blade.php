@@ -399,6 +399,7 @@ Header END -->
                                     <div class="avatar avatar-xxl mt-n5 mb-3">
                                         <img class="avatar-img rounded-circle border border-white border-3"
                                             src="assets/images/avatar/main.png" alt="">
+
                                     </div>
                                 </div>
                                 <div class="ms-sm-4 mt-sm-3">
