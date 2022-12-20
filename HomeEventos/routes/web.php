@@ -6,6 +6,7 @@ use App\Http\Controllers\EventosController;
 
 Route::get('/', [EventosController::class, 'home'])->name('home');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
+Route::get('/Verperfil', [EventosController::class, 'Verperfil'])->middleware(['auth'])->name('Verperfil');
 Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/Categoria/{categoria}', [EventosController::class, 'categoria'])->name('categoria');
