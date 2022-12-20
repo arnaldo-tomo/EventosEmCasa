@@ -572,10 +572,22 @@
                             </div>
                             <!-- Tipo de evento -->
                             <!-- Add guests -->
-                            <div class="col-12">
+
+                            <div class="col-md-12">
                                 <label class="form-label">Addicionar Participantes</label>
-                                <input type="email" class="form-control" name="participante"
-                                    placeholder="Exemplo:joaocarlos@gmail.com">
+                                <div class="form-group">
+
+                                    <select class="form-select form-select" style="width: 100%,height: 100%"
+                                        id="month" name="cidade[]">
+
+                                        <option disabled selected>Exemplo:joaocarlos@gmail.com</option>
+                                        @foreach ($participantes as $participante)
+                                            <option value="{{ $participante->email }}">{{ $participante->email }}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
                             </div>
                             <!-- Avatar group START -->
                             <div class="col-12 mt-3">
@@ -1037,9 +1049,9 @@
                                             </div>
                                         </div>
                                         <hr class="mt-4">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-7">
-                                                <div class="col-lg-7">
+                                        <div class="row ">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     <h5>Proprietário</h5>
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
@@ -1048,9 +1060,10 @@
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
                                                         <li class="ms-3">
-                                                            <small>
+                                                            <a style="color: aliceblue" href=""
+                                                                {{ url('Verperfil') }}>
                                                                 {{ $evento->user_name }}
-                                                            </small>
+                                                            </a>
                                                         </li>
 
                                                     </ul>
