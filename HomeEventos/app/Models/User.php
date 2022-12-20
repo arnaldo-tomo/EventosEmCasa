@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Eventos::class, 'eventos_user', 'user_id', 'eventos_id',);
     }
+
+    public function gostos()
+    {
+        return $this->belongsToMany(Eventos::class, 'gostos', 'user_id', 'eventos_id');
+    }
 }
