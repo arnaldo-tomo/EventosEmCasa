@@ -57,7 +57,7 @@ class EventosController extends Controller
         }
 
         $info = User::where('id', Auth::user()->id)->get()->first();
-        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(10);
+        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
         $amigos = User::all();
         return view('eventos.perfil', compact('info', 'eventos', 'amigos'));
     }
