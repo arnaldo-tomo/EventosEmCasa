@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class gosto extends Model
 {
     use HasFactory;
-    protected R
-    protected $fillable=['userid','evrntosid'];
+    protected $table = 'gostos';
+    protected $fillable = ['user_id', 'eventos_id'];
 }
