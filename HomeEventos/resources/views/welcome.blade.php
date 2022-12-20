@@ -1062,7 +1062,7 @@
                                                         <li class="ms-3">
                                                             <a style="color: aliceblue"
                                                                 href="Verperfil{{ $evento->user_name }}">
-                                                                {{ $evento->user_name }}
+                                                                {{ $evento->dono->name }}
                                                             </a>
                                                         </li>
 
