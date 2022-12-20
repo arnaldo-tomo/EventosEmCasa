@@ -1050,8 +1050,8 @@
                                         </div>
                                         <hr class="mt-4">
                                         <div class="row ">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-12">
+                                            <div class="col-lg-8">
+                                                <div class="col-lg-8">
                                                     <h5>Proprietário</h5>
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
@@ -1060,8 +1060,8 @@
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
                                                         <li class="ms-3">
-                                                            <a style="color: aliceblue" href=""
-                                                                {{ url('Verperfil') }}>
+                                                            <a style="color: aliceblue"
+                                                                href="Verperfil{{ $evento->user_name }}">
                                                                 {{ $evento->user_name }}
                                                             </a>
                                                         </li>
@@ -1094,7 +1094,7 @@
                                                             src="assets/images/avatar/06.jpg" alt="avatar">
                                                     </li>
                                                     <li class="ms-3">
-                                                        <small>16+- </small>
+                                                        <small>16+</small>
                                                     </li>
                                                 </ul>
                                             </div>
