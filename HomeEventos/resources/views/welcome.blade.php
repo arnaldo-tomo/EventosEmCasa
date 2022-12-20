@@ -516,7 +516,7 @@
                                 <label class="form-label">Publico Ou Privado</label>
                                 <select class="form-select form-select" name="privado"
                                     aria-label=".form-select-lg example">
-                                    <option disabled selected>-------------Escolha------------</option>
+                                    <option disabled selected>-Selecione-</option>
                                     <option value="0">publico</option>
                                     <option value="1">privado</option>
 
@@ -537,17 +537,16 @@
                             <!-- Location -->
 
                             <div class="col-md-12">
+                                <label class="form-label">Cidade</label>
                                 <div class="form-group">
 
-                                    <label class="form-label">Cidade</label>
-                                    <select class="form-control select2 select2-hidden-accessible"
-                                        data-placeholder="Escolha o curso" style="width: 100%;" tabindex="-1"
-                                        aria-hidden="true" id="month" name="cidade[]">
-                                        <option value="Beira">Beira</option>
-                                        <option value="Maputo">Maputo</option>
-                                        <option value="#">Nampula</option>
-                                        <option value="#">CaboDelegado</option>
-                                        <option value="#">Chimoio</option>
+                                    <select class="form-select form-select" style="width: 100%" style="height:50%" id="month"
+                                        name="cidade[]">
+                                        <option disabled selected>Escolha o tipo </option>
+                                        @foreach ($cidades as $cidade)
+                                            <option value="{{ $cidade->nome }}">{{ $cidade->nome }}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
@@ -616,7 +615,8 @@
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
                                 <label class="form-label">Carregar Anexo</label>
-                                <div name="anexo" class="dropzone  dropzone-default card shadow-none"
+                                <div type="file" name="anexo"
+                                    class="dropzone  dropzone-default card shadow-none"
                                     data-dropzone='{"maxFiles":2}'>
                                     <div class="dz-message">
                                         <i class="bi bi-file-earmark-text display-3"></i>
