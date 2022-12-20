@@ -29,6 +29,7 @@ class CreateEventosTable extends Migration
             $table->integer('duracao');
             $table->string('localizacao');
             $table->string('anexo')->nullable();
+            $table->string('link')->nullable();
             $table->string('imagen');
             $table->timestamps();
         });
