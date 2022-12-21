@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventosController;
 
 Route::get('/', [EventosController::class, 'home'])->name('home');
+Route::get('/autocomplete', [EventosController::class, 'aucomplete'])->name('autocomplete');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->name('Configuracoes');
 Route::get('/Verperfil{id}', [EventosController::class, 'Verperfil'])->middleware(['auth'])->name('Verperfil');
