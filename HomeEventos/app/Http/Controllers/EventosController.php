@@ -130,4 +130,11 @@ class EventosController extends Controller
 
         // return redirect()->back()->with('interessante');
     }
+
+    public function aucomplete(Request $request)
+    {
+        $query = $request->get('query');
+        $filterResult = User::where('name', 'LIKE', '%' . $query . '%')->get();
+        return response()->json($filterResult);
+    }
 }
