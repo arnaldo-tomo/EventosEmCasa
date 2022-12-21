@@ -7,7 +7,6 @@ use App\Models\gosto;
 use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\catergoria;
-use App\Models\participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -120,21 +119,23 @@ class EventosController extends Controller
 
     public function gosto($id, Request $request)
     {
-
         $gosto = new gosto();
         $gosto->user_id = Auth::user()->id;
         $gosto->eventos_id = $id;
         $gosto->save();
-
-
-
         // return redirect()->back()->with('interessante');
     }
 
     public function aucomplete(Request $request)
     {
-        $query = $request->get('query');
-        $filterResult = User::where('name', 'LIKE', '%' . $query . '%')->get();
-        return response()->json($filterResult);
+        $data = $request->all();
+
+        $query = $data['query'];
+
+        $filter_data = cidade::select('nome')
+            ->where('nome', 'LIKE', '%' . $query . '%')
+            ->get();
+
+        return response()->json($filter_data);
     }
 }
