@@ -486,8 +486,8 @@
                         <!-- Form START -->
 
 
-                        <form method="POST" action="{{ route('salvar') }}" enctype="multipart/form-data"
-                            class="row g-4">
+                        <form method="POST" name="imagen" action="{{ route('salvar') }}"
+                            enctype="multipart/form-data" class="row g-4">
                             @csrf
                             <!-- Title -->
                             <div class="col-12">
@@ -620,12 +620,11 @@
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
                                 <label class="form-label">Carregar Fotografia</label>
-                                <div type="file" id="imagen" name="imagen"
+                                <div t ype="file" name="imagen"
                                     class="dropzone  dropzone-default card shadow-none"
                                     data-dropzone='{"maxFiles":1}'>
-                                    <div id="imagen" name="imagen" class="dz-message">
-                                        <i id="imagen" name="imagen"
-                                            class="bi bi-file-earmark-text display-3"></i>
+                                    <div name="imagen" class="dz-message">
+                                        <i class="bi bi-file-earmark-text display-3"></i>
                                         <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
                                     </div>
                                 </div>
@@ -653,8 +652,8 @@
                         <button type="cancel" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
                             Cancelar</button>
                         <button type="submit" class="btn btn-success-soft">Criar Agora</button>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
