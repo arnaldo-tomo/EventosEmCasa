@@ -698,16 +698,27 @@
                                     </div>
                                     <div class="col-md-5">
                                         <!-- Where -->
-
-
                                         <div class="input-group">
-                                            <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Onde" id="pac-input" class="controls">
-                                            {{-- <div id="lat"></div>
-                                            <div id="long"></div> --}}
+
+                                            <div id="the-basics">
+                                                <input class="typeahead form-control form-control-lg me-1 pe-5"
+                                                    type="text" placeholder="States of USA" class="controls">
+
+                                                <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
+                                                    href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
+                                            </div>
+                                        </div>
+
+
+
+                                        {{-- <div class="input-group">
+
+                                            <input class="form-control form-control-lg me-1 pe-5" class="typeahead"
+                                                type="text" placeholder="Onde" class="controls">
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
-                                        </div>
+
+                                        </div> --}}
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
@@ -1627,7 +1638,6 @@
     </script>
     {{-- script de campo multiselect --}
 
-
     {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
         async defer></script> --}} {{-- <script>
@@ -1691,8 +1701,6 @@
         </script>
     @enderror
 
-
-
     {{-- chama modal de error na parte de recuprar senha --}}
     @error('recuperar')
         <script type="text/javascript">
@@ -1725,11 +1733,6 @@
                         (place.address_components[2] && place.address_components[2].short_name || '')
                     ].join(' ');
                 }
-                /*********************************************************************/
-                /* var address contain your autocomplete address *********************/
-                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
-                /* will be used for current address latitude and longitude************/
-                /*********************************************************************/
                 document.getElementById('lat').innerHTML = place.geometry.location.lat();
                 document.getElementById('long').innerHTML = place.geometry.location.lng();
             });
@@ -1757,11 +1760,6 @@
                         (place.address_components[2] && place.address_components[2].short_name || '')
                     ].join(' ');
                 }
-                /*********************************************************************/
-                /* var address contain your autocomplete address *********************/
-                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
-                /* will be used for current address latitude and longitude************/
-                /*********************************************************************/
                 document.getElementById('lat').innerHTML = place.geometry.location.lat();
                 document.getElementById('long').innerHTML = place.geometry.location.lng();
             });
@@ -1769,11 +1767,54 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-    {{-- GOOGLE MAPS --}}
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
 
+    <script>
+        var substringMatcher = function(strs) {
+            return function findMatches(q, cb) {
+                var matches, substringRegex;
 
+                // an array that will be populated with substring matches
+                matches = [];
 
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function(i, str) {
+                    if (substrRegex.test(str)) {
+                        matches.push(str);
+                    }
+                });
+
+                cb(matches);
+            };
+        };
+
+        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ];
+
+        $('#the-basics .typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            name: 'states',
+            source: substringMatcher(states)
+        });
+    </script>
 </body>
 
 </html>
