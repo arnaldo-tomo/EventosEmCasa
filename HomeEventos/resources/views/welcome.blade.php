@@ -3,7 +3,6 @@
 
 <head>
     <title>{{ config('app.name') }}</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,11 +25,10 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/dropzone/dist/dropzone.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/dist/flatpickr.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/plyr/plyr.css" />
-    {{-- <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -701,15 +699,19 @@
                                     <div class="col-md-5">
                                         <!-- Where -->
                                         <div class="input-group">
+                                            <div id="the-basics">
 
 
-                                            <input class="typeahead form-control form-control-lg me-1 pe-5"
-                                                type="text" placeholder="Onde" id="search" name="search"
-                                                class="controls">
+                                                <input class="typeahead form-control form-control-lg me-1 pe-5"
+                                                    type="text" placeholder="Onde">
 
-                                            <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
-                                                href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
+                                                <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
+                                                    href="#"> <i class="fa-solid fa-crosshairs"></i>
 
+                                                </a>
+
+
+                                            </div>
                                         </div>
 
 
@@ -1781,29 +1783,67 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-
-    {{-- Auto Completo  --}}
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
-    <script type="text/javascript">
-        var route = "{{ url('autocomplete') }}";
-        $('#search').typeahead({
-            source: function(query, process) {
-                return $.get(route, {
-                    query: query
+
+    <script>
+        var substringMatcher = function(strs) {
+            return function findMatches(q, cb) {
+                var matches, substringRegex;
+
+                // an array that will be populated with substring matches
+                matches = [];
+
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function(i, str) {
+                    if (substrRegex.test(str)) {
+                        matches.push(str);
+                    }
+                });
+
+                cb(matches);
+            };
+        };
+
+        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ];
+
+        $('#the-basics .typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            name: 'states',
+            source: substringMatcher(states)
+        });
+    </script>
+    <script>
+        var path = "{{ route('autocomplete') }}";
+
+        $('input.typeahead').typeahead({
+            source: function(terms, process) {
+                return $.get(path, {
+                    terms: terms
                 }, function(data) {
                     return process(data);
                 });
             }
         });
     </script>
-    {{-- Auto Complete --}}
+
 
 </body>
 
