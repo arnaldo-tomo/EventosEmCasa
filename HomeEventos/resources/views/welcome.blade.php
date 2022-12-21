@@ -1608,12 +1608,13 @@
 
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js">
-        < /> <
-        script
-        src =
-            "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U" >
+
+
+    {{-- API DA GOOGLE  --}}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
     </script>
 
     <script>
@@ -1637,6 +1638,7 @@
         });
     </script>
     {{-- script de campo multiselect --}
+
 
     {{-- <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9La_0xlSLF4KpbnVnooIJTsl_tkycFM&libraries=places&callback=initialize"
@@ -1701,6 +1703,8 @@
         </script>
     @enderror
 
+
+
     {{-- chama modal de error na parte de recuprar senha --}}
     @error('recuperar')
         <script type="text/javascript">
@@ -1733,6 +1737,7 @@
                         (place.address_components[2] && place.address_components[2].short_name || '')
                     ].join(' ');
                 }
+
                 document.getElementById('lat').innerHTML = place.geometry.location.lat();
                 document.getElementById('long').innerHTML = place.geometry.location.lng();
             });
