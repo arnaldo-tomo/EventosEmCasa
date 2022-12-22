@@ -30,13 +30,17 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    {{-- Teste de boo typeaheda --}}
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css" />
 
 </head>
+
 
 <body>
 
@@ -695,24 +699,20 @@
                                                 type="text" placeholder="segundo teste">
                                         </div> --}}
                                         <!-- Where -->
-                                        <div class="input-group">
+                                        <div id="input-group" class="input-group">
                                             <input class="form-control typeahead  form-control-lg me-1 pe-5"
-                                                type="text" placeholder="Onde" class="controls">
+                                                name="typeahead" id="typeahead" type="text" placeholder="Onde"
+                                                class="controls">
 
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
-                                        {{-- <div class="input-group">
-                                            <input class="form-control form-control-lg me-1 pe-5" class="typeahead"
-                                                type="text" placeholder="Onde" class="controls">
-                                            <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
-                                                href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
-                                        </div> --}}
-                                    </div>
-                                    <div class="col-md-2 d-grid">
-                                        <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Buscar</a>
-                                    </div>
+
+
+                                        <div class="col-md-2 d-grid">
+                                            <!-- Search -->
+                                            <a class="btn btn-lg btn-primary" href="#">Buscar</a>
+                                        </div>
                                 </form>
                                 <!-- Form END -->
                             </div>
@@ -1771,20 +1771,26 @@
 
 
     <script>
-        var path = "{{ url('autocomplete') }}";
-
-        $('#typeahead').typeahead({
-            source: function(terms, process) {
-                return $.get(path, {
-                    terms: terms
-                }, function(data) {
-                    return process(data);
-                });
-            }
+        var auto_complete = new Autocomplete(document.getElementById('typeahead'), {
+            data: <?php echo json_encode($catergoria); ?>,
+            maximumItems: 10,
+            highlightTyped: true,
+            highlightClass: 'fw-bold text-primary'
         });
+        // var path = "{{ url('autocomplete') }}";
+
+        // $('#typeahead').typeahead({
+        //     source: function(terms, process) {
+        //         return $.get(path, {
+        //             terms: terms
+        //         }, function(data) {
+        //             return process(data);
+        //         });
+        //     }
+        // });
     </script>
 
-    {{-- <script>
+    <script>
         var substringMatcher = function(strs) {
             return function findMatches(q, cb) {
                 var matches, substringRegex;
@@ -1818,7 +1824,7 @@
             'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ];
 
-        $('#the-basics .typeahead').typeahead({
+        $('#input-group .typeahead').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
@@ -1826,7 +1832,7 @@
             name: 'states',
             source: substringMatcher(states)
         });
-    </script> --}}
+    </script>
 </body>
 
 </html>
