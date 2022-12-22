@@ -3,10 +3,11 @@
 
 <head>
     <title>{{ config('app.name') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
+    <meta name="author" content="arnaldotomo.epizy.com">
     <meta name="description" content="Bootstrap 5 based Social Media Network and Community Theme">
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
@@ -14,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
+
     <!-- Plugins CSS -->
     <!-- Plugins CSS -->
     <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
@@ -28,14 +30,11 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
 </head>
 
@@ -62,14 +61,9 @@
                         <span></span>
                     </span>
                 </button>
-
-
-
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-
                     <!-- Nav right START -->
                     <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
-
                         {{-- messaging --}}
                         <!-- Main navbar START -->
                         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -83,7 +77,6 @@
                                     @auth
                                         <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
                                     </li>
-
                                 </ul>
                             </div>
                             <!-- Nav right START -->
@@ -92,7 +85,6 @@
                                 <i class="bi bi-chat-left-text-fill fs-6"> </i>
                             </a>
                         </li> --}}
-
                             <li class="nav-item ms-2">
                                 <a class="nav-link icon-md btn btn-dark p-0" href="{{ route('Configuracoes') }}">
                                     <i class="bi bi-gear-fill fs-6"> </i>
@@ -681,6 +673,7 @@
 
                             <div class="mx-auto bg-mode shadow rounded p-4 mt-5">
                                 <h5 class="mb-3 text-start">Ajudaremos você a encontrar tudo</h5>
+
                                 <!-- Form START -->
                                 <form class="row g-3 justify-content-center">
                                     <div class="col-md-5">
@@ -697,32 +690,23 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5">
+                                        {{-- <div id="the-basics">
+                                            <input class="form-control form-control-lg me-1 pe-5 typeahead"
+                                                type="text" placeholder="segundo teste">
+                                        </div> --}}
                                         <!-- Where -->
                                         <div class="input-group">
-                                            <div id="the-basics">
+                                            <input class="form-control typeahead  form-control-lg me-1 pe-5"
+                                                type="text" placeholder="Onde" class="controls">
 
-
-                                                <input class="typeahead form-control form-control-lg me-1 pe-5"
-                                                    type="text" placeholder="Onde">
-
-                                                <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
-                                                    href="#"> <i class="fa-solid fa-crosshairs"></i>
-
-                                                </a>
-
-
-                                            </div>
+                                            <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
+                                                href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
-
-
-
                                         {{-- <div class="input-group">
-
                                             <input class="form-control form-control-lg me-1 pe-5" class="typeahead"
                                                 type="text" placeholder="Onde" class="controls">
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
-
                                         </div> --}}
                                     </div>
                                     <div class="col-md-2 d-grid">
@@ -1596,8 +1580,15 @@
             </div>
         </div>
     </footer>
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
 
+
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Vendors -->
     <script src="assets/vendor/tiny-slider/dist/tiny-slider.js"></script>
     <script src="assets/vendor/OverlayScrollbars-master/js/OverlayScrollbars.min.js"></script>
@@ -1610,17 +1601,12 @@
     <!-- Template Functions -->
     <script src="assets/js/functions.js"></script>
     <!-- Styles -->
-
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
-
-
     {{-- API DA GOOGLE  --}}
-    <script
+    {{-- <script
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
-    </script>
+    </script> --}}
 
     {{-- SELECT2 --}}
     <script>
@@ -1783,11 +1769,22 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
-
-
 
     <script>
+        var path = "{{ url('autocomplete') }}";
+
+        $('#typeahead').typeahead({
+            source: function(terms, process) {
+                return $.get(path, {
+                    terms: terms
+                }, function(data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
+
+    {{-- <script>
         var substringMatcher = function(strs) {
             return function findMatches(q, cb) {
                 var matches, substringRegex;
@@ -1829,22 +1826,7 @@
             name: 'states',
             source: substringMatcher(states)
         });
-    </script>
-    <script>
-        var path = "{{ route('autocomplete') }}";
-
-        $('input.typeahead').typeahead({
-            source: function(terms, process) {
-                return $.get(path, {
-                    terms: terms
-                }, function(data) {
-                    return process(data);
-                });
-            }
-        });
-    </script>
-
-
+    </script> --}}
 </body>
 
 </html>
