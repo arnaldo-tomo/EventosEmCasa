@@ -689,20 +689,15 @@
                                                     <option> {{ $item->nome }}</option>
                                                 @endforeach
                                             </select>
-                                            {{-- <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-5">
-                                        {{-- <div id="the-basics">
-                                            <input class="form-control form-control-lg me-1 pe-5 typeahead"
-                                                type="text" placeholder="segundo teste">
-                                        </div> --}}
+
                                         <!-- Where -->
                                         <div id="input-group" class="input-group">
                                             <input class="form-control typeahead  form-control-lg me-1 pe-5"
-                                                name="typeahead" id="typeahead" type="text" placeholder="Onde"
-                                                class="controls">
+                                                type="text" placeholder="Onde" class="controls" required
+                                                autofocus>
 
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
