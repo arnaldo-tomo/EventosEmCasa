@@ -126,16 +126,17 @@ class EventosController extends Controller
         // return redirect()->back()->with('interessante');
     }
 
-    public function aucomplete(Request $request)
+    public function autocomplete(Request $request)
     {
-        $data = $request->all();
 
-        $query = $data['query'];
+        // $query = $request->get('query');
+        // $filterResult = User::where('name', 'LIKE', '%' . $query . '%')->get();
+        // return response()->json($filterResult);
 
-        $filter_data = cidade::select('nome')
-            ->where('nome', 'LIKE', '%' . $query . '%')
+
+        $datas = User::select("name")
+            ->where("name", "LIKE", "%{$request->terms}%")
             ->get();
-
-        return response()->json($filter_data);
+        return response()->json($datas);
     }
 }
