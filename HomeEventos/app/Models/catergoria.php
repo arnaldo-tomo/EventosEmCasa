@@ -9,4 +9,9 @@ class catergoria extends Model
 {
     use HasFactory;
     protected  $fillable = ['nome', 'foto'];
+
+    public function Evento()
+    {
+        return $this->belongsToMany(Eventos::class,);
+    }
 }
