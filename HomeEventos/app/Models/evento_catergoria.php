@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\categoria;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class evento_catergoria extends Model
+class evento_categoria extends Model
 {
     use HasFactory;
 
-    protected $table = 'evento_catergorias';
-    protected $fillable = ['evento_id', 'catergoria_id'];
+    protected $table = 'evento_categoria';
+    protected $fillable = ['evento_id', 'categoria_id'];
 }
