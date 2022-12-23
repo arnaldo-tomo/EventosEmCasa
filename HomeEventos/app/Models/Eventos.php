@@ -36,4 +36,9 @@ class Eventos extends Model
     {
         return $this->belongsToMany(User::class, 'gostos', 'user_id', 'eventos_id');
     }
+
+    public function categoria()
+    {
+        return $this->belongsTo(categoria::class, 'categoria_id');
+    }
 }
