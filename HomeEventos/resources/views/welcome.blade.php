@@ -1807,6 +1807,7 @@
             };
         };
 
+        var states = ['Chimoio-Moçambique', 'Maputo-Moçambique'] > ;
         var states = <?= $json = json_encode($cidade) ?>;
 
         $('#input-group .typeahead').typeahead({
