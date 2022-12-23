@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\categoria;
 use App\Models\catergoria;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +16,7 @@ class Eventos extends Model
         'titulo',
         'user_name',
         'descricao',
+        'categoria_id',
         'cidade',
         'privado',
         'tipo_categoria',
@@ -37,5 +39,10 @@ class Eventos extends Model
     public function usuario()
     {
         return $this->belongsToMany(User::class, 'gostos', 'user_id', 'eventos_id');
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(categoria::class,  'categoria_id');
     }
 }
