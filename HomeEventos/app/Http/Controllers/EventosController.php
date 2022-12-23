@@ -7,7 +7,6 @@ use App\Models\gosto;
 use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\categoria;
-use App\Models\catergori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,8 +22,8 @@ class EventosController extends Controller
         $cidades = cidade::all();
         $participantes = User::all();
 
-        $evento = categoria::find(5);
-        dd($evento);
+        $evento = Eventos::find(5);
+        dd($evento->categoria->nome);
 
         // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
