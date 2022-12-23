@@ -6,7 +6,8 @@ use App\Models\User;
 use App\Models\gosto;
 use App\Models\cidade;
 use App\Models\Eventos;
-use App\Models\catergoria;
+use App\Models\categoria;
+use App\Models\catergori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,13 +19,14 @@ class EventosController extends Controller
     public function home()
     {
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
-        $catergoria =  catergoria::all();
+        $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
 
+        $evento = categoria::find(5);
+        dd($evento);
 
-
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
+        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
 
 
@@ -35,7 +37,7 @@ class EventosController extends Controller
     public function todos()
     {
         $eventos = Eventos::all();
-        $catergoria =  catergoria::all();
+        $catergoria =  categoria::all();
         return view('eventos.todos', compact('eventos', 'catergoria'));
     }
 
