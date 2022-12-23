@@ -18,6 +18,7 @@ class CreateEventosTable extends Migration
             $table->string('titulo');
             $table->string('user_name');
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('categoria_id')->constrained();
             $table->string('descricao', 1000);
             $table->string('cidade');
             $table->boolean('privado');
