@@ -693,7 +693,7 @@
                                                 placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
-                                    <div id="input-group" class="col-md-5">
+                                    <div id="the-basics" class="col-md-5">
 
                                         <!-- Where -->
                                         <div class="input-group">
@@ -1767,36 +1767,18 @@
 
 
     <script>
-        var auto_complete = new Autocomplete(document.getElementById('typeahead'), {
-            data: <?php echo json_encode($participantes); ?>,
-            maximumItems: 10,
-            highlightTyped: true,
-            highlightClass: 'fw-bold text-primary'
-        });
-        // var path = "{{ url('autocomplete') }}";
-
-        // $('#typeahead').typeahead({
-        //     source: function(terms, process) {
-        //         return $.get(path, {
-        //             terms: terms
-        //         }, function(data) {
-        //             return process(data);
-        //         });
-        //     }
-        // });
-    </script>
-
-    <script>
         var substringMatcher = function(strs) {
             return function findMatches(q, cb) {
                 var matches, substringRegex;
 
+                // an array that will be populated with substring matches
                 matches = [];
 
-
+                // regex used to determine if a string contains the substring `q`
                 substrRegex = new RegExp(q, 'i');
 
-
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
                 $.each(strs, function(i, str) {
                     if (substrRegex.test(str)) {
                         matches.push(str);
@@ -1807,10 +1789,22 @@
             };
         };
 
-        var states = ['Chimoio-Moçambique', 'Maputo-Moçambique'] > ;
-        var states = <?= $json = json_encode($cidade) ?>;
+        var states = ['Maputo-Moçambique', 'Beira-Moçambique', 'Matola-Moçambique', 'Matola-Nampula-Moçambique',
+            'Nampula-Moçambique',
+            'Tete-Moçambique', 'Mocuba-Moçambique', 'Lichinga-Moçambique', 'Nacala-Moçambique', 'Chimoio-Moçambique',
+            'Pemba-Moçambique',
+            'Maxixe-Moçambique', 'Chokwe-Moçambique', 'Manica-Moçambique', 'Vilanculos-Moçambique',
+            'Moatize-Moçambique',
+            'Chibuto-Moçambique', 'Dondo-Moçambique',
+            'Cidade de Angoche-Moçambique', 'Gurue-Moçambique', 'Cuamba-Moçambique', 'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ];
 
-        $('#input-group .typeahead').typeahead({
+        $('#the-basics .typeahead').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
