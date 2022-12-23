@@ -126,14 +126,18 @@ class EventosController extends Controller
     public function autocomplete(Request $request)
     {
 
+        $paises = User::select("name")
+            ->where("name", "LIKE", "%{$request->input('query')}%")
+            ->get();
+        return response()->json($paises);
         // $query = $request->get('query');
         // $filterResult = User::where('name', 'LIKE', '%' . $query . '%')->get();
         // return response()->json($filterResult);
 
 
-        $datas = User::select("name")
-            ->where("name", "LIKE", "%{$request->terms}%")
-            ->get();
-        return response()->json($datas);
+        // $datas = User::select("name")
+        //     ->where("name", "LIKE", "%{$request->terms}%")
+        //     ->get();
+        // return response()->json($datas);
     }
 }
