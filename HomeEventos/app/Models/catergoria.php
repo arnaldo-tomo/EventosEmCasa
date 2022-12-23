@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class catergoria extends Model
 {
     use HasFactory;
-    protected  $fillable = ['nome', 'foto'];
+    protected  $fillable = ['nome', 'descricao', 'foto'];
 
     public function Evento()
     {
