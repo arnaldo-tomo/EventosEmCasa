@@ -689,25 +689,26 @@
                                                     <option> {{ $item->nome }}</option>
                                                 @endforeach
                                             </select>
+                                            {{-- <input class="form-control form-control-lg me-1 pe-5" type="text"
+                                                placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div id="input-group" class="col-md-5">
 
                                         <!-- Where -->
-                                        <div id="input-group" class="input-group">
-                                            <input class="form-control typeahead  form-control-lg me-1 pe-5"
-                                                type="text" placeholder="Onde" class="controls" required
-                                                autofocus>
+                                        <div class="input-group">
+                                            <input class=" typeahead form-control  form-control-lg me-1 pe-5"
+                                                type="text" placeholder="Onde" class="controls">
 
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
                                                 href="#"> <i class="fa-solid fa-crosshairs"></i> </a>
                                         </div>
 
-
-                                        <div class="col-md-2 d-grid">
-                                            <!-- Search -->
-                                            <a class="btn btn-lg btn-primary" href="#">Buscar</a>
-                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-grid">
+                                        <!-- Search -->
+                                        <a class="btn btn-lg btn-primary" href="#">Buscar</a>
+                                    </div>
                                 </form>
                                 <!-- Form END -->
                             </div>
@@ -1767,7 +1768,7 @@
 
     <script>
         var auto_complete = new Autocomplete(document.getElementById('typeahead'), {
-            data: <?php echo json_encode($catergoria); ?>,
+            data: <?php echo json_encode($participantes); ?>,
             maximumItems: 10,
             highlightTyped: true,
             highlightClass: 'fw-bold text-primary'
@@ -1790,14 +1791,12 @@
             return function findMatches(q, cb) {
                 var matches, substringRegex;
 
-                // an array that will be populated with substring matches
                 matches = [];
 
-                // regex used to determine if a string contains the substring `q`
+
                 substrRegex = new RegExp(q, 'i');
 
-                // iterate through the pool of strings and for any string that
-                // contains the substring `q`, add it to the `matches` array
+
                 $.each(strs, function(i, str) {
                     if (substrRegex.test(str)) {
                         matches.push(str);
@@ -1808,16 +1807,7 @@
             };
         };
 
-        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ];
+        var states = <?= $json = json_encode($cidade) ?>;
 
         $('#input-group .typeahead').typeahead({
             hint: true,
