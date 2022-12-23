@@ -693,6 +693,8 @@
                                                 placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
+
+
                                     <div id="the-basics" class="col-md-5">
 
                                         <!-- Where -->
@@ -714,39 +716,44 @@
                             </div>
                         </div>
                         <div class="mb-n5 mt-3 mt-lg-5">
-                            <div class="col-xl-9 col-lg-11 mx-auto">
+                            <div class="col-xl-10 col-lg-10 mx-auto">
                                 <!-- Category START -->
                                 <div class="d-md-flex gap-3 mt-5">
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                        <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
+                                            alt="">
+                                        <h6>Eventos Culturais & entretenimento</h6>
+                                    </a>
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Artes e entretenimento </h6>
+                                        <h6> Eventos Sociais</h6>
+                                    </a>
+                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                        <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
+                                            alt="">
+                                        <h6>Eventos Esportivos</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clipboard-outline-filled.svg"
                                             alt="">
-                                        <h6> Negócios e conferências</h6>
+                                        <h6>Eventos Corporativo</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
                                             alt="">
-                                        <h6>PNY E-Gaming Fest</h6>
+                                        <h6>Eventos Religiosos</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
-                                        <h6>Eventos e festas</h6>
+                                        <h6>Eventos Acadêmicos & educacionais</h6>
                                     </a>
                                     <!-- Category item -->
-                                    <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
-                                        <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
-                                            alt="">
-                                        <h6>Tecnologias</h6>
-                                    </a>
                                 </div>
                                 <!-- Category END -->
                             </div>
@@ -1789,19 +1796,15 @@
             };
         };
 
-        var states = ['Maputo-Moçambique', 'Beira-Moçambique', 'Matola-Moçambique', 'Matola-Nampula-Moçambique',
-            'Nampula-Moçambique',
-            'Tete-Moçambique', 'Mocuba-Moçambique', 'Lichinga-Moçambique', 'Nacala-Moçambique', 'Chimoio-Moçambique',
-            'Pemba-Moçambique',
-            'Maxixe-Moçambique', 'Chokwe-Moçambique', 'Manica-Moçambique', 'Vilanculos-Moçambique',
-            'Moatize-Moçambique',
-            'Chibuto-Moçambique', 'Dondo-Moçambique',
-            'Cidade de Angoche-Moçambique', 'Gurue-Moçambique', 'Cuamba-Moçambique', 'Michigan', 'Minnesota',
-            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        var states = ['Maputo-Moçambique', 'Beira-Moçambique', 'Matola-Moçambique',
+            'Nampula-Moçambique', 'Tete-Moçambique', 'Mocuba-Moçambique', 'Lichinga-Moçambique', 'Nacala-Moçambique',
+            'Chimoio-Moçambique',
+            'Pemba-Moçambique', 'Maxixe-Moçambique', 'Chokwe-Moçambique', 'Manica-Moçambique', 'Vilanculos-Moçambique',
+            'Moatize-Moçambique', 'Chibuto-Moçambique', 'Dondo-Moçambique', 'Cidade de Angoche-Moçambique',
+            'Gurue-Moçambique', 'Cuamba-Moçambique', 'Xai-Xai-Moçambique',
+            'Montepuez-Moçambique', 'Inhambane-Moçambique', 'Marracuene-Moçambique', 'Manhiça-Moçambique',
+            'Manhiça-Moçambique',
+            'Manhiça-Moçambique', 'Malema-Moçambique', 'Manjacaze-Moçambique'
         ];
 
         $('#the-basics .typeahead').typeahead({
