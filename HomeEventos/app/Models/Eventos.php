@@ -17,7 +17,7 @@ class Eventos extends Model
         'user_name',
         'descricao',
         'categoria_id',
-        'cidade',
+        'cidade_id',
         'privado',
         'tipo_categoria',
         'hora',
@@ -44,5 +44,10 @@ class Eventos extends Model
     public function categoria()
     {
         return $this->belongsTo(categoria::class,  'categoria_id');
+    }
+
+    public function cidades()
+    {
+        return $this->belongsTo(cidade::class, 'cidade_id');
     }
 }
