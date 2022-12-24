@@ -11,7 +11,7 @@ Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->name(
 Route::get('/Verperfil{id}', [EventosController::class, 'Verperfil'])->middleware(['auth'])->name('Verperfil');
 Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
-Route::get('/Categoria/{categoria}', [EventosController::class, 'categoria'])->name('categoria');
+Route::get('/categoria', [EventosController::class, 'categoria'])->name('categoria');
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
 Route::post('/Salvar', [EventosController::class, 'salvar'])->name('salvar');
 Route::post('gosto{id}', [EventosController::class, 'gosto'])->name('gosto');
