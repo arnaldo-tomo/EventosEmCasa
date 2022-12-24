@@ -86,33 +86,33 @@ class EventosController extends Controller
     {
 
         dd($request->all());
-        // $evento = new Eventos();
-        // $evento->user_id = Auth::user()->id;
-        // $evento->user_name = Auth::user()->name;
-        // $evento->titulo = $request->nome;
-        // $evento->descricao = $request->descricao;
-        // $evento->dataInicio = $request->dataInicio;
-        // $evento->dataFim = $request->dataFim;
-        // $evento->hora = $request->hora;
-        // $evento->privado = $request->privado;
-        // $evento->duracao = $request->duracao;
-        // $evento->localizacao = $request->localizacao;
-        // $evento->cidade = $request->cidade;
-        // $evento->tipo_categoria = $request->tipo_categoria;
-        // $evento->participante = $request->participante;
-        // $evento->anexo = $request->anexo;
-        // $evento->link = $request->link;
-        // $evento->imagen = $request->imagen;
-        // if ($request->file('imagen') != null) {
-        //     $filename = $request->file('imagen')->getClientOriginalName();
-        //     $link = "imagen/eventos/" . $filename;
-        //     $evento->imagen = $link;
-        //     $foto = $request->file('imagen');
-        //     $foto->move('imagen/eventos', $filename);
-        // }
-        // $evento->save();
-        // $messagen = "Evento publicado com sucessos!";
-        // return redirect()->back()->with('novo', $messagen);
+        $evento = new Eventos();
+        $evento->user_id = Auth::user()->id;
+        $evento->user_name = Auth::user()->name;
+        $evento->titulo = $request->nome;
+        $evento->descricao = $request->descricao;
+        $evento->dataInicio = $request->dataInicio;
+        $evento->dataFim = $request->dataFim;
+        $evento->hora = $request->hora;
+        $evento->privado = $request->privado;
+        $evento->duracao = $request->duracao;
+        $evento->localizacao = $request->localizacao;
+        $evento->cidade = $request->cidade;
+        $evento->categoria_id = $request->categoria_id;
+        $evento->participante = $request->participante;
+        $evento->anexo = $request->anexo;
+        $evento->link = $request->link;
+        $evento->imagen = $request->imagen;
+        if ($request->file('imagen') != null) {
+            $filename = $request->file('imagen')->getClientOriginalName();
+            $link = "imagen/eventos/" . $filename;
+            $evento->imagen = $link;
+            $foto = $request->file('imagen');
+            $foto->move('imagen/eventos', $filename);
+        }
+        $evento->save();
+        $messagen = "Evento publicado com sucessos!";
+        return redirect()->back()->with('novo', $messagen);
     }
 
     public function gosto($id, Request $request)
