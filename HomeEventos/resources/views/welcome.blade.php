@@ -816,7 +816,7 @@
                                 <!-- Card body START -->
                                 <div class="card-body position-relative pt-0">
                                     <!-- Tag -->
-                                    <a class="btn btn-xs btn-primary mt-n3">{{ $evento->tipo_categoria }}
+                                    <a class="btn btn-xs btn-primary mt-n3">{{ $evento->categoria->nome }}
                                     </a>
                                     @auth
                                         <h5 class="mt-3"> <a href="" data-bs-toggle="modal"
