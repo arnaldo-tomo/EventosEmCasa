@@ -563,13 +563,13 @@
                                 <label class="form-label">Tipo & categoria</label>
                                 <div class="form-group">
 
-                                    <select name="tipo_categoria" style="width: 100%,height: 100%"
+                                    <select name="categoria_id" style="width: 100%,height: 100%"
                                         class="form-select form-select">
 
                                         <option disabled selected>Escolha o tipo de evento</option>
 
                                         @foreach ($catergoria as $item)
-                                            <option value="{{ $item->nome }}">{{ $item->nome }}</option>
+                                            <option value="{{ $item->id }}">{{ $item->nome }}</option>
                                         @endforeach
                                     </select>
 
@@ -1026,7 +1026,7 @@
                                             <div class="col-sm-6 col-lg-4">
                                                 <h5>Categoria e tipo</h5>
                                                 <p class="small mb-0"><i class="fa fa-bullseye"> </i>
-                                                    {{ $evento->tipo_categoria }}
+                                                    {{ $evento->categoria->nome }}
                                                 </p>
                                             </div>
                                             <div class="col-sm-3 col-lg-3">
