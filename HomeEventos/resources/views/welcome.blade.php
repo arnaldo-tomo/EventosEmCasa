@@ -720,10 +720,10 @@
                                 <!-- Category START -->
                                 <div class="d-md-flex gap-3 mt-5">
                                     <!-- Category item -->
-                                    <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
+                                    <a href="/categoria" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Artes e entretenimento </h6>
+                                        <h6>Online Webinar </h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
@@ -735,19 +735,19 @@
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
                                             alt="">
-                                        <h6>Evrntos Religiosos</h6>
+                                        <h6>Exposições artísticas</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
-                                        <h6>Eventos corporativos.</h6>
+                                        <h6>Feira & Networking</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
-                                        <h6>Encontros de Networking </h6>
+                                        <h6>Festival musical </h6>
                                     </a>
                                 </div>
                                 <!-- Category END -->
