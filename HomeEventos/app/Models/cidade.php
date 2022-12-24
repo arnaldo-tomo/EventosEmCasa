@@ -13,4 +13,9 @@ class cidade extends Model
     use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'cidade';
     protected $fillable = ['nome'];
+
+    public function eventos()
+    {
+        return $this->belongsToMany(Eventos::class, 'evento_id');
+    }
 }
