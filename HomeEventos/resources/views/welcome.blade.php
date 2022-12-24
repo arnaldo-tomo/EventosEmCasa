@@ -550,7 +550,7 @@
 
                                         <option disabled selected>Escolha o cidade </option>
                                         @foreach ($cidades as $cidade)
-                                            <option value="{{ $cidade->nome }}">{{ $cidade->nome }}</option>
+                                            <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
                                         @endforeach
 
                                     </select>
@@ -842,7 +842,8 @@
                                         <i class=" fa fa-clock"></i>
                                         {{ $evento->hora }} Horas
                                     </p>
-                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $evento->cidade }} </p>
+                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
+                                        {{ $evento->cidades->nome }} </p>
                                     <!-- Avatar group START -->
                                     <ul class="avatar-group list-unstyled align-items-center mb-0">
                                         <li class="avatar avatar-xs">
@@ -1029,14 +1030,14 @@
                                                     {{ $evento->categoria->nome }}
                                                 </p>
                                             </div>
-                                            <div class="col-sm-3 col-lg-3">
+                                            <div class="col-sm-6 col-lg-6">
                                                 <h5>Cidade</h5>
                                                 <p class="small mb-0"><i class="fa fa-building"></i>
-                                                    {{ $evento->cidade }}
+                                                    {{ $evento->cidades->nome }}
                                                 </p>
 
                                             </div>
-                                            <div class="col-sm-7 col-lg-7">
+                                            <div class="col-sm-6 col-lg-6">
                                                 <h5>Localização</h5>
                                                 <p class="small mb-0"><i class="fa fa-map-marker"></i>
                                                     {{ $evento->localizacao }} </p>
