@@ -22,10 +22,10 @@ class EventosController extends Controller
         $cidades = cidade::all();
         $participantes = User::all();
 
-        // $teste = Eventos::find(11);
-        // dd($teste->cidades->nome);
+        $catergoria = categoria::find(5);
+        dd($catergoria->eventoo);
 
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
+        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
 
 
