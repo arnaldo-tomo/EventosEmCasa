@@ -988,7 +988,7 @@
                                             <div class="col-12">
                                                 <p class="mb-0">{{ $evento->descricao }}</p>
                                             </div>
-                                            <div class="col-sm-6 col-lg-4">
+                                            <div class="col-sm-4 col-lg-4">
                                                 <!-- Timings -->
                                                 <h5>Horários</h5>
                                                 @if ($evento->dataInicio == $evento->dataFim)
@@ -1018,26 +1018,26 @@
                                                 @endif
                                             </div>
                                             <!-- Entry Fees -->
-                                            <div class="col-sm-6 col-lg-4">
+                                            <div class="col-sm-3 col-lg-3">
                                                 <h5>Taxas de entrada</h5>
                                                 <p class="small mb-0"> <a href="#!"> {{ $evento->privado }} </a>
                                                 </p>
                                             </div>
                                             <!-- Category & Type -->
-                                            <div class="col-sm-6 col-lg-4">
-                                                <h5>Categoria e tipo</h5>
+                                            <div class="col-sm-5 col-lg-5">
+                                                <h5>Categoria & Tipo</h5>
                                                 <p class="small mb-0"><i class="fa fa-bullseye"> </i>
                                                     {{ $evento->categoria->nome }}
                                                 </p>
                                             </div>
-                                            <div class="col-sm-6 col-lg-6">
+                                            <div class="col-sm-5 col-lg-5">
                                                 <h5>Cidade</h5>
                                                 <p class="small mb-0"><i class="fa fa-building"></i>
                                                     {{ $evento->cidades->nome }}
                                                 </p>
 
                                             </div>
-                                            <div class="col-sm-6 col-lg-6">
+                                            <div class="col-sm-7 col-lg-7">
                                                 <h5>Localização</h5>
                                                 <p class="small mb-0"><i class="fa fa-map-marker"></i>
                                                     {{ $evento->localizacao }} </p>
@@ -1050,19 +1050,19 @@
                                             <span class="badge bg-danger text-danger bg-opacity-10 small">Estimated
                                                 Count</span>
                                         </div> --}}
-                                            <div class="col-sm-6">
-
+                                            <div class="col-sm-5">
                                                 <a class="btn btn-info-soft btn-sm"> <i class="fa fa-cloud-download"
                                                         aria-hidden="true"></i>
                                                     Download enexo</a>
                                             </div>
-                                            <div class="col-sm-12 col-lg-12">
+                                            <div class="col-sm-7 col-lg-7">
                                                 <!-- Interested -->
                                                 <div class="d-flex">
-                                                    <button class="btn btn-success-soft btn-sm">Interessado?</button>
+                                                    <button class="btn btn-success-soft btn-sm">Pessoas
+                                                        Interessado</button>
                                                     <h6> <i class="bi bi-hand-thumbs-up-fill text-success"></i> 50
                                                     </h6>
-                                                    <p class="small"> pessoas demonstraram interesse recentemente</p>
+                                                    {{-- <p class="small"> pessoas demonstraram interesse</p> --}}
                                                 </div>
                                             </div>
                                         </div>
