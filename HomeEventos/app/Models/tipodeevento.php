@@ -11,6 +11,6 @@ class tipodeevento extends Model
 
     public function categoria()
     {
-        return $this->belongsToMany(categoria::class, 'categoria_tipodeeventos', 'categoria_id', 'tipodeevento_id');
+        return $this->belongsToMany(categoria::class, 'categoria_tipodeeventos', 'categoria_id', 'tipodeeventos_id');
     }
 }
