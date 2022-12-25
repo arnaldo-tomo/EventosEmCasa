@@ -501,6 +501,15 @@
                         <form method="POST" action="{{ url('/Salvar') }}" enctype="multipart/form-data"
                             class="row g-4" id="file-upload-form" class="uploader">
                             @csrf
+
+                            {{-- <input type="text" name="email" id="email"
+                            class="form-control @error('email') is-invalid @enderror"
+                            value="{{ old('email') }}" placeholder="exempla@gmail.com" required autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span> --}}
+
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
@@ -631,7 +640,7 @@
 
                             <div class="mb-3">
                                 <div class="dropzone  dropzone-default card shadow-none">
-                                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                                    <input id="file-upload" type="file" name="imagen" accept="image/*" />
 
                                     <label for="file-upload" id="file-drag">
                                         <div class="dz-message" id="start">
@@ -1646,6 +1655,38 @@
     {{-- <script
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCH3OWhlyC6S28ThKEU4u8kIFkOFkBek5U">
     </script> --}}
+
+
+
+    @section('script')
+        @error('titulo')
+            <script type="text/javascript">
+                window.onload = function() {
+                    OpenBootstrapPopup();
+                };
+
+                function OpenBootstrapPopup() {
+                    $("#modalCreateEvents").modal('show');
+                }
+            </script>
+        @enderror
+    @endsection
+
+
+    @error('descricao')
+        <Script>
+            <
+            script type = "text/javascript" >
+                window.onload = function() {
+                    OpenBootstrapPopup();
+                };
+
+            function OpenBootstrapPopup() {
+                $("#modalCreateEvents").modal('show');
+            }
+        </script>
+    @enderror
+
 
     {{-- SELECT2 --}}
     <script>
