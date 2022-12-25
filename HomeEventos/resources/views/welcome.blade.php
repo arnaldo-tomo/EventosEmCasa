@@ -485,16 +485,6 @@
                             aria-label="Close"></button>
                     </div>
                     <!-- Modal feed header END -->
-
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger role">
-                                <div class="display">
-                                    <strong> {{ $error }}</strong>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
                     <!-- Modal feed body START -->
                     <div class="modal-body">
                         <!-- Form START -->
