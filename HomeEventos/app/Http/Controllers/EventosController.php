@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Request;
 use App\Models\User;
 use App\Models\gosto;
 use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\categoria;
 use App\Models\tipodeevento;
-use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -84,7 +86,15 @@ class EventosController extends Controller
     public function salvar(Request $request)
     {
 
-        dd($request->all());
+
+        // validadacao de campos
+        Request::validate([
+            'titulo' => 'required',
+            'descricao' => 'required',
+            'hora' => 'required',
+            'cidade' => 'required',
+        ]);
+
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
         $evento->user_name = Auth::user()->name;
