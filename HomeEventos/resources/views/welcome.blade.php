@@ -485,12 +485,23 @@
                             aria-label="Close"></button>
                     </div>
                     <!-- Modal feed header END -->
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger role">
+                                <div class="display">
+                                    <strong> {{ $error }}</strong>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                     <!-- Modal feed body START -->
                     <div class="modal-body">
                         <!-- Form START -->
                         <form method="POST" action="{{ url('/Salvar') }}" enctype="multipart/form-data"
                             class="row g-4" id="file-upload-form" class="uploader">
                             @csrf
+
+
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
@@ -558,9 +569,10 @@
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
                                     <!-- Choice select -->
-                                    <select name="cidade[]" class="form-select js-choice" data-search-enabled="true"
-                                        multiple data-remove-item-button="true" data-position="bottom"
-                                        data-max-item-count="3" data-placeholder="true">
+                                    <select class="form-select js-choice" data-search-enabled="true" multiple
+                                        data-remove-item-button="true" data-position="bottom" data-max-item-count="1"
+                                        data-placeholder="true" name="cidade_id">
+
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
                                         @endforeach
@@ -595,7 +607,7 @@
                                 <div class="form-group">
 
                                     <select class="form-select form-select" style="width: 100%,height: 100%"
-                                        id="month" name="cidade[]">
+                                        name="participante">
 
                                         <option disabled selected>Exemplo:joaocarlos@gmail.com</option>
                                         @foreach ($participantes as $participante)
