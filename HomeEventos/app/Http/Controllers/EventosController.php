@@ -86,7 +86,7 @@ class EventosController extends Controller
     public function salvar(Request $request)
     {
         // validadacao de campos
-        Request::validate([
+        $request::validate([
             'titulo' => 'required',
             'descricao' => 'required',
             'hora' => 'required',
@@ -102,21 +102,21 @@ class EventosController extends Controller
 
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
-        $evento->titulo = $request->titulo;
-        $evento->descricao = $request->descricao;
-        $evento->dataInicio = $request->dataInicio;
-        $evento->dataFim = $request->dataFim;
-        $evento->hora = $request->hora;
-        $evento->privado = $request->privado;
-        $evento->duracao = $request->duracao;
-        $evento->localizacao = $request->localizacao;
-        $evento->cidade = $request->cidade;
-        $evento->categoria_id = $request->categoria_id;
-        $evento->participante = $request->participante;
-        $evento->anexo = $request->anexo;
-        $evento->link = $request->link;
-        $evento->imagen = $request->imagen;
-        if ($request->file('imagen') != null) {
+        $evento->titulo = Request('titulo');
+        $evento->descricao = Request('descricao');
+        $evento->dataInicio = Request('dataInicio');
+        $evento->dataFim = Request('dataFim');
+        $evento->hora = Request('hora');
+        $evento->privado = Request('privado');
+        $evento->duracao = Request('duracao');
+        $evento->localizacao = Request('localizacao');
+        $evento->cidade = Request('cidade');
+        $evento->categoria_id = Request('categoria_id');
+        $evento->participante = Request('participante');
+        $evento->anexo = Request('anexo');
+        $evento->link = Request('link');
+        $evento->imagen = Request('imagen');
+        if (Request::file('imagen') != null) {
             $filename = $request->file('imagen')->getClientOriginalName();
             $link = "imagen/eventos/" . $filename;
             $evento->imagen = $link;
