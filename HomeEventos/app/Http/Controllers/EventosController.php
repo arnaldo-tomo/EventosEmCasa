@@ -93,6 +93,7 @@ class EventosController extends Controller
             'descricao' => 'required',
             'hora' => 'required',
             'cidade' => 'required',
+            'imagen' => 'required',
         ]);
 
         $evento = new Eventos();
