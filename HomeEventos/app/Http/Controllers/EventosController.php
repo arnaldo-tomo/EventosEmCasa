@@ -85,23 +85,18 @@ class EventosController extends Controller
 
     public function salvar(Request $request)
     {
-
-
         // validadacao de campos
         Request::validate([
             'titulo' => 'required',
             'descricao' => 'required',
             'hora' => 'required',
             'cidade' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
-            'imagen' => 'required',
+            'dataInicio' => 'required',
+            'dataFim' => 'required',
+            'privado' => 'required',
+            'duracao' => 'required',
+            'localizacao' => 'required',
+            'categoria_id' => 'required',
             'imagen' => 'required',
         ]);
 
@@ -133,7 +128,7 @@ class EventosController extends Controller
         return redirect()->back()->with('novo', $messagen);
     }
 
-    public function gosto($id, Request $request)
+    public function gosto($id,  $request)
     {
         $gosto = new gosto();
         $gosto->user_id = Auth::user()->id;
