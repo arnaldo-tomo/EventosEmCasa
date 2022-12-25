@@ -102,7 +102,7 @@ class EventosController extends Controller
 
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
-        $evento->titulo = $request->nome;
+        $evento->titulo = $request->titulo;
         $evento->descricao = $request->descricao;
         $evento->dataInicio = $request->dataInicio;
         $evento->dataFim = $request->dataFim;
