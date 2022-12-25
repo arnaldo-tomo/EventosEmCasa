@@ -501,24 +501,6 @@
                         <form method="POST" action="{{ url('/Salvar') }}" enctype="multipart/form-data"
                             class="row g-4" id="file-upload-form" class="uploader">
                             @csrf
-
-                            {{--
-                            <div class="col-12">
-
-                                <label class="form-label">Seu Email</label>
-
-                                <input type="text" name="email" id="email"
-
-                                    class="form-control @error('email') is-invalid @enderror"  value="{{ old('email') }}" placeholder="exempla@gmail.com" required autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                            </div> --}}
-
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
