@@ -515,17 +515,26 @@
                                 <label class="form-label">Titulo</label>
                                 <input type="text" class="form-control" name="nome"
                                     placeholder="Nome do evento">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Description -->
                             <div class="col-12">
                                 <label class="form-label">Descrição</label>
                                 <textarea class="form-control" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Duração -->
                             <div class="col-sm-6">
                                 <label class="form-label">Data Inicial</label>
                                 <input type="date" class="form-control flatpickr" name="dataInicio"
                                     placeholder="Select date">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Duração -->
                             <!-- Duração -->
@@ -533,6 +542,9 @@
                                 <label class="form-label">Data do final </label>
                                 <input type="date" class="form-control flatpickr" name="dataFim"
                                     placeholder="Select date">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
 
                             <!-- Duração -->
@@ -541,6 +553,9 @@
                                 <label class="form-label">Duração</label>
                                 <input type="number" class="form-control" name="duracao"
                                     placeholder="Exemplo:6Horas">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Date final -->
                             <div class="col-sm-4">
@@ -550,20 +565,28 @@
                                     <option disabled selected>-Selecione-</option>
                                     <option value="0">publico</option>
                                     <option value="1">privado</option>
-
                                 </select>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Time -->
                             <div class="col-sm-4">
                                 <label class="form-label">Hora</label>
                                 <input type="datetime-local" class="form-control flatpickr" name="hora"
                                     data-enableTime="true" data-noCalendar="true" placeholder="Selecione a Hora">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
 
                             <div class="col-12">
                                 <label class="form-label">Localização</label>
                                 <input type="text" class="form-control" id="pac-inpute" name="localizacao"
                                     placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             </div>
                             <!-- Location -->
 
@@ -578,8 +601,11 @@
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
                                         @endforeach
                                     </select>
-
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 </div>
+
                             </div>
                             <!-- Location -->
 
@@ -597,7 +623,9 @@
                                             <option value="{{ $item->id }}">{{ $item->nome }}</option>
                                         @endforeach
                                     </select>
-
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 </div>
                             </div>
                             <!-- Tipo de evento -->
@@ -615,8 +643,11 @@
                                             <option value="{{ $participante->email }}">{{ $participante->email }}
                                             </option>
                                         @endforeach
-
                                     </select>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+
                                 </div>
                             </div>
                             <!-- Avatar group START -->
@@ -656,6 +687,9 @@
                                             </div>
                                         </div>
                                     </label>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 </div>
                             </div>
 
