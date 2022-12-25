@@ -495,7 +495,7 @@
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
                                 <input type="text" class="form-control @error('titulo') is-invalid @enderror"
-                                    value="{{ old('nome') }}" name="nome" placeholder="Titulo do evento">
+                                    value="{{ old('titulo') }}" name="titulo" placeholder="Titulo do evento">
                                 @error('titulo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
