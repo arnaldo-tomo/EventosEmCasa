@@ -47,6 +47,10 @@
 
 
 <body>
+    <style>
+
+    </style>
+
 
     <header class="navbar-dark navbar-transparent header-static">
 
@@ -486,16 +490,12 @@
                         <!-- Form START -->
 
 
-                        <form method="POST" action="{{ url('salvar') }}" enctype="multipart/form-data"
-                            class="row g-4" class="dropzone" id="dropzone">
+                        <form method="POST" action="{{ url('/Salvar') }}" enctype="multipart/form-data"
+                            class="row g-4" id="file-upload-form" class="uploader">
                             @csrf
 
 
-                            <!-- dropzone -->
-                            <div class="dropzone" id="imageUpload"></div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                            </div>
+
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
@@ -542,7 +542,7 @@
                             <!-- Time -->
                             <div class="col-sm-4">
                                 <label class="form-label">Hora</label>
-                                <input type="time" class="form-control flatpickr" name="hora"
+                                <input type="datetime-local" class="form-control flatpickr" name="hora"
                                     data-enableTime="true" data-noCalendar="true" placeholder="Selecione a Hora">
                             </div>
 
@@ -624,8 +624,29 @@
                                 </ul>
                             </div>
 
-                            <!-- Dropzone photo START -->
                             <div class="mb-3">
+                                <div class="dropzone  dropzone-default card shadow-none">
+                                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+                                    <label for="file-upload" id="file-drag">
+                                        <div class="dz-message" id="start">
+                                            <img id="file-image" src="#" alt="Preview" class="hidden">
+                                            <div class="dz-message" id="notimage" id="response" class="hidden">
+                                                Solte a
+                                                Apresentação e o documento aqui
+                                                ou clique para carregar.</div>
+                                            <div class="dz-message" id="response" class="hidden">
+                                                <div id="messages">
+                                                    <i class="bi bi-file-earmark-text display-3"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Dropzone photo START -->
+                            {{-- <div class="mb-3">
                                 <label class="form-label">Carregar Fotografia</label>
                                 <div class="dropzone  dropzone-default card shadow-none"
                                     data-dropzone='{"maxFiles":1}'>
@@ -636,7 +657,7 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Dropzone photo END -->
 
                             <div class="col-12">
@@ -665,25 +686,6 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            Dropzone.options.dropzone = {
-                maxFilesize: 12,
-                renameFile: function(file) {
-                    var dt = new Date();
-                    var time = dt.getTime();
-                    return time + file.name;
-                },
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                addRemoveLinks: true,
-                timeout: 5000,
-                success: function(file, response) {
-                    console.log(response);
-                },
-                error: function(file, response) {
-                    return false;
-                }
-            };
-        </script>
         <!-- Modal criar events -->
 
         {{-- Modal --}}
@@ -1846,49 +1848,149 @@
         });
     </script>
 
-    @section('scripts')
-        <script>
-            let uploadedImageMap = {}; // uploadedImageMap object created
-            Dropzone.options.imageUpload = { // Dropzone class added
-                url: "{{ route('galery.store') }}", // route to store image
-                maxFilesize: 2, // MB                               // max file size
-                maxFiles: 10, // max files
-                acceptedFiles: ".jpeg,.jpg,.png,.gif", // accepted files
-                addRemoveLinks: true, // add remove links
-                headers: { // headers
-                    'X-CSRF-TOKEN': "{{ csrf_token() }}" // csrf token
-                },
-                success: function(file, response) { // success function
-                    $('form').append('<input type="hidden" name="images[]" value="' + response.name +
-                        '">') // append input to form
-                    uploadedImageMap[file.name] = response.name // uploadedImageMap object created
-                },
-                removedfile: function(file) { // removedfile function
-                    file.previewElement.remove() // remove file
-                    let name = '' // name variable created
-                    if (typeof file.file_name !== 'undefined') { // if file.file_name is not undefined
-                        name = file.file_name // name variable created
-                    } else { // else
-                        name = uploadedImageMap[file.name] // name variable created
-                    }
-                    $('form').find('input[name="images[]"][value="' + name + '"]').remove() // remove input from form
-                },
-                init: function() { // init function
-                    @if (isset($galery) && $galery->image) // if isset galery and galery->image
-                        let files = '{!! json_encode($galery->image) !!}'; // files variable created
-                        for (let i in files) { // for loop
-                            let file = files[i] // file variable created
-                            this.options.addedfile.call(this, file) // addedfile function called
-                            file.previewElement.classList.add('dz-complete') // dz-complete class added
-                            $('form').append('<input type="hidden" name="images[]" value="' + file.file_name +
-                                '">') // append input to form
-                        }
-                    @endif
+    <script>
+        // File Upload
+        //
+        function ekUpload() {
+            function Init() {
+
+                console.log("Upload Initialised");
+
+                var fileSelect = document.getElementById('file-upload'),
+                    fileDrag = document.getElementById('file-drag'),
+                    submitButton = document.getElementById('submit-button');
+
+                fileSelect.addEventListener('change', fileSelectHandler, false);
+
+                // Is XHR2 available?
+                var xhr = new XMLHttpRequest();
+                if (xhr.upload) {
+                    // File Drop
+                    fileDrag.addEventListener('dragover', fileDragHover, false);
+                    fileDrag.addEventListener('dragleave', fileDragHover, false);
+                    fileDrag.addEventListener('drop', fileSelectHandler, false);
                 }
             }
-        </script>
-    @endsection
 
+            function fileDragHover(e) {
+                var fileDrag = document.getElementById('file-drag');
+
+                e.stopPropagation();
+                e.preventDefault();
+
+                fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+            }
+
+            function fileSelectHandler(e) {
+                // Fetch FileList object
+                var files = e.target.files || e.dataTransfer.files;
+
+                // Cancel event and hover styling
+                fileDragHover(e);
+
+                // Process all File objects
+                for (var i = 0, f; f = files[i]; i++) {
+                    parseFile(f);
+                    uploadFile(f);
+                }
+            }
+
+            // Output
+            function output(msg) {
+                // Response
+                var m = document.getElementById('messages');
+                m.innerHTML = msg;
+            }
+
+            function parseFile(file) {
+
+                console.log(file.name);
+                output(
+                    '<strong>' + encodeURI(file.name) + '</strong>'
+                );
+
+                // var fileType = file.type;
+                // console.log(fileType);
+                var imageName = file.name;
+
+                var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+                if (isGood) {
+                    document.getElementById('start').classList.add("hidden");
+                    document.getElementById('response').classList.remove("hidden");
+                    document.getElementById('notimage').classList.add("hidden");
+                    // Thumbnail Preview
+                    document.getElementById('file-image').classList.remove("hidden");
+                    document.getElementById('file-image').src = URL.createObjectURL(file);
+                } else {
+                    document.getElementById('file-image').classList.add("hidden");
+                    document.getElementById('notimage').classList.remove("hidden");
+                    document.getElementById('start').classList.remove("hidden");
+                    document.getElementById('response').classList.add("hidden");
+                    document.getElementById("file-upload-form").reset();
+                }
+            }
+
+            function setProgressMaxValue(e) {
+                var pBar = document.getElementById('file-progress');
+
+                if (e.lengthComputable) {
+                    pBar.max = e.total;
+                }
+            }
+
+            function updateFileProgress(e) {
+                var pBar = document.getElementById('file-progress');
+
+                if (e.lengthComputable) {
+                    pBar.value = e.loaded;
+                }
+            }
+
+            function uploadFile(file) {
+
+                var xhr = new XMLHttpRequest(),
+                    fileInput = document.getElementById('class-roster-file'),
+                    pBar = document.getElementById('file-progress'),
+                    fileSizeLimit = 1024; // In MB
+                if (xhr.upload) {
+                    // Check if file is less than x MB
+                    if (file.size <= fileSizeLimit * 1024 * 1024) {
+                        // Progress bar
+                        pBar.style.display = 'inline';
+                        xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
+                        xhr.upload.addEventListener('progress', updateFileProgress, false);
+
+                        // File received / failed
+                        xhr.onreadystatechange = function(e) {
+                            if (xhr.readyState == 4) {
+                                // Everything is good!
+
+                                // progress.className = (xhr.status == 200 ? "success" : "failure");
+                                // document.location.reload(true);
+                            }
+                        };
+
+                        // Start upload
+                        xhr.open('POST', document.getElementById('file-upload-form').action, true);
+                        xhr.setRequestHeader('X-File-Name', file.name);
+                        xhr.setRequestHeader('X-File-Size', file.size);
+                        xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+                        xhr.send(file);
+                    } else {
+                        output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
+                    }
+                }
+            }
+
+            // Check for the various File API support.
+            if (window.File && window.FileList && window.FileReader) {
+                Init();
+            } else {
+                document.getElementById('file-drag').style.display = 'none';
+            }
+        }
+        ekUpload();
+    </script>
 </body>
 
 </html>
