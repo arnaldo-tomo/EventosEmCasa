@@ -22,6 +22,8 @@ class EventosController extends Controller
         $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
+
+        // dd($eventos);
         return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
 
