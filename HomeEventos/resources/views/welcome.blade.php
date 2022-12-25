@@ -485,6 +485,16 @@
                             aria-label="Close"></button>
                     </div>
                     <!-- Modal feed header END -->
+
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger role">
+                                <div class="display">
+                                    <strong> {{ $error }}</strong>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                     <!-- Modal feed body START -->
                     <div class="modal-body">
                         <!-- Form START -->
@@ -492,38 +502,45 @@
                             class="row g-4" id="file-upload-form" class="uploader">
                             @csrf
 
-                            <!-- Title -->
+                            {{--
                             <div class="col-12">
-                                <label class="form-label">Titulo</label>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }} name="nome" placeholder="Nome do evento">
-                                @error('password')
+
+                                <label class="form-label">Seu Email</label>
+
+                                <input type="text" name="email" id="email"
+
+                                    class="form-control @error('email') is-invalid @enderror"  value="{{ old('email') }}" placeholder="exempla@gmail.com" required autofocus>
+
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
+                            </div> --}}
+
+                            <!-- Title -->
+                            <div class="col-12">
+                                <label class="form-label">Titulo</label>
+                                <input type="text" class="form-control @error('titulo') is-invalid @enderror"
+                                    value="{{ old('nome') }}" name="nome" placeholder="Titulo do evento">
+                                @error('titulo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
                             <!-- Description -->
                             <div class="col-12">
                                 <label class="form-label">Descrição</label>
-                                <textarea class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }} name="descricao"
-                                    placeholder="Ex: topicos, Cronograma, etc."></textarea>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <textarea class="form-control" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                             </div>
                             <!-- Duração -->
                             <div class="col-sm-6">
                                 <label class="form-label">Data Inicial</label>
                                 <input type="date" class="form-control flatpickr" name="dataInicio"
                                     placeholder="Select date">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                             <!-- Duração -->
                             <!-- Duração -->
@@ -531,24 +548,14 @@
                                 <label class="form-label">Data do final </label>
                                 <input type="date" class="form-control flatpickr" name="dataFim"
                                     placeholder="Select date">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
 
                             <!-- Duração -->
                             <!-- Date -->
                             <div class="col-sm-4">
                                 <label class="form-label">Duração</label>
-                                <input type="number" class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }} name="duracao" placeholder="Exemplo:6Horas">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type="number" class="form-control" name="duracao"
+                                    placeholder="Exemplo:6Horas">
                             </div>
                             <!-- Date final -->
                             <div class="col-sm-4">
@@ -558,35 +565,20 @@
                                     <option disabled selected>-Selecione-</option>
                                     <option value="0">publico</option>
                                     <option value="1">privado</option>
+
                                 </select>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                             <!-- Time -->
                             <div class="col-sm-4">
                                 <label class="form-label">Hora</label>
                                 <input type="datetime-local" class="form-control flatpickr" name="hora"
                                     data-enableTime="true" data-noCalendar="true" placeholder="Selecione a Hora">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
 
                             <div class="col-12">
                                 <label class="form-label">Localização</label>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }} id="pac-inpute" name="localizacao"
+                                <input type="text" class="form-control" id="pac-inpute" name="localizacao"
                                     placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                             <!-- Location -->
 
@@ -601,13 +593,8 @@
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
                                         @endforeach
                                     </select>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
 
+                                </div>
                             </div>
                             <!-- Location -->
 
@@ -625,11 +612,7 @@
                                             <option value="{{ $item->id }}">{{ $item->nome }}</option>
                                         @endforeach
                                     </select>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+
                                 </div>
                             </div>
                             <!-- Tipo de evento -->
@@ -647,13 +630,8 @@
                                             <option value="{{ $participante->email }}">{{ $participante->email }}
                                             </option>
                                         @endforeach
-                                    </select>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
 
+                                    </select>
                                 </div>
                             </div>
                             <!-- Avatar group START -->
@@ -693,11 +671,6 @@
                                             </div>
                                         </div>
                                     </label>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -718,16 +691,14 @@
 
                             <div class="col-12">
                                 <label class="form-label">Link Externos</label>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }} id="link" name="link"
+                                <input type="text" class="form-control" id="link" name="link"
                                     placeholder="https://go.com/fwlink/?LinkID=219472&clcid=0x409">
                             </div>
                             <!-- Form END -->
                             {{-- FIle manger --}}
                             <div class="col-12">
                                 <label class="form-label">Carregar anexo</label>
-                                <input type="file" class="form-control @error('email') is-invalid @enderror"
-                                    value="{{ old('email') }} name="anexo">
+                                <input type="file" class="form-control" name="anexo">
                             </div>
                             {{-- FIle manger --}}
 
