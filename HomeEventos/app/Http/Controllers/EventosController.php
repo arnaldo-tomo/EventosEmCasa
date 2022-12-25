@@ -94,11 +94,19 @@ class EventosController extends Controller
             'hora' => 'required',
             'cidade' => 'required',
             'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
+            'imagen' => 'required',
         ]);
 
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
-        $evento->user_name = Auth::user()->name;
         $evento->titulo = $request->nome;
         $evento->descricao = $request->descricao;
         $evento->dataInicio = $request->dataInicio;
