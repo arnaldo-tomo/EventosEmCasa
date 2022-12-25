@@ -88,6 +88,7 @@ class EventosController extends Controller
         // validadacao de campos
         $request::validate([
             'titulo' => 'required',
+            'categoria_id' => 'required',
             'descricao' => 'required',
             'hora' => 'required',
             'cidade' => 'required',
@@ -96,26 +97,27 @@ class EventosController extends Controller
             'privado' => 'required',
             'duracao' => 'required',
             'localizacao' => 'required',
-            'categoria_id' => 'required',
             'imagen' => 'required',
         ]);
 
+        // dd(Request::all());
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
-        $evento->titulo = Request('titulo');
-        $evento->descricao = Request('descricao');
-        $evento->dataInicio = Request('dataInicio');
-        $evento->dataFim = Request('dataFim');
-        $evento->hora = Request('hora');
-        $evento->privado = Request('privado');
-        $evento->duracao = Request('duracao');
-        $evento->localizacao = Request('localizacao');
-        $evento->cidade = Request('cidade');
-        $evento->categoria_id = Request('categoria_id');
-        $evento->participante = Request('participante');
-        $evento->anexo = Request('anexo');
-        $evento->link = Request('link');
-        $evento->imagen = Request('imagen');
+        $evento->titulo = Request::input('titulo');
+        $evento->descricao = Request::input('descricao');
+        $evento->dataInicio = Request::input('dataInicio');
+        $evento->dataFim = Request::input('dataFim');
+        $evento->hora = Request::input('hora');
+        $evento->privado = Request::input('privado');
+        $evento->duracao = Request::input('duracao');
+        $evento->localizacao = Request::input('localizacao');
+        $evento->cidade = Request::input('cidade_id');
+        $evento->categoria_id = Request::input('categoria_id');
+        $evento->participante = Request::input('participante');
+        $evento->anexo = Request::input('anexo');
+        $evento->link = Request::input('link');
+        $evento->imagen = Request::input('imagen');
+
         if (Request::file('imagen') != null) {
             $filename = Request::file('imagen')->getClientOriginalName();
             $link = "imagen/eventos/" . $filename;
@@ -123,7 +125,9 @@ class EventosController extends Controller
             $foto = Request::file('imagen');
             $foto->move('imagen/eventos', $filename);
         }
+
         $evento->save();
+
         $messagen = "Evento publicado com sucessos!";
         return redirect()->back()->with('novo', $messagen);
     }
