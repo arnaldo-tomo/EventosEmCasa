@@ -47,7 +47,6 @@
 </head>
 
 <body>
-
     <!-- =======================
 Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
@@ -412,12 +411,12 @@ Header END -->
                             <div class="d-sm-flex align-items-start text-center text-sm-start">
                                 <div>
                                     <!-- Avatar -->
-                                    <a href="#!" data-bs-toggle="modal" data-bs-target="#feedActionPhoto"
-                                        class="avatar avatar-xxl mt-n5 mb-3">
+                                    <a data-bs-toggle="modal" class="avatar avatar-xxl mt-n5 mb-3">
                                         <img class="avatar-img rounded-circle border border-white border-3"
                                             src="assets/images/avatar/main.png" alt="">
                                     </a>
                                 </div>
+
 
                                 <div class="modal fade" id="feedActionPhoto" tabindex="-1"
                                     aria-labelledby="feedActionPhotoLabel" aria-hidden="true">
@@ -431,7 +430,7 @@ Header END -->
                                             </div>
                                             <!-- Modal feed header END -->
 
-                                            <!-- Modal feed body START -->
+                                            <!-- DROP feed body START -->
                                             <div class="modal-body">
                                                 <!-- Add Feed -->
                                                 <div class="d-flex mb-3">
