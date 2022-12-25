@@ -36,6 +36,10 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     {{-- Teste de boo typeaheda --}}
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css" />
 
@@ -482,9 +486,16 @@
                         <!-- Form START -->
 
 
-                        <form method="POST" name="imagen" action="{{ route('salvar') }}"
-                            enctype="multipart/form-data" class="row g-4">
+                        <form method="POST" action="{{ url('salvar') }}" enctype="multipart/form-data"
+                            class="row g-4" class="dropzone" id="dropzone">
                             @csrf
+
+
+                            <!-- dropzone -->
+                            <div class="dropzone" id="imageUpload"></div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                            </div>
                             <!-- Title -->
                             <div class="col-12">
                                 <label class="form-label">Titulo</label>
@@ -512,12 +523,13 @@
 
                             <!-- Duração -->
                             <!-- Date -->
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <label class="form-label">Duração</label>
-                                <input type="duracao" class="form-control" name="duracao" placeholder="1hr 23m">
+                                <input type="number" class="form-control" name="duracao"
+                                    placeholder="Exemplo:6Horas">
                             </div>
                             <!-- Date final -->
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label class="form-label">Publico Ou Privado</label>
                                 <select class="form-select form-select" name="privado"
                                     aria-label=".form-select-lg example">
@@ -528,10 +540,10 @@
                                 </select>
                             </div>
                             <!-- Time -->
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <label class="form-label">Hora</label>
                                 <input type="time" class="form-control flatpickr" name="hora"
-                                    data-enableTime="true" data-noCalendar="true" placeholder="Select time">
+                                    data-enableTime="true" data-noCalendar="true" placeholder="Selecione a Hora">
                             </div>
 
                             <div class="col-12">
@@ -544,16 +556,15 @@
                             <div class="col-md-12">
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
-
-                                    <select class="form-select form-select" style="width: 100%,height: 100%"
-                                        id="month" name="cidade[]">
-
-                                        <option disabled selected>Escolha o cidade </option>
+                                    <!-- Choice select -->
+                                    <select name="cidade[]" class="form-select js-choice" data-search-enabled="true"
+                                        multiple data-remove-item-button="true" data-position="bottom"
+                                        data-max-item-count="3" data-placeholder="true">
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
                                         @endforeach
-
                                     </select>
+
                                 </div>
                             </div>
                             <!-- Location -->
@@ -616,13 +627,14 @@
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
                                 <label class="form-label">Carregar Fotografia</label>
-                                <div t ype="file" name="imagen"
-                                    class="dropzone  dropzone-default card shadow-none"
+                                <div class="dropzone  dropzone-default card shadow-none"
                                     data-dropzone='{"maxFiles":1}'>
-                                    <div name="imagen" class="dz-message">
+
+                                    <div class="dz-message">
                                         <i class="bi bi-file-earmark-text display-3"></i>
                                         <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
                                     </div>
+
                                 </div>
                             </div>
                             <!-- Dropzone photo END -->
@@ -653,7 +665,27 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            Dropzone.options.dropzone = {
+                maxFilesize: 12,
+                renameFile: function(file) {
+                    var dt = new Date();
+                    var time = dt.getTime();
+                    return time + file.name;
+                },
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 5000,
+                success: function(file, response) {
+                    console.log(response);
+                },
+                error: function(file, response) {
+                    return false;
+                }
+            };
+        </script>
         <!-- Modal criar events -->
+
         {{-- Modal --}}
 
         {{--  --}}
@@ -681,6 +713,7 @@
                                 <!-- Form START -->
                                 <form class="row g-3 justify-content-center">
                                     <div class="col-md-5">
+
                                         <!-- What -->
                                         <div class="input-group">
                                             <select required autofocus class="form-control form-control-lg me-1 pe-5">
@@ -723,7 +756,7 @@
                                     <a href="/categoria" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/badge-outline-filled.svg"
                                             alt="">
-                                        <h6>Online Webinar </h6>
+                                        <h6>Artes e entretenimento </h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
@@ -735,19 +768,19 @@
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/home-outline-filled.svg"
                                             alt="">
-                                        <h6>Exposições artísticas</h6>
+                                        <h6>Eventos Religiosos</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/clock-outline-filled.svg"
                                             alt="">
-                                        <h6>Feira & Networking</h6>
+                                        <h6>Eventos corporativos.</h6>
                                     </a>
                                     <!-- Category item -->
                                     <a href="events.html" class="card card-body mb-3 mb-lg-0 p-3 text-center">
                                         <img class="h-40px mb-3" src="assets/images/icon/imac-outline-filled.svg"
                                             alt="">
-                                        <h6>Festival musical </h6>
+                                        <h6>Encontros de Networking </h6>
                                     </a>
                                 </div>
                                 <!-- Category END -->
@@ -1812,6 +1845,49 @@
             source: substringMatcher(states)
         });
     </script>
+
+    @section('scripts')
+        <script>
+            let uploadedImageMap = {}; // uploadedImageMap object created
+            Dropzone.options.imageUpload = { // Dropzone class added
+                url: "{{ route('galery.store') }}", // route to store image
+                maxFilesize: 2, // MB                               // max file size
+                maxFiles: 10, // max files
+                acceptedFiles: ".jpeg,.jpg,.png,.gif", // accepted files
+                addRemoveLinks: true, // add remove links
+                headers: { // headers
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}" // csrf token
+                },
+                success: function(file, response) { // success function
+                    $('form').append('<input type="hidden" name="images[]" value="' + response.name +
+                        '">') // append input to form
+                    uploadedImageMap[file.name] = response.name // uploadedImageMap object created
+                },
+                removedfile: function(file) { // removedfile function
+                    file.previewElement.remove() // remove file
+                    let name = '' // name variable created
+                    if (typeof file.file_name !== 'undefined') { // if file.file_name is not undefined
+                        name = file.file_name // name variable created
+                    } else { // else
+                        name = uploadedImageMap[file.name] // name variable created
+                    }
+                    $('form').find('input[name="images[]"][value="' + name + '"]').remove() // remove input from form
+                },
+                init: function() { // init function
+                    @if (isset($galery) && $galery->image) // if isset galery and galery->image
+                        let files = '{!! json_encode($galery->image) !!}'; // files variable created
+                        for (let i in files) { // for loop
+                            let file = files[i] // file variable created
+                            this.options.addedfile.call(this, file) // addedfile function called
+                            file.previewElement.classList.add('dz-complete') // dz-complete class added
+                            $('form').append('<input type="hidden" name="images[]" value="' + file.file_name +
+                                '">') // append input to form
+                        }
+                    @endif
+                }
+            }
+        </script>
+    @endsection
 
 </body>
 
