@@ -117,10 +117,10 @@ class EventosController extends Controller
         $evento->link = Request('link');
         $evento->imagen = Request('imagen');
         if (Request::file('imagen') != null) {
-            $filename = $request->file('imagen')->getClientOriginalName();
+            $filename = Request::file('imagen')->getClientOriginalName();
             $link = "imagen/eventos/" . $filename;
             $evento->imagen = $link;
-            $foto = $request->file('imagen');
+            $foto = Request::file('imagen');
             $foto->move('imagen/eventos', $filename);
         }
         $evento->save();
