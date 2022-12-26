@@ -635,10 +635,24 @@
                                 </ul>
                             </div>
 
+                            <style>
+                                .hiddenFileInput>input {
+                                    height: 100%;
+                                    width: 100;
+                                    opacity: 0;
+                                    cursor: pointer;
+                                }
+
+                                .hiddenFileInput {
+                                    display: inline-block;
+                                    overflow: hidden;
+                                    cursor: pointer;
+                                }
+                            </style>
                             <div class="mb-3">
                                 <div class="dropzone  dropzone-default card shadow-none">
-                                    <input id="file-upload" type="file" name="imagen" accept="image/*" />
-
+                                    <input class="hiddenFileInput" id="file-upload" type="file" name="imagen"
+                                        accept="image/*" />
                                     <label for="file-upload" id="file-drag">
                                         <div class="dz-message" id="start">
                                             <img id="file-image" src="#" alt="Preview" class="hidden">
@@ -971,6 +985,36 @@
                             <!-- Event item END -->
                         </div>
 
+                        <!-- ver fotogrfia -->
+                        <div class="modal fade" id="feedActionPhoto{{ $evento->id }}" tabindex="-1"
+                            aria-labelledby="feedActionPhotoLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <!-- Modal feed header START -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="feedActionPhotoLabel">Add post photo
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <!-- Modal feed header END -->
+
+                                    <!-- Modal feed body START -->
+                                    <div class="modal-body">
+                                        <!-- Add Feed -->
+                                        <div class="d-flex mb-3">
+                                            <!-- Avatar -->
+                                            <div class="card card-body card-overlay-bottom border-1">
+                                                <img src="{{ $evento->imagen }}" alt="">
+                                            </div>
+                                            <!-- Feed box  -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Ver fotogrfai --}}
 
                         {{-- ver events --}}
                         <div class="modal fade col-12" id="modalCreateEvents{{ $evento->id }}" tabindex="-1"
@@ -989,10 +1033,11 @@
                                     <!-- Modal feed header END -->
 
 
-
                                     <!-- Modal feed body START -->
                                     <div class="modal-body">
-                                        <div class="card card-body card-overlay-bottom border-0"
+                                        <div href="#!" data-bs-toggle="modal"
+                                            data-bs-target="#feedActionPhoto{{ $evento->id }}"
+                                            class="card card-body card-overlay-bottom border-0"
                                             style="background-image:url(/{{ $evento->imagen }}); background-position: center; background-size: cover; background-repeat: no-repeat;">
                                             <!-- Card body START -->
                                             <div class="row g-3 justify-content-between">
