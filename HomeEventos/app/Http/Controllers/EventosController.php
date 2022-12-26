@@ -89,9 +89,9 @@ class EventosController extends Controller
         $request::validate([
             'titulo' => 'required',
             'categoria_id' => 'required',
+            'cidade_id' => 'required',
             'descricao' => 'required',
             'hora' => 'required',
-            'cidade' => 'required',
             'dataInicio' => 'required',
             'dataFim' => 'required',
             'privado' => 'required',
@@ -103,6 +103,8 @@ class EventosController extends Controller
         // dd(Request::all());
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
+        $evento->cidade_id = Request::input('cidade_id');
+        $evento->categoria_id = Request::input('categoria_id');
         $evento->titulo = Request::input('titulo');
         $evento->descricao = Request::input('descricao');
         $evento->dataInicio = Request::input('dataInicio');
@@ -111,13 +113,18 @@ class EventosController extends Controller
         $evento->privado = Request::input('privado');
         $evento->duracao = Request::input('duracao');
         $evento->localizacao = Request::input('localizacao');
-        $evento->cidade = Request::input('cidade_id');
-        $evento->categoria_id = Request::input('categoria_id');
         $evento->participante = Request::input('participante');
         $evento->anexo = Request::input('anexo');
         $evento->link = Request::input('link');
         $evento->imagen = Request::input('imagen');
 
+        if (Request::file('anexo') != null) {
+            $filename = Request::file('anexo')->getClientOriginalName();
+            $link = "anexo/eventos/" . $filename;
+            $evento->anexo = $link;
+            $foto = Request::file('anexo');
+            $foto->move('anexo/eventos', $filename);
+        }
         if (Request::file('imagen') != null) {
             $filename = Request::file('imagen')->getClientOriginalName();
             $link = "imagen/eventos/" . $filename;
