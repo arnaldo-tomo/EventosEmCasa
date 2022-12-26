@@ -1030,7 +1030,7 @@
                                             <li class="nav-item">
                                                 <a class="nav-link mb-0" href="{{ $evento->imagen }}"
                                                     download="{{ $evento->imagen }}"> <i
-                                                        class="bi bi-file-earmark-arrow-down pe-1 text-success"></i>Descarregar
+                                                        class="bi bi-file-earmark-arrow-down pe-1 "></i>Descarregar
                                                     Capa</a>
                                             </li>
                                             <!-- Card share action dropdown menu -->
