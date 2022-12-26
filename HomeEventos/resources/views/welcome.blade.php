@@ -648,7 +648,7 @@
                                                 ou clique para carregar.</div>
                                             <div class="dz-message" id="response" class="hidden">
                                                 <div id="messages">
-                                                    <i class="bi bi-file-earmark-text display-3"></i>
+                                                    <i class="bi bi-images display-3"></i>
                                                 </div>
                                             </div>
                                         </div>
