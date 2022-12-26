@@ -27,7 +27,7 @@ class EventosController extends Controller
         $participantes = User::all();
         $teste = Eventos::find(14);
 
-        $dt = Carbon::parse($teste->dataInicio);
+        // $dt = Carbon::parse($teste->dataInicio);
         // dd($teste->created_at->format('l jS \\of F Y h:i ', 'Africa/Maputo'));
         //"Sunday 4th of December 2022 08:50 "
 
