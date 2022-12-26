@@ -48,9 +48,19 @@
 
 <body>
     <style>
+        .hiddenFileInput>input {
+            height: 100%;
+            width: 100;
+            opacity: 0;
+            cursor: pointer;
+        }
 
+        .hiddenFileInput {
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+        }
     </style>
-
 
     <header class="navbar-dark navbar-transparent header-static">
 
@@ -635,24 +645,14 @@
                                 </ul>
                             </div>
 
-                            <style>
-                                .hiddenFileInput>input {
-                                    height: 100%;
-                                    width: 100;
-                                    opacity: 0;
-                                    cursor: pointer;
-                                }
 
-                                .hiddenFileInput {
-                                    display: inline-block;
-                                    overflow: hidden;
-                                    cursor: pointer;
-                                }
-                            </style>
                             <div class="mb-3">
                                 <div class="dropzone  dropzone-default card shadow-none">
-                                    <input class="hiddenFileInput" id="file-upload" type="file" name="imagen"
-                                        accept="image/*" />
+                                    <a class="hiddenFileInput">
+
+                                        <input class="hiddenFileInput" id="file-upload" type="file"
+                                            name="imagen" accept="image/*" />
+                                    </a>
                                     <label for="file-upload" id="file-drag">
                                         <div class="dz-message" id="start">
                                             <img id="file-image" src="#" alt="Preview" class="hidden">
