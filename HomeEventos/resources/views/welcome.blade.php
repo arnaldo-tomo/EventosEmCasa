@@ -986,30 +986,34 @@
                         </div>
 
                         <!-- ver fotogrfia -->
-                        <div class="modal fade" id="feedActionPhoto{{ $evento->id }}" tabindex="-1"
+                        <div class="modal fade " opa id="feedActionPhoto{{ $evento->id }}" tabindex="-1"
                             aria-labelledby="feedActionPhotoLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
+                                <div class="modal-content ">
+
                                     <!-- Modal feed header START -->
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="feedActionPhotoLabel">Add post photo
-                                        </h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    <div class="modal-header bg-dark  text-white">
+                                        <h6 class="modal-title text-white p-2" id="feedActionPhotoLabel">
+                                            {{ $evento->titulo }}
+                                        </h6>
+                                        <a><a href=""
+                                                class="bi bi-file-earmark-arrow-down text-success  pe-2 p-2">
+                                                Descarregar
+                                                Capa</a></a>
+                                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <!-- Modal feed header END -->
 
                                     <!-- Modal feed body START -->
-                                    <div class="modal-body">
-                                        <!-- Add Feed -->
-                                        <div class="d-flex mb-3">
-                                            <!-- Avatar -->
-                                            <div class="card card-body card-overlay-bottom border-1">
-                                                <img src="{{ $evento->imagen }}" alt="">
-                                            </div>
-                                            <!-- Feed box  -->
-                                        </div>
+
+                                    <!-- Add Feed -->
+
+                                    <!-- foto -->
+                                    <div class="card  border-1">
+                                        <img src="{{ $evento->imagen }}" alt="">
                                     </div>
+                                    <!--foto  -->
 
                                 </div>
                             </div>
