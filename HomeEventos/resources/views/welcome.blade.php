@@ -569,9 +569,7 @@
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
                                     <!-- Choice select -->
-                                    <select class="form-select js-choice" data-search-enabled="true" multiple
-                                        data-remove-item-button="true" data-position="bottom" data-max-item-count="1"
-                                        data-placeholder="true" name="cidade_id" id="cidade_id">
+                                    <select class="form-select " name="cidade_id" id="cidade_id">
 
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
@@ -1000,8 +998,9 @@
                                                 <!-- Date START -->
                                                 <div class="col-lg-2">
                                                     <div
-                                                        class="bg-mode text-center rounded overflow-hidden p-1 d-inline-block">
-                                                        <div class="bg-primary p-2 text-white rounded-top small lh-1">
+                                                        class="bg-mode text-center sm rounded overflow-hidden p-1 d-inline-block">
+                                                        <div
+                                                            class="bg-primary sm p-2 text-white rounded-top small lh-1">
                                                             {{ $evento->hora }}Hora
                                                         </div>
                                                         <h6 class="mb-0 py-2 lh-1">
