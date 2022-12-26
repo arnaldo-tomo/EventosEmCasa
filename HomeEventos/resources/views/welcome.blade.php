@@ -646,8 +646,8 @@
                                             </div>
                                             <div class="dz-message" id="response" class="hidden">
                                                 <div id="messages">
-                                                    <p class="bi bi-images display-3">
-                                                    </p>
+                                                    <i class="bi bi-images display-3">
+                                                    </i>
                                                     <p> clique para carregar ou Solte a
                                                         image aqui.</p>
                                                 </div>
