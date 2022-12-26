@@ -100,7 +100,6 @@ class EventosController extends Controller
             'imagen' => 'required',
         ]);
 
-        // dd(Request::all());
         $evento = new Eventos();
         $evento->user_id = Auth::user()->id;
         $evento->cidade_id = Request::input('cidade_id');
@@ -114,9 +113,7 @@ class EventosController extends Controller
         $evento->duracao = Request::input('duracao');
         $evento->localizacao = Request::input('localizacao');
         $evento->participante = Request::input('participante');
-        $evento->anexo = Request::input('anexo');
         $evento->link = Request::input('link');
-        $evento->imagen = Request::input('imagen');
 
         if (Request::file('anexo') != null) {
             $filename = Request::file('anexo')->getClientOriginalName();
@@ -125,6 +122,7 @@ class EventosController extends Controller
             $foto = Request::file('anexo');
             $foto->move('anexo/eventos', $filename);
         }
+
         if (Request::file('imagen') != null) {
             $filename = Request::file('imagen')->getClientOriginalName();
             $link = "imagen/eventos/" . $filename;
@@ -132,10 +130,8 @@ class EventosController extends Controller
             $foto = Request::file('imagen');
             $foto->move('imagen/eventos', $filename);
         }
-
         $evento->save();
-
-        $messagen = "Evento publicado com sucessos!";
+        $messagen =  "Evento " . Request::input('titulo') . " publicado com sucessos! ";
         return redirect()->back()->with('novo', $messagen);
     }
 
