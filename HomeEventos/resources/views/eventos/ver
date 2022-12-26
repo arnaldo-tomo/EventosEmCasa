@@ -307,15 +307,15 @@ Header END -->
                                             <div class="hstack gap-2 gap-xl-3 justify-content-center">
                                                 <!-- User stat item -->
                                                 <div>
-                                                    <h6 class="mb-0">{{ $eventos->count() }}</h6>
-                                                    <small>Eventos</small>
+                                                    <h6 class="mb-0">256</h6>
+                                                    <small>Post</small>
                                                 </div>
                                                 <!-- Divider -->
                                                 <div class="vr"></div>
                                                 <!-- User stat item -->
                                                 <div>
-                                                    <h6 class="mb-0">2</h6>
-                                                    <small>Particpando</small>
+                                                    <h6 class="mb-0">2.5K</h6>
+                                                    <small>Followers</small>
                                                 </div>
                                                 <!-- Divider -->
                                                 <div class="vr"></div>
@@ -335,8 +335,7 @@ Header END -->
                                         <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
 
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="Perfil"> <img
-                                                        class="me-2 h-20px fa-fw"
+                                                <a class="nav-link" href="Perfil"> <img class="me-2 h-20px fa-fw"
                                                         src="assets/images/icon/calendar-outline-filled.svg"
                                                         alt=""><span>Eventos </span></a>
                                             </li>
@@ -421,15 +420,15 @@ Header END -->
                             <!-- Tab nav line -->
                             <ul class="nav nav-tabs nav-bottom-line justify-content-center justify-content-md-start">
                                 <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab"
-                                        href="#tab-1"> Meus Eventos </a> </li>
+                                        href="#tab-1"> Top </a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-2"> Local
                                     </a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-                                        Estas Semana </a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-3"> This
+                                        week </a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
                                         Online </a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-5">
-                                        Participando </a> </li>
+                                        Friends </a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-6">
                                         Following </a> </li>
                             </ul>
@@ -455,8 +454,7 @@ Header END -->
                                             <!-- Upcoming event START -->
                                             <div class="alert alert-success alert-dismissible fade show"
                                                 role="alert">
-                                                <strong>Ola,{{ Auth::user()->name }}</strong> parece que nao tens
-                                                nenhum
+                                                <strong>Ola,{{ Auth::user()->name }}</strong> parece que nao tens nenhum
                                                 evento
                                                 publicado
                                                 {{-- <a href="events.html" class="btn btn-xs btn-success ms-md-4">Criar um
@@ -467,75 +465,115 @@ Header END -->
                                             <!-- Upcoming event END -->
                                         @else
                                             @foreach ($info->Eventos as $evento)
-                                                <div class="d-sm-flex align-items-center mb-2">
-                                                    <!-- Avatar -->
-                                                    <div class="avatar avatar-xl">
-                                                        <a href="#!"><img
-                                                                class="avatar-img rounded border border-white border-3"
-                                                                src="/{{ $evento->imagen }}" alt=""></a>
-                                                    </div>
-                                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                                        <!-- Info -->
-                                                        <h5 class="mb-1"><a href="event-details.html">
-                                                                {{ $evento->titulo }}
-                                                            </a>
-                                                        </h5>
-                                                        <ul class="nav nav-stack small">
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-calendar-check pe-1"></i>
+                                                <div class="col-sm-6 col-xl-4">
+                                                    <!-- Event item START -->
+                                                    <div class="card h-100">
+                                                        <div class="position-relative">
+                                                            <img class="img-fluid rounded-top"
+                                                                src="/{{ $evento->imagen }}" alt="">
+                                                            <div
+                                                                class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
+                                                                {{ $evento->localizacao }}
+                                                            </div>
+                                                        </div>
+                                                        <!-- Card body START -->
+                                                        <div class="card-body position-relative pt-0">
+                                                            <!-- Tag -->
+                                                            <a class="btn btn-xs btn-primary mt-n3"
+                                                                href="event-details.html">{{ $evento->tipo_categoria }}</a>
+                                                            <h6 class="mt-3"> <a href="event-details.html">
+                                                                    {{ $evento->titulo }} </a>
+                                                            </h6>
+                                                            <!-- Date time -->
+                                                            <p class="mb-0 small"> <i
+                                                                    class="bi bi-calendar-check pe-1"></i>
                                                                 {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
                                                                 -
-                                                                {{ $evento->hora }} Horas
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-geo-alt pe-1"></i>
-                                                                {{ $evento->cidades->nome }}
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-people pe-1"></i> 77 going
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 ms-auto">
-                                                        <div class="dropdown">
-                                                            <!-- Card share action menu -->
-                                                            <button class="icon-md btn btn-secondary-soft"
-                                                                type="button" id="profileAction"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="bi bi-three-dots"></i>
-                                                            </button>
-                                                            <!-- Card share action dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="profileAction">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share
-                                                                        profile
-                                                                        in
-                                                                        a
-                                                                        message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                                        your
-                                                                        profile to PDF</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-lock fa-fw pe-2"></i>Lock
-                                                                        profile</a>
+                                                                {{ $evento->hora }} Horas </p>
+                                                            <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
+                                                                {{ $evento->cidade }} </p>
+                                                            <!-- Avatar group START -->
+                                                            <ul
+                                                                class="avatar-group list-unstyled align-items-center mb-0">
+                                                                <li class="avatar avatar-xs">
+                                                                    <img class="avatar-img rounded-circle"
+                                                                        src="assets/images/avatar/05.jpg"
+                                                                        alt="avatar">
                                                                 </li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
+                                                                <li class="avatar avatar-xs">
+                                                                    <img class="avatar-img rounded-circle"
+                                                                        src="assets/images/avatar/06.jpg"
+                                                                        alt="avatar">
                                                                 </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                                        settings</a>
+                                                                <li class="avatar avatar-xs">
+                                                                    <div class="avatar-img rounded-circle bg-primary">
+                                                                        <span
+                                                                            class="smaller text-white position-absolute top-50 start-50 translate-middle">+36</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="ms-3">
+                                                                    <small> are attending</small>
                                                                 </li>
                                                             </ul>
+                                                            <!-- Avatar group END -->
+                                                            <!-- Button -->
+                                                            <div class="d-flex mt-3 justify-content-between">
+                                                                <!-- Interested button -->
+                                                                <div class="w-100">
+                                                                    <input type="checkbox" class="btn-check d-block"
+                                                                        id="Interested5">
+                                                                    <label
+                                                                        class="btn btn-sm btn-outline-success d-block"
+                                                                        for="Interested5"><i
+                                                                            class="fa-solid fa-thumbs-up me-1"></i>
+                                                                        Interresante</label>
+                                                                </div>
+                                                                <div class="dropdown ms-3">
+                                                                    <a href="#"
+                                                                        class="btn btn-sm btn-primary-soft"
+                                                                        id="eventActionShare5"
+                                                                        data-bs-toggle="dropdown"
+                                                                        aria-expanded="false">
+                                                                        <i class="bi bi-share-fill"></i>
+                                                                    </a>
+                                                                    <!-- Dropdown menu -->
+                                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                                        aria-labelledby="eventActionShare5">
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    class="bi bi-envelope fa-fw pe-1"></i>
+                                                                                Send
+                                                                                via Direct Message</a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    class="bi bi-bookmark-check fa-fw pe-1"></i>
+                                                                                Share to News Feed </a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-people fa-fw pe-1"></i>
+                                                                                Share
+                                                                                to a group</a></li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-share fa-fw pe-1"></i>
+                                                                                Share
+                                                                                post via …</a></li>
+                                                                        <li>
+                                                                            <hr class="dropdown-divider">
+                                                                        </li>
+                                                                        <li><a class="dropdown-item" href="#">
+                                                                                <i class="bi bi-person fa-fw pe-1"></i>
+                                                                                Share
+                                                                                on a friend's profile</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                        <!-- Card body END -->
                                                     </div>
+                                                    <!-- Event item END -->
                                                 </div>
                                             @endforeach
                                         @endif
-                                        {{ $eventos->links() }}
+
                                     </div>
                                 </div>
                                 <!-- Event top tab END -->
