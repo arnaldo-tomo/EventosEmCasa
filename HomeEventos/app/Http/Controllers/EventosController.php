@@ -33,9 +33,9 @@ class EventosController extends Controller
 
         // dd($teste->created_at->format('j F Y', 'pt', '20 fevereiro 2001')->locale('pt'));
         // echo Carbon::parse($teste->created_at)->locale('pt-BR')->isoFormat('LLLL');
-        // return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
+        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
         // echo Carbon::now()->subMinutes($teste->created_at->dayOfweek)->diffForHumans();
-        echo Carbon::now()->parse($teste->created_at)->locale('pt')->diffForHumans();
+        // echo Carbon::now()->parse($teste->created_at)->locale('pt')->diffForHumans();
         //há 7 horas
     }
 
