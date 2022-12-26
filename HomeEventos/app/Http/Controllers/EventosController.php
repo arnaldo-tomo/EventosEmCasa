@@ -9,7 +9,6 @@ use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\categoria;
 use App\Models\tipodeevento;
-use Carbon\Carbon;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
@@ -25,19 +24,9 @@ class EventosController extends Controller
         $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-        $teste = Eventos::find(14);
 
-        $dt = Carbon::parse($teste->dataInicio);
-        // dd($teste->created_at->format('l jS \\of F Y h:i ', 'Africa/Maputo'));
-        //"Sunday 4th of December 2022 08:50 "
-
-        // echo Carbon::now()->parse($teste->created_at)->locale('pt')->diffForHumans();
-        //há 7 horas
-
-        // dd($teste->created_at->format('j F Y', 'pt', '20 fevereiro 2001')->locale('pt'));
-        // echo Carbon::parse($teste->created_at)->locale('pt-BR')->isoFormat('LLLL');
+        // dd($eventos);
         return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
-        // echo Carbon::now()->subMinutes($teste->created_at->dayOfweek)->diffForHumans();
     }
 
 
@@ -74,8 +63,7 @@ class EventosController extends Controller
     public function Verperfil($id)
     {
         $info = User::find($id);
-        $eventos = Eventos::paginate(8);;
-        return view('eventos.verperfil', compact('info', 'eventos'));
+        return view('eventos.verperfil', compact('info'));
     }
     public function sobre()
     {
