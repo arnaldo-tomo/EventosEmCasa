@@ -1207,7 +1207,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-">
+                                            <div class="col-lg-4">
                                                 <h5>Participantes</h5>
                                                 <!-- Avatar group START -->
                                                 <ul class="avatar-group list-unstyled align-items-center">
