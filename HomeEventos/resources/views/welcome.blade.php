@@ -1024,8 +1024,10 @@
                                                         class="bi bi-heart pe-1"></i>Interrados (56)</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link mb-0" href="#!"> <i
-                                                        class="bi bi-chat-fill pe-1"></i>Comentarios (12)</a>
+                                                <a class="nav-link mb-0" href="{{ $evento->imagen }}"
+                                                    download="{{ $evento->imagen }}"> <i
+                                                        class="bi bi-file-earmark-arrow-down pe-1"></i>Descarregar Capa
+                                                    (12)</a>
                                             </li>
                                             <!-- Card share action dropdown START -->
                                             <li class="nav-item dropdown">
