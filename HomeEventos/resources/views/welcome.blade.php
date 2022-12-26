@@ -996,10 +996,6 @@
                                         <h6 class="modal-title text-white p-2" id="feedActionPhotoLabel">
                                             {{ $evento->titulo }}
                                         </h6>
-                                        <a><a href="{{ $evento->imagen }}" download="{{ $evento->imagen }}"
-                                                class="bi bi-file-earmark-arrow-down text-success  pe-2 p-2">
-                                                Descarregar
-                                                Capa</a></a>
                                         <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -1021,7 +1017,7 @@
                                         <ul class="nav nav-fill nav-stack small">
                                             <li class="nav-item">
                                                 <a class="nav-link mb-0 active" href="#!"> <i
-                                                        class="bi bi-heart pe-1"></i>Interrados (56)</a>
+                                                        class="fa-solid fa-thumbs-up me-1 pe-1"></i>Interrados (56)</a>
                                             </li>
 
                                             <!-- Card share action dropdown START -->
