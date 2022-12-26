@@ -899,7 +899,7 @@
 
                                     <!-- Data hora -->
                                     <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                        {{ \Carbon\Carbon::parse($evento->dataInicio->dayOfWeek) }}
+                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
                                         <i class=" fa fa-clock"></i>
                                         {{ $evento->hora }} Horas
                                     </p>
