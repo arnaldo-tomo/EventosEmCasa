@@ -756,11 +756,11 @@
                                     </div>
 
 
-                                    <div id="the-basics" class="col-md-5">
 
-                                        <!-- Where -->
+                                    <!-- Where -->
+                                    <div id="the-basics" class="col-md-5">
                                         <div class="input-group">
-                                            <input class=" typeahead form-control  form-control-lg me-1 pe-5"
+                                            <input class="typeahead form-control  form-control-lg me-1 pe-5"
                                                 type="text" placeholder="Onde" class="controls">
 
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
@@ -899,7 +899,7 @@
 
                                     <!-- Data hora -->
                                     <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                        {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
+                                        {{ \Carbon\Carbon::parse($evento->dataInicio->dayOfWeek) }}
                                         <i class=" fa fa-clock"></i>
                                         {{ $evento->hora }} Horas
                                     </p>
@@ -1017,50 +1017,24 @@
                                         <ul class="nav nav-fill nav-stack small">
                                             <li class="nav-item">
                                                 <a class="nav-link mb-0 active" href="#!"> <i
-                                                        class="fa-solid fa-thumbs-up me-1 pe-1"></i>Interrados (56)</a>
+                                                        class="fa-solid fa-thumbs-up me-1"></i>Interrados (56)</a>
                                             </li>
 
                                             <!-- Card share action dropdown START -->
                                             <li class="nav-item dropdown">
                                                 <a href="#" class="nav-link mb-0" id="feedActionShare7"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="bi bi-reply-fill flip-horizontal ps-1"></i>Reeventos
+                                                    <i class="bi bi-reply-fill flip-horizontal "></i>Reeventos
                                                     (3)
                                                 </a>
                                             <li class="nav-item">
                                                 <a class="nav-link mb-0" href="{{ $evento->imagen }}"
                                                     download="{{ $evento->imagen }}"> <i
-                                                        class="bi bi-file-earmark-arrow-down pe-1 "></i>Descarregar
-                                                    Capa</a>
+                                                        class="bi bi-file-earmark-arrow-down "></i>Baixar</a>
                                             </li>
                                             <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="feedActionShare7">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-envelope fa-fw pe-2"></i>Send via
-                                                        Direct
-                                                        Message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark-check fa-fw pe-2"></i>Bookmark
-                                                    </a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-link fa-fw pe-2"></i>Copy link to
-                                                        post</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-share fa-fw pe-2"></i>Share post via
-                                                        …</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-pencil-square fa-fw pe-2"></i>Share to
-                                                        News Feed</a></li>
-                                            </ul>
                                             </li>
                                             <!-- Card share action dropdown END -->
-
                                         </ul>
                                         <!-- Feed react END -->
                                     </div>
@@ -1216,7 +1190,7 @@
                                         <hr class="mt-4">
                                         <div class="row ">
                                             <div class="col-lg-8">
-                                                <div class="col-lg-8">
+                                                <div class="col-lg-6">
                                                     <h5>Proprietário</h5>
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
@@ -1233,7 +1207,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-3">
                                                 <h5>Participantes</h5>
                                                 <!-- Avatar group START -->
                                                 <ul class="avatar-group list-unstyled align-items-center">
@@ -1982,7 +1956,7 @@
             'Manhiça-Moçambique', 'Malema-Moçambique', 'Manjacaze-Moçambique'
         ];
 
-        $('#the-basics .typeahead').typeahead({
+        $('#input-group .typeahead').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
