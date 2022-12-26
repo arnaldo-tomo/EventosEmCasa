@@ -560,7 +560,7 @@
 
                             <div class="col-12">
                                 <label class="form-label">Localização</label>
-                                <input type="text" class="form-control" id="pac-inpute" name="localizacao"
+                                <input type="text" class="form-control" name="localizacao"
                                     placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
                             </div>
                             <!-- Location -->
@@ -571,7 +571,7 @@
                                     <!-- Choice select -->
                                     <select class="form-select js-choice" data-search-enabled="true" multiple
                                         data-remove-item-button="true" data-position="bottom" data-max-item-count="1"
-                                        data-placeholder="true" name="cidade_id">
+                                        data-placeholder="true" name="cidade_id" id="cidade_id">
 
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
@@ -675,7 +675,7 @@
 
                             <div class="col-12">
                                 <label class="form-label">Link Externos</label>
-                                <input type="text" class="form-control" id="link" name="link"
+                                <input type="text" class="form-control" name="link"
                                     placeholder="https://go.com/fwlink/?LinkID=219472&clcid=0x409">
                             </div>
                             <!-- Form END -->
