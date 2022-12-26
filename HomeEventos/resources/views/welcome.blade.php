@@ -643,12 +643,13 @@
                                         <div class="dz-message" id="start">
                                             <img id="file-image" src="#" alt="Preview" class="hidden">
                                             <div class="dz-message" id="notimage" id="response" class="hidden">
-                                                Solte a
-                                                Apresentação e o documento aqui
-                                                ou clique para carregar.</div>
+                                            </div>
                                             <div class="dz-message" id="response" class="hidden">
                                                 <div id="messages">
-                                                    <i class="bi bi-images display-3"></i>
+                                                    <p class="bi bi-images display-3">
+                                                    </p>
+                                                    <p> clique para carregar ou Solte a
+                                                        image aqui.</p>
                                                 </div>
                                             </div>
                                         </div>
