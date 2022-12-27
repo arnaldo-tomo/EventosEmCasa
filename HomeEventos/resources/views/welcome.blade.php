@@ -1157,29 +1157,33 @@
                                                 <h5>Taxas de entrada</h5>
                                                 <p class="small mb-0">
                                                     @if ($evento->privado == 0)
-                                                        Publico
+                                                        <a href=""> <i class="fa fa-bullhorn"
+                                                                aria-hidden="true"></i> Publico</a>
                                                     @else
-                                                        <i class="fa fa-lock" aria-hidden="true"></i> Privado
+                                                        <a href=""> <i class="fa fa-lock"
+                                                                aria-hidden="true"></i> Privado</a>
                                                     @endif
                                                 </p>
                                             </div>
                                             <!-- Category & Type -->
                                             <div class="col-sm-5 col-lg-5">
                                                 <h5>Categoria & Tipo</h5>
-                                                <p class="small mb-0"><i class="fa fa-bullseye"> </i>
+                                                <a href="" class="small mb-0"><i class="fa fa-tags"
+                                                        aria-hidden="true"></i>
                                                     {{ $evento->categoria->nome }}
-                                                </p>
+                                                </a>
                                             </div>
                                             <div class="col-sm-5 col-lg-5">
                                                 <h5>Cidade</h5>
-                                                <p class="small mb-0"><i class="fa fa-building"></i>
+                                                <a href="" class="small mb-0"><i class="fa fa-building"></i>
                                                     {{ $evento->cidades->nome }}
-                                                </p>
+                                                </a>
 
                                             </div>
                                             <div class="col-sm-7 col-lg-7">
                                                 <h5>Localização</h5>
-                                                <p class="small mb-0"><i class="fa fa-map-marker"></i>
+                                                <p class="small mb-0"><i class="fa fa-map-pin"
+                                                        aria-hidden="true"></i>
                                                     {{ $evento->localizacao }} </p>
                                             </div>
                                             <!-- Estimated Turnout -->
