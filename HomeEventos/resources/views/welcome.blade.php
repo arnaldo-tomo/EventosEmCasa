@@ -533,31 +533,30 @@
                             <div class="col-sm-6">
                                 <label class="form-label">Data Inicial</label>
                                 <input type="date" class="form-control flatpickr" name="dataInicio"
-                                    placeholder="Select date">
+                                    placeholder="Data a inicar">
                             </div>
                             <!-- Duração -->
                             <!-- Duração -->
                             <div class="col-sm-6">
-                                <label class="form-label">Data do final </label>
+                                <label class="form-label" disable:minDate="today">Data do final </label>
                                 <input type="date" class="form-control flatpickr" name="dataFim"
-                                    placeholder="Select date">
+                                    placeholder="Data a terminar">
                             </div>
 
                             <!-- Duração -->
                             <!-- Date -->
                             <div class="col-sm-4">
                                 <label class="form-label">Duração</label>
-                                <input type="number" class="form-control" name="duracao"
-                                    placeholder="Exemplo:6Horas">
+                                <input type="number" class="form-control" name="duracao" placeholder="Exemplo:6H">
                             </div>
                             <!-- Date final -->
                             <div class="col-sm-4">
                                 <label class="form-label">Publico Ou Privado</label>
                                 <select class="form-select form-select" name="privado"
                                     aria-label=".form-select-lg example">
-                                    <option disabled selected>-Selecione-</option>
-                                    <option value="0">publico</option>
-                                    <option value="1">privado</option>
+                                    <option disabled selected>Selecione</option>
+                                    <option value="0">Publico</option>
+                                    <option value="1">Privado</option>
 
                                 </select>
                             </div>
@@ -565,7 +564,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label">Hora</label>
                                 <input type="datetime-local" class="form-control flatpickr" name="hora"
-                                    data-enableTime="true" data-noCalendar="true" placeholder="Selecione a Hora">
+                                    data-enableTime="true" data-noCalendar="true" placeholder="Hora a Iniciar">
                             </div>
 
                             <div class="col-12">
@@ -579,7 +578,11 @@
                                 <label class="form-label">Cidade</label>
                                 <div class="form-group">
                                     <!-- Choice select -->
-                                    <select class="form-select " name="cidade_id" id="cidade_id">
+                                    {{-- <select class="form-select" multiple name="cidade_id" id="cidade_id"> --}}
+                                    <select class="form-select js-choice" name="cidade_id" id="cidade_id"
+                                        data-search-enabled="false" data-placeholder-val="Pesquisa por cidade"
+                                        multiple data-remove-item-button="true" data-position="bottom"
+                                        data-max-item-count="2" data-placeholder="true">
 
                                         @foreach ($cidades as $cidade)
                                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
@@ -760,7 +763,7 @@
                                     <!-- Where -->
                                     <div id="the-basics" class="col-md-5">
                                         <div class="input-group">
-                                            <input class="typeahead form-control  form-control-lg me-1 pe-5"
+                                            <input class="typeahead form-control text-dark  form-control-lg me-1 pe-5"
                                                 type="text" placeholder="Onde" class="controls">
 
                                             <a class="position-absolute top-50 end-0 translate-middle-y text-secondary px-3 z-index-9"
@@ -1149,7 +1152,12 @@
                                             <!-- Entry Fees -->
                                             <div class="col-sm-3 col-lg-3">
                                                 <h5>Taxas de entrada</h5>
-                                                <p class="small mb-0"> <a href="#!"> {{ $evento->privado }} </a>
+                                                <p class="small mb-0">
+                                                    @if ($evento->privado == 0)
+                                                        Publico
+                                                    @else
+                                                        <i class="fa fa-unluck"></i> Privado
+                                                    @endif
                                                 </p>
                                             </div>
                                             <!-- Category & Type -->
@@ -1964,7 +1972,7 @@
             'Manhiça-Moçambique', 'Malema-Moçambique', 'Manjacaze-Moçambique'
         ];
 
-        $('#input-group .typeahead').typeahead({
+        $('#the-basics .typeahead').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
