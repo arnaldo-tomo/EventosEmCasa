@@ -1071,16 +1071,15 @@
                                             <div class="row g-3 justify-content-between">
                                                 <!-- Date START -->
                                                 <div class="col-lg-2">
-                                                    <div
+                                                    <di
                                                         class="bg-mode text-center sm rounded overflow-hidden p-1 d-inline-block">
-                                                        <div
-                                                            class="bg-primary sm p-2 text-white rounded-top small lh-1">
-                                                            {{ $evento->hora }}Hora
+                                                        <div class="bg-primary-solft sm p-2 text-white  small lh-1">
+                                                            {{ \Carbon\Carbon::now()->parse($evento->created_at)->locale('pt')->diffForHumans() }}
                                                         </div>
-                                                        <h6 class="mb-0 py-2 lh-1">
+                                                        {{-- <h6 class="mb-0 py-2 lh-1">
                                                             {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
-                                                        </h6>
-                                                    </div>
+                                                        </h6> --}}
+                                                    </di>
                                                 </div>
                                             </div>
                                             <!-- Event name START -->
