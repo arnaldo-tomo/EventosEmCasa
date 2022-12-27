@@ -1096,16 +1096,17 @@
                                             <!-- Event name START -->
                                             <div
                                                 class="row g-3 justify-content-between align-items-center mt-5 pt-5 position-relative z-index-9">
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-12">
                                                     <h1 class="h3 mb-1 text-white"> {{ $evento->titulo }} </h1>
                                                     <a class="text-white" href="{{ $evento->link }}"
                                                         target="_blank">{{ $evento->link }}</a>
                                                 </div>
                                                 @if ($evento->privado == 1)
                                                     <!-- Button -->
-                                                    <div class="col-lg-3 text-lg-end">
-                                                        <a class="btn btn-primary-soft btn-sm" href="#!"> Comprar
-                                                        </a>
+                                                    <div class="col-lg-12 text-lg-end">
+                                                        <a class="btn btn-info-soft btn-sm"> <i class="fa fa-ticket"
+                                                                aria-hidden="true"></i>
+                                                            Comprar</a>
                                                     </div>
                                                 @endif
                                             </div>
@@ -1208,7 +1209,7 @@
                                         <hr class="mt-4">
                                         <div class="row ">
                                             <div class="col-lg-8">
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-8">
                                                     <h5>Proprietário</h5>
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
@@ -1216,7 +1217,7 @@
                                                             <img class="avatar-img rounded-circle"
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
-                                                        <li class="ms-3">
+                                                        <li class="ms-4">
                                                             <a href="Verperfil{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
                                                             </a>
