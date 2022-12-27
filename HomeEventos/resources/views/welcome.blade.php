@@ -930,13 +930,14 @@
                                     </ul>
                                     <!-- Avatar group END -->
                                     <!-- Button -->
-                                    <div class="d-flex mt-3 justify-content-between">
-                                        <!-- Interested button -->
+                                    @auth
+                                        <div class="d-flex mt-3 justify-content-between">
+                                            <!-- Interested button -->
 
 
 
-                                        <div class="w-100">
-                                            @auth
+                                            <div class="w-100">
+
                                                 <form method="POST" action="gosto{{ $evento->id }}">
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-outline-success d-block"
@@ -944,41 +945,42 @@
                                                         Interessante </button>
 
                                                 </form>
-                                            @endauth
+
+                                            </div>
+                                            <div class="dropdown ms-3">
+                                                <a href="#" class="btn btn-sm btn-primary-soft"
+                                                    id="eventActionShare" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <i class="bi bi-share-fill"></i>
+                                                </a>
+                                                <!-- Dropdown menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="eventActionShare">
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-envelope fa-fw pe-1"></i> Enviar via Direct
+                                                            Mensagem</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-bookmark-check fa-fw pe-1"></i> Compartilhar
+                                                            no
+                                                            feed de notícias
+                                                        </a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-pessoas fa-fw pe-1"></i> Compartilhar em um
+                                                            grupo</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-share fa-fw pe-1"></i> Compartilhar postagem
+                                                            via
+                                                            …</a></li>
+                                                    <li>
+                                                        <hr class="divisor suspenso">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
+                                                            amigo perfil</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="dropdown ms-3">
-                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                id="eventActionShare" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="bi bi-share-fill"></i>
-                                            </a>
-                                            <!-- Dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="eventActionShare">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-envelope fa-fw pe-1"></i> Enviar via Direct
-                                                        Mensagem</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark-check fa-fw pe-1"></i> Compartilhar
-                                                        no
-                                                        feed de notícias
-                                                    </a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-pessoas fa-fw pe-1"></i> Compartilhar em um
-                                                        grupo</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-share fa-fw pe-1"></i> Compartilhar postagem
-                                                        via
-                                                        …</a></li>
-                                                <li>
-                                                    <hr class="divisor suspenso">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
-                                                        amigo perfil</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @endauth
                                 </div>
                                 <!-- Card body END -->
                             </div>
@@ -1071,15 +1073,21 @@
                                             <div class="row g-3 justify-content-between">
                                                 <!-- Date START -->
                                                 <div class="col-lg-2">
-                                                    <di
-                                                        class="bg-mode text-center sm rounded overflow-hidden p-1 d-inline-block">
-                                                        <div class="bg-primary-solft sm p-2 text-white  small lh-1">
+                                                    <div
+                                                        class="bg-mode-soft text-center rounded overflow-hidden p-1 d-inline-block">
+                                                        <div
+                                                            class="badge bg-success rounded-top text-white mt-2 me-2 position-absolute top-0 start-0 lh-1">
+                                                            <i class="fa fa-clock"></i>
                                                             {{ \Carbon\Carbon::now()->parse($evento->created_at)->locale('pt')->diffForHumans() }}
                                                         </div>
+                                                        {{-- <div
+                                                            class="bg-primary sm p-2 text-white rounded-top small lh-1">
+                                                            {{ \Carbon\Carbon::now()->parse($evento->created_at)->locale('pt')->diffForHumans() }}
+                                                        </div> --}}
                                                         {{-- <h6 class="mb-0 py-2 lh-1">
                                                             {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('DD MMM Y') }}
                                                         </h6> --}}
-                                                    </di>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Event name START -->
@@ -1092,7 +1100,8 @@
                                                 </div>
                                                 <!-- Button -->
                                                 <div class="col-lg-3 text-lg-end">
-                                                    <a class="btn btn-primary-soft" href="#!"> Comprar </a>
+                                                    <a class="btn btn-primary-soft btn-sm" href="#!"> Comprar
+                                                    </a>
                                                 </div>
                                             </div>
                                             <!-- Event name END -->
