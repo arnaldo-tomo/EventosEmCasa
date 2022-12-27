@@ -1168,8 +1168,9 @@
                                             <!-- Category & Type -->
                                             <div class="col-sm-5 col-lg-5">
                                                 <h5>Categoria & Tipo</h5>
-                                                <a href="" class="small mb-0"><i class="fa fa-tags"
-                                                        aria-hidden="true"></i>
+                                                <a href="" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    class="small mb-0" title="{{ $evento->categoria->descricao }}"><i
+                                                        class="fa fa-tags" aria-hidden="true"></i>
                                                     {{ $evento->categoria->nome }}
                                                 </a>
                                             </div>
