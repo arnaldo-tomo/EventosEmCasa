@@ -1101,11 +1101,13 @@
                                                     <a class="text-white" href="{{ $evento->link }}"
                                                         target="_blank">{{ $evento->link }}</a>
                                                 </div>
-                                                <!-- Button -->
-                                                <div class="col-lg-3 text-lg-end">
-                                                    <a class="btn btn-primary-soft btn-sm" href="#!"> Comprar
-                                                    </a>
-                                                </div>
+                                                @if ($evento->privado == 1)
+                                                    <!-- Button -->
+                                                    <div class="col-lg-3 text-lg-end">
+                                                        <a class="btn btn-primary-soft btn-sm" href="#!"> Comprar
+                                                        </a>
+                                                    </div>
+                                                @endif
                                             </div>
                                             <!-- Event name END -->
                                         </div>
@@ -1156,7 +1158,7 @@
                                                     @if ($evento->privado == 0)
                                                         Publico
                                                     @else
-                                                        <i class="fa fa-unluck"></i> Privado
+                                                        <i class="fa fa-lock" aria-hidden="true"></i> Privado
                                                     @endif
                                                 </p>
                                             </div>
