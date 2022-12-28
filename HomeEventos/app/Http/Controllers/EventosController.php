@@ -35,13 +35,7 @@ class EventosController extends Controller
     public function home()
     {
 
-        $usurio = User::find(1);
-        // dd($usurio->gostos);
-
-
-
-
-
+        $evento = Eventos::find(17);
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  categoria::all();
         $cidades = cidade::all();
@@ -73,6 +67,9 @@ class EventosController extends Controller
         if (!Auth::check()) {
             redirect()->back();
         }
+        $online = Eventos::where();
+        $estaSemana = Eventos::where();
+        $esteMes = Eventos::where();
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
         $amigos = User::all();
@@ -158,10 +155,19 @@ class EventosController extends Controller
 
     public function gosto($id)
     {
-        $gosto = new gosto();
-        $gosto->user_id = Auth::user()->id;
-        $gosto->eventos_id = $id;
-        $gosto->save();
+        $gosto = gosto::where('user_id', $id)->where('eventos_id', Auth::user()->id)->first();
+        if ($gosto) {
+            $gosto->delete();
+        } else {
+            gosto::create([
+                'user_id' => Auth::user()->id,
+                'eventos_id' => $id
+            ]);
+        }
+        // $gosto = new gosto();
+        // $gosto->user_id = Auth::user()->id;
+        // $gosto->eventos_id = $id;
+        // $gosto->save();
         return redirect()->back()->with('interessante');
     }
 
