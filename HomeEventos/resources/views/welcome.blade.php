@@ -924,7 +924,7 @@
                                         </li>
                                         <li class="avatar avatar-xs">
                                             <div class="avatar-img rounded-circle bg-primary"><span
-                                                    class="menor text-white position-absolute top-50 start-50 translate-middle">+78</span>
+                                                    class="menor text-white position-absolute top-50 start-50 translate-middle">+{{ $evento->usuario->count() }}</span>
                                             </div>
                                         </li>
                                         <li class="ms-3">
@@ -943,9 +943,19 @@
 
                                                 <form method="POST" action="gosto{{ $evento->id }}">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-sm btn-outline-success d-block"
-                                                        for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                        Interessante </button>
+
+                                                    @if ($evento->b())
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger d-block"
+                                                            for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
+                                                            Desenteressante </button>
+                                                    @else
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-outline-success d-block"
+                                                            for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
+                                                            Interessante </button>
+                                                    @endif
+
 
                                                 </form>
 
@@ -1205,7 +1215,8 @@
                                                 <div class="d-flex">
                                                     <button class="btn btn-success-soft btn-sm">Pessoas
                                                         Interessado</button>
-                                                    <h6> <i class="bi bi-hand-thumbs-up-fill text-success"></i> 50
+                                                    <h6> <i
+                                                            class="bi bi-hand-thumbs-up-fill text-success"></i>{{ $evento->usuario->count() }}
                                                     </h6>
                                                     {{-- <p class="small"> pessoas demonstraram interesse</p> --}}
                                                 </div>
