@@ -19,16 +19,8 @@ class EventosController extends Controller
 {
 
 
-    public function home()
+    public function Main()
     {
-        $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
-        $catergoria =  categoria::all();
-        $cidades = cidade::all();
-        $participantes = User::all();
-        $teste = Eventos::find(11);
-
-        foreach ($teste->gostos as $nome) {
-        }
 
         // dd($teste->created_at->format('l jS \\of F Y h:i ', 'Africa/Maputo'));
         //"Sunday 4th of December 2022 08:50 "
@@ -38,7 +30,22 @@ class EventosController extends Controller
 
         // dd(Carbon::parse($teste->created_at)->locale('pt-BR')->isoFormat('LLLL'));
         // "quinta-feira, 8 de dezembro de 2022 às 10:48"
+    }
 
+    public function home()
+    {
+
+        $usurio = User::find(1);
+        // dd($usurio->gostos);
+
+
+
+
+
+        $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
+        $catergoria =  categoria::all();
+        $cidades = cidade::all();
+        $participantes = User::all();
         return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
     }
 
@@ -149,13 +156,13 @@ class EventosController extends Controller
         return redirect()->back()->with('novo', $messagen);
     }
 
-    public function gosto($id,  $request)
+    public function gosto($id)
     {
         $gosto = new gosto();
         $gosto->user_id = Auth::user()->id;
         $gosto->eventos_id = $id;
         $gosto->save();
-        // return redirect()->back()->with('interessante');
+        return redirect()->back()->with('interessante');
     }
 
     public function autocomplete(Request $request)
