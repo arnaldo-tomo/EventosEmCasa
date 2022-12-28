@@ -25,7 +25,10 @@ class EventosController extends Controller
         $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-        $teste = Eventos::find(12);
+        $teste = Eventos::find(11);
+
+        foreach ($teste->gostos as $nome) {
+        }
 
         // dd($teste->created_at->format('l jS \\of F Y h:i ', 'Africa/Maputo'));
         //"Sunday 4th of December 2022 08:50 "
