@@ -49,4 +49,8 @@ class Eventos extends Model
     {
         return $this->belongsTo(cidade::class, 'cidade_id');
     }
+
+    public function gostos(){
+        return
+    }
 }
