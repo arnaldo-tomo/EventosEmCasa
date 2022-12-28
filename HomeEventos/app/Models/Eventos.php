@@ -7,6 +7,7 @@ use App\Models\categoria;
 use App\Models\catergoria;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 
 class Eventos extends Model
 {
@@ -50,7 +51,18 @@ class Eventos extends Model
         return $this->belongsTo(cidade::class, 'cidade_id');
     }
 
-    public function gostos(){
-        return
+    public function b()
+    {
+        $id = Auth::id();
+        $liker = array();
+        foreach ($this->usuario as $like) :
+            array_push($liker, $like->user_id);
+        endforeach;
+
+        if (in_array($id, $liker)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
