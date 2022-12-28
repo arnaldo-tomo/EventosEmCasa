@@ -51,6 +51,8 @@ class Eventos extends Model
         return $this->belongsTo(cidade::class, 'cidade_id');
     }
 
+
+
     public function b()
     {
         $id = Auth::id();
