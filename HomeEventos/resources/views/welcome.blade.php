@@ -924,7 +924,7 @@
                                         </li>
                                         <li class="avatar avatar-xs">
                                             <div class="avatar-img rounded-circle bg-primary"><span
-                                                    class="menor text-white position-absolute top-50 start-50 translate-middle">+{{ $evento->usuario->count() }}</span>
+                                                    class="menor text-white position-absolute top-50 start-50 translate-middle">+{{ count($evento->usuario) }}</span>
                                             </div>
                                         </li>
                                         <li class="ms-3">
@@ -944,17 +944,10 @@
                                                 <form method="POST" action="gosto{{ $evento->id }}">
                                                     @csrf
 
-                                                    @if ($evento->b())
-                                                        <button type="submit"
-                                                            class="btn btn-sm btn-outline-danger d-block"
-                                                            for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                            Desenteressante </button>
-                                                    @else
-                                                        <button type="submit"
-                                                            class="btn btn-sm btn-outline-success d-block"
-                                                            for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                            Interessante </button>
-                                                    @endif
+                                                    <button type="submit" class="btn btn-sm btn-outline-success d-block"
+                                                        for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
+                                                        Interessante </button>
+
 
 
                                                 </form>
