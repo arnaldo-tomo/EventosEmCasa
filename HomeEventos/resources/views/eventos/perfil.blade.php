@@ -746,187 +746,110 @@ Header END -->
                                 <!-- Event Online tab START -->
                                 <div class="tab-pane fade" id="tab-4">
                                     <div class="row g-4">
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/01.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Online
+                                        @forelse ($online as $evento)
+                                            <div class="col-sm-6 col-xl-4">
+                                                <!-- Event item START -->
+                                                <div class="card h-100">
+                                                    <div class="position-relative">
+                                                        <img class="img-fluid rounded-top"
+                                                            src="{{ $evento->imagen }}" alt="">
+                                                        <div
+                                                            class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
+                                                            <i class="fa fa-vedeo-camera"></i>
+                                                            {{ $evento->categoria->nome }}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Spa training </a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Beach event
-                                                        </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Mon, Sep 25, 2020 at 9:30 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> San
-                                                        francisco </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/01.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/03.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/04.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+46</span>
+                                                    <!-- Card body START -->
+                                                    <div class="card-body position-relative pt-0">
+                                                        <!-- Tag -->
+                                                        <a class="btn btn-xs btn-primary mt-n3"
+                                                            href="event-details.html">Spa training </a>
+                                                        <h6 class="mt-3"> <a href="event-details.html"> Beach event
+                                                            </a> </h6>
+                                                        <!-- Date time -->
+                                                        <p class="mb-0 small"> <i
+                                                                class="bi bi-calendar-check pe-1"></i>
+                                                            Mon, Sep 25, 2020 at 9:30 AM </p>
+                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> San
+                                                            francisco </p>
+                                                        <!-- Avatar group START -->
+                                                        <ul class="avatar-group list-unstyled align-items-center mb-0">
+                                                            <li class="avatar avatar-xs">
+                                                                <img class="avatar-img rounded-circle"
+                                                                    src="assets/images/avatar/01.jpg" alt="avatar">
+                                                            </li>
+                                                            <li class="avatar avatar-xs">
+                                                                <img class="avatar-img rounded-circle"
+                                                                    src="assets/images/avatar/03.jpg" alt="avatar">
+                                                            </li>
+                                                            <li class="avatar avatar-xs">
+                                                                <img class="avatar-img rounded-circle"
+                                                                    src="assets/images/avatar/04.jpg" alt="avatar">
+                                                            </li>
+                                                            <li class="avatar avatar-xs">
+                                                                <div class="avatar-img rounded-circle bg-primary"><span
+                                                                        class="smaller text-white position-absolute top-50 start-50 translate-middle">+46</span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="ms-3">
+                                                                <small> are attending</small>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Avatar group END -->
+                                                        <!-- Button -->
+                                                        <div class="d-flex mt-3 justify-content-between">
+                                                            <!-- Interested button -->
+                                                            <div class="w-100">
+                                                                <input type="checkbox" class="btn-check d-block"
+                                                                    id="Interested9" checked>
+                                                                <label class="btn btn-sm btn-outline-success d-block"
+                                                                    for="Interested9"><i
+                                                                        class="fa-solid fa-thumbs-up me-1"></i>
+                                                                    Interested</label>
                                                             </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested9" checked>
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested9"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare9" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare9">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i>
-                                                                        Send via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card body END -->
-                                            </div>
-                                            <!-- Event item END -->
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/04.jpg" alt="">
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Live show</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Lewis black
-                                                            tickets </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Fri, Oct 05, 2022 at 1:00 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Miami </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/02.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/04.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+75</span>
+                                                            <div class="dropdown ms-3">
+                                                                <a href="#" class="btn btn-sm btn-primary-soft"
+                                                                    id="eventActionShare9" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <i class="bi bi-share-fill"></i>
+                                                                </a>
+                                                                <!-- Dropdown menu -->
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="eventActionShare9">
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-envelope fa-fw pe-1"></i>
+                                                                            Send via Direct Message</a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-bookmark-check fa-fw pe-1"></i>
+                                                                            Share to News Feed </a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-people fa-fw pe-1"></i>
+                                                                            Share
+                                                                            to a group</a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-share fa-fw pe-1"></i>
+                                                                            Share
+                                                                            post via …</a></li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-person fa-fw pe-1"></i>
+                                                                            Share
+                                                                            on a friend's profile</a></li>
+                                                                </ul>
                                                             </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested10">
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested10"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare10" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare10">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i>
-                                                                        Send via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
                                                         </div>
                                                     </div>
+                                                    <!-- Card body END -->
                                                 </div>
-                                                <!-- Card body END -->
+                                                <!-- Event item END -->
                                             </div>
-                                            <!-- Event item END -->
-                                        </div>
+                                        @empty
+                                            Vazio
+                                        @endforelse
+
+
                                     </div>
                                 </div>
                                 <!-- Event Online tab END -->
