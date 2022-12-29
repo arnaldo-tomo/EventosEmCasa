@@ -241,7 +241,7 @@ Header START -->
 
                             <li class="dropdown-divider"></li>
 
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="http://127.0.0.1:8000/Terminar"><i
+                            <li><a class="dropdown-item bg-danger-soft-hover" href="/sair"><i
                                         class="bi bi-power fa-fw me-2"></i>Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
