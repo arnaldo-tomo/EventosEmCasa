@@ -640,7 +640,13 @@ Header END -->
                                                 <!-- Event item END -->
                                             </div>
                                         @empty
-                                            Vazio
+                                            <div class="my-sm-5 py-sm-5">
+                                                <i class="display-1 text-muted bi bi-calendar2-event"> </i>
+                                                <h4 class="mt-2 mb-3 text-body">Nenhum evento encontrado</h4>
+                                                <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#modalCreateEvents"> clique aque para criar um
+                                                    evento </button>
+                                            </div>
                                         @endforelse
 
 
@@ -755,7 +761,7 @@ Header END -->
                                                             src="{{ $evento->imagen }}" alt="">
                                                         <div
                                                             class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                            <i class="fa fa-vedeo-camera"></i>
+                                                            <i class="fa fa-video-camera"></i>
                                                             {{ $evento->categoria->nome }}
                                                         </div>
                                                     </div>
@@ -846,7 +852,15 @@ Header END -->
                                                 <!-- Event item END -->
                                             </div>
                                         @empty
-                                            Vazio
+                                            <div class="text-center">
+                                                <div class="my-sm-5 py-sm-5">
+                                                    <i class="display-1 text-muted bi bi-calendar2-event"> </i>
+                                                    <h4 class="mt-2 mb-3 text-body">No events found</h4>
+                                                    <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
+                                                        data-bs-target="#modalCreateEvents"> Click here to add
+                                                    </button>
+                                                </div>
+                                            </div>
                                         @endforelse
 
 
