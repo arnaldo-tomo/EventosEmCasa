@@ -35,7 +35,7 @@ class EventosController extends Controller
     public function home()
     {
 
-        $evento = Eventos::find(17);
+        // $evento = Eventos::find(17);
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  categoria::all();
         $cidades = cidade::all();
@@ -64,16 +64,15 @@ class EventosController extends Controller
 
     public function perfil()
     {
-        if (!Auth::check()) {
-            redirect()->back();
-        }
-        $online = Eventos::where();
-        $estaSemana = Eventos::where();
-        $esteMes = Eventos::where();
+
+        $dia = Carbon::now();
+        $nline = Eventos::where('categoria_id', 22)->get();
+        $estaSemana = Eventos::whereDay('dataInicio', $dia->startOfWeek())->get();
+        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth());
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
         $amigos = User::all();
-        return view('eventos.perfil', compact('info', 'eventos', 'amigos'));
+        return view('eventos.perfil', compact('info', 'eventos', 'amigos', ' $estaSemana', 'online', 'esteMes'));
     }
 
 
