@@ -640,12 +640,14 @@ Header END -->
                                                 <!-- Event item END -->
                                             </div>
                                         @empty
-                                            <div class="my-sm-5 py-sm-5">
-                                                <i class="display-1 text-muted bi bi-calendar2-event"> </i>
-                                                <h4 class="mt-2 mb-3 text-body">Nenhum evento encontrado</h4>
-                                                <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
-                                                    data-bs-target="#modalCreateEvents"> clique aque para criar um
-                                                    evento </button>
+                                            <div class="text-center">
+                                                <div class="my-sm-5 py-sm-5">
+                                                    <i class="display-1 text-muted bi bi-calendar2-event"> </i>
+                                                    <h4 class="mt-2 mb-3 text-body">Nenhum evento encontrado</h4>
+                                                    <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
+                                                        data-bs-target="#modalCreateEvents"> clique aque para criar um
+                                                        evento </button>
+                                                </div>
                                             </div>
                                         @endforelse
 
@@ -657,94 +659,113 @@ Header END -->
                                 <!-- Event This week tab START -->
                                 <div class="tab-pane fade" id="tab-3">
                                     <div class="row g-4">
-                                        <div class="col-sm-6 col-xl-4">
-                                            <!-- Event item START -->
-                                            <div class="card h-100">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded-top"
-                                                        src="assets/images/events/03.jpg" alt="">
-                                                    <div
-                                                        class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                        Beach
+                                        @forelse ($estaSemana as $evento)
+                                            <div class="col-sm-6 col-xl-4">
+                                                <!-- Event item START -->
+                                                <div class="card h-100">
+                                                    <div class="position-relative">
+                                                        <img class="img-fluid rounded-top"
+                                                            src="assets/images/events/03.jpg" alt="">
+                                                        <div
+                                                            class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
+                                                            Beach
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <!-- Card body START -->
-                                                <div class="card-body position-relative pt-0">
-                                                    <!-- Tag -->
-                                                    <a class="btn btn-xs btn-primary mt-n3"
-                                                        href="event-details.html">Meeting</a>
-                                                    <h6 class="mt-3"> <a href="event-details.html"> Old dominion
-                                                        </a> </h6>
-                                                    <!-- Date time -->
-                                                    <p class="mb-0 small"> <i class="bi bi-calendar-check pe-1"></i>
-                                                        Wen, Dec 16, 2022 at 5:00 AM </p>
-                                                    <p class="small"> <i class="bi bi-geo-alt pe-1"></i> London </p>
-                                                    <!-- Avatar group START -->
-                                                    <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/05.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/06.jpg" alt="avatar">
-                                                        </li>
-                                                        <li class="avatar avatar-xs">
-                                                            <div class="avatar-img rounded-circle bg-primary"><span
-                                                                    class="smaller text-white position-absolute top-50 start-50 translate-middle">+85</span>
+                                                    <!-- Card body START -->
+                                                    <div class="card-body position-relative pt-0">
+                                                        <!-- Tag -->
+                                                        <a class="btn btn-xs btn-primary mt-n3"
+                                                            href="event-details.html">Meeting</a>
+                                                        <h6 class="mt-3"> <a href="event-details.html"> Old dominion
+                                                            </a> </h6>
+                                                        <!-- Date time -->
+                                                        <p class="mb-0 small"> <i
+                                                                class="bi bi-calendar-check pe-1"></i>
+                                                            Wen, Dec 16, 2022 at 5:00 AM </p>
+                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> London
+                                                        </p>
+                                                        <!-- Avatar group START -->
+                                                        <ul class="avatar-group list-unstyled align-items-center mb-0">
+                                                            <li class="avatar avatar-xs">
+                                                                <img class="avatar-img rounded-circle"
+                                                                    src="assets/images/avatar/05.jpg" alt="avatar">
+                                                            </li>
+                                                            <li class="avatar avatar-xs">
+                                                                <img class="avatar-img rounded-circle"
+                                                                    src="assets/images/avatar/06.jpg" alt="avatar">
+                                                            </li>
+                                                            <li class="avatar avatar-xs">
+                                                                <div class="avatar-img rounded-circle bg-primary"><span
+                                                                        class="smaller text-white position-absolute top-50 start-50 translate-middle">+85</span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="ms-3">
+                                                                <small> are attending</small>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Avatar group END -->
+                                                        <!-- Button -->
+                                                        <div class="d-flex mt-3 justify-content-between">
+                                                            <!-- Interested button -->
+                                                            <div class="w-100">
+                                                                <input type="checkbox" class="btn-check d-block"
+                                                                    id="Interested8">
+                                                                <label class="btn btn-sm btn-outline-success d-block"
+                                                                    for="Interested8"><i
+                                                                        class="fa-solid fa-thumbs-up me-1"></i>
+                                                                    Interested</label>
                                                             </div>
-                                                        </li>
-                                                        <li class="ms-3">
-                                                            <small> are attending</small>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- Avatar group END -->
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 justify-content-between">
-                                                        <!-- Interested button -->
-                                                        <div class="w-100">
-                                                            <input type="checkbox" class="btn-check d-block"
-                                                                id="Interested8">
-                                                            <label class="btn btn-sm btn-outline-success d-block"
-                                                                for="Interested8"><i
-                                                                    class="fa-solid fa-thumbs-up me-1"></i>
-                                                                Interested</label>
-                                                        </div>
-                                                        <div class="dropdown ms-3">
-                                                            <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                id="eventActionShare8" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                <i class="bi bi-share-fill"></i>
-                                                            </a>
-                                                            <!-- Dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="eventActionShare8">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-envelope fa-fw pe-1"></i> Send
-                                                                        via Direct Message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                        Share to News Feed </a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-people fa-fw pe-1"></i> Share
-                                                                        to a group</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-share fa-fw pe-1"></i> Share
-                                                                        post via …</a></li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-person fa-fw pe-1"></i> Share
-                                                                        on a friend's profile</a></li>
-                                                            </ul>
+                                                            <div class="dropdown ms-3">
+                                                                <a href="#" class="btn btn-sm btn-primary-soft"
+                                                                    id="eventActionShare8" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <i class="bi bi-share-fill"></i>
+                                                                </a>
+                                                                <!-- Dropdown menu -->
+                                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                                    aria-labelledby="eventActionShare8">
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-envelope fa-fw pe-1"></i>
+                                                                            Send
+                                                                            via Direct Message</a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-bookmark-check fa-fw pe-1"></i>
+                                                                            Share to News Feed </a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-people fa-fw pe-1"></i>
+                                                                            Share
+                                                                            to a group</a></li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-share fa-fw pe-1"></i>
+                                                                            Share
+                                                                            post via …</a></li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                                class="bi bi-person fa-fw pe-1"></i>
+                                                                            Share
+                                                                            on a friend's profile</a></li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <!-- Card body END -->
                                                 </div>
-                                                <!-- Card body END -->
+                                                <!-- Event item END -->
                                             </div>
-                                            <!-- Event item END -->
-                                        </div>
+                                        @empty
+                                            <div class="text-center">
+                                                <div class="my-sm-5 py-sm-5">
+                                                    <i class="display-1 text-muted bi bi-calendar2-event"> </i>
+                                                    <h4 class="mt-2 mb-3 text-body">Sem eventos para esta semana</h4>
+                                                    <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
+                                                        data-bs-target="#modalCreateEvents"> Click here to add
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        @endforelse
+
                                     </div>
                                 </div>
                                 <!-- Event This week tab END -->
