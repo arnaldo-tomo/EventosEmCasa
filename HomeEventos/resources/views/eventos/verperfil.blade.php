@@ -228,7 +228,7 @@ Header START -->
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="http://127.0.0.1:8000/Perfil">Visualizar perfil</a>
+                                    href="/Perfil">Visualizar perfil</a>
                             </li>
                             <!-- Links -->
                             <li><a class="dropdown-item" href="Configuracoes"><i
@@ -401,9 +401,9 @@ Header END -->
                             <ul
                                 class="nav nav-bottom-line align-items-center justify-content-center justify-content-md-start mb-0 border-0">
 
-                                <li class="nav-item"> <a class="nav-link active" href="http://127.0.0.1:8000/Perfil">
+                                <li class="nav-item"> <a class="nav-link active" href="/Perfil">
                                         Meus Ventos</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="http://127.0.0.1:8000/Sobre"> Sobre
+                                <li class="nav-item"> <a class="nav-link" href="/Sobre"> Sobre
                                     </a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">
@@ -435,10 +435,10 @@ Header END -->
                                     <!-- Modal feed body START -->
                                     <div class="modal-body">
                                         <!-- Form START -->
-                                        <form method="POST" action="http://127.0.0.1:8000/Salvar"
-                                            enctype="multipart/form-data" class="row g-4">
-                                            <input type="hidden" name="_token"
-                                                value="l6ro32bsbRb2cnTjZD1uzFfsa0tWx7DgOIXRK4BU"> <!-- Title -->
+                                        <form method="POST" action="/Salvar" enctype="multipart/form-data"
+                                            class="row g-4">
+                                            <!-- Title -->
+                                            @csrf
                                             <div class="col-12">
                                                 <label class="form-label">Titulo</label>
                                                 <input type="text" class="form-control" name="nome"
