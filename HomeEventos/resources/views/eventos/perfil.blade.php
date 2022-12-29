@@ -544,13 +544,13 @@ Header END -->
                                 <div class="tab-pane fade" id="tab-2">
                                     <div class="row g-4">
 
-                                        @forelse ($local as $item)
+                                        @forelse ($local as $evento)
                                             <div class="col-sm-6 col-xl-4">
                                                 <!-- Event item START -->
                                                 <div class="card h-100">
                                                     <div class="position-relative">
                                                         <img class="img-fluid rounded-top"
-                                                            src="assets/images/events/04.jpg" alt="">
+                                                            src="/{{ $evento->imagen }}" alt="">
                                                     </div>
                                                     <!-- Card body START -->
                                                     <div class="card-body position-relative pt-0">
