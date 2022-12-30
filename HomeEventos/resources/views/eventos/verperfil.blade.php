@@ -393,18 +393,19 @@ Header END -->
                                         <div class="ms-sm-4 mt-2 mt-sm-0">
                                             <!-- Info -->
                                             <h5 class="mb-1"><a href="event-details.html">
-                                                    Saindo da Eleiete
+                                                    {{ $eventos->titulo }}
                                                 </a>
                                             </h5>
                                             <ul class="nav nav-stack small">
                                                 <li class="nav-item">
                                                     <i class="bi bi-calendar-check pe-1"></i>
-                                                    8 dez 2022
-                                                    -
-                                                    04:07:00 Horas
+                                                    {{ \Carbon\Carbon::parse($eventos->dataInicio)->isoFormat('D MMM Y') }}
+                                                    <i class=" fa fa-clock"></i>
+                                                    {{ $eventos->hora }} Horas
                                                 </li>
                                                 <li class="nav-item">
                                                     <i class="bi bi-geo-alt pe-1"></i>
+                                                    {{ $eventos->cidades->nome }}
                                                 </li>
                                                 <li class="nav-item">
                                                     <i class="bi bi-people pe-1"></i> 77 going
