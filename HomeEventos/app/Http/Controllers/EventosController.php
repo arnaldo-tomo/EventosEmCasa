@@ -84,7 +84,7 @@ class EventosController extends Controller
         $info = User::find($id);
         return view('eventos.verperfil', compact('info',));
     }
-    public function sobre($id)
+    public function sobre(Request $request, $id)
     {
         $info = User::find($id);
         return view('eventos.sobre', compact('info'));
