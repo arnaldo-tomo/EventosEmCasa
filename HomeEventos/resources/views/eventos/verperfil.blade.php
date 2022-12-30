@@ -349,7 +349,7 @@ Header END -->
 
                                 <li class="nav-item"> <a class="nav-link active" href="/Perfil">
                                         Meus Ventos</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="/Sobre"> Sobre
+                                <li class="nav-item"> <a class="nav-link" href="/Sobre{{ $info->id }}"> Sobre
                                     </a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">
