@@ -107,6 +107,7 @@ class EventosController extends Controller
     {
         // validadacao de campos
         $request::validate([
+
             'titulo' => 'required|unique:posts|max:255',
             'categoria_id' => 'required',
             'cidade_id' => 'required',
