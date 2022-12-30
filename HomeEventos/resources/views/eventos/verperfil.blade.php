@@ -381,379 +381,75 @@ Header END -->
 
                             <!-- Events list START -->
                             <div class="row">
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/empresa.png" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                Saindo da Eleiete
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                8 dez 2022
-                                                -
-                                                04:07:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
+
+                                @forelse ($info->eventos as $eventos)
+                                    <div class="d-sm-flex align-items-center mb-2">
+                                        <!-- Avatar -->
+                                        <div class="avatar avatar-xl">
+                                            <a href="#!"><img
+                                                    class="avatar-img rounded border border-white border-3"
+                                                    src="{{ $eventos->Eventos->imagen }}" alt=""></a>
+                                        </div>
+                                        <div class="ms-sm-4 mt-2 mt-sm-0">
+                                            <!-- Info -->
+                                            <h5 class="mb-1"><a href="event-details.html">
+                                                    Saindo da Eleiete
+                                                </a>
+                                            </h5>
+                                            <ul class="nav nav-stack small">
+                                                <li class="nav-item">
+                                                    <i class="bi bi-calendar-check pe-1"></i>
+                                                    8 dez 2022
+                                                    -
+                                                    04:07:00 Horas
                                                 </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
+                                                <li class="nav-item">
+                                                    <i class="bi bi-geo-alt pe-1"></i>
                                                 </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
+                                                <li class="nav-item">
+                                                    <i class="bi bi-people pe-1"></i> 77 going
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/69077594_1215215648658234_6228177888913747369_n.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                DesignerMozDevz
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                28 jan 2023
-                                                -
-                                                10:54:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
-                                                </li>
-                                            </ul>
+                                        <!-- Button -->
+                                        <div class="d-flex mt-3 ms-auto">
+                                            <div class="dropdown">
+                                                <!-- Card share action menu -->
+                                                <button class="icon-md btn btn-secondary-soft" type="button"
+                                                    id="profileAction" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
+                                                <!-- Card share action dropdown menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="profileAction">
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-bookmark fa-fw pe-2"></i>Share profile
+                                                            in
+                                                            a
+                                                            message</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
+                                                            your
+                                                            profile to PDF</a></li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
+                                                    </li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"> <i
+                                                                class="bi bi-gear fa-fw pe-2"></i>Profile
+                                                            settings</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/baixados.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                Feira do Livro
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                5 jun 2023
-                                                -
-                                                10:44:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/02.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                Jejum de 22 dias
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                1 dez 2022
-                                                -
-                                                16:43:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/04.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                Festas de djs afrika
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                2 nov 2022
-                                                -
-                                                03:21:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-sm-flex align-items-center mb-2">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl">
-                                        <a href="#!"><img class="avatar-img rounded border border-white border-3"
-                                                src="/imagen/eventos/03.jpg" alt=""></a>
-                                    </div>
-                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                        <!-- Info -->
-                                        <h5 class="mb-1"><a href="event-details.html">
-                                                Explosao Profetica
-                                            </a>
-                                        </h5>
-                                        <ul class="nav nav-stack small">
-                                            <li class="nav-item">
-                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                30 jan 2023
-                                                -
-                                                01:48:00 Horas
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-geo-alt pe-1"></i>
-                                            </li>
-                                            <li class="nav-item">
-                                                <i class="bi bi-people pe-1"></i> 77 going
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="d-flex mt-3 ms-auto">
-                                        <div class="dropdown">
-                                            <!-- Card share action menu -->
-                                            <button class="icon-md btn btn-secondary-soft" type="button"
-                                                id="profileAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                            <!-- Card share action dropdown menu -->
-                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="profileAction">
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                        in
-                                                        a
-                                                        message</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                        your
-                                                        profile to PDF</a></li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#"> <i
-                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                        settings</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
+                                @empty
+                                @endforelse
+
+
 
 
                             </div>
