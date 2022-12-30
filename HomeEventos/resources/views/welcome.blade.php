@@ -774,8 +774,8 @@
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
                                         <a class="btn btn-lg btn-primary" href="#">
-                                            @if (session('nado'))
-                                                {{ session('nado') }}
+                                            @if (session('novo'))
+                                                {{ session('novo') }}
                                             @endif
                                         </a>
                                     </div>
