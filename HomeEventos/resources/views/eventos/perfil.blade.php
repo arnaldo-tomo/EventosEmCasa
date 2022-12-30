@@ -446,105 +446,78 @@ Header END -->
                                 <!-- Event top tab START -->
                                 <div class="tab-pane fade show active" id="tab-1">
                                     <div class="row g-4">
-                                        @if (session('novo'))
-                                            <div class="alert alert-success alert-dismissible fade show"
-                                                role="alert">
-                                                <strong>Otimo,</strong> Evento publicado com sucessos
-                                                <a href="{{ route('todos') }}"
-                                                    class="btn btn-xs btn-success ms-md-4">Ver
-                                                    todos
-                                                    eventos</a>
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                        @endif
-                                        @if ($info->Eventos->count() == 0)
-                                            <!-- Upcoming event START -->
-                                            <div class="alert alert-success alert-dismissible fade show"
-                                                role="alert">
-                                                <strong>Ola,{{ Auth::user()->name }}</strong> parece que nao tens
-                                                nenhum
-                                                evento
-                                                publicado
-                                                {{-- <a href="events.html" class="btn btn-xs btn-success ms-md-4">Criar um
-                                                evento</a> --}}
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <!-- Upcoming event END -->
-                                        @else
-                                            @foreach ($info->Eventos as $evento)
-                                                <div class="d-sm-flex align-items-center mb-2">
-                                                    <!-- Avatar -->
-                                                    <div class="avatar avatar-xl">
-                                                        <a href="#!"><img
-                                                                class="avatar-img rounded border border-white border-3"
-                                                                src="/{{ $evento->imagen }}" alt=""></a>
-                                                    </div>
-                                                    <div class="ms-sm-4 mt-2 mt-sm-0">
-                                                        <!-- Info -->
-                                                        <h5 class="mb-1"><a href="event-details.html">
-                                                                {{ $evento->titulo }}
-                                                            </a>
-                                                        </h5>
-                                                        <ul class="nav nav-stack small">
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-calendar-check pe-1"></i>
-                                                                {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
-                                                                -
-                                                                {{ $evento->hora }} Horas
+                                        @foreach ($info->Eventos as $evento)
+                                            <div class="d-sm-flex align-items-center mb-2">
+                                                <!-- Avatar -->
+                                                <div class="avatar avatar-xl">
+                                                    <a href="#!"><img
+                                                            class="avatar-img rounded border border-white border-3"
+                                                            src="/{{ $evento->imagen }}" alt=""></a>
+                                                </div>
+                                                <div class="ms-sm-4 mt-2 mt-sm-0">
+                                                    <!-- Info -->
+                                                    <h5 class="mb-1"><a href="event-details.html">
+                                                            {{ $evento->titulo }}
+                                                        </a>
+                                                    </h5>
+                                                    <ul class="nav nav-stack small">
+                                                        <li class="nav-item">
+                                                            <i class="bi bi-calendar-check pe-1"></i>
+                                                            {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                            -
+                                                            {{ $evento->hora }} Horas
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <i class="bi bi-geo-alt pe-1"></i>
+                                                            {{ $evento->cidades->nome }}
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <i class="bi bi-people pe-1"></i> 77 going
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Button -->
+                                                <div class="d-flex mt-3 ms-auto">
+                                                    <div class="dropdown">
+                                                        <!-- Card share action menu -->
+                                                        <button class="icon-md btn btn-secondary-soft" type="button"
+                                                            id="profileAction" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            <i class="bi bi-three-dots"></i>
+                                                        </button>
+                                                        <!-- Card share action dropdown menu -->
+                                                        <ul class="dropdown-menu dropdown-menu-end"
+                                                            aria-labelledby="profileAction">
+                                                            <li><a class="dropdown-item" href="#"> <i
+                                                                        class="bi bi-bookmark fa-fw pe-2"></i>Share
+                                                                    profile
+                                                                    in
+                                                                    a
+                                                                    message</a></li>
+                                                            <li><a class="dropdown-item" href="#"> <i
+                                                                        class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
+                                                                    your
+                                                                    profile to PDF</a></li>
+                                                            <li><a class="dropdown-item" href="#"> <i
+                                                                        class="bi bi-lock fa-fw pe-2"></i>Lock
+                                                                    profile</a>
                                                             </li>
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-geo-alt pe-1"></i>
-                                                                {{ $evento->cidades->nome }}
+                                                            <li>
+                                                                <hr class="dropdown-divider">
                                                             </li>
-                                                            <li class="nav-item">
-                                                                <i class="bi bi-people pe-1"></i> 77 going
+                                                            <li><a class="dropdown-item" href="#"> <i
+                                                                        class="bi bi-gear fa-fw pe-2"></i>Profile
+                                                                    settings</a>
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <!-- Button -->
-                                                    <div class="d-flex mt-3 ms-auto">
-                                                        <div class="dropdown">
-                                                            <!-- Card share action menu -->
-                                                            <button class="icon-md btn btn-secondary-soft"
-                                                                type="button" id="profileAction"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="bi bi-three-dots"></i>
-                                                            </button>
-                                                            <!-- Card share action dropdown menu -->
-                                                            <ul class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="profileAction">
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-bookmark fa-fw pe-2"></i>Share
-                                                                        profile
-                                                                        in
-                                                                        a
-                                                                        message</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                                        your
-                                                                        profile to PDF</a></li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-lock fa-fw pe-2"></i>Lock
-                                                                        profile</a>
-                                                                </li>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"> <i
-                                                                            class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                                        settings</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                            @endforeach
-                                        @endif
-                                        {{ $eventos->links() }}
+                                            </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
+
                                 <!-- Event top tab END -->
 
                                 <!-- Event local tab START -->
