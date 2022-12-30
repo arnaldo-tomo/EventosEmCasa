@@ -388,7 +388,7 @@ Header END -->
                                         <div class="avatar avatar-xl">
                                             <a href="#!"><img
                                                     class="avatar-img rounded border border-white border-3"
-                                                    src="{{ $eventos->Eventos->imagen }}" alt=""></a>
+                                                    src="{{ $eventos->imagen }}" alt=""></a>
                                         </div>
                                         <div class="ms-sm-4 mt-2 mt-sm-0">
                                             <!-- Info -->
