@@ -89,7 +89,7 @@ class EventosController extends Controller
     public function sobre($id)
     {
 
-        $info = User::where('id', $id)->get();
+        $info = User::find($id)->get();
         return view('eventos.sobre', compact('info'));
     }
 
