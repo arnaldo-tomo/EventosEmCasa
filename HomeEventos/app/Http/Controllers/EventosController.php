@@ -86,10 +86,10 @@ class EventosController extends Controller
         // $eventos = Eventos::paginate(8);;
         return view('eventos.verperfil', compact('info',));
     }
-    public function sobre()
+    public function sobre($id)
     {
 
-        $info = User::where('id', Auth::user()->id)->get()->first();
+        $info = User::where('id', $id)->get()->first();
         return view('eventos.sobre', compact('info'));
     }
 
