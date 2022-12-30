@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from social.webestica.com/my-profile-events.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
-
 <head>
     <title>Sobre - {{ $info->name }}</title>
 
@@ -292,9 +290,9 @@ Header END -->
                                 </div>
                                 <div class="ms-sm-4 mt-sm-3">
                                     <!-- Info -->
-                                    <h1 class="mb-0 h5">{{ Auth::user()->name }} <i
+                                    <h1 class="mb-0 h5">{{ $info->name }} <i
                                             class="bi bi-patch-check-fill text-success small"></i></h1>
-                                    <p>250 conexões</p>
+                                    <p>250 conexõesdd</p>
                                 </div>
                                 <!-- Button -->
                                 <div class="d-flex mt-3 justify-content-center ms-sm-auto">
