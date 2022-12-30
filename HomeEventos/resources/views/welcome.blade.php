@@ -774,9 +774,7 @@
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
                                         <a class="btn btn-lg btn-primary" href="#">
-                                            @if (session('novo'))
-                                                {{ session('novo') }}
-                                            @endif
+                                            Buscar
                                         </a>
                                     </div>
                                 </form>
