@@ -347,7 +347,7 @@ Header END -->
                             <ul
                                 class="nav nav-bottom-line align-items-center justify-content-center justify-content-md-start mb-0 border-0">
 
-                                <li class="nav-item"> <a class="nav-link active" href="/Perfil">
+                                <li class="nav-item"> <a class="nav-link active" href="Verperfil{{ $info->id }}">
                                         Meus Ventos</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="Sobre{{ $info->id }}"> Sobre
                                     </a>
@@ -367,195 +367,13 @@ Header END -->
                     <!-- Events START -->
                     <div class="card">
                         <!-- Modal criar events  -->
-                        <div class="modal fade" id="modalCreateEvents" tabindex="-1"
-                            aria-labelledby="modalLabelCreateEvents" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <!-- Modal feed header START -->
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="modalLabelCreateEvents">Criar evento</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <!-- Modal feed header END -->
-                                    <!-- Modal feed body START -->
-                                    <div class="modal-body">
-                                        <!-- Form START -->
-                                        <form method="POST" action="/Salvar" enctype="multipart/form-data"
-                                            class="row g-4">
-                                            <!-- Title -->
-                                            @csrf
-                                            <div class="col-12">
-                                                <label class="form-label">Titulo</label>
-                                                <input type="text" class="form-control" name="nome"
-                                                    placeholder="Nome do evento">
-                                            </div>
-                                            <!-- Description -->
-                                            <div class="col-12">
-                                                <label class="form-label">Descrição</label>
-                                                <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
-                                            </div>
-                                            <!-- Duração -->
-                                            <div class="col-sm-6">
-                                                <label class="form-label">Data Inicial</label>
-                                                <input type="date" class="form-control flatpickr"
-                                                    name="dataInicio" placeholder="Select date">
-                                            </div>
-                                            <!-- Duração -->
-                                            <!-- Duração -->
-                                            <div class="col-sm-6">
-                                                <label class="form-label">Data do final </label>
-                                                <input type="date" class="form-control flatpickr" name="dataFim"
-                                                    placeholder="Select date">
-                                            </div>
 
-                                            <!-- Duração -->
-                                            <!-- Date -->
-                                            <div class="col-sm-3">
-                                                <label class="form-label">Duração</label>
-                                                <input type="duracao" class="form-control" name="duracao"
-                                                    placeholder="1hr 23m">
-                                            </div>
-                                            <!-- Date final -->
-                                            <div class="col-sm-6">
-                                                <label class="form-label">Publico Ou Privado</label>
-                                                <select class="form-select form-select" name="privado"
-                                                    aria-label=".form-select-lg example">
-                                                    <option disabled selected>-------------Escolha------------</option>
-                                                    <option value="0">publico</option>
-                                                    <option value="1">privado</option>
-
-                                                </select>
-                                            </div>
-                                            <!-- Time -->
-                                            <div class="col-sm-3">
-                                                <label class="form-label">Hora</label>
-                                                <input type="time" class="form-control flatpickr" name="hora"
-                                                    data-enableTime="true" data-noCalendar="true"
-                                                    placeholder="Select time">
-                                            </div>
-
-                                            <div class="col-12">
-                                                <label class="form-label">Localização</label>
-                                                <input type="text" class="form-control" id="pac-inpute"
-                                                    name="localizacao"
-                                                    placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
-                                            </div>
-                                            <!-- Location -->
-                                            <div class="col-12">
-                                                <label class="form-label">Cidade</label>
-                                                <select class="form-select form-select" name="cidade"
-                                                    aria-label=".form-select-lg example">
-                                                    <option disabled selected>Escolha a cidade</option>
-                                                    <option value="Beira">Beira</option>
-                                                    <option value="Maputo">Maputo</option>
-                                                    <option value="#">Nampula</option>
-                                                    <option value="#">CaboDelegado</option>
-                                                    <option value="#">Chimoio</option>
-                                                    <option value="#">Chimoio</option>
-                                                </select>
-                                            </div>
-                                            <!-- Location -->
-                                            <!-- Tipo de evento -->
-                                            <div class="col-12">
-                                                <label class="form-label">Tipo & categoria de evento</label>
-                                                <select class="form-select form-select" name="categoria"
-                                                    aria-label=".form-select-lg example">
-                                                    <option disabled selected>Escolha o tipo de evento</option>
-                                                    <option value="Festa">Festa</option>
-                                                    <option value="Culto">Culto</option>
-                                                    <option value="#">Nampula</option>
-                                                    <option value="#">CaboDelegado</option>
-                                                    <option value="#">Chimoio</option>
-                                                    <option value="#">Chimoio</option>
-                                                </select>
-                                            </div>
-                                            <!-- Tipo de evento -->
-                                            <!-- Add guests -->
-                                            <div class="col-12">
-                                                <label class="form-label">Addicionar Participantes</label>
-                                                <input type="email" class="form-control" name="participante"
-                                                    placeholder="Exemplo:joaocarlos@gmail.com">
-                                            </div>
-                                            <!-- Avatar group START -->
-                                            <div class="col-12 mt-3">
-                                                <ul class="avatar-group list-unstyled align-items-center mb-0">
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/01.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/02.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/03.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/04.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/05.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/06.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="avatar avatar-xs">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/07.jpg" alt="avatar">
-                                                    </li>
-                                                    <li class="ms-3">
-                                                        <small> +50 </small>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <label class="form-label">Carregar Fotografia</label>
-                                                <input type="file" class="form-control" name="imagen">
-                                            </div>
-
-                                            <!-- Dropzone photo START -->
-                                            <div class="mb-3">
-                                                <label class="form-label">Carregar Anexo</label>
-                                                <div name="anexo"
-                                                    class="dropzone  dropzone-default card shadow-none"
-                                                    data-dropzone='{"maxFiles":2}'>
-                                                    <div class="dz-message">
-                                                        <i class="bi bi-file-earmark-text display-3"></i>
-                                                        <p>Solte a Apresentação e o documento aqui ou clique para
-                                                            carregar.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Dropzone photo END -->
-                                            <!-- Form END -->
-                                    </div>
-                                    <!-- Modal feed body END -->
-                                    <!-- Modal footer -->
-                                    <!-- Button -->
-                                    <div class="modal-footer">
-                                        <button type="cancel" class="btn btn-danger-soft me-2"
-                                            data-bs-dismiss="modal">
-                                            Cancelar</button>
-                                        <button type="submit" class="btn btn-success-soft">Criar Agora</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- Modal criar events -->
                         <!-- Card header START -->
                         <div class="card-header d-sm-flex align-items-center justify-content-between border-0 pb-0">
                             <h5 class="card-title mb-sm-0">Descubra eventos</h5>
                             <!-- Button modal -->
-                            <a class="btn btn-primary-soft" href="#" data-bs-toggle="modal"
-                                data-bs-target="#modalCreateEvents"> <i class="fa-solid fa-plus pe-1"></i> Criar
-                                evento</a>
+
                         </div>
                         <!-- Card header END -->
                         <!-- Card body START -->
