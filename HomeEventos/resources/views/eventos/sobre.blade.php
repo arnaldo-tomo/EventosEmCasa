@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sobre - {{ $info->name }}</title>
+    <title>Sobre - </title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -290,8 +290,9 @@ Header END -->
                                 </div>
                                 <div class="ms-sm-4 mt-sm-3">
                                     <!-- Info -->
-                                    <h1 class="mb-0 h5">{{ $info->name }} <i
-                                            class="bi bi-patch-check-fill text-success small"></i></h1>
+                                    <h1 class="mb-0 h5">fnmdbgnfbs <i
+                                            class="bi bi-patch-check-fill text-success small"></i>
+                                    </h1>
                                     <p>250 conexõesdd</p>
                                 </div>
                                 <!-- Button -->
@@ -328,7 +329,7 @@ Header END -->
                                 <li class="list-inline-item"><i class="bi bi-briefcase me-1"></i> Lead Developer</li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> Beira,Moçambique</li>
                                 <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
-                                    {{ \Carbon\Carbon::parse($info->created_at)->isoFormat('DD  MMM Y') }}</li>
+                                    {{-- {{ \Carbon\Carbon::parse($info->created_at)->isoFormat('DD  MMM Y') }}</li> --}}
                             </ul>
                         </div>
                         <!-- Card body END -->
