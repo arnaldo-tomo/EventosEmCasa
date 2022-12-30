@@ -773,7 +773,11 @@
                                     </div>
                                     <div class="col-md-2 d-grid">
                                         <!-- Search -->
-                                        <a class="btn btn-lg btn-primary" href="#">Buscar</a>
+                                        <a class="btn btn-lg btn-primary" href="#">
+                                            @if (session('nado'))
+                                                {{ session('nado') }}
+                                            @endif
+                                        </a>
                                     </div>
                                 </form>
                                 <!-- Form END -->
