@@ -123,10 +123,10 @@ class EventosController extends Controller
         if ($request->fails()) {
             $response = [
                 'status' => '0',
-                'error' => $$request->errors(),
+                'error' => $request->errors(),
             ];
 
-            return redirect()->back()->withErrors('nado', 'nado');
+            return redirect()->back()->with('nado', 'nado');
         } else {
             $evento = new Eventos();
             $evento->user_id = Auth::user()->id;
