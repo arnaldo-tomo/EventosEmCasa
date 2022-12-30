@@ -85,7 +85,7 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/Perfil">Arnaldo Tomo</a>
+                            <a class="nav-link" href="/Perfil">{{ Auth::user()->name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -296,60 +296,6 @@ Header END -->
                                 </div>
 
 
-                                <div class="modal fade" id="feedActionPhoto" tabindex="-1"
-                                    aria-labelledby="feedActionPhotoLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <!-- Modal feed header START -->
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="feedActionPhotoLabel">Add post photo</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <!-- Modal feed header END -->
-
-                                            <!-- DROP feed body START -->
-                                            <div class="modal-body">
-                                                <!-- Add Feed -->
-                                                <div class="d-flex mb-3">
-                                                    <!-- Avatar -->
-                                                    <div class="avatar avatar-xs me-2">
-                                                        <img class="avatar-img rounded-circle"
-                                                            src="assets/images/avatar/03.jpg" alt="">
-                                                    </div>
-                                                    <!-- Feed box  -->
-                                                    <form class="w-100">
-                                                        <textarea class="form-control pe-4 fs-3 lh-1 border-0" rows="2" placeholder="Share your thoughts..."></textarea>
-                                                    </form>
-                                                </div>
-
-                                                <!-- Dropzone photo START -->
-                                                <div>
-                                                    <label class="form-label">Upload attachment</label>
-                                                    <div class="dropzone dropzone-default card shadow-none"
-                                                        data-dropzone='{"maxFiles":2}'>
-                                                        <div class="dz-message">
-                                                            <i class="bi bi-images display-3"></i>
-                                                            <p>Drag here or click to upload photo.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Dropzone photo END -->
-
-                                            </div>
-                                            <!-- Modal feed body END -->
-
-                                            <!-- Modal feed footer -->
-                                            <div class="modal-footer ">
-                                                <!-- Button -->
-                                                <button type="button" class="btn btn-danger-soft me-2"
-                                                    data-bs-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-success-soft">Post</button>
-                                            </div>
-                                            <!-- Modal feed footer -->
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="ms-sm-4 mt-sm-3">
                                     <!-- Info -->
                                     <h1 class="mb-0 h5">{{ $info->name }} <i
