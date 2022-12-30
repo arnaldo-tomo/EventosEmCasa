@@ -222,7 +222,7 @@ Header START -->
 
                             <li class="dropdown-divider"></li>
 
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('sair') }}"><i
+                            <li><a class="dropdown-item bg-danger-soft-hover" href="/sair"><i
                                         class="bi bi-power fa-fw me-2"></i>Sair</a></li>
                             <li>
                                 <hr class="dropdown-divider">
