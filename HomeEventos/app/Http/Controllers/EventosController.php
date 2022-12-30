@@ -86,8 +86,7 @@ class EventosController extends Controller
     }
     public function sobre($id)
     {
-
-        $info = User::find($id)->get();
+        $info = User::find($id);
         return view('eventos.sobre', compact('info'));
     }
 
