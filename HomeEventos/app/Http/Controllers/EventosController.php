@@ -106,7 +106,7 @@ class EventosController extends Controller
         // validadacao de campos
         $request::validate([
 
-            'titulo' => 'required|unique:posts|max:255',
+            'titulo' => 'required',
             'categoria_id' => 'required',
             'cidade_id' => 'required',
             'descricao' => 'required',
@@ -118,11 +118,7 @@ class EventosController extends Controller
             'localizacao' => 'required',
             'imagen' => 'required',
         ]);
-        if ($request->fails()) {
-            return redirect('post/create')
-                ->withErrors($request)
-                ->withInput();
-        }
+
 
 
         $evento = new Eventos();
