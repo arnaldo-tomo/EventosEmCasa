@@ -928,8 +928,8 @@ Header END -->
     <!-- **************** MAIN CONTENT END **************** -->
 
     <!-- Modal create events START -->
-    <div class="modal fade" id="modalCreateEvents" tabindex="-1" aria-labelledby="modalLabelCreateEvents"
-        aria-hidden="true">
+    <!-- Modal criar events  -->
+    <div class="modal fade" id="modalCreateEvents" aria-labelledby="modalLabelCreateEvents" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal feed header START -->
@@ -938,100 +938,139 @@ Header END -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal feed header END -->
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger role">
+                            <div class="display">
+                                <strong> {{ $error }}</strong>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
                 <!-- Modal feed body START -->
                 <div class="modal-body">
                     <!-- Form START -->
-                    <form method="POST" action="{{ route('salvar') }}" enctype="multipart/form-data"
-                        class="row g-4">
+                    <form method="POST" action="{{ url('/Salvar') }}" enctype="multipart/form-data"
+                        class="row g-4" id="file-upload-form" class="uploader">
                         @csrf
+
+
                         <!-- Title -->
                         <div class="col-12">
                             <label class="form-label">Titulo</label>
-                            <input type="text" class="form-control" name="nome" placeholder="Nome do evento">
+                            <input type="text" class="form-control @error('titulo') is-invalid @enderror"
+                                value="{{ old('titulo') }}" name="titulo" placeholder="Titulo do evento">
+                            @error('titulo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
                         </div>
                         <!-- Description -->
                         <div class="col-12">
                             <label class="form-label">Descrição</label>
-                            <textarea class="form-control" rows="2" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
+                            <textarea class="form-control" name="descricao" placeholder="Ex: topicos, Cronograma, etc."></textarea>
                         </div>
                         <!-- Duração -->
                         <div class="col-sm-6">
                             <label class="form-label">Data Inicial</label>
                             <input type="date" class="form-control flatpickr" name="dataInicio"
-                                placeholder="Select date">
+                                placeholder="Data a inicar">
                         </div>
                         <!-- Duração -->
                         <!-- Duração -->
                         <div class="col-sm-6">
-                            <label class="form-label">Data do final </label>
+                            <label class="form-label" disable:minDate="today">Data do final </label>
                             <input type="date" class="form-control flatpickr" name="dataFim"
-                                placeholder="Select date">
+                                placeholder="Data a terminar">
                         </div>
 
                         <!-- Duração -->
                         <!-- Date -->
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <label class="form-label">Duração</label>
-                            <input type="duracao" class="form-control" name="duracao" placeholder="1hr 23m">
+                            <input type="number" class="form-control" name="duracao" placeholder="Exemplo:6H">
                         </div>
                         <!-- Date final -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <label class="form-label">Publico Ou Privado</label>
                             <select class="form-select form-select" name="privado"
                                 aria-label=".form-select-lg example">
-                                <option disabled selected>-------------Escolha------------</option>
-                                <option value="0">publico</option>
-                                <option value="1">privado</option>
+                                <option disabled selected>Selecione</option>
+                                <option value="0">Publico</option>
+                                <option value="1">Privado</option>
 
                             </select>
                         </div>
                         <!-- Time -->
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <label class="form-label">Hora</label>
-                            <input type="time" class="form-control flatpickr" name="hora"
-                                data-enableTime="true" data-noCalendar="true" placeholder="Select time">
+                            <input type="datetime-local" class="form-control flatpickr" name="hora"
+                                data-enableTime="true" data-noCalendar="true" placeholder="Hora a Iniciar">
                         </div>
 
                         <div class="col-12">
                             <label class="form-label">Localização</label>
-                            <input type="text" class="form-control" id="pac-inpute" name="localizacao"
+                            <input type="text" class="form-control" name="localizacao"
                                 placeholder="Ex:Beira-Moçambique, Munhava Rua Gross Gomes 47">
                         </div>
                         <!-- Location -->
-                        <div class="col-12">
+
+                        <div class="col-md-12">
                             <label class="form-label">Cidade</label>
-                            <select class="form-select form-select" name="cidade"
-                                aria-label=".form-select-lg example">
-                                <option disabled selected>Escolha a cidade</option>
-                                <option value="Beira">Beira</option>
-                                <option value="Maputo">Maputo</option>
-                                <option value="#">Nampula</option>
-                                <option value="#">CaboDelegado</option>
-                                <option value="#">Chimoio</option>
-                                <option value="#">Chimoio</option>
-                            </select>
+                            <div class="form-group">
+                                <!-- Choice select -->
+                                {{-- <select class="form-select" multiple name="cidade_id" id="cidade_id"> --}}
+                                <select class="form-select js-choice" name="cidade_id" id="cidade_id"
+                                    data-search-enabled="false" data-placeholder-val="Pesquisa por cidade" multiple
+                                    data-remove-item-button="true" data-position="bottom" data-max-item-count="2"
+                                    data-placeholder="true">
+
+                                    @foreach ($cidades as $cidade)
+                                        <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
                         </div>
                         <!-- Location -->
+
                         <!-- Tipo de evento -->
                         <div class="col-12">
-                            <label class="form-label">Tipo & categoria de evento</label>
-                            <select class="form-select form-select" name="categoria"
-                                aria-label=".form-select-lg example">
-                                <option disabled selected>Escolha o tipo de evento</option>
-                                <option value="Festa">Festa</option>
-                                <option value="Culto">Culto</option>
-                                <option value="#">Nampula</option>
-                                <option value="#">CaboDelegado</option>
-                                <option value="#">Chimoio</option>
-                                <option value="#">Chimoio</option>
-                            </select>
+                            <label class="form-label">Tipo & categoria</label>
+                            <div class="form-group">
+
+                                <select name="categoria_id" style="width: 100%,height: 100%"
+                                    class="form-select form-select">
+
+                                    <option disabled selected>Escolha o tipo de evento</option>
+
+                                    @foreach ($catergoria as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
                         </div>
                         <!-- Tipo de evento -->
                         <!-- Add guests -->
-                        <div class="col-12">
+
+                        <div class="col-md-12">
                             <label class="form-label">Addicionar Participantes</label>
-                            <input type="email" class="form-control" name="participante"
-                                placeholder="Exemplo:joaocarlos@gmail.com">
+                            <div class="form-group">
+
+                                <select class="form-select form-select" style="width: 100%,height: 100%"
+                                    name="participante">
+
+                                    <option disabled selected>Exemplo:joaocarlos@gmail.com</option>
+                                    @foreach ($participantes as $participante)
+                                        <option value="{{ $participante->email }}">{{ $participante->email }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+                            </div>
                         </div>
                         <!-- Avatar group START -->
                         <div class="col-12 mt-3">
@@ -1040,55 +1079,59 @@ Header END -->
                                     <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
                                         alt="avatar">
                                 </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg"
-                                        alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg"
-                                        alt="avatar">
-                                </li>
+
                                 <li class="avatar avatar-xs">
                                     <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg"
                                         alt="avatar">
                                 </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg"
-                                        alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg"
-                                        alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                        alt="avatar">
-                                </li>
+
                                 <li class="ms-3">
                                     <small> +50 </small>
                                 </li>
                             </ul>
                         </div>
-                        {{-- FIle manger --}}
-                        <div class="col-12">
-                            <label class="form-label">Carregar Fotografia</label>
-                            <input type="file" class="form-control" name="imagen">
-                        </div>
-                        {{-- FIle manger --}}
-                        <!-- Dropzone photo START -->
+
+
                         <div class="mb-3">
-                            <label class="form-label">Carregar Anexo</label>
-                            <div name="anexo" class="dropzone  dropzone-default card shadow-none"
-                                data-dropzone='{"maxFiles":2}'>
-                                <div class="dz-message">
-                                    <i class="bi bi-file-earmark-text display-3"></i>
-                                    <p>Solte a Apresentação e o documento aqui ou clique para
-                                        carregar.</p>
-                                </div>
+                            <div class="dropzone  dropzone-default card shadow-none">
+                                <a class="hiddenFileInput">
+
+                                    <input class="hiddenFileInput" id="file-upload" type="file" name="imagen"
+                                        accept="image/*" />
+                                </a>
+                                <label for="file-upload" id="file-drag">
+                                    <div class="dz-message" id="start">
+                                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                                        <div class="dz-message" id="notimage" id="response" class="hidden">
+                                        </div>
+                                        <div class="dz-message" id="response" class="hidden">
+                                            <div id="messages">
+                                                <i class="bi bi-images display-3">
+                                                </i>
+                                                <p> clique para carregar ou Solte a
+                                                    image aqui.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
                         </div>
+                        <!-- Dropzone photo START -->
                         <!-- Dropzone photo END -->
+
+                        <div class="col-12">
+                            <label class="form-label">Link Externos</label>
+                            <input type="text" class="form-control" name="link"
+                                placeholder="https://go.com/fwlink/?LinkID=219472&clcid=0x409">
+                        </div>
                         <!-- Form END -->
+                        {{-- FIle manger --}}
+                        <div class="col-12">
+                            <label class="form-label">Carregar anexo</label>
+                            <input type="file" class="form-control" name="anexo">
+                        </div>
+                        {{-- FIle manger --}}
+
                 </div>
                 <!-- Modal feed body END -->
                 <!-- Modal footer -->
@@ -1097,11 +1140,12 @@ Header END -->
                     <button type="cancel" class="btn btn-danger-soft me-2" data-bs-dismiss="modal">
                         Cancelar</button>
                     <button type="submit" class="btn btn-success-soft">Criar Agora</button>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
     </div>
+    <!-- Modal criar events -->
     <!-- Modal create events END -->
 
     <!-- =======================
