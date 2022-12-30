@@ -93,7 +93,7 @@ Header START -->
                         </a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link icon-md btn btn-light p-0" href="settings.html">
+                        <a class="nav-link icon-md btn btn-light p-0" href="Configuracoes">
                             <i class="bi bi-gear-fill fs-6"> </i>
                         </a>
                     </li>
