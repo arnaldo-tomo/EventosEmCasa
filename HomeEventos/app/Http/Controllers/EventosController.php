@@ -72,10 +72,13 @@ class EventosController extends Controller
         $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', Auth::user()->id);
         $info = User::where('id', Auth::user()->id)->get()->first();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
-        $amigos = User::all();
+        $cidades = cidade::all();
+        $catergoria = categoria::all();
+
+        $participantes = $amigos = User::all();
 
         // dd($local);
-        return view('eventos.perfil', compact('info', 'eventos', 'amigos', 'local', 'estaSemana', 'online', 'esteMes'));
+        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'eventos', 'amigos', 'local', 'estaSemana', 'online', 'esteMes'));
     }
 
 
