@@ -120,39 +120,48 @@ class EventosController extends Controller
             'imagen' => 'required',
         ]);
 
-        $evento = new Eventos();
-        $evento->user_id = Auth::user()->id;
-        $evento->cidade_id = Request::input('cidade_id');
-        $evento->categoria_id = Request::input('categoria_id');
-        $evento->titulo = Request::input('titulo');
-        $evento->descricao = Request::input('descricao');
-        $evento->dataInicio = Request::input('dataInicio');
-        $evento->dataFim = Request::input('dataFim');
-        $evento->hora = Request::input('hora');
-        $evento->privado = Request::input('privado');
-        $evento->duracao = Request::input('duracao');
-        $evento->localizacao = Request::input('localizacao');
-        $evento->participante = Request::input('participante');
-        $evento->link = Request::input('link');
+        if ($request->fails()) {
+            $response = [
+                'status' => '0',
+                'error' => $$request->errors(),
+            ];
 
-        if (Request::file('anexo') != null) {
-            $filename = Request::file('anexo')->getClientOriginalName();
-            $link = "anexo/eventos/" . $filename;
-            $evento->anexo = $link;
-            $foto = Request::file('anexo');
-            $foto->move('anexo/eventos', $filename);
-        }
+            return redirect()->back()->withErrors('nado', 'nado');
+        } else {
+            $evento = new Eventos();
+            $evento->user_id = Auth::user()->id;
+            $evento->cidade_id = Request::input('cidade_id');
+            $evento->categoria_id = Request::input('categoria_id');
+            $evento->titulo = Request::input('titulo');
+            $evento->descricao = Request::input('descricao');
+            $evento->dataInicio = Request::input('dataInicio');
+            $evento->dataFim = Request::input('dataFim');
+            $evento->hora = Request::input('hora');
+            $evento->privado = Request::input('privado');
+            $evento->duracao = Request::input('duracao');
+            $evento->localizacao = Request::input('localizacao');
+            $evento->participante = Request::input('participante');
+            $evento->link = Request::input('link');
 
-        if (Request::file('imagen') != null) {
-            $filename = Request::file('imagen')->getClientOriginalName();
-            $link = "imagen/eventos/" . $filename;
-            $evento->imagen = $link;
-            $foto = Request::file('imagen');
-            $foto->move('imagen/eventos', $filename);
+            if (Request::file('anexo') != null) {
+                $filename = Request::file('anexo')->getClientOriginalName();
+                $link = "anexo/eventos/" . $filename;
+                $evento->anexo = $link;
+                $foto = Request::file('anexo');
+                $foto->move('anexo/eventos', $filename);
+            }
+
+            if (Request::file('imagen') != null) {
+                $filename = Request::file('imagen')->getClientOriginalName();
+                $link = "imagen/eventos/" . $filename;
+                $evento->imagen = $link;
+                $foto = Request::file('imagen');
+                $foto->move('imagen/eventos', $filename);
+            }
+            $evento->save();
+            $messagen =  "Evento " . Request::input('titulo') . " publicado com sucessos! ";
+            return redirect()->back()->with('novo', $messagen);
         }
-        $evento->save();
-        $messagen =  "Evento " . Request::input('titulo') . " publicado com sucessos! ";
-        return redirect()->back()->with('novo', $messagen);
     }
 
     public function gosto($id)
