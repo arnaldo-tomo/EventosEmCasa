@@ -9,7 +9,7 @@ Route::get('/autocomplete', [EventosController::class, 'autocomplete'])->name('a
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->name('Configuracoes');
 Route::get('/Verperfil{id}', [EventosController::class, 'Verperfil'])->middleware(['auth'])->name('Verperfil');
-Route::get('/Sobre', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
+Route::get('/Sobre{id}', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
 Route::get('/Todos', [EventosController::class, 'todos'])->name('todos');
 Route::get('/categoria', [EventosController::class, 'categoria'])->name('categoria');
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
