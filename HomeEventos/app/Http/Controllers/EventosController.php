@@ -82,8 +82,6 @@ class EventosController extends Controller
     public function Verperfil($id)
     {
         $info = User::find($id);
-        // dd($info->eventos);
-        // $eventos = Eventos::paginate(8);;
         return view('eventos.verperfil', compact('info',));
     }
     public function sobre($id)
