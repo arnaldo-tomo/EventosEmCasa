@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Request;
+use session;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\gosto;
 use App\Models\cidade;
 use App\Models\Eventos;
 use App\Models\categoria;
 use App\Models\tipodeevento;
-use Carbon\Carbon;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Validated;
 
 
 class EventosController extends Controller
@@ -64,21 +65,20 @@ class EventosController extends Controller
 
     public function perfil()
     {
-
+        $meuID = Auth::user()->id;
         $dia = Carbon::now();
-        $local = Eventos::where('categoria_id', 22)->where('user_id', Auth::user()->id)->get();
-        $online = Eventos::where('categoria_id', 22)->where('user_id', Auth::user()->id)->get();
-        $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', Auth::user()->id)->get();
-        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', Auth::user()->id);
-        $info = User::where('id', Auth::user()->id)->get()->first();
-        $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(6);
+        $local = Eventos::where('user_id', $meuID)->ORDERBY('id', 'DESC')->get();
+        $online = Eventos::where('user_id', $meuID)->where('categoria_id', 22)->ORDERBY('id', 'DESC')->get();
+        $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', $meuID)->get();
+        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', $meuID);
+        $info = User::find($meuID);
         $cidades = cidade::all();
         $catergoria = categoria::all();
 
         $participantes = $amigos = User::all();
 
         // dd($local);
-        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'eventos', 'amigos', 'local', 'estaSemana', 'online', 'esteMes'));
+        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online', 'esteMes'));
     }
 
 
@@ -96,8 +96,8 @@ class EventosController extends Controller
     public function sair(Request $request)
     {
         Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $request::session()->invalidate();
+        $request::session()->regenerateToken();
         return redirect('/');
     }
 
