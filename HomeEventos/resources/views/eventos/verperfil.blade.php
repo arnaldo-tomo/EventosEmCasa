@@ -754,30 +754,7 @@ Header END -->
                                     </div>
                                 </div>
                                 <br>
-                                <nav>
-                                    <ul class="pagination">
 
-                                        <li class="page-item disabled" aria-disabled="true"
-                                            aria-label="&laquo; Anterior">
-                                            <span class="page-link" aria-hidden="true">&lsaquo;</span>
-                                        </li>
-
-
-
-
-
-                                        <li class="page-item active" aria-current="page"><span
-                                                class="page-link">1</span></li>
-                                        <li class="page-item"><a class="page-link"
-                                                href="http://127.0.0.1:8000/Perfil?page=2">2</a></li>
-
-
-                                        <li class="page-item">
-                                            <a class="page-link" href="http://127.0.0.1:8000/Perfil?page=2"
-                                                rel="next" aria-label="Próximo &raquo;">&rsaquo;</a>
-                                        </li>
-                                    </ul>
-                                </nav>
 
                             </div>
                             <!-- Events list END -->
