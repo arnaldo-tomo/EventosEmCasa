@@ -87,9 +87,6 @@ class EventosController extends Controller
     }
     public function sobre()
     {
-        if (!Auth::check()) {
-            redirect()->back();
-        }
 
         $info = User::where('id', Auth::user()->id)->get()->first();
         return view('eventos.sobre', compact('info'));
@@ -120,7 +117,11 @@ class EventosController extends Controller
             'localizacao' => 'required',
             'imagen' => 'required',
         ]);
-
+        if ($request->fails()) {
+            return redirect('post/create')
+                ->withErrors($request)
+                ->withInput();
+        }
 
 
         $evento = new Eventos();
