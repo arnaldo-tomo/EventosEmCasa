@@ -408,7 +408,7 @@ Header END -->
                                                     {{ $eventos->cidades->nome }}
                                                 </li>
                                                 <li class="nav-item">
-                                                    <i class="bi bi-people pe-1"></i> 77 going
+                                                    <i class="bi bi-people pe-1"></i> 79 Interresados
                                                 </li>
                                             </ul>
                                         </div>
