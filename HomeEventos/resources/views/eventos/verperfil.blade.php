@@ -448,6 +448,15 @@ Header END -->
                                         </div>
                                     </div>
                                 @empty
+                                    <div class="text-center">
+                                        <div class="my-sm-5 py-sm-5">
+                                            <i class="display-1 text-muted bi bi-calendar2-event"> </i>
+                                            <h4 class="mt-2 mb-3 text-body">No tens nheum Evntos</h4>
+                                            <button class="btn btn-primary-soft btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#modalCreateEvents"> clique aque para criar um
+                                                evento </button>
+                                        </div>
+                                    </div>
                                 @endforelse
 
 
