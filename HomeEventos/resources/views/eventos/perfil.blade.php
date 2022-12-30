@@ -18,10 +18,17 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
 
     <!-- Plugins CSS -->
+    <!-- Plugins CSS -->
     <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/OverlayScrollbars-master/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/dist/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/choices.js/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/dropzone/dist/dropzone.css" />
     <link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/dist/flatpickr.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/plyr/plyr.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox-master/dist/css/glightbox.min.css">
 
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -1155,8 +1162,13 @@ JS libraries, plugins and custom scripts -->
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Vendors -->
-    <script src="assets/vendor/dropzone/dist/dropzone.js"></script>
+    <script src="assets/vendor/tiny-slider/dist/tiny-slider.js"></script>
+    <script src="assets/vendor/OverlayScrollbars-master/js/OverlayScrollbars.min.js"></script>
+    <script src="assets/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/vendor/glightbox-master/dist/js/glightbox.min.js"></script>
     <script src="assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="assets/vendor/plyr/plyr.js"></script>
+    <script src="assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
 
     <!-- Template Functions -->
     <script src="assets/js/functions.js"></script>
