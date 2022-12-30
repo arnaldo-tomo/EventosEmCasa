@@ -4,7 +4,7 @@
 <!-- Mirrored from social.webestica.com/my-profile-events.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:44:07 GMT -->
 
 <head>
-    <title>Sobre - {{ Auth::user()->name }}</title>
+    <title>Sobre - {{ $info->name }}</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -75,118 +75,7 @@ Header START -->
                     <!-- Nav Search END -->
 
                     <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                        <!-- Nav item 1 Demos -->
-                        {{--   <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="homeMenu" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Demo</a>
-                            <ul class="dropdown-menu" aria-labelledby="homeMenu">
-                                <li> <a class="dropdown-item" href="index-2.html">Home default</a></li>
-                                <li> <a class="dropdown-item" href="index-classic.html">Home classic</a></li>
-                                <li> <a class="dropdown-item" href="index-post.html">Home post</a></li>
-                                <li> <a class="dropdown-item" href="index-video.html">Home video</a></li>
-                                <li> <a class="dropdown-item" href="index-event.html">Home event</a></li>
-                                <li> <a class="dropdown-item" href="landing.html">Landing page</a></li>
-                                <li> <a class="dropdown-item" href="app-download.html">App download</a></li>
-                                <li class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/"
-                                        target="_blank">
-                                        <i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy Social!
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Nav item 2 Pages -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                                <li> <a class="dropdown-item" href="albums.html">Albums</a></li>
-                                <li> <a class="dropdown-item" href="celebration.html">Celebration</a></li>
-                                <li> <a class="dropdown-item" href="messaging.html">Messaging</a></li>
-                                <!-- Dropdown submenu -->
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#!">Profile</a>
-                                    <ul class="dropdown-menu" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="my-profile.html">Feed</a> </li>
-                                        <li> <a class="dropdown-item" href="my-profile-about.html">About</a> </li>
-                                        <li> <a class="dropdown-item"
-                                                href="my-profile-connections.html">Connections</a> </li>
-                                        <li> <a class="dropdown-item" href="my-profile-media.html">Media</a> </li>
-                                        <li> <a class="dropdown-item" href="my-profile-videos.html">Videos</a> </li>
-                                        <li> <a class="dropdown-item" href="my-profile-events.html">Events</a> </li>
-                                        <li> <a class="dropdown-item" href="my-profile-activity.html">Activity</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li> <a class="dropdown-item" href="events.html">Events</a></li>
-                                <li> <a class="dropdown-item" href="events-2.html">Events 2</a></li>
-                                <li> <a class="dropdown-item" href="event-details.html">Event details</a></li>
-                                <li> <a class="dropdown-item" href="event-details-2.html">Event details 2</a></li>
-                                <li> <a class="dropdown-item" href="groups.html">Groups</a></li>
-                                <li> <a class="dropdown-item" href="group-details.html">Group details</a></li>
-                                <li> <a class="dropdown-item" href="post-videos.html">Post videos</a></li>
-                                <li> <a class="dropdown-item" href="post-video-details.html">Post video details</a>
-                                </li>
-                                <li> <a class="dropdown-item" href="post-details.html">Post details</a></li>
-                                <li> <a class="dropdown-item" href="video-details.html">Video details</a></li>
-                                <li> <a class="dropdown-item" href="blog.html">Blog</a></li>
-                                <li> <a class="dropdown-item" href="blog-details.html">Blog details</a></li>
 
-                                <!-- Dropdown submenu levels -->
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
-                                    <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        <!-- dropdown submenu open left -->
-                                        <li class="dropdown-submenu dropstart">
-                                            <a class="dropdown-item dropdown-toggle" href="#">Dropdown
-                                                (start)</a>
-                                            <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Nav item 3 Post -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="postMenu"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account </a>
-                            <ul class="dropdown-menu" aria-labelledby="postMenu">
-                                <li> <a class="dropdown-item" href="create-page.html">Create a page</a></li>
-                                <li> <a class="dropdown-item" href="settings.html">Settings</a> </li>
-                                <li> <a class="dropdown-item" href="notifications.html">Notifications</a> </li>
-                                <li> <a class="dropdown-item" href="help.html">Help center</a> </li>
-                                <li> <a class="dropdown-item" href="help-details.html">Help details</a> </li>
-                                <!-- dropdown submenu open left -->
-                                <li class="dropdown-submenu dropstart">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
-                                    <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="sign-in.html">Sign in</a> </li>
-                                        <li> <a class="dropdown-item" href="sign-up.html">Sing up</a> </li>
-                                        <li> <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                        </li>
-                                        <li class="dropdown-divider"></li>
-                                        <li> <a class="dropdown-item" href="sign-in-advance.html">Sign in advance</a>
-                                        </li>
-                                        <li> <a class="dropdown-item" href="sign-up-advance.html">Sing up advance</a>
-                                        </li>
-                                        <li> <a class="dropdown-item" href="forgot-password-advance.html">Forgot
-                                                password advance</a> </li>
-                                    </ul>
-                                </li>
-                                <li> <a class="dropdown-item" href="error-404.html">Error 404</a> </li>
-                                <li> <a class="dropdown-item" href="offline.html">Offline</a> </li>
-                                <li> <a class="dropdown-item" href="privacy-and-terms.html">Privacy & terms</a> </li>
-                            </ul>
-                        </li> --}}
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
