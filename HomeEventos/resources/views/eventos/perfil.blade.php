@@ -299,7 +299,7 @@ Header END -->
                                             </div>
                                             <!-- Info -->
                                             <h5 class="mb-0"> <a href="#!">{{ $info->name }} </a> </h5>
-                                            <small>Web Developer at Webestica</small>
+                                            <small>{{ $info->email }}</small>
                                             <p class="mt-3">I'd love to change the world, but they won’t give me the
                                                 source code.</p>
 
@@ -307,7 +307,7 @@ Header END -->
                                             <div class="hstack gap-2 gap-xl-3 justify-content-center">
                                                 <!-- User stat item -->
                                                 <div>
-                                                    <h6 class="mb-0">{{ $eventos->count() }}</h6>
+                                                    <h6 class="mb-0">{{ $info->eventos->count() }}</h6>
                                                     <small>Eventos</small>
                                                 </div>
                                                 <!-- Divider -->
