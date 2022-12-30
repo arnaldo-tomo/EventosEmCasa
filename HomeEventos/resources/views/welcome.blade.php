@@ -673,20 +673,7 @@
                                     </label>
                                 </div>
                             </div>
-
                             <!-- Dropzone photo START -->
-                            {{-- <div class="mb-3">
-                                <label class="form-label">Carregar Fotografia</label>
-                                <div class="dropzone  dropzone-default card shadow-none"
-                                    data-dropzone='{"maxFiles":1}'>
-
-                                    <div class="dz-message">
-                                        <i class="bi bi-file-earmark-text display-3"></i>
-                                        <p>Solte a Apresentação e o documento aqui ou clique para carregar.</p>
-                                    </div>
-
-                                </div>
-                            </div> --}}
                             <!-- Dropzone photo END -->
 
                             <div class="col-12">
@@ -753,8 +740,6 @@
                                                     <option> {{ $item->nome }}</option>
                                                 @endforeach
                                             </select>
-                                            {{-- <input class="form-control form-control-lg me-1 pe-5" type="text"
-                                                placeholder="Oque" required autofocus> --}}
                                         </div>
                                     </div>
 
