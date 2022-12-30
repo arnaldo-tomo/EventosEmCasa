@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sobre - </title>
+    <title>Sobre - {{ $info->name }} </title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -340,7 +340,8 @@ Header END -->
                                 {{-- <li class="nav-item"> <a class="nav-link" href="my-profile.html"> Posts </a> </li> --}}
                                 <li class="nav-item"> <a class="nav-link " href="{{ route('perfil') }}">
                                         Meus Ventos</a> </li>
-                                <li class="nav-item"> <a class="nav-link active" href="{{ route('sobre') }}"> Sobre
+                                <li class="nav-item"> <a class="nav-link active" href="Sobre{{ $info->id }}">
+                                        Sobre
                                     </a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">
