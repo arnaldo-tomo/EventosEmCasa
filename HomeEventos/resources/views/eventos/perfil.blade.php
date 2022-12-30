@@ -489,25 +489,14 @@ Header END -->
                                                         <ul class="dropdown-menu dropdown-menu-end"
                                                             aria-labelledby="profileAction">
                                                             <li><a class="dropdown-item" href="#"> <i
-                                                                        class="bi bi-bookmark fa-fw pe-2"></i>Share
-                                                                    profile
-                                                                    in
-                                                                    a
-                                                                    message</a></li>
-                                                            <li><a class="dropdown-item" href="#"> <i
-                                                                        class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                                    your
-                                                                    profile to PDF</a></li>
-                                                            <li><a class="dropdown-item" href="#"> <i
-                                                                        class="bi bi-lock fa-fw pe-2"></i>Lock
-                                                                    profile</a>
-                                                            </li>
+                                                                        class="bi bi-edit fa-fw pe-2"></i>
+                                                                    Editar</a></li>
+
                                                             <li>
                                                                 <hr class="dropdown-divider">
                                                             </li>
                                                             <li><a class="dropdown-item" href="#"> <i
-                                                                        class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                                    settings</a>
+                                                                        class="bi bi-trash fa-fw pe-2"></i>Deletar</a>
                                                             </li>
                                                         </ul>
                                                     </div>
