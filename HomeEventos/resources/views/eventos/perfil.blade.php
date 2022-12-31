@@ -531,8 +531,10 @@ Header END -->
                                                         <!-- Date time -->
                                                         <p class="mb-0 small"> <i
                                                                 class="bi bi-calendar-check pe-1"></i>
-                                                            Fri, Oct 05, 2022 at 1:00 AM </p>
-                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> Miami
+                                                                {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                                -
+                                                                {{ $evento->hora }} Horas</p>
+                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $ }}
                                                         </p>
                                                         <!-- Avatar group START -->
                                                         <ul class="avatar-group list-unstyled align-items-center mb-0">
