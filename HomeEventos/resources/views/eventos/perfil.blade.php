@@ -801,50 +801,6 @@ Header END -->
                                                             </li>
                                                         </ul>
                                                         <!-- Avatar group END -->
-                                                        <!-- Button -->
-                                                        <div class="d-flex mt-3 justify-content-between">
-                                                            <!-- Interested button -->
-                                                            <div class="w-100">
-                                                                <input type="checkbox" class="btn-check d-block"
-                                                                    id="Interested9" checked>
-                                                                <label class="btn btn-sm btn-outline-success d-block"
-                                                                    for="Interested9"><i
-                                                                        class="fa-solid fa-thumbs-up me-1"></i>
-                                                                    Interested</label>
-                                                            </div>
-                                                            <div class="dropdown ms-3">
-                                                                <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                    id="eventActionShare9" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <i class="bi bi-share-fill"></i>
-                                                                </a>
-                                                                <!-- Dropdown menu -->
-                                                                <ul class="dropdown-menu dropdown-menu-end"
-                                                                    aria-labelledby="eventActionShare9">
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-envelope fa-fw pe-1"></i>
-                                                                            Send via Direct Message</a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                            Share to News Feed </a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-people fa-fw pe-1"></i>
-                                                                            Share
-                                                                            to a group</a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-share fa-fw pe-1"></i>
-                                                                            Share
-                                                                            post via …</a></li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-person fa-fw pe-1"></i>
-                                                                            Share
-                                                                            on a friend's profile</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <!-- Card body END -->
                                                 </div>
