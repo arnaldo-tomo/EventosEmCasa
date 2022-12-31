@@ -562,28 +562,6 @@ Header END -->
                                                                 <small> are attending</small>
                                                             </li>
                                                         </ul>
-                                                        <!-- Avatar group END -->
-                                                        <!-- Button -->
-                                                        <div class="d-flex mt-3 justify-content-between">
-                                                            <!-- Interested button -->
-                                                            <div class="w-100">
-                                                                <input type="checkbox" class="btn-check d-block"
-                                                                    id="Interested6" checked>
-                                                                <label class="btn btn-sm btn-outline-success d-block"
-                                                                    for="Interested6"><i
-                                                                        class="fa-solid fa-thumbs-up me-1"></i>
-                                                                    Interested</label>
-                                                            </div>
-                                                            <div class="w-100">
-                                                                <input type="checkbox" class="btn-check d-block"
-                                                                    id="Interested6" checked>
-                                                                <label class="btn btn-sm btn-outline-success d-block"
-                                                                    for="Interested6"><i
-                                                                        class="fa-solid fa-thumbs-up me-1"></i>
-                                                                    Interested</label>
-                                                            </div>
-
-                                                        </div>
                                                     </div>
                                                     <!-- Card body END -->
                                                 </div>
