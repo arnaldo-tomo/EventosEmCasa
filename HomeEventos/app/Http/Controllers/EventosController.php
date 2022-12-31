@@ -65,8 +65,8 @@ class EventosController extends Controller
 
     public function perfil()
     {
-        $meuID = Auth::user()->id;
         $dia = Carbon::now();
+        $meuID = Auth::user()->id;
         $local = Eventos::where('user_id', $meuID)->ORDERBY('id', 'DESC')->get();
         $online = Eventos::where('user_id', $meuID)->where('categoria_id', 22)->ORDERBY('id', 'DESC')->get();
         $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', $meuID)->get();
@@ -97,7 +97,7 @@ class EventosController extends Controller
     {
         Auth::guard('web')->logout();
         $request::session()->invalidate();
-        $requestsession()->regenerateToken();
+        $request::session()->regenerateToken();
         return redirect('/');
     }
 
