@@ -505,6 +505,8 @@ Header END -->
                                         @endforeach
 
                                     </div>
+
+                                    {{ $eventos->links() }}
                                 </div>
 
                                 <!-- Event top tab END -->
