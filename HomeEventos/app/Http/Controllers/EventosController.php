@@ -76,7 +76,6 @@ class EventosController extends Controller
         $catergoria = categoria::all();
         $cidades = cidade::all();
 
-        // dd($local);
         return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online',  'eventos'));
     }
 
