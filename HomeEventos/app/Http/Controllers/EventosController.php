@@ -76,7 +76,7 @@ class EventosController extends Controller
         $info = User::find(Auth::user()->id);
         $catergoria = categoria::all();
         $cidades = cidade::all();
-        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online',  'eventos'));
+        return view('eventos.perfil', compact('info', 'total', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online',  'eventos'));
     }
 
 
