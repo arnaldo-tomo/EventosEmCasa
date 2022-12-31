@@ -446,7 +446,7 @@ Header END -->
                                 <!-- Event top tab START -->
                                 <div class="tab-pane fade show active" id="tab-1">
                                     <div class="row g-4">
-                                        @foreach ($local as $evento)
+                                        @foreach ($eventos as $evento)
                                             <div class="d-sm-flex align-items-center mb-2">
                                                 <!-- Avatar -->
                                                 <div class="avatar avatar-xl">
