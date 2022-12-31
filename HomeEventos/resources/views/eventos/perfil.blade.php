@@ -314,7 +314,7 @@ Header END -->
                                             <div class="hstack gap-2 gap-xl-3 justify-content-center">
                                                 <!-- User stat item -->
                                                 <div>
-                                                    <h6 class="mb-0">{{ $info->eventos->count() }}</h6>
+                                                    <h6 class="mb-0">{{ $local->count() }}</h6>
                                                     <small>Eventos</small>
                                                 </div>
                                                 <!-- Divider -->
@@ -446,7 +446,7 @@ Header END -->
                                 <!-- Event top tab START -->
                                 <div class="tab-pane fade show active" id="tab-1">
                                     <div class="row g-4">
-                                        @foreach ($info->Eventos as $evento)
+                                        @foreach ($local as $evento)
                                             <div class="d-sm-flex align-items-center mb-2">
                                                 <!-- Avatar -->
                                                 <div class="avatar avatar-xl">
