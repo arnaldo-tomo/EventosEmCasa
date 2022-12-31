@@ -489,7 +489,7 @@ Header END -->
                                                         <ul class="dropdown-menu dropdown-menu-end"
                                                             aria-labelledby="profileAction">
                                                             <li><a class="dropdown-item" href="#"> <i
-                                                                        class="bi bi-edit fa-fw pe-2"></i>
+                                                                        class="fa fa-edit fa-fw pe-2"></i>
                                                                     Editar</a></li>
 
                                                             <li>
@@ -574,39 +574,15 @@ Header END -->
                                                                         class="fa-solid fa-thumbs-up me-1"></i>
                                                                     Interested</label>
                                                             </div>
-                                                            <div class="dropdown ms-3">
-                                                                <a href="#" class="btn btn-sm btn-primary-soft"
-                                                                    id="eventActionShare6" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <i class="bi bi-share-fill"></i>
-                                                                </a>
-                                                                <!-- Dropdown menu -->
-                                                                <ul class="dropdown-menu dropdown-menu-end"
-                                                                    aria-labelledby="eventActionShare6">
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-envelope fa-fw pe-1"></i>
-                                                                            Send
-                                                                            via Direct Message</a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-bookmark-check fa-fw pe-1"></i>
-                                                                            Share to News Feed </a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-people fa-fw pe-1"></i>
-                                                                            Share
-                                                                            to a group</a></li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-share fa-fw pe-1"></i>
-                                                                            Share
-                                                                            post via …</a></li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                                class="bi bi-person fa-fw pe-1"></i>
-                                                                            Share
-                                                                            on a friend's profile</a></li>
-                                                                </ul>
+                                                            <div class="w-100">
+                                                                <input type="checkbox" class="btn-check d-block"
+                                                                    id="Interested6" checked>
+                                                                <label class="btn btn-sm btn-outline-success d-block"
+                                                                    for="Interested6"><i
+                                                                        class="fa-solid fa-thumbs-up me-1"></i>
+                                                                    Interested</label>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                     <!-- Card body END -->
