@@ -82,12 +82,16 @@
                         <span></span>
                     </span>
                 </button>
+
                 <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
                     <!-- Nav right START -->
+
                     <ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
                         {{-- messaging --}}
                         <!-- Main navbar START -->
                         <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
                             <ul class="navbar-nav navbar-nav-scroll ms-auto">
                                 <li class="nav-item">
                                     @guest
