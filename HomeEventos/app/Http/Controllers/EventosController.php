@@ -71,14 +71,13 @@ class EventosController extends Controller
         $local = Eventos::where('user_id', Auth::user()->id)->where('categoria_id', '<>', 22)->ORDERBY('id', 'DESC')->get();
         $online = Eventos::where('user_id', Auth::user()->id)->where('categoria_id', 22)->ORDERBY('id', 'DESC')->get();
         $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', Auth::user()->id)->get();
-        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', Auth::user()->id);
         $info = User::find(Auth::user()->id);
         $cidades = cidade::all();
         $catergoria = categoria::all();
         $participantes = $amigos = User::all();
 
         // dd($local);
-        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online', 'esteMes', 'eventos'));
+        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online',  'eventos'));
     }
 
 
