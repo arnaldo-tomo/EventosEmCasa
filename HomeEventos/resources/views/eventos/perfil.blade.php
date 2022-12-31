@@ -526,8 +526,8 @@ Header END -->
                                                         <!-- Tag -->
                                                         <a class="btn btn-xs btn-primary mt-n3"
                                                             href="event-details.html">Live show</a>
-                                                        <h6 class="mt-3"> <a href="event-details.html"> America 50th
-                                                                anniversary </a> </h6>
+                                                        <h6 class="mt-3"> <a href="event-details.html">
+                                                                {{ $evento->titulo }} </a> </h6>
                                                         <!-- Date time -->
                                                         <p class="mb-0 small"> <i
                                                                 class="bi bi-calendar-check pe-1"></i>
