@@ -767,7 +767,7 @@ Header END -->
                                                                 class=" fa fa-clock"></i>
                                                             {{ $evento->hora }} </a>
                                                         <h6 class="mt-3"> <a href="event-details.html">
-                                                                Beach event
+                                                                {{ $evento->titulo }}
                                                             </a> </h6>
                                                         <!-- Date time -->
                                                         <p class="mb-0 small"> <i
@@ -775,8 +775,7 @@ Header END -->
                                                             {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
                                                         </p>
                                                         <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
-                                                            San
-                                                            francisco </p>
+                                                            {{ $evento->cidades->nome }} </p>
                                                         <!-- Avatar group START -->
                                                         <ul class="avatar-group list-unstyled align-items-center mb-0">
                                                             <li class="avatar avatar-xs">
