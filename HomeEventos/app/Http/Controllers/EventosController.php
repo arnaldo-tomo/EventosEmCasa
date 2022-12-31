@@ -69,13 +69,12 @@ class EventosController extends Controller
         $dia = Carbon::now();
         $eventos = Eventos::where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->paginate(5);
         $local = Eventos::where('user_id', Auth::user()->id)->where('categoria_id', '<>', 22)->ORDERBY('id', 'DESC')->get();
-        $online = Eventos::where('categoria_id', 22)->where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
+        $online = Eventos::where('user_id', Auth::user()->id)->where('categoria_id', 22)->ORDERBY('id', 'DESC')->get();
         $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', Auth::user()->id)->get();
         $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', Auth::user()->id);
         $info = User::find(Auth::user()->id);
         $cidades = cidade::all();
         $catergoria = categoria::all();
-
         $participantes = $amigos = User::all();
 
         // dd($local);
