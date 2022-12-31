@@ -531,10 +531,11 @@ Header END -->
                                                         <!-- Date time -->
                                                         <p class="mb-0 small"> <i
                                                                 class="bi bi-calendar-check pe-1"></i>
-                                                                {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
-                                                                -
-                                                                {{ $evento->hora }} Horas</p>
-                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> {{ $ }}
+                                                            {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                            -
+                                                            {{ $evento->hora }} Horas</p>
+                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
+                                                            {{ $evento->localizacao }}
                                                         </p>
                                                         <!-- Avatar group START -->
                                                         <ul class="avatar-group list-unstyled align-items-center mb-0">
