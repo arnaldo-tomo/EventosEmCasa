@@ -751,22 +751,29 @@ Header END -->
                                                             src="{{ $evento->imagen }}" alt="">
                                                         <div
                                                             class="badge bg-danger text-white mt-2 me-2 position-absolute top-0 end-0">
-                                                            <i class="fa fa-video-camera"></i>
-                                                            {{ $evento->categoria->nome }}
+                                                            <i class="fa fa-map-pin"></i>
+                                                            {{ $evento->localizacao }}
                                                         </div>
                                                     </div>
                                                     <!-- Card body START -->
-                                                    <div class="card-body position-relative pt-0">
+                                                    <div
+                                                        class="card-body
+                                                                position-relative pt-0">
                                                         <!-- Tag -->
                                                         <a class="btn btn-xs btn-primary mt-n3"
-                                                            href="event-details.html">Spa training </a>
-                                                        <h6 class="mt-3"> <a href="event-details.html"> Beach event
+                                                            href="event-details.html"><i
+                                                                class="fa fa-video-camera"></i>
+                                                            {{ $evento->categoria->nome }}</a>
+                                                        <h6 class="mt-3"> <a href="event-details.html">
+                                                                Beach event
                                                             </a> </h6>
                                                         <!-- Date time -->
                                                         <p class="mb-0 small"> <i
                                                                 class="bi bi-calendar-check pe-1"></i>
-                                                            Mon, Sep 25, 2020 at 9:30 AM </p>
-                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i> San
+                                                            {{ \Carbon\Carbon::parse($evento->dataInicio)->isoFormat('D MMM Y') }}
+                                                        </p>
+                                                        <p class="small"> <i class="bi bi-geo-alt pe-1"></i>
+                                                            San
                                                             francisco </p>
                                                         <!-- Avatar group START -->
                                                         <ul class="avatar-group list-unstyled align-items-center mb-0">
@@ -783,7 +790,8 @@ Header END -->
                                                                     src="assets/images/avatar/04.jpg" alt="avatar">
                                                             </li>
                                                             <li class="avatar avatar-xs">
-                                                                <div class="avatar-img rounded-circle bg-primary"><span
+                                                                <div class="avatar-img rounded-circle bg-primary">
+                                                                    <span
                                                                         class="smaller text-white position-absolute top-50 start-50 translate-middle">+46</span>
                                                                 </div>
                                                             </li>
