@@ -314,7 +314,7 @@ Header END -->
                                             <div class="hstack gap-2 gap-xl-3 justify-content-center">
                                                 <!-- User stat item -->
                                                 <div>
-                                                    <h6 class="mb-0">{{ $local->count() }}</h6>
+                                                    <h6 class="mb-0">{{ $info->Evntos->count() }}</h6>
                                                     <small>Eventos</small>
                                                 </div>
                                                 <!-- Divider -->
