@@ -12,6 +12,7 @@ use App\Models\Eventos;
 use App\Models\categoria;
 use App\Models\tipodeevento;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Validated;
 
@@ -66,13 +67,11 @@ class EventosController extends Controller
     public function perfil()
     {
         $dia = Carbon::now();
-        $meuID = Auth::user()->id;
-        $users = DB::table('eventos')->where('votes', '>', 100)->get();
-        $local = Eventos::where('user_id', $meuID)->ORDERBY('id', 'DESC')->get();
+        $local = Eventos::where('user_id', Auth::user()->id)->where('categoria_id', '<>', 22)->ORDERBY('id', 'DESC')->get();
         $online = Eventos::where('categoria_id', 22)->where('user_id', Auth::user()->id)->ORDERBY('id', 'DESC')->get();
-        $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', $meuID)->get();
-        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', $meuID);
-        $info = User::find($meuID);
+        $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', Auth::user()->id)->get();
+        $esteMes = Eventos::where('dataInicio', $dia->startOfMonth())->where('user_id', Auth::user()->id);
+        $info = User::find(Auth::user()->id);
         $cidades = cidade::all();
         $catergoria = categoria::all();
 
