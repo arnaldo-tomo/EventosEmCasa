@@ -79,7 +79,7 @@ class EventosController extends Controller
         $participantes = $amigos = User::all();
 
         // dd($local);
-        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online', 'esteMes'));
+        return view('eventos.perfil', compact('info', 'participantes', 'catergoria', 'cidades', 'amigos', 'local', 'estaSemana', 'online', 'esteMes', 'eventos'));
     }
 
 
