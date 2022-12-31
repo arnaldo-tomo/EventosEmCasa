@@ -627,6 +627,7 @@ Header END -->
 
 
                                     </div>
+                                    {{ $local->links() }}
                                 </div>
                                 <!-- Event local tab END -->
 
