@@ -763,7 +763,9 @@ Header END -->
                                                         <a class="btn btn-xs btn-primary mt-n3"
                                                             href="event-details.html"><i
                                                                 class="fa fa-video-camera"></i>
-                                                            {{ $evento->categoria->nome }}</a>
+                                                            {{ $evento->categoria->nome }} <i
+                                                                class=" fa fa-clock"></i>
+                                                            {{ $evento->hora }} </a>
                                                         <h6 class="mt-3"> <a href="event-details.html">
                                                                 Beach event
                                                             </a> </h6>
