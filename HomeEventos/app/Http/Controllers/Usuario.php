@@ -11,12 +11,10 @@ class Usuario extends Controller
     public function PasswordUpdate(Request $request)
     {
         // validadacao de campos
-        $request::validate([
-
+        $request->validate([
             'senhaactual' => 'required',
             'password' => 'required',
             'password_confirmation' => 'required',
-
         ]);
         // $criptografar = Hash::make($request['senhaactual']);
         // $query_ru = user::where(auth()->user()->password, $criptografar);
