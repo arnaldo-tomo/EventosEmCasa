@@ -503,11 +503,13 @@ Header END -->
                                 <!-- Title START -->
                                 <div class="card-body">
                                     <!-- Settings START -->
-                                    <form class="row g-3">
+                                    <form method="POST" action="{{ route('PasswordUpdate') }}" class="row g-3">
+                                        @csrf
                                         <!-- Current password -->
                                         <div class="col-12">
                                             <label class="form-label">Current password</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control"
+                                                value="{{ old('senhaactual') }}" name="senhaactual" placeholder="">
                                         </div>
                                         <!-- New password -->
                                         <div class="col-12">
@@ -515,7 +517,8 @@ Header END -->
                                             <!-- Input group -->
                                             <div class="input-group">
                                                 <input class="form-control fakepassword" type="password"
-                                                    id="psw-input" placeholder="Enter new password">
+                                                    id="psw-input" name="password" value="{{ old('password') }}"
+                                                    placeholder="Enter new password">
                                                 <span class="input-group-text p-0">
                                                     <i
                                                         class="fakepasswordicon fa-solid fa-eye-slash cursor-pointer p-2 w-40px"></i>
@@ -528,7 +531,9 @@ Header END -->
                                         <!-- Confirm password -->
                                         <div class="col-12">
                                             <label class="form-label">Confirm password</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" name="password_confirmation"
+                                                value="{{ old('password_confirmation') }}" class="form-control"
+                                                placeholder="">
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
