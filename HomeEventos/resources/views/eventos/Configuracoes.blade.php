@@ -500,7 +500,9 @@ Header END -->
                                     <h5 class="card-title">Change your password</h5>
                                     <p class="mb-0">See resolved goodness felicity shy civility domestic had but.</p>
                                 </div>
-                                <!-- Title START -->
+                                <!-- Title START
+
+                                -->
                                 <div class="card-body">
                                     <!-- Settings START -->
                                     <form method="POST" action="{{ route('PasswordUpdate') }}" class="row g-3">
@@ -509,7 +511,15 @@ Header END -->
                                         <div class="col-12">
                                             <label class="form-label">Current password</label>
                                             <input type="text" class="form-control"
-                                                value="{{ old('senhaactual') }}" name="senhaactual" placeholder="">
+                                                value="{{ old('senhaactual') }}"
+                                                @error('senhaactual') is-invalid @enderror name="senhaactual"
+                                                placeholder="">
+
+                                            @error('senhaactual')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <!-- New password -->
                                         <div class="col-12">
@@ -517,12 +527,18 @@ Header END -->
                                             <!-- Input group -->
                                             <div class="input-group">
                                                 <input class="form-control fakepassword" type="password"
-                                                    id="psw-input" name="password" value="{{ old('password') }}"
-                                                    placeholder="Enter new password">
+                                                    id="psw-input" name="password"
+                                                    @error('password') is-invalid @enderror
+                                                    value="{{ old('password') }}" placeholder="Enter new password">
                                                 <span class="input-group-text p-0">
                                                     <i
                                                         class="fakepasswordicon fa-solid fa-eye-slash cursor-pointer p-2 w-40px"></i>
                                                 </span>
+                                                @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <!-- Pswmeter -->
                                             <div id="pswmeter" class="mt-2"></div>
@@ -531,9 +547,15 @@ Header END -->
                                         <!-- Confirm password -->
                                         <div class="col-12">
                                             <label class="form-label">Confirm password</label>
-                                            <input type="text" name="password_confirmation"
+                                            <input type="text" @error('password_confirmation') is-invalid @enderror
+                                                name="password_confirmation"
                                                 value="{{ old('password_confirmation') }}" class="form-control"
                                                 placeholder="">
+                                            @error('password_confirmation')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
