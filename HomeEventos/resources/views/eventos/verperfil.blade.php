@@ -412,40 +412,7 @@ Header END -->
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!-- Button -->
-                                        <div class="d-flex mt-3 ms-auto">
-                                            <div class="dropdown">
-                                                <!-- Card share action menu -->
-                                                <button class="icon-md btn btn-secondary-soft" type="button"
-                                                    id="profileAction" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <i class="bi bi-three-dots"></i>
-                                                </button>
-                                                <!-- Card share action dropdown menu -->
-                                                <ul class="dropdown-menu dropdown-menu-end"
-                                                    aria-labelledby="profileAction">
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-bookmark fa-fw pe-2"></i>Share profile
-                                                            in
-                                                            a
-                                                            message</a></li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-file-earmark-pdf fa-fw pe-2"></i>Save
-                                                            your
-                                                            profile to PDF</a></li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-lock fa-fw pe-2"></i>Lock profile</a>
-                                                    </li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="#"> <i
-                                                                class="bi bi-gear fa-fw pe-2"></i>Profile
-                                                            settings</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 @empty
                                     <div class="text-center">
@@ -458,10 +425,6 @@ Header END -->
                                         </div>
                                     </div>
                                 @endforelse
-
-
-
-
                             </div>
                             <!-- Events list END -->
 
