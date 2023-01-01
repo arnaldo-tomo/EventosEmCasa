@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventosController;
+use App\Http\Controllers\Usuario as ControllersUsuario;
+use App\Models\Usuario;
 
 Route::get('/', [EventosController::class, 'home'])->name('home');
+Route::post('/PasswordUpdate', [ControllersUsuario::class, 'PasswordUpdate'])->name('PasswordUpdate');
 Route::get('/autocomplete', [EventosController::class, 'autocomplete'])->name('autocomplete');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->name('Configuracoes');
