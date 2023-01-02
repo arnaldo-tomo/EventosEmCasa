@@ -499,12 +499,6 @@ Header END -->
                                 <div class="card-header border-0 pb-0">
                                     <h5 class="card-title">Change your password</h5>
                                     <p class="mb-0">See resolved goodness felicity shy civility domestic had but.</p>
-                                    @if (session('error1'))
-                                        gdfgfdhdfshdfdshdfhfd
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ session('error1') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                                 <!-- Title START
 
@@ -517,14 +511,14 @@ Header END -->
                                         <div class="col-12">
                                             <label class="form-label">Current password</label>
                                             <input type="text"
-                                                class="form-control  @error('senhaactual') is-invalid @enderror"
+                                                class="form-control  @if (session('senhaactual')) is-invalid @endif"
                                                 value="{{ old('senhaactual') }}" name="senhaactual" placeholder="">
 
-                                            @error('senhaactual')
+                                            @if ('senhaactual')
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong>{{ session('senhaactual') }}</strong>
                                                 </span>
-                                            @enderror
+                                            @endif
                                         </div>
                                         <!-- New password -->
                                         <div class="col-12">
