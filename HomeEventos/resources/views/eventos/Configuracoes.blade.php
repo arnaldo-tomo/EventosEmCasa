@@ -499,6 +499,10 @@ Header END -->
                                 <div class="card-header border-0 pb-0">
                                     <h5 class="card-title">Change your password</h5>
                                     <p class="mb-0">See resolved goodness felicity shy civility domestic had but.</p>
+                                    @if (session('senhaactual'))
+                                        <div class="alert alert-danger" role="alert"> {{ session('senhaactual') }}
+                                        </div>
+                                    @endif
                                 </div>
                                 <!-- Title START
 
@@ -510,10 +514,9 @@ Header END -->
                                         <!-- Current password -->
                                         <div class="col-12">
                                             <label class="form-label">Current password</label>
-                                            <input type="text" class="form-control"
-                                                value="{{ old('senhaactual') }}"
-                                                @error('senhaactual') is-invalid @enderror name="senhaactual"
-                                                placeholder="">
+                                            <input type="text"
+                                                class="form-control  @error('senhaactual') is-invalid @enderror"
+                                                value="{{ old('senhaactual') }}" name="senhaactual" placeholder="">
 
                                             @error('senhaactual')
                                                 <span class="invalid-feedback" role="alert">
