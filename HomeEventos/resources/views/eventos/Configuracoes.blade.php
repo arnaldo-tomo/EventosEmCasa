@@ -525,19 +525,19 @@ Header END -->
                                             <label class="form-label">New password</label>
                                             <!-- Input group -->
                                             <div class="input-group">
-                                                <input class="form-control fakepassword" type="password"
-                                                    id="psw-input" name="password"
-                                                    @error('password') is-invalid @enderror
+                                                <input
+                                                    class="form-control    @if (session('password_confirmation')) is-invalid @endif fakepassword"
+                                                    type="password" id="psw-input" name="password"
                                                     value="{{ old('password') }}" placeholder="Enter new password">
                                                 <span class="input-group-text p-0">
                                                     <i
                                                         class="fakepasswordicon fa-solid fa-eye-slash cursor-pointer p-2 w-40px"></i>
                                                 </span>
-                                                @error('password')
+                                                @if ('password')
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
+                                                        <strong>{{ session('password_confirmation') }}</strong>
                                                     </span>
-                                                @enderror
+                                                @endif
                                             </div>
                                             <!-- Pswmeter -->
                                             <div id="pswmeter" class="mt-2"></div>
@@ -546,15 +546,16 @@ Header END -->
                                         <!-- Confirm password -->
                                         <div class="col-12">
                                             <label class="form-label">Confirm password</label>
-                                            <input type="text" @error('password_confirmation') is-invalid @enderror
+                                            <input type="text"
+                                                class="form-control @if (session('password_confirmation')) is-invalid @endif"
                                                 name="password_confirmation"
-                                                value="{{ old('password_confirmation') }}" class="form-control"
-                                                placeholder="">
-                                            @error('password_confirmation')
+                                                value="{{ old('password_confirmation') }}" placeholder="">
+
+                                            @if ('password_confirmation')
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong>{{ session('password_confirmation') }}</strong>
                                                 </span>
-                                            @enderror
+                                            @endif
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
