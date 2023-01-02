@@ -20,7 +20,7 @@ class Usuario extends Controller
         // $query_ru = user::where(auth()->user()->password, $criptografar);
         $check = hash::check($request['senhaactual'], auth()->user()->password);
         if (!$check == true) {
-            return redirect()->back()->withErrors('A sua senha Actual Nao confere ');
+            return redirect()->back()->withErrors('senhaactual', 'A sua senha Actual Nao confere ');
         } else {
 
             $password = $request->password;
