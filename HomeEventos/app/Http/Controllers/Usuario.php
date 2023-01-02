@@ -12,16 +12,15 @@ class Usuario extends Controller
     public function PasswordUpdate(Request $request)
     {
         // validadacao de campos
-        $request->validate([
-            'senhaactual' => 'required',
-            'password' => 'required',
-            'password_confirmation' => 'required',
-        ]);
+        // $request->validate([
+        //     'senhaactual' => 'required',
+        //     'password' => 'required',
+        //     'password_confirmation' => 'required',
+        // ]);
         // $criptografar = Hash::make($request['senhaactual']);
         // $query_ru = user::where(auth()->user()->password, $criptografar);
         $check = hash::check($request['senhaactual'], auth()->user()->password);
         if (!$check == true) {
-
             return redirect()->back()->with('senhaactual', 'A sua senha Actual Nao confere ');
         } else {
 
@@ -36,9 +35,9 @@ class Usuario extends Controller
                 // $user->update('password', $request->password);
                 DB::table('users')->where(['id' => auth()->user()->id])->update(['password' => Hash::make($request->password)]);
 
-                return redirect()->back()->with('status', 'Senha Actualizada com Successos.');
+                return redirect()->back()->with('status', 'Senha actualizada com Successos.');
             } else {
-                return redirect()->back()->with('password_confirmation', 'suas credencias nao  batem com os nossos registos');
+                return redirect()->back()->with('password_confirmation', 'Suas credencias não  batem com os nossos registos');
             }
         }
     }
