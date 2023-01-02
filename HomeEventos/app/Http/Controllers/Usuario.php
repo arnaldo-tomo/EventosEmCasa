@@ -38,7 +38,7 @@ class Usuario extends Controller
 
                 return redirect()->back()->with('status', 'Senha Actualizada com Successos.');
             } else {
-                return redirect()->back()->withErrors('suas credencias nao  batem com os nossos registos');
+                return redirect()->back()->with('password_confirmation', 'suas credencias nao  batem com os nossos registos');
             }
         }
     }
