@@ -12,17 +12,17 @@ class Usuario extends Controller
     public function PasswordUpdate(Request $request)
     {
         // validadacao de campos
-        // $request->validate([
-        //     'senhaactual' => 'required',
-        //     'password' => 'required',
-        //     'password_confirmation' => 'required',
-        // ]);
+        $request->validate([
+            'senhaactual' => 'required',
+            'password' => 'required',
+            'password_confirmation' => 'required',
+        ]);
         // $criptografar = Hash::make($request['senhaactual']);
         // $query_ru = user::where(auth()->user()->password, $criptografar);
         $check = hash::check($request['senhaactual'], auth()->user()->password);
         if (!$check == true) {
 
-            return redirect()->back()->withErrors('senhaactual', 'A sua senha Actual Nao confere ');
+            return redirect()->back()->with('senhaactual', 'A sua senha Actual Nao confere ');
         } else {
 
             $password = $request->password;
