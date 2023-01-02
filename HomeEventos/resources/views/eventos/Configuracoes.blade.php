@@ -500,10 +500,7 @@ Header END -->
                                     <h5 class="card-title">Change your password</h5>
                                     <p class="mb-0">See resolved goodness felicity shy civility domestic had but.</p>
 
-                                    @if (session('senhaactual'))
-                                        <div class="alert alert-danger" role="alert">{{ ssesion('senhaactual') }}
-                                        </div>
-                                    @endif
+
                                     <!-- Title START-->
                                     <div class="card-body">
                                         <!-- Settings START -->
