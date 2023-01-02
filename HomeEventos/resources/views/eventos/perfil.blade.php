@@ -308,8 +308,7 @@ Header END -->
                                             <!-- Info -->
                                             <h5 class="mb-0"> <a href="#!">{{ $info->name }} </a> </h5>
                                             <small>{{ $info->email }}</small>
-                                            <p class="mt-3">I'd love to change the world, but they won’t give me the
-                                                source code.</p>
+                                            <p class="mt-3">{{ auth::user()->descricao }}</p>
 
                                             <!-- User stat START -->
                                             <div class="hstack gap-2 gap-xl-3 justify-content-center">
