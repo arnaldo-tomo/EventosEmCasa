@@ -717,11 +717,11 @@ var e = {
                 showMessage: true,
                 messageContainer: '#pswmeter-message',
                 messagesList: [
-                    'Write your password...',
-                    'Easy peasy!',
-                    'That is a simple one',
-                    'That is better',
-                    'Yeah! that password rocks ;)'
+                    'Escreva sua senha...',
+                    'Fraca-Fraca!',
+                    'Isso é simples potu',
+                    'Isso é melhor',
+                    'Sim! essa senha é Forte mo puto;)'
                 ],
                 height: 8,
                 borderRadius: 4,
