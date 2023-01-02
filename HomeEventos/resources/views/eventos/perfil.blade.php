@@ -306,8 +306,8 @@ Header END -->
                                                         src="assets/images/avatar/07.jpg" alt=""></a>
                                             </div>
                                             <!-- Info -->
-                                            <h5 class="mb-0"> <a href="#!">{{ $info->name }} </a> </h5>
-                                            <small>{{ $info->email }}</small>
+                                            <h5 class="mb-0"> <a>{{ auth::user()->name }} </a> </h5>
+                                            <small>{{ auth::user()->email }}</small>
                                             <p class="mt-3">{{ auth::user()->descricao }}</p>
 
                                             <!-- User stat START -->
