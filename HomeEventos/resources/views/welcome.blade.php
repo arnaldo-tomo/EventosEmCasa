@@ -1744,6 +1744,31 @@
     </script> --}}
 
 
+    @section('script')
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        @error('titulo')
+            <script>
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            </script>
+        @enderror
+    @endsection
+
 
     @section('script')
         @error('titulo')
@@ -1881,33 +1906,7 @@
         </script>
     @enderror
 
-    <script>
-        function initializes() {
-            var addresss = (document.getElementById('pac-inpute'));
-            var autocomplete = new google.maps.places.Autocomplete(addresss);
-            autocomplete.setTypes(['geocode']);
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                if (!place.geometry) {
-                    return;
-                }
 
-                var addresss = '';
-                if (place.address_components) {
-                    addresss = [
-                        (place.address_components[0] && place.address_components[0].short_name || ''),
-                        (place.address_components[1] && place.address_components[1].short_name || ''),
-                        (place.address_components[2] && place.address_components[2].short_name || '')
-                    ].join(' ');
-                }
-
-                document.getElementById('lat').innerHTML = place.geometry.location.lat();
-                document.getElementById('long').innerHTML = place.geometry.location.lng();
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initializes);
-    </script>
 
     <script>
         function initialize() {
