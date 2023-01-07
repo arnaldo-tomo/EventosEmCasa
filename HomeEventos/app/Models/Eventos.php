@@ -55,7 +55,7 @@ class Eventos extends Model
     {
         return $this->hasMany(gosto::class);
     }
-    public function b()
+    public function gostado()
     {
         $id = Auth::user()->id;
 
