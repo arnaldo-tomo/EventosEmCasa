@@ -47,8 +47,7 @@ class EventosController extends Controller
         $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-        $DEUS = auth::user()->id;
-        return view('welcome', compact('eventos', 'DEUS', 'catergoria', 'cidades', 'participantes',));
+        return view('welcome', compact('eventos',  'catergoria', 'cidades', 'participantes',));
     }
 
 
