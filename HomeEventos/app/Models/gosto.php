@@ -11,4 +11,15 @@ class gosto extends Model
     protected $table = 'gostos';
     protected $fillable = ['user_id', 'eventos_id'];
     public $timestamps = false;
+
+
+    public function vento()
+    {
+        return $this->hasMany(Eventos::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
