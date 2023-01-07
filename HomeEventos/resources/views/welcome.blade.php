@@ -932,8 +932,7 @@
                                                 <a href="/gosto{{ $evento->id }}" type="submit"
                                                     class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
                                                         class="fa-solid fa-thumbs-up me-1"></i>
-                                                    Interessante </a>
-
+                                                    Interessante {{ $evento->usuario }} </a>
 
 
 
