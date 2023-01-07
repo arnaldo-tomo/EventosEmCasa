@@ -923,9 +923,6 @@
                                     @auth
                                         <div class="d-flex mt-3 justify-content-between">
                                             <!-- Interested button -->
-
-
-
                                             <div class="w-100">
                                                 @if ($evento->gostado())
                                                     <a href="/gosto{{ $evento->id }}" type="submit"
@@ -938,12 +935,6 @@
                                                         for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
                                                         Interessado </a>
                                                 @endif
-
-
-
-
-
-
                                             </div>
                                             <div class="dropdown ms-3">
                                                 <a href="#" class="btn btn-sm btn-primary-soft"
