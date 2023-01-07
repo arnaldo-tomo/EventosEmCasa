@@ -156,9 +156,11 @@ class EventosController extends Controller
 
     public function gosto($id)
     {
-        $gosto = gosto::where('user_id', $id)->where('eventos_id', Auth::user()->id)->first();
+        $gosto = gosto::where('eventos_id', $id)->where('user_id', Auth::user()->id)->first();
         if ($gosto) {
-            $gosto->delete();
+            DB::table('gostos')->where('eventos_id', $id)
+                ->where('user_id', Auth::user()->id)
+                ->delete();
         } else {
             gosto::create([
                 'user_id' => Auth::user()->id,
