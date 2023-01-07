@@ -51,13 +51,17 @@ class Eventos extends Model
         return $this->belongsTo(cidade::class, 'cidade_id');
     }
 
-
-
+    public function likes()
+    {
+        return $this->hasMany(gosto::class);
+    }
     public function b()
     {
-        $id = Auth::id();
+        $id = Auth::user()->id;
+
         $liker = array();
-        foreach ($this->usuario as $like) :
+
+        foreach ($this->likes as $like) :
             array_push($liker, $like->user_id);
         endforeach;
 
