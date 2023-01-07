@@ -37,12 +37,18 @@ class EventosController extends Controller
     public function home()
     {
 
-        // $evento = Eventos::find(17);
+        // $evento = Eventos::find(20);
+
+        // // dd($evento);
+        // foreach ($evento->usuario as $i) {
+        //     echo $i->id;
+        // }
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  categoria::all();
         $cidades = cidade::all();
         $participantes = User::all();
-        return view('welcome', compact('eventos', 'catergoria', 'cidades', 'participantes',));
+        $DEUS = auth::user()->id;
+        return view('welcome', compact('eventos', 'DEUS', 'catergoria', 'cidades', 'participantes',));
     }
 
 
