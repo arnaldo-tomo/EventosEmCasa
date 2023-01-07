@@ -927,12 +927,19 @@
 
 
                                             <div class="w-100">
+                                                @if ($evento->b())
+                                                    <a href="/gosto{{ $evento->id }}" type="submit"
+                                                        class="btn btn-sm btn-outline-danger d-block" for="Interested1"><i
+                                                            class="fa-solid fa-thumbs-up me-1"></i>
+                                                        Interessante </a>
+                                                @else
+                                                    <a href="/gosto{{ $evento->id }}" type="submit"
+                                                        class="btn btn-sm btn-outline-success d-block"
+                                                        for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
+                                                        Interessante </a>
+                                                @endif
 
 
-                                                <a href="/gosto{{ $evento->id }}" type="submit"
-                                                    class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
-                                                        class="fa-solid fa-thumbs-up me-1"></i>
-                                                    Interessante {{ $evento->usuario }} </a>
 
 
 
