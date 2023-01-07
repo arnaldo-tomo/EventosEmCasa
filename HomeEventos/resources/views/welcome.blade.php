@@ -928,16 +928,15 @@
 
                                             <div class="w-100">
 
-                                                <form method="POST" action="gosto{{ $evento->id }}">
-                                                    @csrf
 
-                                                    <button type="submit" class="btn btn-sm btn-outline-success d-block"
-                                                        for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                        Interessante </button>
-
+                                                <a href="/gosto{{ $evento->id }}" type="submit"
+                                                    class="btn btn-sm btn-outline-success d-block" for="Interested1"><i
+                                                        class="fa-solid fa-thumbs-up me-1"></i>
+                                                    Interessante </a>
 
 
-                                                </form>
+
+
 
                                             </div>
                                             <div class="dropdown ms-3">
