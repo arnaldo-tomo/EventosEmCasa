@@ -36,13 +36,6 @@ class EventosController extends Controller
 
     public function home()
     {
-
-        // $evento = Eventos::find(20);
-
-        // // dd($evento);
-        // foreach ($evento->usuario as $i) {
-        //     echo $i->id;
-        // }
         $eventos = Eventos::ORDERBY('id', 'DESC')->paginate(8);
         $catergoria =  categoria::all();
         $cidades = cidade::all();
