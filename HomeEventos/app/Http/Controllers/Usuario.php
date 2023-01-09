@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\hash;
 
 class Usuario extends Controller
 {
+    public function infoUpdate()
+    {
+    }
+
+
     public function PasswordUpdate(Request $request)
     {
         // validadacao de campos
