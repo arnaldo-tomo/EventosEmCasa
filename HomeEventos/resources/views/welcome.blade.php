@@ -926,14 +926,14 @@
                                             <div class="w-100">
                                                 @if ($evento->gostado())
                                                     <a href="/gosto{{ $evento->id }}" type="submit"
-                                                        class="btn btn-sm btn-outline-danger d-block" for="Interested1"><i
-                                                            class="fa-solid fa-thumbs-down me-1"></i>
-                                                        Interessante </a>
+                                                        class="btn btn-sm btn-success d-block" for="Interested1"><i
+                                                            class="fa-solid fa-thumbs-up me-1"></i>
+                                                        Interessado </a>
                                                 @else
                                                     <a href="/gosto{{ $evento->id }}" type="submit"
                                                         class="btn btn-sm btn-outline-success d-block"
                                                         for="Interested1"><i class="fa-solid fa-thumbs-up me-1"></i>
-                                                        Interessado </a>
+                                                        Interessante </a>
                                                 @endif
                                             </div>
                                             <div class="dropdown ms-3">
