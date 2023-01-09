@@ -19,6 +19,5 @@ Route::get('/categoria', [EventosController::class, 'categoria'])->middleware(['
 Route::get('/Terminar', [EventosController::class, 'sair'])->name('sair');
 Route::post('/Salvar', [EventosController::class, 'salvar'])->name('salvar');
 Route::get('/gosto{id}', [EventosController::class, 'gosto'])->name('gosto');
-Route::post('join/{id}', [EventosController::class, 'join'])->name('join');
 Route::get('/Save', [AdminController::class, 'categoria'])->middleware(['auth'])->name('Save');
 require __DIR__ . '/auth.php';
