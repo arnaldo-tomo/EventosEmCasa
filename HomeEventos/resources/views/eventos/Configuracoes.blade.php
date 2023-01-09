@@ -399,10 +399,12 @@ Header END -->
                             <div class="card mb-4">
                                 <!-- Title START -->
                                 <div class="card-header border-0 pb-0">
-                                    <h1 class="h5 card-title">Account Settings</h1>
-                                    <p class="mb-0">He moonlights difficult engrossed it, sportsmen. Interested has
-                                        all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment
-                                        alteration to.</p>
+                                    <h1 class="h5 card-title">Configurações da conta</h1>
+                                    <p class="mb-0">Todos os campos nesta página são opcionais e podem ser excluídos
+                                        em qualquer tempo, e ao preenchê-los, você está nos dando consentimento para
+                                        compartilhar isso dados onde quer que seu perfil de usuário apareça. Consulte
+                                        nossa declaração de privacidade para saber mais sobre como usamos essas
+                                        informações.</p>
                                 </div>
                                 <!-- Card header START -->
                                 <!-- Card body START -->
