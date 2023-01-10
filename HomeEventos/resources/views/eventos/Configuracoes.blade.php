@@ -409,7 +409,7 @@ Header END -->
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
-                                    <form method="post" action="/updateinfo" class="row g-3">
+                                    <form method="post" action="/infoUpdate" class="row g-3">
                                         @csrf
                                         <!-- First name -->
                                         <div class="col-sm-6 col-lg-6">
