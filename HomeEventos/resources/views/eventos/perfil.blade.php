@@ -288,13 +288,14 @@ Header END -->
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
-                                <form action="" method="POST" enctype="multipart/form-data" class="w-100">
+                                <form action="/profileUpdate" method="POST" enctype="multipart/form-data" class="w-100">
+                                    @csrf
                                     <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="" rows="6">{{ auth::user()->descricao }}</textarea>
                                 </div>
 
 
                             <!-- Dropzone photo START -->
-                                <div class="dropzone  dropzone-default card shadow-none">
+                                <div class=" text-center dropzone-default card shadow-none">
                                     <a class="hiddenFileInput">
 
                                         <input class="hiddenFileInput" id="file-upload" type="file"
