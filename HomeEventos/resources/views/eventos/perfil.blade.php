@@ -277,6 +277,7 @@ Header END -->
                                 aria-label="Close"></button>
                         </div>
                         <!-- Modal feed header END -->
+                        <form action="{{ route('') }}" method="POST" enctype="multipart/form-data" class="w-100">
 
                         <!-- Modal feed body START -->
                         <div class="modal-body">
@@ -288,8 +289,7 @@ Header END -->
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
-                                <form action="" method="POST" enctype="multipart/form-data" class="w-100">
-                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="descricao" rows="6">{{ auth::user()->descricao }}</textarea>
                             </div>
 
                             <!-- Dropzone photo START -->
@@ -304,7 +304,6 @@ Header END -->
                                 </div>
                             </div>
                             <!-- Dropzone photo END -->
-
                         </div>
                         <!-- Modal feed body END -->
 
@@ -313,7 +312,7 @@ Header END -->
                             <!-- Button -->
                             <button type="button" class="btn btn-danger-soft me-2"
                                 data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success-soft">Post</button>
+                            <button type="submit" class="btn btn-success-soft">Post</button>
                         </div>
                     </form>
 
