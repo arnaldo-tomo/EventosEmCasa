@@ -393,6 +393,18 @@ Header END -->
                                             </div>
                                             <!-- User stat END -->
                                         </div>
+<hr>
+<ul>
+    <li class="nav-item"> <i class="bi bi-twitter"></i> </li>
+    <li><i class="bi bi-globe"></i></li>
+    <li><i class="bi bi-phone"></i></li>
+    <li><i class="bi bi-geo-alt-fill"></i></li>
+    <li><i class="bi bi-building"></i></li>
+</ul>
+
+
+
+
 
                                         <!-- Divider -->
                                         <hr>
