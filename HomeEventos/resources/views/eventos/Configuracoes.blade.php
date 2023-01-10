@@ -498,8 +498,9 @@ Header END -->
                             <div class="card">
                                 <!-- Title START -->
                                 <div class="card-header border-0 pb-0">
-                                    <h5 class="card-title">Change your password</h5>
-                                    <p class="mb-0">See resolved goodness felicity shy civility domestic had but.</p>
+                                    <h5 class="card-title">Altere sua senha</h5>
+                                    <p class="mb-0">Veja a bondade resolvida, a felicidade tímida, a civilidade
+                                        doméstica tinha, mas.</p>
                                 </div>
                                 <!-- Title START
 
