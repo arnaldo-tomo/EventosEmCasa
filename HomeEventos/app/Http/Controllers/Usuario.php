@@ -40,7 +40,7 @@ class Usuario extends Controller
 
         $infoUpdate->update();
 
-        return back()->with('infoUpdate', 'Profile Updated');
+        return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
     }
 
 
