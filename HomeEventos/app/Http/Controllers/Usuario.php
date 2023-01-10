@@ -44,6 +44,7 @@ class Usuario extends Controller
     }
     public function profileUpdate(Request $request)
     {
+        dd($request->all());
 
         $request->validate([
             'descricao' => 'max:255'
