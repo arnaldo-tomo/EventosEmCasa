@@ -502,20 +502,17 @@ Header END -->
                                                 class="form-control @error('contacto') is-invalid @enderror"
                                                 placeholder="+258 000 0000" value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
-                                            @if ($errors->any('name'))
-                                                @error('name')
+                                            @if ($errors->any('contacto'))
+                                                @error('contacto')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
                                             @else
-                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
-                                                    contribui
-                                                    ou é mencionado. Você pode removê-lo a qualquer momento.</small>
+                                                <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
+                                                        class="bi bi-plus-circle-dotted me-1"></i>adcionar outro
+                                                    telefone</a>
                                             @endif
-                                            <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
-                                                    class="bi bi-plus-circle-dotted me-1"></i>adcionar outro
-                                                telefone</a>
 
                                         </div>
                                         <!-- Phone number -->
