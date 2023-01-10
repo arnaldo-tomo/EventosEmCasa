@@ -367,7 +367,7 @@ Header END -->
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">
                                         Conexões <span class="badge bg-success bg-opacity-10 text-success small">
-                                            {{ $info->() }}</span> </a> </li>
+                                            {{ $info->Eventos->count() }}</span> </a> </li>
 
 
                                 <li class="nav-item"> <a class="nav-link" href="#">
