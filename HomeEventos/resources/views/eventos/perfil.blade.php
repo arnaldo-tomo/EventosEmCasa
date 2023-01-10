@@ -293,7 +293,7 @@ Header END -->
                             </div>
 
                             <!-- Dropzone photo START -->
-                            <div class=" dropzone-default card shadow-none">
+                            <div class="text-center dropzone-default card shadow-none">
                                 <a class="hiddenFileInput">
 
                                     <input class="hiddenFileInput" id="file-upload" type="file"
