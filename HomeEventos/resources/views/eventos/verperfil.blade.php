@@ -223,7 +223,7 @@ Header START -->
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
                                         alt="avatar">
                                             @else
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                        <img class="avatar-img rounded-circle" src="/{{ auth::user()->foto }}"
                                         alt="avatar">
                                         @endif
                                     </div>
