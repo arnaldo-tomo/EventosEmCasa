@@ -393,19 +393,31 @@ Header END -->
                                             </div>
                                             <!-- User stat END -->
                                         </div>
-<hr>
-<ul class="nav nav-link-secondary flex-column fw-bold gap-2">
-    <li > <i class="bi bi-twitter"></i> <a href=""></a> </li>
-    <li><i class="bi bi-globe"></i><a href="https://mobile.twitter.com/{{ Auth::user()->twitter }}">{{ Auth::user()->twitter }}</a>{{ Auth::user()->twitter }}</li>
-    <li><i class="bi bi-phone"></i><a href=""></a></li>
-    <li><i class="bi bi-geo-alt-fill"></i><a href=""></a></li>
-    <li><i class="bi bi-building"></i><a href=""></a></li>
-</ul>
+                                        <hr>
+                                        <ul class="nav nav-link-secondary flex-column fw-smal gap-2">
+                                            @if (!Auth::user()->twitter == null)
+                                                <li class="nav-item"> <i class="bi bi-twitter">
+                                                    </i> <a href="https://twitter.com/{{ Auth::user()->twitter }}">
+                                            @endif
 
+                                            @if (!Auth::user()->website == null)
+                                                <li class="nav-item"> <i class="bi bi-globe"></i><a href="">
+                                                        {{ Auth::user()->website }}</a> </li>
+                                            @endif
+                                            @if (!Auth::user()->contacto == null)
+                                                <li class="nav-item"> <i class="bi bi-phone"></i><a>
+                                                        {{ Auth::user()->contacto }}</a></li>
+                                            @endif
+                                            @if (!Auth::user()->localizacao == null)
+                                                <li class="nav-item"><i class="bi bi-geo-alt-fill"></i><a>
+                                                        {{ Auth::user()->localizacao }}</a></li>
+                                            @endif
+                                            @if (!Auth::user()->empresa == null)
+                                                <li class="nav-item"> <i class="bi bi-building"></i><a></a>
+                                                    {{ Auth::user()->empresa }}</li>
+                                            @endif
 
-
-
-
+                                        </ul>
                                         <!-- Divider -->
                                         <hr>
 
@@ -419,8 +431,7 @@ Header END -->
                                                         alt=""><span>Eventos </span></a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="Configuracoes"> <img
-                                                        class="me-2 h-20px fa-fw"
+                                                <a href="Configuracoes"> <img class="me-2 h-20px fa-fw"
                                                         src="assets/images/icon/cog-outline-filled.svg"
                                                         alt=""><span>Configurações </span></a>
                                             </li>
