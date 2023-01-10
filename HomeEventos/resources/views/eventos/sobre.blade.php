@@ -85,7 +85,7 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                            <a class="nav-link" href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -230,7 +230,7 @@ Header START -->
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="{{ route('perfil') }}">Visualizar perfil</a>
+                                    href="{{ route('perfile') }}">Visualizar perfil</a>
                             </li>
                             <!-- Links -->
                             <li><a class="dropdown-item" href="settings.html"><i
