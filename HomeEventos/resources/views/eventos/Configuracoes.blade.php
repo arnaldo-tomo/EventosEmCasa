@@ -228,7 +228,7 @@ Header START -->
 
                                         @if (!Auth::user()->foto)
 
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                             alt="avatar">
                                         @endif
                                         <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
