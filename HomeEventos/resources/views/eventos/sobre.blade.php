@@ -223,12 +223,20 @@ Header START -->
                             <!-- Profile info -->
                             <li class="px-3">
                                 <div class="d-flex align-items-center position-relative">
-                                    if
-                                    <!-- Avatar -->
+                                    @if (!auth::user()->foto)
+                                            <!-- Avatar -->
                                     <div class="avatar me-3">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
+                                        alt="avatar">
                                     </div>
+                                    @else
+
+                                    <!-- Avatar -->
+                                    <div class="avatar me-3">
+                                        <img class="avatar-img rounded-circle" src="/{{ auth::user()->foto }}"
+                                        alt="avatar">
+                                    </div>
+                                    @endif
                                     <div>
                                         <a class="h6 stretch-link" href="/perfile">{{ auth::user()->name }}</a>
                                         <p class="small m-0">{{ auth::user()->empresa }}</p>
@@ -339,10 +347,13 @@ Header END -->
                             </div>
                             <!-- List profile -->
                             <ul class="list-inline mb-0 text-center text-sm-start mt-3 mt-sm-0">
-                                <li class="list-inline-item"><i class="bi bi-briefcase me-1"></i> Lead Developer</li>
-                                <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> Beira,Moçambique</li>
+                                <li class="list-inline-item"><i class="bi bi-globe me-1"></i> {{ $info->website }} </li>
+                                <li class="list-inline-item"><i class="bi bi-twitter me-1"></i> {{ $info->twitter }} </li>
+                                <li class="list-inline-item"><i class="bi bi-building me-1"></i> {{ $info->empresa }} </li>
+                                <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> {{ $info->localizacao }} </li>
                                 <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
                                     {{ \Carbon\Carbon::parse($info->created_at)->isoFormat('DD  MMM Y') }}</li>
+                                </li>
                             </ul>
                         </div>
                         <!-- Card body END -->
@@ -360,10 +371,6 @@ Header END -->
                                 <li class="nav-item"> <a class="nav-link" href="#">
                                         Conexões <span class="badge bg-success bg-opacity-10 text-success small">
                                             230</span> </a> </li>
-                                {{-- <li class="nav-item"> <a class="nav-link" href="my-profile-media.html"> Media</a>
-                                </li> --}}
-                                {{-- <li class="nav-item"> <a class="nav-link" href="my-profile-videos.html"> Videos</a>
-                                </li> --}}
                                 <li class="nav-item"> <a class="nav-link" href="#">
                                         Atividade</a> </li>
                             </ul>
@@ -398,11 +405,7 @@ Header END -->
                                         </ul>
                                     </div>
                                 </div>
-                                <p>Ele luar difícil absorto, esportistas. Interessado tem toda a alegria de assistência
-                                    gay de dificuldade de Devonshire. Bonito conheceu debatendo o material da idade da
-                                    residência do senhor. À medida que o estilo vivia, ele piorava. Oferecido
-                                    relacionado para que os visitantes privados sejam removidos. Modere os assuntos à
-                                    distância. </p>
+                                <p>{{ auth::user()->descricao }}</p>
                             </div>
                             <div class="row g-4">
                                 <div class="col-sm-6">
