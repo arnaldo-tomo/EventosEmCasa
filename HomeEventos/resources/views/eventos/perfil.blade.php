@@ -377,7 +377,7 @@ Header END -->
                                                 <a href="#!" data-bs-toggle="modal"
                                                 data-bs-target="#feedActionPhoto"><img
                                                 class="avatar-img rounded border border-white border-3"
-                                                src="/{{ Auth::user()->foto }}" alt=""></a>
+                                                src="assets/images/avatar/main.png" alt=""></a>
                                             </div>
                                             @else
                                             <div class="avatar avatar-lg mt-n5 mb-3">
