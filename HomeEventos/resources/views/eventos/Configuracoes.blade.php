@@ -409,11 +409,12 @@ Header END -->
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
-                                    <form class="row g-3">
+                                    <form method="post" action="/updateinfo" class="row g-3">
+                                        @csrf
                                         <!-- First name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Nome</label>
-                                            <input type="text" class="form-control"
+                                            <input type="text" name="name" class="form-control"
                                                 value="{{ Auth::user()->name }}">
                                             <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você contribui
                                                 ou é mencionado. Você pode removê-lo a qualquer momento.</small>
@@ -421,7 +422,7 @@ Header END -->
                                         <!-- Additional name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Email</label>
-                                            <input type="email" class="form-control"
+                                            <input type="email" name="email" class="form-control"
                                                 value="{{ Auth::user()->email }}">
                                             <small>Você definiu seu endereço de e-mail como privado. Para alternar a
                                                 privacidade do e-mail, vá para as configurações de e-mail e desmarque
@@ -430,20 +431,20 @@ Header END -->
                                         <!-- URL (em inglês) -->
                                         <div class="col-sm-4">
                                             <label class="form-label">URL (em inglês)</label>
-                                            <input type="text" class="form-control"
+                                            <input type="text" name="website" class="form-control"
                                                 placeholder="https://seuwebsite.com/"
                                                 value="{{ Auth::user()->website }}">
                                         </div>
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
                                             <label class="form-label">Nome de usuário do Twitter </label>
-                                            <input type="text" class="form-control flatpickr"
-                                                placeholder="homeevento" value="">
+                                            <input type="text" name="twitter" class="form-control flatpickr"
+                                                placeholder="homeevento" value="{{ auth::user()->twitter }}">
                                         </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Companhia</label>
-                                            <input type="text" placeholder="HomeCompanyLDA"
-                                                class="form-control flatpickr" value="">
+                                            <input type="text" name="empresa" placeholder="HomeCompanyLDA"
+                                                class="form-control flatpickr" value="{{ auth::user()->empresa }}">
                                         </div>
                                         <!-- Allow checkbox -->
                                         <div class="col-12">
@@ -458,8 +459,8 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Telefone</label>
-                                            <input type="text" class="form-control" placeholder="+258 000 0000"
-                                                value="{{ auth::user()->contacto }}">
+                                            <input type="text" name="contacto" class="form-control"
+                                                placeholder="+258 000 0000" value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
                                                     class="bi bi-plus-circle-dotted me-1"></i>adcionar outro
@@ -468,8 +469,8 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Localização</label>
-                                            <input type="text" class="form-control" placeholder="Moçambique"
-                                                value="">
+                                            <input type="text" name="localizacao" class="form-control"
+                                                placeholder="Moçambique" value="{{ auth::user()->localizacao }}">
                                             <!-- Add new email -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
                                                     class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
@@ -478,7 +479,7 @@ Header END -->
                                         <!-- Page information -->
                                         <div class="col-12">
                                             <label class="form-label">Visão geral</label>
-                                            <textarea class="form-control" rows="4" placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
+                                            <textarea class="form-control" name="descricao" rows="4" placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
                                             <small>Você pode @mention outros usuários e organizações para vincular a
                                                 eles. limite: de 300 palavras </small>
                                         </div>
