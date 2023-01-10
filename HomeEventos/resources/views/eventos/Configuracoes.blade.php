@@ -428,16 +428,16 @@ Header END -->
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if ($error)
-                                                @error('name')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                                            @if ($errors->has('name'))
+                                            @error('name')
+                                                 <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                                 </span>
+                                        @enderror
                                             @else
-                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
-                                                    contribui
-                                                    ou é mencionado. Você pode removê-lo a qualquer momento.</small>
+                                            <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
+                                                contribui
+                                                ou é mencionado. Você pode removê-lo a qualquer momento.</small>
                                             @endif
                                         </div>
                                         <!-- Additional name -->
