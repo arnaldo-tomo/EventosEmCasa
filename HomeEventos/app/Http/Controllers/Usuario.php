@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class Usuario extends Controller
 {
@@ -16,12 +18,12 @@ class Usuario extends Controller
 
         $infoUpdate = User::find(Auth::user()->id);
         $request->validate([
-            'name' => 'required|unique:users| min:4|string|max:50',
-            'email' => 'required|email|string|max:255',
+            'name' => 'min:4|string|max:255',
+            'email'  =>  'required|email|unique:users,email,'.Auth::user()->id, // <--- THIS LINE
             'website' => 'string|max:50',
             'twitter' => 'string|unique:users|max:50',
             'empresa' => 'string|unique:users|max:50',
-            'contacto' => 'numeric|unique:users||max:9',
+            'contacto' => 'numeric|unique:users,contacto|max:2',
             'localizacao' => 'string|max:50',
             'descricao' => 'string|max:255'
         ]);
