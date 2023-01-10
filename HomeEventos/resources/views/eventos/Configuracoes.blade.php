@@ -511,7 +511,7 @@ Header END -->
                                         @csrf
                                         <!-- Current password -->
                                         <div class="col-12">
-                                            <label class="form-label">Current password</label>
+                                            <label class="form-label">Senha atual</label>
                                             <input type="text"
                                                 class="form-control  @if (session('senhaactual')) is-invalid @endif"
                                                 value="{{ old('senhaactual') }}" name="senhaactual" placeholder="">
