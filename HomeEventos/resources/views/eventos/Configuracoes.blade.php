@@ -406,6 +406,17 @@ Header END -->
                                         informações.</p>
                                 </div>
                                 <!-- Card header START -->
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>
+                                                    {{ $error }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
