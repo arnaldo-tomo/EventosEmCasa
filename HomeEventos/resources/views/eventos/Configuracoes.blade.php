@@ -476,7 +476,7 @@ Header END -->
                                         </div>
                                         <!-- Page information -->
                                         <div class="col-12">
-                                            <label class="form-label">Overview</label>
+                                            <label class="form-label">Visão geral</label>
                                             <textarea class="form-control" rows="4" placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
                                             <small>Você pode @mention outros usuários e organizações para vincular a
                                                 eles. limite: de 300 palavras </small>
