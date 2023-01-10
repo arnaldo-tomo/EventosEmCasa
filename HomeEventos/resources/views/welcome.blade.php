@@ -1222,7 +1222,7 @@
                                                     </li>
                                                         @endif
                                                         <li class="ms-4">
-                                                            <a href="Verperfile{{ $evento->dono->id }}">
+                                                            <a href="Verperfil{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
                                                             </a>
                                                         </li>
