@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\hash;
 
 class Usuario extends Controller
 {
-    public function infoUpdate()
+    public function infoUpdate(Request $request)
     {
+        dd(Request::all());
     }
 
 
