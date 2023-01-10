@@ -402,22 +402,11 @@ Header END -->
                                     <p class="mb-0">Todos os campos nesta página são opcionais e podem ser excluídos
                                         em qualquer tempo, e ao preenchê-los, você está nos dando consentimento para
                                         compartilhar isso dados onde quer que seu perfil de usuário apareça. Consulte
-                                        nossa <a > declaração de privacidade</a> para saber mais sobre como usamos essas
+                                        nossa <a href="/Configuracoes"> declaração de privacidade</a> para saber mais sobre como usamos essas
                                         informações.</p>
                                         
                                 </div>
                                 <!-- Card header START -->
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>
-                                                    {{ $error }}
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
@@ -436,7 +425,7 @@ Header END -->
                                                     </span>
                                                 @enderror
                                             @else
-                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
+                                                <small>Seu nome pode aparecer em torno do HomeEventos, onde você
                                                     contribui
                                                     ou é mencionado. Você pode removê-lo a qualquer momento.</small>
                                             @endif
@@ -454,16 +443,16 @@ Header END -->
                                                     </span>
                                                 @enderror
                                             @else
-                                                <small>Você definiu seu endereço de e-mail como privado. Para alternar a
-                                                    privacidade do e-mail, vá para as configurações de e-mail e
+                                                <small>Por padrao o endereço de e-mail e definido como privado. Para alternar a
+                                                    privacidade do e-mail, vá para as <a href="/configuracoes">configurações de e-mail</a> e
                                                     desmarque
-                                                    "Manter meu endereço de e-mail privado".</small>
+                                                    "Manter meu endereço de e-mail publico".</small>
                                             @endif
 
                                         </div>
                                         <!-- URL (em inglês) -->
                                         <div class="col-sm-4">
-                                            <label class="form-label">URL (em inglês)</label>
+                                            <label class="form-label">URL (website)</label>
                                             <input type="text" name="website"
                                                 class="form-control @error('website') is-invalid @enderror"
                                                 placeholder="https://seuwebsite.com/"
