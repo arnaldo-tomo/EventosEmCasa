@@ -397,9 +397,8 @@ Header END -->
                            @if(sesseion('infoUpdate'))
                                    <!-- Event alert START -->
                     <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-                        <strong>Upcoming event:</strong> The learning conference on Sep 19 2022
-                        <a href="event-details.html" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">View
-                            event</a>
+                        <strong>Nice:</strong> {{session('infoUpdate')}}
+                        <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu perfil</a>
                         <button type="button" class="btn-close" data-bs-dismiss="alert"
                             aria-label="Close"></button>
                     </div>
