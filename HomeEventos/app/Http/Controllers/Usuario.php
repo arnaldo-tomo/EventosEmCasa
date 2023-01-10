@@ -17,14 +17,14 @@ class Usuario extends Controller
     {
 
         $request->validate([
-            'name' => 'required|min:4|string|max:255',
-            'email'  =>  'required|email|unique:users,email,'.Auth::user()->id, 
-            'website' => 'string|max:50',
-            'twitter' => 'string|max:50|unique:users,twitter,'.Auth::user()->id,
-            'empresa' => 'string|max:50|unique:users,empresa,'.Auth::user()->id, 
-            'contacto' => 'numeric| digits:9 |unique:users,contacto,'.Auth::user()->id, 
-            'localizacao' => 'string|max:50',
-            'descricao' => 'string|max:255'
+            'name' => 'required|min:4|max:255',
+            'email'  =>  'required|email|unique:users,email,' . Auth::user()->id,
+            'website' => 'max:50',
+            'twitter' => 'max:50',
+            'empresa' => 'max:50',
+            'contacto' => 'numeric',
+            'localizacao' => 'max:50',
+            'descricao' => 'max:255'
         ]);
 
         $infoUpdate = User::find(Auth::user()->id);
