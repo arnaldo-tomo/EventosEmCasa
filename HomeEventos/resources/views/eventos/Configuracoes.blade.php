@@ -120,12 +120,12 @@ Header START -->
                                                 class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
                                                 <div class="avatar text-center d-none d-sm-inline-block">
                                                     @if (!Auth::user()->foto)
-
                                                     <img class="avatar-img rounded-circle"
                                                     src="assets/images/avatar/01.jpg" alt="">
-                                                    @endif
+                                                    @else
                                                     <img class="avatar-img rounded-circle"
                                                     src="/{{ Auth::user()->foto }}" alt="">
+                                                    @endif
                                                 </div>
                                                 <div class="ms-sm-3">
                                                     <div class=" d-flex">
