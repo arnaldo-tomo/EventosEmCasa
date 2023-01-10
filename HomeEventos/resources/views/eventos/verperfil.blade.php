@@ -311,7 +311,7 @@ Header END -->
                                     <!-- Info -->
                                     <h1 class="mb-0 h5">{{ $info->name }} <i
                                             class="bi bi-patch-check-fill text-success small"></i></h1>
-                                    <p>250 conexões</p>
+                                    <p>{{ $info->Eventos->count() }} Eventos Publicados</p>
                                 </div>
                                 <!-- Button -->
                                 <div class="d-flex mt-3 justify-content-center ms-sm-auto">
