@@ -17,7 +17,7 @@ class Usuario extends Controller
 
         $infoUpdate = User::find(Auth::user()->id);
         $request->validate([
-            'name' => 'required|min:4|string|max:255',
+            'name' => 'required|unique:posts| min:4|string|max:255',
             'email' => 'required|email|string|max:255',
             'website' => 'string|max:255',
             'twitter' => 'string|max:255',
