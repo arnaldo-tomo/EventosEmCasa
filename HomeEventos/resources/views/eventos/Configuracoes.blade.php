@@ -547,7 +547,7 @@ Header END -->
                                         </div>
                                         <!-- Confirm password -->
                                         <div class="col-12">
-                                            <label class="form-label">Confirm password</label>
+                                            <label class="form-label">Confirme nova Senha</label>
                                             <input type="text"
                                                 class="form-control @if (session('password_confirmation')) is-invalid @endif"
                                                 name="password_confirmation"
