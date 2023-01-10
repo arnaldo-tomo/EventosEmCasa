@@ -293,15 +293,27 @@ Header END -->
                             </div>
 
                             <!-- Dropzone photo START -->
-                            <div>
-                                <label class="form-label">Upload attachment</label>
-                                <div class="dropzone dropzone-default card shadow-none"
-                                    data-dropzone='{"maxFiles":2}'>
-                                    <div class="dz-message">
-                                        <i class="bi bi-images display-3"></i>
-                                        <p>Drag here or click to upload photo.</p>
+                            <div class=" dropzone-default card shadow-none">
+                                <a class="hiddenFileInput">
+
+                                    <input class="hiddenFileInput" id="file-upload" type="file"
+                                        name="imagen" accept="image/*" />
+                                </a>
+                                <label for="file-upload" id="file-drag">
+                                    <div class="dz-message" id="start">
+                                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                                        <div class="dz-message" id="notimage" id="response" class="hidden">
+                                        </div>
+                                        <div class="dz-message" id="response" class="hidden">
+                                            <div id="messages">
+                                                <i class="bi bi-images display-3">
+                                                </i>
+                                                <p> clique para carregar ou Solte a
+                                                    image aqui.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </label>
                             </div>
                             <!-- Dropzone photo END -->
                         </div>
