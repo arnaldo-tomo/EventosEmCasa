@@ -194,6 +194,10 @@ Header START -->
                             <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
                                 data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                                 aria-expanded="false">
+                                @if (!Auth::user()->foto)
+                                <img class="avatar-img rounded-2" src="/{{ Auth::user()->foto }}" alt="">
+
+                                @endif
                                 <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                             </a>
                         @endauth
