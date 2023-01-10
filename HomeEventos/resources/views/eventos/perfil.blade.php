@@ -397,7 +397,7 @@ Header END -->
                                         <ul class="nav nav-link-secondary flex-column fw-smal gap-2">
                                             @if (!Auth::user()->twitter == null)
                                                 <li class="nav-item"> <i class="bi bi-twitter">
-                                                    </i> <a href="https://twitter.com/{{ Auth::user()->twitter }}">
+                                                    </i> <a href="https://twitter.com/{{ Auth::user()->twitter }}">{{ Auth::user()->twitter }} </a> </li>
                                             @endif
 
                                             @if (!Auth::user()->website == null)
