@@ -198,9 +198,10 @@ Header START -->
                                         @if (!Auth::user()->foto)
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                         alt="avatar">
+                                        @else
+                                        <img class="avatar-img rounded-circle" src="/{{Auth::user()->foto}}"
+                                        alt="avatar">
                                         @endif
-                                    <img class="avatar-img rounded-circle" src="/{{Auth::user()->foto}}"
-                                            alt="avatar">
                                     </div>
                                     <div>
                                         <a class="h6 stretch-link" href="#">{{ Auth::user()->name }}</a>
