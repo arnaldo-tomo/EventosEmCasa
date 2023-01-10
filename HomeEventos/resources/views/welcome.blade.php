@@ -223,7 +223,12 @@
                                     <div class="d-flex align-items-center position-relative">
                                         <!-- Avatar -->
                                         <div class="avatar me-3">
-                                            <img class="avatar-img rounded-circle" src="/perfil/usuario/{{ Auth::user()->foto }}"
+                     --}}
+                                            @if (!Auth::user()->foto)
+                                            <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
+                                            alt="avatar">
+                                            @endif
+                                            <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
                                                 alt="avatar">
                                         </div>
                                         <div>
