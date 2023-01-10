@@ -13,6 +13,10 @@ class Usuario extends Controller
     public function infoUpdate(Request $request)
     {
         $infoUpdate  = Auth::user();
+        $request->validate([
+            'name' => 'required|min:4|string|max:255',
+            'email' => 'required|email|string|max:255'
+        ]);
     }
 
 
