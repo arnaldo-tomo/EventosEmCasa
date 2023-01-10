@@ -325,7 +325,7 @@ Header END -->
                             <!-- Button -->
                             <button type="button" class="btn btn-danger-soft me-2"
                                 data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success-soft">Actuliazar</button>
+                            <a type="submit" class="btn btn-success-soft">Actuliazar</a>
                         </div>
                     </form>
 
