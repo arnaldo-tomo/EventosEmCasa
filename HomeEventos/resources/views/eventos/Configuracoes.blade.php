@@ -417,7 +417,7 @@ Header END -->
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if ($error == 'name')
+                                            @if ($error == ('name'))
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -435,7 +435,7 @@ Header END -->
                                             <input type="email" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ Auth::user()->email }}">
-                                            @if ($errors == 'email')
+                                            @if ($errors == ('email'))
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
