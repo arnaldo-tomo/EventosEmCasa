@@ -345,7 +345,7 @@ Header END -->
                             </div>
                             <!-- List profile -->
                             <ul class="list-inline mb-0 text-center text-sm-start mt-3 mt-sm-0">
-                                <li class="list-inline-item"><i class="bi bi-briefcase me-1"></i> Lead Developer</li>
+                                <li class="list-inline-item"><i class="bi bi-building me-1"></i> Lead Developer</li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> Beira,Moçambique</li>
                                 <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
                                     30 nov 2022
