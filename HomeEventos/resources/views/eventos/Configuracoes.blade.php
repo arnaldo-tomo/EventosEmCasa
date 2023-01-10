@@ -513,7 +513,7 @@ Header END -->
                                                 class="form-control @error('contacto') is-invalid @enderror"
                                                 placeholder="+258 000 0000" value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
-                                            @if ($errors->has('contacto')
+                                            @if ($errors->has('contacto'))
                                                 @error('contacto')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -533,7 +533,7 @@ Header END -->
                                                 class="form-control @error('localizacao') is-invalid @enderror"
                                                 placeholder="Moçambique" value="{{ auth::user()->localizacao }}">
                                             <!-- Add new email -->
-                                            @if ($errors == 'localizacao')
+                                            @if ($errors->has('localizacao'))
                                                 @error('localizacao')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -551,7 +551,7 @@ Header END -->
                                             <label class="form-label">Visão geral</label>
                                             <textarea class="form-control @error('descricao') is-invalid @enderror" name="descricao" rows="4"
                                                 placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
-                                            @if ($errors == 'descricao')
+                                            @if ($errors->has('descricao'))
                                                 @error('descricao')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
