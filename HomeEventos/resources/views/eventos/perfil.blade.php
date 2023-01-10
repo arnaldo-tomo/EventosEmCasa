@@ -301,9 +301,10 @@ Header END -->
                                             @if (!Auth::user()->foto)
                                                 <img id="file-image" src="assets/images/avatar/main.png"
                                                     alt="Preview" class="hidden">
-                                            @endif
-                                            <img id="file-image" src="{{ Auth::user()->foto }}" alt="Preview"
-                                                class="hidden">
+                                                    @else
+                                                    <img id="file-image" src="{{ Auth::user()->foto }}" alt="Preview"
+                                                    class="hidden">
+                                                    @endif
 
                                             <div class="dz-message" id="notimage" id="response" class="hidden">
                                             </div>
