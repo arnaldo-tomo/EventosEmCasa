@@ -461,7 +461,8 @@ Header END -->
                                                 value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
-                                                    class="bi bi-plus-circle-dotted me-1"></i>Add new phone number</a>
+                                                    class="bi bi-plus-circle-dotted me-1"></i>adcionar outro
+                                                telefone</a>
                                         </div>
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
