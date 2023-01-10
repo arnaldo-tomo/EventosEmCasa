@@ -280,9 +280,10 @@ Header END -->
                                         @if (!Auth::user()->foto)
                                             <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                                 alt="">
-                                        @endif
-                                        <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
-                                            alt="">
+                                                @else
+                                                <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
+                                                alt="">
+                                                @endif
                                     </div>
                                     <!-- Feed box  -->
                                     <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="descricao" rows="6">{{ Auth::user()->descricao }}</textarea>
