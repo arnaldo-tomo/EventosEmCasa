@@ -289,9 +289,8 @@ Header END -->
                                 </div>
                                 <!-- Feed box  -->
                                 <form class="w-100">
-                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
-                                </form>
-                            </div>
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="" rows="6">{{ auth::user()->descricao }}</textarea>
+
 
                             <!-- Dropzone photo START -->
                             <div class="mb-3">
@@ -316,6 +315,8 @@ Header END -->
                                     </label>
                                 </div>
                             </div>
+                        </form>
+                    </div>
                             <!-- Dropzone photo END -->
 
                         </div>
