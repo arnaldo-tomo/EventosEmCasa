@@ -303,13 +303,11 @@ Header END -->
                                     </a>
                                     <label for="file-upload" id="file-drag">
                                         <div class="dz-message" id="start">
-                                            <img id="file-image" src="#" alt="Preview" class="hidden">
+                                            <img id="file-image" src="assets/images/avatar/03.jpg" alt="Preview" class="hidden">
                                             <div class="dz-message" id="notimage" id="response" class="hidden">
                                             </div>
                                             <div class="dz-message" id="response" class="hidden">
                                                 <div id="messages">
-                                                    <i class="bi bi-images display-3">
-                                                    </i>
                                                     <p> clique para carregar ou Solte a
                                                         image aqui.</p>
                                                 </div>
