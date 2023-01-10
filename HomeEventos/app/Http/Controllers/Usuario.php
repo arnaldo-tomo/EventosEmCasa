@@ -21,9 +21,9 @@ class Usuario extends Controller
             'name' => 'min:4|string|max:255',
             'email'  =>  'required|email|unique:users,email,'.Auth::user()->id, // <--- THIS LINE
             'website' => 'string|max:50',
-            'twitter' => 'string|unique:users|max:50',
-            'empresa' => 'string|unique:users|max:50',
-            'contacto' => 'numeric|unique:users,contacto|max:2',
+            'twitter' => 'string|max:50|unique:users,twitter,'.Auth::user()->id,
+            'empresa' => 'string|max:50|unique:users,empresa,'.Auth::user()->id, 
+            'contacto' => 'numeric|max:9|unique:users,contacto,'.Auth::user()->id, 
             'localizacao' => 'string|max:50',
             'descricao' => 'string|max:255'
         ]);
