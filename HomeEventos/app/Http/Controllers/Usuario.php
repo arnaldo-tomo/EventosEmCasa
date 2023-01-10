@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+// use Request;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -12,11 +14,21 @@ class Usuario extends Controller
 {
     public function infoUpdate(Request $request)
     {
-        $infoUpdate  = Auth::user();
+
+        $infoUpdate = User::find(Auth::user()->id);
         $request->validate([
             'name' => 'required|min:4|string|max:255',
-            'email' => 'required|email|string|max:255'
+            'email' => 'required|email|string|max:255',
+            'website' => 'string|max:255',
+            'twitter' => 'string|max:255',
+            'empresa' => 'string|max:255',
+            'contacto' => 'string|max:10',
+            'localizacao' => 'string|max:255',
+            'descricao' => 'string|max:255'
         ]);
+        $infoUpdate->name = $request->input('name');
+        $infoUpdate->update();
+        return back()->with('message', 'Profile Updated');
     }
 
 
