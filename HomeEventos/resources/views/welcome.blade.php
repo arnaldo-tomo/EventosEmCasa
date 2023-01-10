@@ -344,8 +344,8 @@
                             data-bs-target="#login_registar">
                             Crie uma conta</a>
 
-                        <button type="submit" class="btn btn-success btn-sm">Entrar</button>
-                    </div>
+                            <button type="submit" class="btn btn-success btn-sm">Entrar</button>
+                        </div>
                     </form>
                 </div>
             </div>
