@@ -428,7 +428,7 @@ Header END -->
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if (session('name'))
+                                            @if ($error)
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
