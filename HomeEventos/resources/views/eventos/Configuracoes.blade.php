@@ -446,7 +446,7 @@ Header END -->
                                             <input type="text" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ Auth::user()->email }}">
-                                            @if ($errors->has('eamil'))
+                                            @if ($errors->has('email'))
                                                 @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -477,7 +477,7 @@ Header END -->
                                         <div class="col-lg-4">
                                             <label class="form-label">Nome de usuário do Twitter </label>
                                             <input type="text" name="twitter"
-                                                class="form-control @error('website') is-invalid @enderror"
+                                                class="form-control @error('twitter') is-invalid @enderror"
                                                 placeholder="homeevento" value="{{ auth::user()->twitter }}">
                                             @error('twitter')
                                                 <span class="invalid-feedback" role="alert">
