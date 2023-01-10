@@ -456,7 +456,7 @@ Header END -->
                                         </div>
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
-                                            <label class="form-label">Phone number</label>
+                                            <label class="form-label">Telefone</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
