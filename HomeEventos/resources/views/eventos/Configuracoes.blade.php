@@ -525,20 +525,18 @@ Header END -->
                                                 class="form-control @error('localizacao') is-invalid @enderror"
                                                 placeholder="Moçambique" value="{{ auth::user()->localizacao }}">
                                             <!-- Add new email -->
-                                            @if ($errors->any('name'))
-                                                @error('name')
+                                            @if ($errors->any('localizacao'))
+                                                @error('localizacao')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
                                             @else
-                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
-                                                    contribui
-                                                    ou é mencionado. Você pode removê-lo a qualquer momento.</small>
+                                                <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
+                                                        class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
+                                                    lozalização</a>
                                             @endif
-                                            <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
-                                                    class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
-                                                lozalização</a>
+
                                         </div>
                                         <!-- Page information -->
                                         <div class="col-12">
