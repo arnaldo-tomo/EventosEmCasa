@@ -62,7 +62,7 @@ class EventosController extends Controller
         return view('eventos.categoria');
     }
 
-    public function perfil()
+    public function perfile()
     {
         $dia = Carbon::now();
         $estaSemana = Eventos::where('created_at',  $dia->startOfWeek())->where('created_at', $dia->endOfWeek())->where('user_id', Auth::user()->id)->get();
