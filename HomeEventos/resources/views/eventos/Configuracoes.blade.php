@@ -406,6 +406,17 @@ Header END -->
                                         informações.</p>
                                 </div>
                                 <!-- Card header START -->
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                  <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>
+                                      {{$error}}
+                                    </li>
+                                    @endforeach
+                                  </ul>
+                                 </div>
+                                @endif
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
@@ -417,7 +428,7 @@ Header END -->
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if ($error == ('name'))
+                                            @if (session('name'))
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -432,7 +443,7 @@ Header END -->
                                         <!-- Additional name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Email</label>
-                                            <input type="email" name="email"
+                                            <input type="text" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ Auth::user()->email }}">
                                             @if ($errors == ('email'))
