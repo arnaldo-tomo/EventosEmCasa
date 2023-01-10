@@ -272,8 +272,7 @@ Header END -->
                     <div class="modal-content">
                         <!-- Modal feed header START -->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="feedActionPhotoLabel">Add
-                                post photo</h5>
+                            <h5 class="modal-title" id="feedActionPhotoLabel">Alterar foto so perfil</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -290,7 +289,7 @@ Header END -->
                                 </div>
                                 <!-- Feed box  -->
                                 <form class="w-100">
-                                    <textarea class="form-control pe-4 fs-3 lh-1 border-0" rows="2" placeholder="Share your thoughts..."></textarea>
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
                                 </form>
                             </div>
 
