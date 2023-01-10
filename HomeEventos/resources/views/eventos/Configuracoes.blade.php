@@ -80,7 +80,7 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                            <a class="nav-link" href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
                         </li>
                     </ul>
                 </div>
