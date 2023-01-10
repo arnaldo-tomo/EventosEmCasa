@@ -435,9 +435,19 @@ Header END -->
                                             <input type="email" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ Auth::user()->email }}">
-                                            <small>Você definiu seu endereço de e-mail como privado. Para alternar a
-                                                privacidade do e-mail, vá para as configurações de e-mail e desmarque
-                                                "Manter meu endereço de e-mail privado".</small>
+                                            @if ($errors->any('email'))
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            @else
+                                                <small>Você definiu seu endereço de e-mail como privado. Para alternar a
+                                                    privacidade do e-mail, vá para as configurações de e-mail e
+                                                    desmarque
+                                                    "Manter meu endereço de e-mail privado".</small>
+                                            @endif
+
                                         </div>
                                         <!-- URL (em inglês) -->
                                         <div class="col-sm-4">
@@ -446,6 +456,11 @@ Header END -->
                                                 class="form-control @error('website') is-invalid @enderror"
                                                 placeholder="https://seuwebsite.com/"
                                                 value="{{ Auth::user()->website }}">
+                                            @error('website')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
@@ -453,12 +468,22 @@ Header END -->
                                             <input type="text" name="twitter"
                                                 class="form-control @error('website') is-invalid @enderror"
                                                 placeholder="homeevento" value="{{ auth::user()->twitter }}">
+                                            @error('twitter')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Companhia</label>
                                             <input type="text" name="empresa" placeholder="HomeCompanyLDA"
                                                 class="form-control @error('empresa') is-invalid @enderror"
                                                 value="{{ auth::user()->empresa }}">
+                                            @error('empresa')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <!-- Allow checkbox -->
                                         <div class="col-12">
@@ -477,9 +502,21 @@ Header END -->
                                                 class="form-control @error('contacto') is-invalid @enderror"
                                                 placeholder="+258 000 0000" value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
+                                            @if ($errors->any('name'))
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            @else
+                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
+                                                    contribui
+                                                    ou é mencionado. Você pode removê-lo a qualquer momento.</small>
+                                            @endif
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
                                                     class="bi bi-plus-circle-dotted me-1"></i>adcionar outro
                                                 telefone</a>
+
                                         </div>
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
@@ -488,6 +525,17 @@ Header END -->
                                                 class="form-control @error('localizacao') is-invalid @enderror"
                                                 placeholder="Moçambique" value="{{ auth::user()->localizacao }}">
                                             <!-- Add new email -->
+                                            @if ($errors->any('name'))
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            @else
+                                                <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
+                                                    contribui
+                                                    ou é mencionado. Você pode removê-lo a qualquer momento.</small>
+                                            @endif
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
                                                     class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
                                                 lozalização</a>
@@ -497,8 +545,17 @@ Header END -->
                                             <label class="form-label">Visão geral</label>
                                             <textarea class="form-control @error('descricao') is-invalid @enderror" name="descricao" rows="4"
                                                 placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
-                                            <small>Você pode @mention outros usuários e organizações para vincular a
-                                                eles. limite: de 300 palavras </small>
+                                            @if ($errors->any('descricao'))
+                                                @error('descricao')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            @else
+                                                <small>Você pode @mention outros usuários e organizações para vincular a
+                                                    eles. limite: de 300 palavras </small>
+                                            @endif
+
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
