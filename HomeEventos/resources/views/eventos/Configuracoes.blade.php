@@ -499,8 +499,8 @@ Header END -->
                                 <!-- Title START -->
                                 <div class="card-header border-0 pb-0">
                                     <h5 class="card-title">Altere sua senha</h5>
-                                    <p class="mb-0">Veja a bondade resolvida, a felicidade tímida, a civilidade
-                                        doméstica tinha, mas.</p>
+                                    <p class="mb-0">para actulaizar sua password,informe a sua senha actual e seguida
+                                        asua niava senha e em seguida enforme a nova senha e confirme a mesma.</p>
                                 </div>
                                 <!-- Title START
 
