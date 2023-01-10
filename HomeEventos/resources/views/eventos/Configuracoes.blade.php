@@ -561,8 +561,8 @@ Header END -->
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
-                                            <button type="submit" class="btn btn-primary mb-0">Update
-                                                password</button>
+                                            <button type="submit" class="btn btn-primary mb-0">Atualizar
+                                                senha</button>
                                         </div>
                                     </form>
                                     <!-- Settings END -->
