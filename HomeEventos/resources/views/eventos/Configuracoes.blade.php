@@ -419,9 +419,10 @@ Header END -->
                                                 ou é mencionado. Você pode removê-lo a qualquer momento.</small>
                                         </div>
                                         <!-- Additional name -->
-                                        <div class="col-sm-4 col-lg-4">
-                                            <label class="form-label">Additional name</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                        <div class="col-sm-6 col-lg-6">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control"
+                                                value="{{ Auth::user()->email }}">
                                         </div>
                                         <!-- User name -->
                                         <div class="col-sm-4">
@@ -430,6 +431,10 @@ Header END -->
                                                 value="{{ Auth::user()->name }}">
                                         </div>
                                         <!-- Birthday -->
+                                        <div class="col-lg-4">
+                                            <label class="form-label">Birthday </label>
+                                            <input type="text" class="form-control flatpickr" value="12/12/1990">
+                                        </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Birthday </label>
                                             <input type="text" class="form-control flatpickr" value="12/12/1990">
@@ -1296,7 +1301,5 @@ Header END -->
     <script src="assets/js/functions.js"></script>
 
 </body>
-
-<!-- Mirrored from social.webestica.com/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 08:47:34 GMT -->
 
 </html>
