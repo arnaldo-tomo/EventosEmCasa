@@ -91,15 +91,6 @@
                             </ul>
                         </div>
                         <!-- Nav right START -->
-                        {{-- <li class="nav-item ms-2">
-                            <form class="rounded position-relative">
-                                <input class="form-control ps-5 bg-light" type="search" placeholder="Search..."
-                                    aria-label="Search">
-                                <button
-                                    class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y"
-                                    type="submit"><i class="bi bi-search fs-5"> </i></button>
-                            </form>
-                        </li> --}}
                         <li class="nav-item ms-2">
                             <a class="nav-link icon-md btn btn-dark p-0" href="{{ route('Configuracoes') }}">
                                 <i class="bi bi-gear-fill fs-6"> </i>
@@ -221,7 +212,7 @@
                                     <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
 
                                     @endif
-                                    <img class="avatar-img rounded-2" src="/perfil/usuario/{{ Auth::user()->foto }}" alt="">
+                                    <img class="avatar-img rounded-2" src="/{{ Auth::user()->foto }}" alt="">
 
                                 </a>
                             @endauth
