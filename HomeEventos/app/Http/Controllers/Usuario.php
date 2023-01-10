@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\hash;
+use Illuminate\Support\Facades\File;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -50,32 +51,30 @@ class Usuario extends Controller
         $request->validate([
             'descricao' => 'max:255'
         ]);
+
         $profileUpdate = user::find(Auth::user()->id);
 
-        $profileUpdate->telefone = Request::input('telefone');
-        $local = $profileUpdate->imagen;
+        $profileUpdate->descricao = $request->input('descricao');
+        $profileUpdate->foto = $request->input('foto');
+
+        $local = $profileUpdate->foto;
         //Verificando se a imagem existe para elimina-la
         if (File::exists($local)) {
             File::delete($local);
         }
 
         //Capturando a imagem
-        if (Request::file('foto') != null) {
-            $filename = Request::file('foto')->getClientOriginalName();
+        if ($request->file('foto') != null) {
+            $filename = $request->file('foto')->getClientOriginalName();
             $link = "perfil/usuario/" . $filename;
-            $profileUpdate->imagen = $link;
-            $foto = Request::file('imagen');
+            $profileUpdate->foto = $link;
+
+            $foto = $request->file('foto');
             $foto->move('perfil/usuario', $filename);
         }
 
         $profileUpdate->update();
-        return redirect()->route('allBook')->with('actualizado', 'O Book foi actualizado com sucesso.');
-
-        $profileUpdate = User::find(Auth::user()->id);
-        $profileUpdate->name = $request->input('name');
-        $profileUpdate->update();
-
-        return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
+        return back();
     }
 
 
