@@ -394,6 +394,18 @@ Header END -->
 
                         <!-- Account setting tab START -->
                         <div class="tab-pane show active fade" id="nav-setting-tab-1">
+                           @if(sesseion('infoUpdate'))
+                                   <!-- Event alert START -->
+                    <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+                        <strong>Upcoming event:</strong> The learning conference on Sep 19 2022
+                        <a href="event-details.html" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">View
+                            event</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                    <!-- Event alert END -->
+                           @endif
+
                             <!-- Account settings START -->
                             <div class="card mb-4">
                                 <!-- Title START -->
