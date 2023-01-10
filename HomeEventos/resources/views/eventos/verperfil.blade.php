@@ -219,8 +219,13 @@ Header START -->
                                 <div class="d-flex align-items-center position-relative">
                                     <!-- Avatar -->
                                     <div class="avatar me-3">
+                                        @if (!auth::user()->foto)
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
-                                            alt="avatar">
+                                        alt="avatar">
+                                            @else
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                        alt="avatar">
+                                        @endif
                                     </div>
                                     <div>
                                         <a class="h6 stretch-link" href="#">Lori Ferguson</a>
