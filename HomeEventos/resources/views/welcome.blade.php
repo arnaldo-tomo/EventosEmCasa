@@ -634,11 +634,14 @@
                             <!-- Avatar group START -->
                             <div class="col-12 mt-3">
                                 <ul class="avatar-group list-unstyled align-items-center mb-0">
+                                    @auth
+                                    @if (!Auth::user()->foto)
                                     <li class="avatar avatar-xs">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
-                                            alt="avatar">
+                                        alt="avatar">
                                     </li>
-
+                                    @endif
+                                    @endauth
                                     <li class="avatar avatar-xs">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg"
                                             alt="avatar">
@@ -1209,7 +1212,7 @@
                                                     <ul class="avatar-group list-unstyled align-items-center">
                                                         <li class="avatar avatar-xs">
                                                             <img class="avatar-img rounded-circle"
-                                                                src="assets/images/avatar/01.jpg" alt="avatar">
+                                                                src="/{{ $eventos->dono->foto }}" alt="avatar">
                                                         </li>
                                                         <li class="ms-4">
                                                             <a href="Verperfile{{ $evento->dono->id }}">
