@@ -285,7 +285,7 @@ Header END -->
                             <div class="d-flex mb-3">
                                 <!-- Avatar -->
                                 <div class="avatar avatar-xs me-2">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg"
+                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
@@ -301,13 +301,13 @@ Header END -->
                                 </a>
                                 <label for="file-upload" id="file-drag">
                                     <div class="dz-message" id="start">
-                                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                                        <img id="file-image" src="assets/images/avatar/main.png" alt="Preview" class="hidden">
                                         <div class="dz-message" id="notimage" id="response" class="hidden">
                                         </div>
                                         <div class="dz-message" id="response" class="hidden">
                                             <div id="messages">
-                                                <i class="bi bi-images display-3">
-                                                </i>
+                                                {{-- <i class="bi bi-images display-3">
+                                                </i> --}}
                                                 <p> clique para carregar ou Solte a
                                                     image aqui.</p>
                                             </div>
@@ -372,7 +372,7 @@ Header END -->
                                                 <a href="#!" data-bs-toggle="modal"
                                                     data-bs-target="#feedActionPhoto"><img
                                                         class="avatar-img rounded border border-white border-3"
-                                                        src="assets/images/avatar/07.jpg" alt=""></a>
+                                                        src="assets/images/avatar/main.png" alt=""></a>
 
 
                                             </div>
