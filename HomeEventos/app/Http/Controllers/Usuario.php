@@ -42,32 +42,19 @@ class Usuario extends Controller
 
         return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
     }
-    public function infoUpdate(Request $request)
+    public function profileUpdate(Request $request)
     {
 
         $request->validate([
-            'name' => 'required|min:4|max:255',
-            'email'  =>  'required|email|unique:users,email,' . Auth::user()->id,
-            'website' => 'max:50',
-            'twitter' => 'max:50|unique:users,twitter,' . Auth::user()->id,
-            'empresa' => 'max:50|unique:users,empresa,' . Auth::user()->id,
-            'contacto' => 'numeric| digits:9 |unique:users,contacto,' . Auth::user()->id,
-            'localizacao' => 'max:50',
             'descricao' => 'max:255'
         ]);
 
-        $infoUpdate = User::find(Auth::user()->id);
+        $profileUpdate = User::find(Auth::user()->id);
 
-        $infoUpdate->name = $request->input('name');
-        $infoUpdate->email = $request->input('email');
-        $infoUpdate->website = $request->input('website');
-        $infoUpdate->twitter = $request->input('twitter');
-        $infoUpdate->empresa = $request->input('empresa');
-        $infoUpdate->contacto = $request->input('contacto');
-        $infoUpdate->localizacao = $request->input('localizacao');
-        $infoUpdate->descricao = $request->input('descricao');
+        $profileUpdate->name = $request->input('name');
 
-        $infoUpdate->update();
+
+        $profileUpdate->update();
 
         return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
     }
