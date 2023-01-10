@@ -234,7 +234,7 @@
                                         <div>
                                             <a class="h6 stretch-link"
                                                 href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
-                                            <p class="small m-0">{{ Auth::user()->descricao }}</p>
+                                            <p class="small m-0">{{ Auth::user()->empresa }}</p>
                                         </div>
                                     </div>
                                     <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
