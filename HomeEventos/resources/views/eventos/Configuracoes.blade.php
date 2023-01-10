@@ -402,8 +402,9 @@ Header END -->
                                     <p class="mb-0">Todos os campos nesta página são opcionais e podem ser excluídos
                                         em qualquer tempo, e ao preenchê-los, você está nos dando consentimento para
                                         compartilhar isso dados onde quer que seu perfil de usuário apareça. Consulte
-                                        nossa declaração de privacidade para saber mais sobre como usamos essas
+                                        nossa <a > declaração de privacidade</a> para saber mais sobre como usamos essas
                                         informações.</p>
+                                        
                                 </div>
                                 <!-- Card header START -->
                                 @if ($errors->any())
