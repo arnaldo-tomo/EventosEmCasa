@@ -1211,9 +1211,16 @@
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
                                                         <li class="avatar avatar-xs">
+
+                                                            @if ($evento->dono->foto==null)
+
                                                             <img class="avatar-img rounded-circle"
-                                                                src="/{{ $evento->dono->foto }}" alt="avatar">
+                                                            src="/{{ $evento->dono->foto  }}" alt="avatar">
                                                         </li>
+                                                        @else
+                                                        <img class="avatar-img rounded-circle"
+                                                        src="assets/images/avatar/01.jpg" alt="avatar">
+                                                        @endif
                                                         <li class="ms-4">
                                                             <a href="Verperfile{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
