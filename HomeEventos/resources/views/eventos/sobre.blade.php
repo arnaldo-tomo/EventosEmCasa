@@ -212,11 +212,9 @@ Header START -->
                                 data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 @if (!auth::user()->foto)
-
                                 <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                                 @else
                                 <img class="avatar-img rounded-2" src="/{{ auth::user()->foto }}" alt="">
-
                                 @endif
                             </a>
                         @endauth
@@ -225,14 +223,15 @@ Header START -->
                             <!-- Profile info -->
                             <li class="px-3">
                                 <div class="d-flex align-items-center position-relative">
+                                    if
                                     <!-- Avatar -->
                                     <div class="avatar me-3">
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
                                             alt="avatar">
                                     </div>
                                     <div>
-                                        <a class="h6 stretch-link" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">Desenvolvedor Web</p>
+                                        <a class="h6 stretch-link" href="/perfile">{{ auth::user()->name }}</a>
+                                        <p class="small m-0">{{ auth::user()->empresa }}</p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
