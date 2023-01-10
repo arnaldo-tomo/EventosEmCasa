@@ -73,7 +73,7 @@ class Usuario extends Controller
             $foto->move('perfil/usuario', $filename);
         }
 
-        $profileUpdate->update();
+        $profileUpdate->save();
         return back();
     }
 
