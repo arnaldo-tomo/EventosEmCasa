@@ -217,7 +217,12 @@
                                 <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
                                     data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                                     aria-expanded="false">
+                                    @if (!Auth::user()->foto)
                                     <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
+
+                                    @endif
+                                    <img class="avatar-img rounded-2" src="/perfil/usuario/{{ Auth::user()->foto }}" alt="">
+
                                 </a>
                             @endauth
                             <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
@@ -227,13 +232,13 @@
                                     <div class="d-flex align-items-center position-relative">
                                         <!-- Avatar -->
                                         <div class="avatar me-3">
-                                            <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
+                                            <img class="avatar-img rounded-circle" src="/perfil/usuario/{{ Auth::user()->foto }}"
                                                 alt="avatar">
                                         </div>
                                         <div>
                                             <a class="h6 stretch-link"
                                                 href="{{ route('perfile') }}">{{ Auth::user()->email }}</a>
-                                            <p class="small m-0">Desenvolvedor Web</p>
+                                            <p class="small m-0">{{ Auth::user()->foto }}</p>
                                         </div>
                                     </div>
                                     <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
