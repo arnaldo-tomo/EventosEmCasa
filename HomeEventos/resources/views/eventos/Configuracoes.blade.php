@@ -348,7 +348,7 @@ Header END -->
                                     <!-- Card body END -->
                                     <!-- Card footer -->
                                     <div class="card-footer text-center py-2">
-                                        <a class="btn btn-link text-secondary btn-sm" href="Perfil">View Profile </a>
+                                        <a class="btn btn-link text-secondary btn-sm" href="/Perfile">View Profile </a>
                                     </div>
                                 </div>
                                 <!-- Card END -->
@@ -395,7 +395,7 @@ Header END -->
                             <!-- Event alert START -->
                             <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">
                                 <strong>Nice:</strong> {{ session('infoUpdate') }}
-                                <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu
+                                <a href="/Perfile" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu
                                     perfil</a>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
