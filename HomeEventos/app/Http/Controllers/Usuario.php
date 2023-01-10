@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-// use Request;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -17,16 +16,23 @@ class Usuario extends Controller
 
         $infoUpdate = User::find(Auth::user()->id);
         $request->validate([
-            'name' => 'required|unique:posts| min:4|string|max:255',
+            'name' => 'required|unique:users,name| min:4|string|max:50',
             'email' => 'required|email|string|max:255',
-            'website' => 'string|max:255',
-            'twitter' => 'string|unique:posts|max:255',
-            'empresa' => 'string|unique:posts|max:255',
-            'contacto' => 'string|max:10',
-            'localizacao' => 'string|max:255',
-            'descricao' => 'string|max:255'
+            'website' => 'string|max:50',
+            'twitter' => 'string|unique:users,twitter|max:50',
+            'empresa' => 'string|unique:users,empresa|max:50',
+            'contacto' => 'numeric|unique:users,contacto||max:9',
+            'localizacao' => 'string|max:50',
+            'descricao' => 'string|max:100'
         ]);
         $infoUpdate->name = $request->input('name');
+        $infoUpdate->email = $request->input('email');
+        $infoUpdate->website = $request->input('website');
+        $infoUpdate->twitter = $request->input('twitter');
+        $infoUpdate->empresa = $request->input('empresa');
+        $infoUpdate->contacto = $request->input('contacto');
+        $infoUpdate->localizacao = $request->input('localizacao');
+        $infoUpdate->descricao = $request->input('descricao');
         $infoUpdate->update();
         return back()->with('message', 'Profile Updated');
     }
