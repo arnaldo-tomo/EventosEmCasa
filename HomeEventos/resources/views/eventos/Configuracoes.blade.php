@@ -432,7 +432,8 @@ Header END -->
                                         <!-- Additional name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control"
+                                            <input type="email" name="email"
+                                                class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ Auth::user()->email }}">
                                             <small>Você definiu seu endereço de e-mail como privado. Para alternar a
                                                 privacidade do e-mail, vá para as configurações de e-mail e desmarque
@@ -441,20 +442,23 @@ Header END -->
                                         <!-- URL (em inglês) -->
                                         <div class="col-sm-4">
                                             <label class="form-label">URL (em inglês)</label>
-                                            <input type="text" name="website" class="form-control"
+                                            <input type="text" name="website"
+                                                class="form-control @error('website') is-invalid @enderror"
                                                 placeholder="https://seuwebsite.com/"
                                                 value="{{ Auth::user()->website }}">
                                         </div>
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
                                             <label class="form-label">Nome de usuário do Twitter </label>
-                                            <input type="text" name="twitter" class="form-control flatpickr"
+                                            <input type="text" name="twitter"
+                                                class="form-control @error('website') is-invalid @enderror"
                                                 placeholder="homeevento" value="{{ auth::user()->twitter }}">
                                         </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Companhia</label>
                                             <input type="text" name="empresa" placeholder="HomeCompanyLDA"
-                                                class="form-control flatpickr" value="{{ auth::user()->empresa }}">
+                                                class="form-control @error('empresa') is-invalid @enderror"
+                                                value="{{ auth::user()->empresa }}">
                                         </div>
                                         <!-- Allow checkbox -->
                                         <div class="col-12">
@@ -469,7 +473,8 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Telefone</label>
-                                            <input type="text" name="contacto" class="form-control"
+                                            <input type="text" name="contacto"
+                                                class="form-control @error('contacto') is-invalid @enderror"
                                                 placeholder="+258 000 0000" value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
@@ -479,7 +484,8 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Localização</label>
-                                            <input type="text" name="localizacao" class="form-control"
+                                            <input type="text" name="localizacao"
+                                                class="form-control @error('localizacao') is-invalid @enderror"
                                                 placeholder="Moçambique" value="{{ auth::user()->localizacao }}">
                                             <!-- Add new email -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
@@ -489,7 +495,8 @@ Header END -->
                                         <!-- Page information -->
                                         <div class="col-12">
                                             <label class="form-label">Visão geral</label>
-                                            <textarea class="form-control" name="descricao" rows="4" placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
+                                            <textarea class="form-control @error('descricao') is-invalid @enderror" name="descricao" rows="4"
+                                                placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
                                             <small>Você pode @mention outros usuários e organizações para vincular a
                                                 eles. limite: de 300 palavras </small>
                                         </div>
