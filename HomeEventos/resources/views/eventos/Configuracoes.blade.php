@@ -406,17 +406,6 @@ Header END -->
                                         informações.</p>
                                 </div>
                                 <!-- Card header START -->
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>
-                                                    {{ $error }}
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <!-- Form settings START -->
@@ -428,10 +417,12 @@ Header END -->
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if ('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            @if ($errors->any('name'))
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             @else
                                                 <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você
                                                     contribui
