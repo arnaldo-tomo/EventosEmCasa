@@ -65,12 +65,7 @@ Header START -->
 
                 <!-- Main navbar START -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-
-
-
-
                     <ul class="navbar-nav navbar-nav-scroll ms-auto">
-
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
@@ -277,57 +272,67 @@ Header END -->
                                 aria-label="Close"></button>
                         </div>
                         <!-- Modal feed header END -->
-                        <form action="{{ route('profileUpdate') }}" method="POST" enctype="multipart/form-data" class="w-100">
-@csrf
-                        <!-- Modal feed body START -->
-                        <div class="modal-body">
-                            <!-- Add Feed -->
-                            <div class="d-flex mb-3">
-                                <!-- Avatar -->
-                                <div class="avatar avatar-xs me-2">
-                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
-                                        alt="">
+                        <form action="{{ route('profileUpdate') }}" method="POST" enctype="multipart/form-data"
+                            class="w-100">
+                            @csrf
+                            <!-- Modal feed body START -->
+                            <div class="modal-body">
+                                <!-- Add Feed -->
+                                <div class="d-flex mb-3">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-xs me-2">
+                                        @if (!Auth::user()->foto)
+                                            <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
+                                                alt="">
+                                        @endif
+                                        <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
+                                            alt="">
+                                    </div>
+                                    <!-- Feed box  -->
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="descricao" rows="6">{{ Auth::user()->descricao }}</textarea>
                                 </div>
-                                <!-- Feed box  -->
-                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="descricao" rows="6">{{ auth::user()->descricao }}</textarea>
-                            </div>
 
-                            <!-- Dropzone photo START -->
-                            <div class="text-center dropzone-default card shadow-none">
-                                <a class="hiddenFileInput">
+                                <!-- Dropzone photo START -->
+                                <div class="text-center dropzone-default card shadow-none">
+                                    <a class="hiddenFileInput">
 
-                                    <input class="hiddenFileInput" id="file-upload" type="file"
-                                        name="foto" accept="image/*" />
-                                </a>
-                                <label for="file-upload" id="file-drag">
-                                    <div class="dz-message" id="start">
+                                        <input class="hiddenFileInput" id="file-upload" type="file"
+                                            name="foto" accept="image/*" />
+                                    </a>
+                                    <label for="file-upload" id="file-drag">
+                                        <div class="dz-message" id="start">
+                                            @if (!Auth::user()->foto)
+                                                <img id="file-image" src="assets/images/avatar/main.png"
+                                                    alt="Preview" class="hidden">
+                                            @endif
+                                            <img id="file-image" src="{{ Auth::user()->foto }}" alt="Preview"
+                                                class="hidden">
 
-                                        <img id="file-image" src="assets/images/avatar/main.png" alt="Preview" class="hidden">
-                                        <div class="dz-message" id="notimage" id="response" class="hidden">
-                                        </div>
-                                        <div class="dz-message" id="response" class="hidden">
-                                            <div id="messages">
-                                                {{-- <i class="bi bi-images display-3">
+                                            <div class="dz-message" id="notimage" id="response" class="hidden">
+                                            </div>
+                                            <div class="dz-message" id="response" class="hidden">
+                                                <div id="messages">
+                                                    {{-- <i class="bi bi-images display-3">
                                                 </i> --}}
-                                                <p> clique para carregar ou Solte a
-                                                    image aqui.</p>
+                                                    <p> clique para carregar ou Solte a
+                                                        image aqui.</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </label>
+                                    </label>
+                                </div>
+                                <!-- Dropzone photo END -->
                             </div>
-                            <!-- Dropzone photo END -->
-                        </div>
-                        <!-- Modal feed body END -->
+                            <!-- Modal feed body END -->
 
-                        <!-- Modal feed footer -->
-                        <div class="modal-footer ">
-                            <!-- Button -->
-                            <button type="button" class="btn btn-danger-soft me-2"
-                                data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-success-soft">Post</button>
-                        </div>
-                    </form>
+                            <!-- Modal feed footer -->
+                            <div class="modal-footer ">
+                                <!-- Button -->
+                                <button type="button" class="btn btn-danger-soft me-2"
+                                    data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-success-soft">Post</button>
+                            </div>
+                        </form>
 
                         <!-- Modal feed footer -->
                     </div>
@@ -369,11 +374,13 @@ Header END -->
                                     <div class="card-body pt-0">
                                         <div class="text-center">
                                             <!-- Avatar -->
+                                            @if (!Auth::user()->foto)
+                                            @endif
                                             <div class="avatar avatar-lg mt-n5 mb-3">
                                                 <a href="#!" data-bs-toggle="modal"
                                                     data-bs-target="#feedActionPhoto"><img
                                                         class="avatar-img rounded border border-white border-3"
-                                                        src="assets/images/avatar/main.png" alt=""></a>
+                                                        src="/{{ Auth::user()->foto }}" alt=""></a>
                                             </div>
                                             <!-- Info -->
                                             <h5 class="mb-0"> <a>{{ auth::user()->name }} </a> </h5>
@@ -408,7 +415,9 @@ Header END -->
                                         <ul class="nav nav-link-secondary flex-column fw-smal gap-2">
                                             @if (!Auth::user()->twitter == null)
                                                 <li class="nav-item"> <i class="bi bi-twitter">
-                                                    </i> <a href="https://twitter.com/{{ Auth::user()->twitter }}">{{ Auth::user()->twitter }} </a> </li>
+                                                    </i> <a
+                                                        href="https://twitter.com/{{ Auth::user()->twitter }}">{{ Auth::user()->twitter }}
+                                                    </a> </li>
                                             @endif
 
                                             @if (!Auth::user()->website == null)
