@@ -225,12 +225,18 @@ Header START -->
                                 <div class="d-flex align-items-center position-relative">
                                     <!-- Avatar -->
                                     <div class="avatar me-3">
+
+                                        @if (!Auth::user()->foto)
+
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+                                            alt="avatar">
+                                        @endif
+                                        <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
                                             alt="avatar">
                                     </div>
                                     <div>
                                         <a class="h6 stretch-link" href="#">{{ Auth::user()->name }}</a>
-                                        <p class="small m-0">Desenvolvedor Web</p>
+                                        <p class="small m-0">{{ Auth::user()->empresa }}</p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
