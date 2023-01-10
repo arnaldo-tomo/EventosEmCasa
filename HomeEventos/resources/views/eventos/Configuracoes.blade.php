@@ -422,23 +422,13 @@ Header END -->
                                     <!-- Form settings START -->
                                     <form method="post" action="/infoUpdate" class="row g-3">
                                         @csrf
-
-                                        <input type="text" name="name" id="name"
-                                            class="form-control @error('name') is-invalid @enderror"
-                                            value="{{ old('name') }}"
-                                            placeholder="Infrome o seu nome ou da sua empresa" required autofocus>
-                                        {{-- @error('name2')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror --}}
                                         <!-- First name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Nome</label>
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
                                                 value="{{ Auth::user()->name }}">
-                                            @if (error('name'))
+                                            @if ('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
