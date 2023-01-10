@@ -288,14 +288,14 @@ Header END -->
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
-                                <form action="/profileUpdate" method="POST" enctype="multipart/form-data" class="w-100">
-                                    @csrf
-                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="" rows="6">{{ auth::user()->descricao }}</textarea>
-                                </div>
-
+                                <form class="w-100">
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
+                                </form>
+                            </div>
 
                             <!-- Dropzone photo START -->
-                                <div class=" text-center dropzone-default card shadow-none">
+                            <div class="mb-3">
+                                <div class="dropzone  dropzone-default card shadow-none">
                                     <a class="hiddenFileInput">
 
                                         <input class="hiddenFileInput" id="file-upload" type="file"
@@ -303,14 +303,17 @@ Header END -->
                                     </a>
                                     <label for="file-upload" id="file-drag">
                                         <div class="dz-message" id="start">
-                                            <img id="file-image" src="assets/images/avatar/03.jpg" alt="Preview" class="hidden">
+                                            <img id="file-image" src="#" alt="Preview" class="hidden">
                                             <div class="dz-message" id="notimage" id="response" class="hidden">
                                             </div>
                                             <div class="dz-message" id="response" class="hidden">
                                                 <div id="messages">
+                                                    <i class="bi bi-images display-3">
+                                                    </i>
                                                     <p> clique para carregar ou Solte a
                                                         image aqui.</p>
                                                 </div>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -325,10 +328,8 @@ Header END -->
                             <!-- Button -->
                             <button type="button" class="btn btn-danger-soft me-2"
                                 data-bs-dismiss="modal">Cancel</button>
-                            <a type="submit" class="btn btn-success-soft">Actuliazar</a>
+                            <button type="button" class="btn btn-success-soft">Post</button>
                         </div>
-                    </form>
-
                         <!-- Modal feed footer -->
                     </div>
                 </div>
@@ -1136,7 +1137,7 @@ Header END -->
     </div>
     <!-- Modal criar events -->
     <!-- Modal create events END -->
-    <script>
+   <script>
         // File Upload
         //
         function ekUpload() {
