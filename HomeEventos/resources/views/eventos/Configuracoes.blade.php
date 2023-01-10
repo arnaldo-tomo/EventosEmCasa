@@ -391,19 +391,19 @@ Header END -->
                 <div class="col-lg-6 vstack gap-4">
                     <!-- Setting Tab content START -->
                     <div class="tab-content py-0 mb-0">
-
+                        @if(session('infoUpdate'))
+                        <!-- Event alert START -->
+         <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">
+             <strong>Nice:</strong> {{session('infoUpdate')}}
+             <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu perfil</a>
+             <button type="button" class="btn-close" data-bs-dismiss="alert"
+                 aria-label="Close"></button>
+         </div>
+         <!-- Event alert END -->
+                @endif
                         <!-- Account setting tab START -->
                         <div class="tab-pane show active fade" id="nav-setting-tab-1">
-                           @if(sesseion('infoUpdate'))
-                                   <!-- Event alert START -->
-                    <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-                        <strong>Nice:</strong> {{session('infoUpdate')}}
-                        <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu perfil</a>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"
-                            aria-label="Close"></button>
-                    </div>
-                    <!-- Event alert END -->
-                           @endif
+                     
 
                             <!-- Account settings START -->
                             <div class="card mb-4">
