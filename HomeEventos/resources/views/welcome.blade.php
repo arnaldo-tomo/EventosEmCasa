@@ -419,10 +419,11 @@
                             {{-- {{ csrf_field() }} --}}
                             <!-- Title -->
                             <div class="col-12">
-                                <label class="form-label">Seu nome</label>
+                                <label class="form-label">Seu nome Ou Empresa</label>
                                 <input type="text" name="name" id="name"
                                     class="form-control @error('name') is-invalid @enderror"
-                                    value="{{ old('name') }}" placeholder="EX:John Doe" required autofocus>
+                                    value="{{ old('name') }}" placeholder="Infrome o seu nome ou da sua empresa"
+                                    required autofocus>
                                 @error('name2')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
