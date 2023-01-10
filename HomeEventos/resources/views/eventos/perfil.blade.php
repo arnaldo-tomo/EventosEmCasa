@@ -301,6 +301,7 @@ Header END -->
                                 </a>
                                 <label for="file-upload" id="file-drag">
                                     <div class="dz-message" id="start">
+
                                         <img id="file-image" src="assets/images/avatar/main.png" alt="Preview" class="hidden">
                                         <div class="dz-message" id="notimage" id="response" class="hidden">
                                         </div>
@@ -373,8 +374,6 @@ Header END -->
                                                     data-bs-target="#feedActionPhoto"><img
                                                         class="avatar-img rounded border border-white border-3"
                                                         src="assets/images/avatar/main.png" alt=""></a>
-
-
                                             </div>
                                             <!-- Info -->
                                             <h5 class="mb-0"> <a>{{ auth::user()->name }} </a> </h5>
