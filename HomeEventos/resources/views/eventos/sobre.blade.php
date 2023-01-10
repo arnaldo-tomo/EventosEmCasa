@@ -213,10 +213,11 @@ Header START -->
                                 aria-expanded="false">
                                 @if (!auth::user()->foto)
 
+                                <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                                 @else
+                                <img class="avatar-img rounded-2" src="/{{ auth::user()->foto }}" alt="">
 
                                 @endif
-                                <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                             </a>
                         @endauth
                         <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
