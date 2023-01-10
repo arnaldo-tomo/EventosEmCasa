@@ -86,7 +86,7 @@
                                         Entrar</a>
                                 @endguest
                                 @auth
-                                    <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                                    <a class="nav-link" href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -232,12 +232,12 @@
                                         </div>
                                         <div>
                                             <a class="h6 stretch-link"
-                                                href="{{ route('perfil') }}">{{ Auth::user()->email }}</a>
+                                                href="{{ route('perfile') }}">{{ Auth::user()->email }}</a>
                                             <p class="small m-0">Desenvolvedor Web</p>
                                         </div>
                                     </div>
                                     <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                        href="{{ route('perfil') }}">Visualizar perfil</a>
+                                        href="{{ route('perfile') }}">Visualizar perfile</a>
                                 </li>
                                 <!-- Links -->
                                 <li><a class="dropdown-item" href="{{ route('Configuracoes') }}"><i
@@ -966,7 +966,7 @@
                                                     </li>
                                                     <li><a class="dropdown-item" href="#"> <i
                                                                 class="bi bi-person fa-fw pe-1"></i> Compartilhar no de um
-                                                            amigo perfil</a></li>
+                                                            amigo perfile</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1211,7 +1211,7 @@
                                                                 src="assets/images/avatar/01.jpg" alt="avatar">
                                                         </li>
                                                         <li class="ms-4">
-                                                            <a href="Verperfil{{ $evento->dono->id }}">
+                                                            <a href="Verperfile{{ $evento->dono->id }}">
                                                                 {{ $evento->dono->name }}
                                                             </a>
                                                         </li>
