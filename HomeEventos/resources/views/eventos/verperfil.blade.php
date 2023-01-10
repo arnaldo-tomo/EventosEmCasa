@@ -345,6 +345,8 @@ Header END -->
                             </div>
                             <!-- List profile -->
                             <ul class="list-inline mb-0 text-center text-sm-start mt-3 mt-sm-0">
+                                <li class="list-inline-item"><i class="bi bi-globe me-1"></i> {{ $info->website }} </li>
+                                <li class="list-inline-item"><i class="bi bi-twitter me-1"></i> {{ $info->twitter }} </li>
                                 <li class="list-inline-item"><i class="bi bi-building me-1"></i> {{ $info->empresa }} </li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> {{ $info->localizacao }} </li>
                                 <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
