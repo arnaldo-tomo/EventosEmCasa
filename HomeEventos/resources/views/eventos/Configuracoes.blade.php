@@ -437,11 +437,12 @@ Header END -->
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
                                             <label class="form-label">Nome de usuário do Twitter </label>
-                                            <input type="text" class="form-control flatpickr" value="12/12/1990">
+                                            <input type="text" class="form-control flatpickr" value="homeevento">
                                         </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Companhia</label>
-                                            <input type="text" class="form-control flatpickr" value="12/12/1990">
+                                            <input type="text" class="form-control flatpickr"
+                                                value="HomeCompanyLDA">
                                         </div>
                                         <!-- Allow checkbox -->
                                         <div class="col-12">
@@ -464,12 +465,13 @@ Header END -->
                                         </div>
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">Localização</label>
                                             <input type="text" class="form-control" placeholder=""
-                                                value="{{ auth::user()->email }}">
+                                                value="mozambique">
                                             <!-- Add new email -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
-                                                    class="bi bi-plus-circle-dotted me-1"></i>Add new email address</a>
+                                                    class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
+                                                lozalização</a>
                                         </div>
                                         <!-- Page information -->
                                         <div class="col-12">
