@@ -32,41 +32,6 @@
 </head>
 
 <body>
-    <Style>
-        #profileDisplay {
-            display: block;
-            height: 210px;
-            width: 20%;
-            /* margin: 1px auto; */
-            border-radius: 10%;
-        }
-
-        .img-placeholder {
-            width: 20%;
-            color: white;
-            height: 10%;
-            background: black;
-            opacity: .7;
-            height: 210px;
-            border-radius: 10%;
-            z-index: 2;
-            position: absolute;
-            left: 10%;
-            transform: translateX(-50%);
-            display: none;
-        }
-
-        .img-placeholder h4 {
-            margin-top: 40%;
-            color: white;
-        }
-
-        .img-div:hover .img-placeholder {
-            display: block;
-            cursor: pointer;
-        }
-    </Style>
-
     <!-- =======================
 Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
@@ -446,18 +411,6 @@ Header END -->
                                     <!-- Form settings START -->
                                     <form class="row g-3">
                                         <!-- First name -->
-                                        <div class="col-sm-4 col-lg-4">
-                                            <span class="img-div">
-                                                <div class="text-center img-placeholder" onClick="triggerClick()">
-                                                    <h4>Carregar a foto do perfil</h4>
-                                                </div>
-                                                <img src="assets/images/avatar/01.jpg" onClick="triggerClick()"
-                                                    id="profileDisplay">
-                                            </span>
-                                            <input type="file" name="profileImage" onChange="displayImage(this)"
-                                                id="profileImage" class="form-control" style="display: none;">
-                                        </div>
-                                        <!-- Last name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Nome</label>
                                             <input type="text" class="form-control" placeholder=""
@@ -1331,25 +1284,6 @@ Header END -->
         </div>
     </div>
     <!-- Modal login activity END -->
-    <script>
-        function triggerClick(e) {
-            document.querySelector('#profileImage').click();
-        }
-
-        function displayImage(e) {
-            if (e.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
-                }
-                reader.readAsDataURL(e.files[0]);
-            }
-        }
-    </script>
-
-
-
-
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Vendors -->
