@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Perfil - {{ $info->name }}</title>
+    <title>Perfile - {{ $info->name }}</title>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -73,7 +73,7 @@ Header START -->
 
                         <!-- Nav item 4 Mega menu -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('perfil') }}">{{ Auth::user()->name }}</a>
+                            <a class="nav-link" href="{{ route('perfile') }}">{{ Auth::user()->name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -218,7 +218,7 @@ Header START -->
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="{{ route('perfil') }}">Visualizar perfil</a>
+                                    href="{{ route('perfile') }}">Visualizar perfile</a>
                             </li>
                             <!-- Links -->
                             <li><a class="dropdown-item" href="Configuracoes"><i
@@ -272,7 +272,7 @@ Header END -->
                     <div class="modal-content">
                         <!-- Modal feed header START -->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="feedActionPhotoLabel">Alterar foto so perfil</h5>
+                            <h5 class="modal-title" id="feedActionPhotoLabel">Alterar foto so perfile</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -297,7 +297,7 @@ Header END -->
                                 <a class="hiddenFileInput">
 
                                     <input class="hiddenFileInput" id="file-upload" type="file"
-                                        name="imagen" accept="image/*" />
+                                        name="foto" accept="image/*" />
                                 </a>
                                 <label for="file-upload" id="file-drag">
                                     <div class="dz-message" id="start">
@@ -434,7 +434,7 @@ Header END -->
                                         <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
 
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="Perfil"> <img
+                                                <a class="nav-link active" href="Perfile"> <img
                                                         class="me-2 h-20px fa-fw"
                                                         src="assets/images/icon/calendar-outline-filled.svg"
                                                         alt=""><span>Eventos </span></a>
