@@ -182,10 +182,10 @@ Header START -->
                                 data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 @if (!Auth::user()->foto)
-                                <img class="avatar-img rounded-2" src="/{{ Auth::user()->foto }}" alt="">
+                                <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
 
                                 @endif
-                                <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
+                                <img class="avatar-img rounded-2" src="/{{ Auth::user()->foto }}" alt="">
                             </a>
                         @endauth
                         <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
@@ -199,7 +199,7 @@ Header START -->
                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                         alt="avatar">
                                         @endif
-                                    <img class="avatar-img rounded-circle" src="/{{!Auth::user()->foto}}"
+                                    <img class="avatar-img rounded-circle" src="/{{Auth::user()->foto}}"
                                             alt="avatar">
                                     </div>
                                     <div>
