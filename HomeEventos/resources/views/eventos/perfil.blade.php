@@ -373,13 +373,20 @@ Header END -->
                                         <div class="text-center">
                                             <!-- Avatar -->
                                             @if (!Auth::user()->foto)
-                                            @endif
                                             <div class="avatar avatar-lg mt-n5 mb-3">
                                                 <a href="#!" data-bs-toggle="modal"
-                                                    data-bs-target="#feedActionPhoto"><img
-                                                        class="avatar-img rounded border border-white border-3"
-                                                        src="/{{ Auth::user()->foto }}" alt=""></a>
+                                                data-bs-target="#feedActionPhoto"><img
+                                                class="avatar-img rounded border border-white border-3"
+                                                src="/{{ Auth::user()->foto }}" alt=""></a>
                                             </div>
+                                            @else
+                                            <div class="avatar avatar-lg mt-n5 mb-3">
+                                                <a href="#!" data-bs-toggle="modal"
+                                                data-bs-target="#feedActionPhoto"><img
+                                                class="avatar-img rounded border border-white border-3"
+                                                src="/{{ Auth::user()->foto }}" alt=""></a>
+                                            </div>
+                                            @endif
                                             <!-- Info -->
                                             <h5 class="mb-0"> <a>{{ auth::user()->name }} </a> </h5>
                                             <small>{{ auth::user()->email }}</small>
