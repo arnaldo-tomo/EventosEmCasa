@@ -432,7 +432,7 @@ Header END -->
                                             <label class="form-label">URL (em inglês)</label>
                                             <input type="text" class="form-control"
                                                 placeholder="https://seuwebsite.com/"
-                                                value="{{ Auth::user()->name }}">
+                                                value="{{ Auth::user()->website }}">
                                         </div>
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
