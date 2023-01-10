@@ -391,19 +391,19 @@ Header END -->
                 <div class="col-lg-6 vstack gap-4">
                     <!-- Setting Tab content START -->
                     <div class="tab-content py-0 mb-0">
-                        @if(session('infoUpdate'))
-                        <!-- Event alert START -->
-         <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">
-             <strong>Nice:</strong> {{session('infoUpdate')}}
-             <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu perfil</a>
-             <button type="button" class="btn-close" data-bs-dismiss="alert"
-                 aria-label="Close"></button>
-         </div>
-         <!-- Event alert END -->
-                @endif
+                        @if (session('infoUpdate'))
+                            <!-- Event alert START -->
+                            <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">
+                                <strong>Nice:</strong> {{ session('infoUpdate') }}
+                                <a href="/Perfil" class="btn btn-xs btn-success mt-2 mt-lg-0 ms-lg-4">Ver Meu
+                                    perfil</a>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- Event alert END -->
+                        @endif
                         <!-- Account setting tab START -->
                         <div class="tab-pane show active fade" id="nav-setting-tab-1">
-                     
 
                             <!-- Account settings START -->
                             <div class="card mb-4">
@@ -413,9 +413,10 @@ Header END -->
                                     <p class="mb-0">Todos os campos nesta página são opcionais e podem ser excluídos
                                         em qualquer tempo, e ao preenchê-los, você está nos dando consentimento para
                                         compartilhar isso dados onde quer que seu perfil de usuário apareça. Consulte
-                                        nossa <a href="/Configuracoes"> declaração de privacidade</a> para saber mais sobre como usamos essas
+                                        nossa <a href="/Configuracoes"> declaração de privacidade</a> para saber mais
+                                        sobre como usamos essas
                                         informações.</p>
-                                        
+
                                 </div>
                                 <!-- Card header START -->
                                 <!-- Card body START -->
@@ -454,8 +455,10 @@ Header END -->
                                                     </span>
                                                 @enderror
                                             @else
-                                                <small>Por padrao o endereço de e-mail e definido como privado. Para alternar a
-                                                    privacidade do e-mail, vá para as <a href="/configuracoes">configurações de e-mail</a> e
+                                                <small>Por padrao o endereço de e-mail e definido como privado. Para
+                                                    alternar a
+                                                    privacidade do e-mail, vá para as <a
+                                                        href="/configuracoes">configurações de e-mail</a> e
                                                     desmarque
                                                     "Manter meu endereço de e-mail publico".</small>
                                             @endif
