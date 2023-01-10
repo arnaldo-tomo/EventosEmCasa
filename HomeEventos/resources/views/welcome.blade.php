@@ -1210,16 +1210,16 @@
                                                     <h5>Proprietário</h5>
                                                     <!-- Avatar group START -->
                                                     <ul class="avatar-group list-unstyled align-items-center">
+                                                        @if ($evento->dono->foto)
                                                         <li class="avatar avatar-xs">
-
-                                                            @if ($evento->dono->foto==null)
-
                                                             <img class="avatar-img rounded-circle"
                                                             src="/{{ $evento->dono->foto  }}" alt="avatar">
                                                         </li>
                                                         @else
+                                                        <li class="avatar avatar-xs">
                                                         <img class="avatar-img rounded-circle"
-                                                        src="assets/images/avatar/01.jpg" alt="avatar">
+                                                        src="/assets/images/avatar/main.png" alt="avatar">
+                                                    </li>
                                                         @endif
                                                         <li class="ms-4">
                                                             <a href="Verperfile{{ $evento->dono->id }}">
