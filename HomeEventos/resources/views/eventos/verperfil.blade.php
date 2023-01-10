@@ -348,7 +348,7 @@ Header END -->
                                 <li class="list-inline-item"><i class="bi bi-building me-1"></i> {{ $info->empresa }} </li>
                                 <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> {{ $info->localizacao }} </li>
                                 <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i>
-                                    30 nov 2022
+                                    {{ $info->created_at }}
                                 </li>
                             </ul>
                         </div>
