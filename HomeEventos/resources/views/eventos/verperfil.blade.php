@@ -210,6 +210,11 @@ Header START -->
                         <a class="nav-link btn icon-md p-0" href="#" id="profileDropdown" role="button"
                             data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                             aria-expanded="false">
+                            @if (!auth::user()->foto)
+
+                            @else
+
+                            @endif
                             <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3"
