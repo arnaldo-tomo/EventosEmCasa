@@ -9,6 +9,7 @@ use App\Models\Usuario;
 Route::get('/', [EventosController::class, 'home'])->name('home');
 Route::post('/PasswordUpdate', [ControllersUsuario::class, 'PasswordUpdate'])->name('PasswordUpdate');
 Route::post('/infoUpdate', [ControllersUsuario::class, 'infoUpdate'])->name('infoUpdate');
+Route::post('/profileUpdate', [ControllersUsuario::class, 'profileUpdate'])->name('profileUpdate');
 Route::get('/autocomplete', [EventosController::class, 'autocomplete'])->middleware(['auth'])->name('autocomplete');
 Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
 Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->middleware(['auth'])->name('Configuracoes');
