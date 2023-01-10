@@ -16,7 +16,6 @@ class Usuario extends Controller
     public function infoUpdate(Request $request)
     {
 
-        $infoUpdate = User::find(Auth::user()->id);
         $request->validate([
             'name' => 'required|min:4|string|max:255',
             'email'  =>  'required|email|unique:users,email,'.Auth::user()->id, 
@@ -27,6 +26,9 @@ class Usuario extends Controller
             'localizacao' => 'string|max:50',
             'descricao' => 'string|max:255'
         ]);
+
+        $infoUpdate = User::find(Auth::user()->id);
+
         $infoUpdate->name = $request->input('name');
         $infoUpdate->email = $request->input('email');
         $infoUpdate->website = $request->input('website');
@@ -35,8 +37,10 @@ class Usuario extends Controller
         $infoUpdate->contacto = $request->input('contacto');
         $infoUpdate->localizacao = $request->input('localizacao');
         $infoUpdate->descricao = $request->input('descricao');
+
         $infoUpdate->update();
-        return back()->with('message', 'Profile Updated');
+
+        return back()->with('infoUpdate', 'Profile Updated');
     }
 
 
