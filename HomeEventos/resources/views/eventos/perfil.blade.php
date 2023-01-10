@@ -277,8 +277,8 @@ Header END -->
                                 aria-label="Close"></button>
                         </div>
                         <!-- Modal feed header END -->
-                        <form action="{{ route('') }}" method="POST" enctype="multipart/form-data" class="w-100">
-
+                        <form action="{{ route('profileUpdate') }}" method="POST" enctype="multipart/form-data" class="w-100">
+@csrf
                         <!-- Modal feed body START -->
                         <div class="modal-body">
                             <!-- Add Feed -->
