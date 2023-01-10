@@ -265,6 +265,7 @@ Header END -->
 
         <!-- Container START -->
         <div class="container">
+
             {{-- Modal --}}
             <div class="modal fade" id="feedActionPhoto" tabindex="-1" aria-labelledby="feedActionPhotoLabel"
                 aria-hidden="true">
@@ -278,6 +279,7 @@ Header END -->
                         </div>
                         <!-- Modal feed header END -->
 
+                        <form action="/profileUpdate" method="POST" enctype="multipart/form-data" >
                         <!-- Modal feed body START -->
                         <div class="modal-body">
                             <!-- Add Feed -->
@@ -289,7 +291,7 @@ Header END -->
                                 </div>
                                 <!-- Feed box  -->
                                 <form class="w-100">
-                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
+                                    <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="descricao" rows="6">{{ auth::user()->descricao }}</textarea>
                                 </form>
                             </div>
 
@@ -319,7 +321,6 @@ Header END -->
                                 </div>
                             </div>
                             <!-- Dropzone photo END -->
-
                         </div>
                         <!-- Modal feed body END -->
 
@@ -331,6 +332,7 @@ Header END -->
                             <button type="button" class="btn btn-success-soft">Post</button>
                         </div>
                         <!-- Modal feed footer -->
+                    </form>
                     </div>
                 </div>
             </div>
