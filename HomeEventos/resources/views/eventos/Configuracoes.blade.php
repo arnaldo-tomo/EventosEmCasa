@@ -423,20 +423,23 @@ Header END -->
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-control"
                                                 value="{{ Auth::user()->email }}">
+                                            <small>Você definiu seu endereço de e-mail como privado. Para alternar a
+                                                privacidade do e-mail, vá para as configurações de e-mail e desmarque
+                                                "Manter meu endereço de e-mail privado".</small>
                                         </div>
-                                        <!-- User name -->
+                                        <!-- URL (em inglês) -->
                                         <div class="col-sm-4">
-                                            <label class="form-label">User name</label>
+                                            <label class="form-label">URL (em inglês)</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 value="{{ Auth::user()->name }}">
                                         </div>
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
-                                            <label class="form-label">Birthday </label>
+                                            <label class="form-label">Nome de usuário do Twitter </label>
                                             <input type="text" class="form-control flatpickr" value="12/12/1990">
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="form-label">Birthday </label>
+                                            <label class="form-label">Companhia</label>
                                             <input type="text" class="form-control flatpickr" value="12/12/1990">
                                         </div>
                                         <!-- Allow checkbox -->
@@ -471,7 +474,8 @@ Header END -->
                                         <div class="col-12">
                                             <label class="form-label">Overview</label>
                                             <textarea class="form-control" rows="4" placeholder="Description (Required)">{{ auth::user()->descricao }}</textarea>
-                                            <small>Character limit: 300</small>
+                                            <small>Você pode @mention outros usuários e organizações para vincular a
+                                                eles. limite: de 300 palavras </small>
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
