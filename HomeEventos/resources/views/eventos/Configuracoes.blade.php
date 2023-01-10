@@ -450,7 +450,7 @@ Header END -->
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="allowChecked" checked>
                                                 <label class="form-check-label" for="allowChecked">
-                                                    Allow anyone to add you to their team
+                                                    Permitir que qualquer pessoa adicione você à um Evento
                                                 </label>
                                             </div>
                                         </div>
