@@ -288,7 +288,7 @@ Header END -->
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
-                                <form class="w-100">
+                                <form action="" method="POST" enctype="multipart/form-data" class="w-100">
                                     <textarea class="form-control pe-6 fs-6 lh-6 border-0" name="" rows="6">{{ auth::user()->descricao }}</textarea>
                                 </div>
 
@@ -314,7 +314,6 @@ Header END -->
                                     </label>
                                 </div>
                             </div>
-                        </form>
                             <!-- Dropzone photo END -->
 
                         </div>
@@ -325,8 +324,10 @@ Header END -->
                             <!-- Button -->
                             <button type="button" class="btn btn-danger-soft me-2"
                                 data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success-soft">Post</button>
+                            <button type="button" class="btn btn-success-soft">Actuliazar</button>
                         </div>
+                    </form>
+
                         <!-- Modal feed footer -->
                     </div>
                 </div>
