@@ -1212,7 +1212,7 @@
                                                     <ul class="avatar-group list-unstyled align-items-center">
                                                         <li class="avatar avatar-xs">
                                                             <img class="avatar-img rounded-circle"
-                                                                src="/{{ $eventos->dono->foto }}" alt="avatar">
+                                                                src="/{{ $evento->dono->foto }}" alt="avatar">
                                                         </li>
                                                         <li class="ms-4">
                                                             <a href="Verperfile{{ $evento->dono->id }}">
