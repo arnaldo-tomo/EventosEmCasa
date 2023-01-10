@@ -210,9 +210,9 @@
                                     aria-expanded="false">
                                     @if (!Auth::user()->foto)
                                     <img class="avatar-img rounded-2" src="assets/images/avatar/main.png" alt="">
-
-                                    @endif
+@else
                                     <img class="avatar-img rounded-2" src="/{{ Auth::user()->foto }}" alt="">
+                                    @endif
 
                                 </a>
                             @endauth
@@ -226,9 +226,10 @@
                                             @if (!Auth::user()->foto)
                                             <img class="avatar-img rounded-circle" src="assets/images/avatar/main.png"
                                             alt="avatar">
-                                            @endif
+                                            @else
                                             <img class="avatar-img rounded-circle" src="/{{ Auth::user()->foto }}"
-                                                alt="avatar">
+                                            alt="avatar">
+                                            @endif
                                         </div>
                                         <div>
                                             <a class="h6 stretch-link"
