@@ -11,7 +11,7 @@ Route::post('/PasswordUpdate', [ControllersUsuario::class, 'PasswordUpdate'])->n
 Route::post('/infoUpdate', [ControllersUsuario::class, 'infoUpdate'])->name('infoUpdate');
 Route::post('/profileUpdate', [ControllersUsuario::class, 'profileUpdate'])->name('profileUpdate');
 Route::get('/autocomplete', [EventosController::class, 'autocomplete'])->middleware(['auth'])->name('autocomplete');
-Route::get('/Perfil', [EventosController::class, 'perfil'])->middleware(['auth'])->name('perfil');
+Route::get('/Perfile', [EventosController::class, 'perfile'])->middleware(['auth'])->name('perfile');
 Route::get('/Configuracoes', [EventosController::class, 'Configuracoes'])->middleware(['auth'])->name('Configuracoes');
 Route::get('/Verperfil{id}', [EventosController::class, 'Verperfil'])->middleware(['auth'])->name('Verperfil');
 Route::get('/Sobre{id}', [EventosController::class, 'sobre'])->middleware(['auth'])->name('sobre');
