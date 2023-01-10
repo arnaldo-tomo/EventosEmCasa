@@ -130,6 +130,7 @@ Header START -->
                                             <div
                                                 class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
                                                 <div class="avatar text-center d-none d-sm-inline-block">
+
                                                     <img class="avatar-img rounded-circle"
                                                         src="assets/images/avatar/02.jpg" alt="">
                                                 </div>
@@ -163,21 +164,7 @@ Header START -->
                                             </a>
                                         </li>
                                         <!-- Notif item -->
-                                        <li>
-                                            <a href="#"
-                                                class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
-                                                <div class="avatar text-center d-none d-sm-inline-block">
-                                                    <img class="avatar-img rounded-circle"
-                                                        src="assets/images/logo/12.svg" alt="">
-                                                </div>
-                                                <div class="ms-sm-3 d-flex">
-                                                    <p class="small mb-2"><b>Bootstrap in the news:</b> The search
-                                                        giant’s parent company, Alphabet, just joined an exclusive club
-                                                        of tech stocks.</p>
-                                                    <p class="small ms-3">4hr</p>
-                                                </div>
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </div>
                                 <div class="card-footer text-center">
