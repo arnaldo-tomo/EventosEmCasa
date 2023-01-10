@@ -20,8 +20,8 @@ class Usuario extends Controller
             'name' => 'required|unique:posts| min:4|string|max:255',
             'email' => 'required|email|string|max:255',
             'website' => 'string|max:255',
-            'twitter' => 'string|max:255',
-            'empresa' => 'string|max:255',
+            'twitter' => 'string|unique:posts|max:255',
+            'empresa' => 'string|unique:posts|max:255',
             'contacto' => 'string|max:10',
             'localizacao' => 'string|max:255',
             'descricao' => 'string|max:255'
