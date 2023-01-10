@@ -524,7 +524,7 @@ Header END -->
                                         </div>
                                         <!-- New password -->
                                         <div class="col-12">
-                                            <label class="form-label">New password</label>
+                                            <label class="form-label">Nova Senha</label>
                                             <!-- Input group -->
                                             <div class="input-group">
                                                 <input
