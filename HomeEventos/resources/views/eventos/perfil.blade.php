@@ -288,7 +288,7 @@ Header END -->
                                         alt="">
                                 </div>
                                 <!-- Feed box  -->
-                                <form class="w-100">
+                                <form action="" method="POST" enctype="multipart/form-data" class="w-100">
                                     <textarea class="form-control pe-6 fs-6 lh-6 border-0" rows="6">{{ auth::user()->descricao }}</textarea>
                             </div>
 
