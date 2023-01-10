@@ -416,11 +416,9 @@ Header END -->
                                                 <li class="nav-item"> <i class="bi bi-building"></i><a></a>
                                                     {{ Auth::user()->empresa }}</li>
                                             @endif
-
                                         </ul>
                                         <!-- Divider -->
                                         <hr>
-
                                         <!-- Side Nav START -->
                                         <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
 
