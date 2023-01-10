@@ -413,7 +413,7 @@ Header END -->
                                         <!-- First name -->
                                         <div class="col-sm-6 col-lg-6">
                                             <label class="form-label">Nome</label>
-                                            <input type="text" class="form-control" placeholder=""
+                                            <input type="text" class="form-control"
                                                 value="{{ Auth::user()->name }}">
                                             <small>Seu nome pode aparecer em torno do HomeEvrntos, onde você contribui
                                                 ou é mencionado. Você pode removê-lo a qualquer momento.</small>
@@ -437,12 +437,13 @@ Header END -->
                                         <!-- Birthday -->
                                         <div class="col-lg-4">
                                             <label class="form-label">Nome de usuário do Twitter </label>
-                                            <input type="text" class="form-control flatpickr" value="homeevento">
+                                            <input type="text" class="form-control flatpickr"
+                                                placeholder="homeevento" value="">
                                         </div>
                                         <div class="col-lg-4">
                                             <label class="form-label">Companhia</label>
-                                            <input type="text" class="form-control flatpickr"
-                                                value="HomeCompanyLDA">
+                                            <input type="text" placeholder="HomeCompanyLDA"
+                                                class="form-control flatpickr" value="">
                                         </div>
                                         <!-- Allow checkbox -->
                                         <div class="col-12">
@@ -457,7 +458,7 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Telefone</label>
-                                            <input type="text" class="form-control" placeholder=""
+                                            <input type="text" class="form-control" placeholder="+258 000 0000"
                                                 value="{{ auth::user()->contacto }}">
                                             <!-- Add new number -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
@@ -467,8 +468,8 @@ Header END -->
                                         <!-- Phone number -->
                                         <div class="col-sm-6">
                                             <label class="form-label">Localização</label>
-                                            <input type="text" class="form-control" placeholder=""
-                                                value="mozambique">
+                                            <input type="text" class="form-control" placeholder="Moçambique"
+                                                value="">
                                             <!-- Add new email -->
                                             <a class="btn btn-sm btn-dashed rounded mt-2" href="#!"> <i
                                                     class="bi bi-plus-circle-dotted me-1"></i>adcionar outra
@@ -483,8 +484,8 @@ Header END -->
                                         </div>
                                         <!-- Button  -->
                                         <div class="col-12 text-end">
-                                            <button type="submit" class="btn btn-sm btn-primary mb-0">Save
-                                                changes</button>
+                                            <button type="submit" class="btn btn-sm btn-primary mb-0">Actuliazar
+                                                perfil</button>
                                         </div>
                                     </form>
                                     <!-- Settings END -->
