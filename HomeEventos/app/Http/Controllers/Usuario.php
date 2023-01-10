@@ -42,13 +42,34 @@ class Usuario extends Controller
 
         return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
     }
+
+
     public function profileUpdate(Request $request)
     {
-        dd($request->all());
 
         $request->validate([
             'descricao' => 'max:255'
         ]);
+        $profileUpdate = user::find(Auth::user()->id);
+
+        $profileUpdate->telefone = Request::input('telefone');
+        $local = $profileUpdate->imagen;
+        //Verificando se a imagem existe para elimina-la
+        if (File::exists($local)) {
+            File::delete($local);
+        }
+
+        //Capturando a imagem
+        if (Request::file('foto') != null) {
+            $filename = Request::file('foto')->getClientOriginalName();
+            $link = "perfil/usuario/" . $filename;
+            $profileUpdate->imagen = $link;
+            $foto = Request::file('imagen');
+            $foto->move('perfil/usuario', $filename);
+        }
+
+        $profileUpdate->update();
+        return redirect()->route('allBook')->with('actualizado', 'O Book foi actualizado com sucesso.');
 
         $profileUpdate = User::find(Auth::user()->id);
         $profileUpdate->name = $request->input('name');
