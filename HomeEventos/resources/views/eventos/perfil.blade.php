@@ -396,7 +396,7 @@ Header END -->
 <hr>
 <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
     <li > <i class="bi bi-twitter"></i> <a href=""></a> </li>
-    <li><i class="bi bi-globe"></i><a href=""></a></li>
+    <li><i class="bi bi-globe"></i><a href="https://mobile.twitter.com/{{ Auth::user()->twitter }}">{{ Auth::user()->twitter }}</a>{{ Auth::user()->twitter }}</li>
     <li><i class="bi bi-phone"></i><a href=""></a></li>
     <li><i class="bi bi-geo-alt-fill"></i><a href=""></a></li>
     <li><i class="bi bi-building"></i><a href=""></a></li>
