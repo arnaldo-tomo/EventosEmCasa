@@ -225,7 +225,7 @@ Header START -->
                                     </div>
                                 </div>
                                 <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center"
-                                    href="{{ route('perfil') }}">Visualizar perfil</a>
+                                    href="{{ route('perfile') }}">Visualizar perfil</a>
                             </li>
                             <!-- Links -->
                             <li><a class="dropdown-item" href="Configuracoes"><i
