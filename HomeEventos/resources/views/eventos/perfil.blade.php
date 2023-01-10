@@ -394,8 +394,8 @@ Header END -->
                                             <!-- User stat END -->
                                         </div>
 <hr>
-<ul>
-    <li class="nav-item"> <i class="bi bi-twitter"></i> </li>
+<ul class="nav nav-link-secondary flex-column fw-bold gap-2">
+    <li > <i class="bi bi-twitter"></i> </li>
     <li><i class="bi bi-globe"></i></li>
     <li><i class="bi bi-phone"></i></li>
     <li><i class="bi bi-geo-alt-fill"></i></li>
