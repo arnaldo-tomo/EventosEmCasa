@@ -50,10 +50,7 @@ class Usuario extends Controller
         ]);
 
         $profileUpdate = User::find(Auth::user()->id);
-
         $profileUpdate->name = $request->input('name');
-
-
         $profileUpdate->update();
 
         return back()->with('infoUpdate', 'Enformações do perfil atualizadas');
